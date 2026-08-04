@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Derecho Administrativo — UCC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a1a;
+            color: rgba(255,255,255,0.85);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px 20px;
+        }
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.8em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4f8cff, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 12px;
+        }
+        .hero p {
+            font-size: 1.1em;
+            color: rgba(255,255,255,0.5);
+            font-weight: 300;
+        }
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            width: 100%;
+        }
+        .card {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 16px;
+            padding: 28px;
+            text-decoration: none;
+            color: rgba(255,255,255,0.85);
+            transition: all 0.3s ease;
+            display: block;
+        }
+        .card:hover {
+            border-color: #4f8cff;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(79,140,255,0.15);
+        }
+        .card .num {
+            font-size: 0.7em;
+            font-weight: 700;
+            color: #4f8cff;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+        .card h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3em;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: white;
+        }
+        .card p {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.5;
+        }
+        .card .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #4f8cff, #a855f7);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.65em;
+            font-weight: 600;
+            margin-top: 14px;
+        }
+        .card.pending {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: rgba(255,255,255,0.25);
+            font-size: 0.75em;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1>Derecho Administrativo</h1>
+        <p>Licenciatura en Derecho — UCC · Ago-Dic 2026</p>
+    </div>
+    
+    <div class="cards">
+        <a class="card" href="diapositivas/unidad-01-introduccion-da.html">
+            <div class="num">Unidad 01</div>
+            <h2>Introducción al Derecho Administrativo</h2>
+            <p>Evolución histórica, concepto, caracteres, función administrativa, relaciones y principios.</p>
+            <span class="badge">Disponible</span>
+        </a>
+        
+        <div class="card pending">
+            <div class="num">Unidad 02</div>
+            <h2>Fuentes del Derecho Administrativo</h2>
+            <p>Próximamente.</p>
+        </div>
+        
+        <div class="card pending">
+            <div class="num">Unidad 03</div>
+            <h2>La Organización Administrativa</h2>
+            <p>Próximamente.</p>
+        </div>
+        
+        <div class="card pending">
+            <div class="num">Unidad 04</div>
+            <h2>El Servidor Público</h2>
+            <p>Próximamente.</p>
+        </div>
+        
+        <div class="card pending">
+            <div class="num">Unidad 05</div>
+            <h2>Teoría del Acto Administrativo</h2>
+            <p>Próximamente.</p>
+        </div>
+    </div>
+    
+    <footer>
+        Prof. Cortina Ceballos Sergio Armando · Lic. en Derecho Esc. v14
+    </footer>
+</body>
+</html>

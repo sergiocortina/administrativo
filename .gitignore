@@ -1,0 +1,31 @@
+# PDFs compilados (no subir — se generan desde .typ)
+*.pdf
+
+# Typst output
+output/typ/
+
+# Archivos de prueba
+test-*.typ
+test-*.pdf
+test-include-content.typ
+
+# .opencode (configuración local)
+.opencode/node_modules/
+.opencode/package-lock.json
+
+# Fuentes y legislación (archivos grandes, solo lectura)
+Fuentes/
+Legislacion/
+
+# Word
+*.docx
+
+# Programa original
+Programa_Derecho_Administrativo.docx
+
+# Output docs
+output/docs/
+
+# Sistema
+Thumbs.db
+.DS_Store

@@ -1,0 +1,1623 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 1 — Introducción al Derecho Administrativo</title>
+    
+    <!-- Reveal.js CSS + Theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --r-background-color: #0a0a1a;
+            --r-main-font: 'Inter', sans-serif;
+            --r-heading-font: 'Playfair Display', serif;
+            --r-main-font-size: 24px;
+            --accent-blue: #4f8cff;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --glass: rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.1);
+        }
+        
+        .reveal {
+            font-family: var(--r-main-font);
+        }
+        
+        .reveal .slides {
+            text-align: left;
+        }
+        
+        .reveal .slides section {
+            padding: 20px 50px;
+        }
+        
+        /* ====== TITLE SLIDE ====== */
+        .reveal .slides section.title-slide {
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%);
+        }
+        
+        .reveal .slides section.title-slide h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4em;
+            font-weight: 900;
+            background: linear-gradient(135deg, #4f8cff, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .reveal .slides section.title-slide .subtitle {
+            font-size: 1em;
+            color: rgba(255,255,255,0.6);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .reveal .slides section.title-slide .unit-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.7em;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+        
+        /* ====== SECTION HEADERS ====== */
+        .reveal .slides section.section-header {
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%);
+        }
+        
+        .reveal .slides section.section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4f8cff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+        
+        .reveal .slides section.section-header .section-icon {
+            font-size: 2.5em;
+            margin-bottom: 14px;
+            display: block;
+        }
+        
+        /* ====== CONTENT CARDS ====== */
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 16px 18px;
+            margin: 8px 0;
+            backdrop-filter: blur(10px);
+        }
+        
+        .card-accent-blue { border-left: 4px solid var(--accent-blue); }
+        .card-accent-purple { border-left: 4px solid var(--accent-purple); }
+        .card-accent-pink { border-left: 4px solid var(--accent-pink); }
+        .card-accent-green { border-left: 4px solid var(--accent-green); }
+        .card-accent-orange { border-left: 4px solid var(--accent-orange); }
+        .card-accent-red { border-left: 4px solid var(--accent-red); }
+        
+        /* ====== GRIDS ====== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 14px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 12px;
+            margin-top: 14px;
+        }
+        
+        .grid-2 > .card, .grid-3 > .card {
+            margin: 0;
+        }
+        
+        /* ====== HEADINGS ====== */
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            color: white;
+            font-weight: 700;
+        }
+        
+        .reveal h2 {
+            font-size: 1.4em;
+            margin-bottom: 14px;
+        }
+        
+        .reveal h3 {
+            font-size: 1.05em;
+            color: var(--accent-blue);
+            margin-bottom: 8px;
+        }
+        
+        .reveal h4 {
+            font-size: 0.9em;
+            color: var(--accent-purple);
+        }
+        
+        /* ====== TEXT ====== */
+        .reveal p, .reveal li {
+            color: rgba(255,255,255,0.85);
+            line-height: 1.6;
+        }
+        
+        .reveal ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .reveal ul li {
+            padding: 3px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .reveal ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+        
+        /* ====== HIGHLIGHTS ====== */
+        .highlight {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+        
+        .highlight-purple {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+        
+        .highlight-pink {
+            color: var(--accent-pink);
+            font-weight: 600;
+        }
+        
+        .highlight-green {
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+        
+        .highlight-orange {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+        
+        /* ====== EMOJI ICONS ====== */
+        .icon-lg {
+            font-size: 1.6em;
+            display: inline-block;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        
+        .icon-xl {
+            font-size: 3em;
+            display: block;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        
+        /* ====== TIMELINE ====== */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 10px;
+            padding: 8px 14px;
+            background: var(--glass);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 18px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            border: 2px solid #0a0a1a;
+        }
+        
+        .timeline-item .year {
+            font-size: 0.75em;
+            color: var(--accent-blue);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .timeline-item .event {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.8);
+            margin-top: 4px;
+        }
+        
+        /* ====== QUOTE / DEFINITION ====== */
+        .definition-box {
+            background: linear-gradient(135deg, rgba(79,140,255,0.15), rgba(168,85,247,0.15));
+            border: 1px solid rgba(79,140,255,0.3);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin: 14px 0;
+            position: relative;
+        }
+        
+        .definition-box::before {
+            content: '📖';
+            font-size: 1.5em;
+            position: absolute;
+            top: -12px;
+            left: 20px;
+        }
+        
+        .definition-box .def-title {
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        
+        .definition-box .def-text {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.5;
+        }
+        
+        /* ====== COMPARISON TABLE ====== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 0.65em;
+            margin-top: 12px;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 8px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 7px 12px;
+            border-bottom: 1px solid var(--glass-border);
+            color: rgba(255,255,255,0.85);
+        }
+        
+        .comparison-table tr:nth-child(even) td {
+            background: var(--glass);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* ====== FUN FACT / CURIOSITY ====== */
+        .fun-fact {
+            background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(239,68,68,0.1));
+            border: 1px solid rgba(245,158,11,0.3);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 10px 0;
+            font-size: 0.85em;
+        }
+        
+        .fun-fact .ff-label {
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* ====== QUIZ CARD ====== */
+        .quiz-card {
+            background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(79,140,255,0.15));
+            border: 1px solid rgba(16,185,129,0.3);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin: 10px 0;
+        }
+        
+        .quiz-card .quiz-q {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+        
+        .quiz-option {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 7px 14px;
+            margin: 4px 0;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-option:hover {
+            border-color: var(--accent-green);
+            background: rgba(16,185,129,0.1);
+        }
+        
+        .quiz-option.correct {
+            border-color: var(--accent-green);
+            background: rgba(16,185,129,0.2);
+            color: var(--accent-green);
+        }
+        
+        .quiz-option.wrong {
+            border-color: var(--accent-red);
+            background: rgba(239,68,68,0.1);
+            opacity: 0.6;
+        }
+        
+        /* ====== PRINCIPLE CARDS ====== */
+        .principle-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+        }
+        
+        .principle-card .p-icon {
+            font-size: 1.6em;
+            margin-bottom: 6px;
+        }
+        
+        .principle-card .p-name {
+            font-weight: 700;
+            font-size: 0.8em;
+            color: white;
+            margin-bottom: 4px;
+        }
+        
+        .principle-card .p-desc {
+            font-size: 0.65em;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.3;
+        }
+        
+        /* ====== REAL LIFE EXAMPLE ====== */
+        .real-life {
+            background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(168,85,247,0.15));
+            border: 1px solid rgba(236,72,153,0.3);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 10px 0;
+        }
+        
+        .real-life .rl-label {
+            color: var(--accent-pink);
+            font-weight: 700;
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        
+        /* ====== COUNTER ====== */
+        .counter-number {
+            font-size: 3em;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        .counter-label {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8em;
+            margin-top: 8px;
+        }
+        
+        /* ====== PROGRESS BAR ====== */
+        .progress-bar {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            height: 8px;
+            margin: 8px 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar .fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            transition: width 1s ease;
+        }
+        
+        /* ====== REVEAL OVERRIDES ====== */
+        .reveal .slides section .fragment.visible {
+            opacity: 1;
+        }
+        
+        .reveal .slide-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .reveal .slides section {
+                padding: 20px 30px;
+            }
+        }
+        
+        /* ====== SPECIAL EFFECTS ====== */
+        .glow-text {
+            text-shadow: 0 0 20px rgba(79,140,255,0.5), 0 0 40px rgba(168,85,247,0.3);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+        
+            <!-- ========== PORTADA ========== -->
+            <section class="title-slide" data-background-gradient="linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%)">
+                <span class="unit-badge">Unidad 1</span>
+                <h1 style="margin-top: 30px;">Introducción al<br>Derecho Administrativo</h1>
+                <p class="subtitle">¿Qué es y por qué nos importa?</p>
+                <p style="color: rgba(255,255,255,0.4); font-size: 0.7em; margin-top: 40px;">
+                    <i class="fa-solid fa-graduation-cap"></i> Licenciatura en Derecho — Primer Semestre<br>
+                    <i class="fa-solid fa-calendar"></i> Ago-Dic 2026
+                </p>
+            </section>
+            
+            <!-- ========== ¿POR QUÉ IMPORTA? ========== -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🤔</span> ¿Por qué estudiar Derecho Administrativo?</h2>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Dato que te sorprenderá</div>
+                    <p><strong>El 98% del derecho mexicano es administrativo.</strong> Desde sacar tu credencial de elector hasta pedir una beca, todo pasa por la administración pública.</p>
+                </div>
+                
+                <div class="grid-3 fragment">
+                    <div class="card card-accent-blue" style="text-align: center;">
+                        <span class="icon-lg">📱</span>
+                        <p style="font-size: 0.8em;"><strong>Tu celular</strong><br>CONAFEC autorizó las frecuencias. El IFT regula tu señal.</p>
+                    </div>
+                    <div class="card card-accent-purple" style="text-align: center;">
+                        <span class="icon-lg">🚰</span>
+                        <p style="font-size: 0.8em;"><strong>El agua de tu casa</strong><br>SACMEX o tu junta de agua la distribuye. ¿Y si falla?</p>
+                    </div>
+                    <div class="card card-accent-pink" style="text-align: center;">
+                        <span class="icon-lg">🎓</span>
+                        <p style="font-size: 0.8em;"><strong>Tu universidad</strong><br>La UCC opera con permisos, licencias y acuerdos gubernamentales.</p>
+                    </div>
+                </div>
+                
+                <p class="fragment" style="text-align: center; color: rgba(255,255,255,0.5); font-size: 0.8em; margin-top: 24px;">
+                    ⬇️ <em>Usa las flechas del teclado o haz clic para avanzar</em>
+                </p>
+            </section>
+            
+            <!-- ========== PLAN DE LA UNIDAD ========== -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗺️</span> Qué veremos hoy</h2>
+                
+                <div class="grid-2">
+                    <div>
+                        <div class="card card-accent-blue fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">📜</span>
+                            <div>
+                                <h4 style="color: var(--accent-blue); margin: 0;">1. Evolución histórica</h4>
+                                <p style="font-size: 0.75em; margin: 0;">Del rey absoluto al Estado de derecho</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-purple fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">📚</span>
+                            <div>
+                                <h4 style="color: var(--accent-purple); margin: 0;">2. Concepto</h4>
+                                <p style="font-size: 0.75em; margin: 0;">¿Qué dice la doctrina?</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-pink fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">⚡</span>
+                            <div>
+                                <h4 style="color: var(--accent-pink); margin: 0;">3. Caracteres</h4>
+                                <p style="font-size: 0.75em; margin: 0;">Lo que hace único al DA</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card card-accent-green fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">🏛️</span>
+                            <div>
+                                <h4 style="color: var(--accent-green); margin: 0;">4. Función administrativa</h4>
+                                <p style="font-size: 0.75em; margin: 0;">¿Quién hace qué?</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-orange fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">🔗</span>
+                            <div>
+                                <h4 style="color: var(--accent-orange); margin: 0;">5. Relaciones con otras ramas</h4>
+                                <p style="font-size: 0.75em; margin: 0;">El DA y sus amigos</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-red fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">⚖️</span>
+                            <div>
+                                <h4 style="color: var(--accent-red); margin: 0;">6. Principios</h4>
+                                <p style="font-size: 0.75em; margin: 0;">Las reglas del juego</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- MAPA CONCEPTUAL -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗺️</span> Mapa Conceptual</h2>
+                
+                <div style="font-family: 'Consolas', monospace; font-size: 0.7em; line-height: 1.6; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 20px 24px; border: 1px solid var(--glass-border);">
+                    <div style="text-align: center; font-weight: 700; font-size: 1.1em; margin-bottom: 12px; color: var(--accent-blue);">Introducción al Derecho Administrativo</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px;">
+                        <div>
+                            <div style="color: var(--accent-purple); font-weight: 700; margin-bottom: 4px;">📜 Evolución histórica</div>
+                            <div style="padding-left: 12px; font-size: 0.9em; color: rgba(255,255,255,0.6);">
+                                ├── Antigüedad (Grecia, Roma)<br>
+                                ├── Estado policía<br>
+                                ├── Constitucionalismo<br>
+                                ├── Instituciones que perviven<br>
+                                ├── Jurisdicción administrativa<br>
+                                └── Escuelas del DA
+                            </div>
+                        </div>
+                        <div>
+                            <div style="color: var(--accent-green); font-weight: 700; margin-bottom: 4px;">📚 Concepto y caracteres</div>
+                            <div style="padding-left: 12px; font-size: 0.9em; color: rgba(255,255,255,0.6);">
+                                ├── Criterio legalista<br>
+                                ├── Criterio orgánico<br>
+                                ├── Criterio material<br>
+                                ├── Criterio mixto ✅<br>
+                                └── 5 caracteres
+                            </div>
+                            <div style="color: var(--accent-orange); font-weight: 700; margin-top: 10px; margin-bottom: 4px;">🏛️ Función administrativa</div>
+                            <div style="padding-left: 12px; font-size: 0.9em; color: rgba(255,255,255,0.6);">
+                                ├── Legislativa<br>
+                                ├── Administrativa<br>
+                                └── Jurisdiccional
+                            </div>
+                        </div>
+                        <div>
+                            <div style="color: var(--accent-pink); font-weight: 700; margin-bottom: 4px;">🔗 Relaciones</div>
+                            <div style="padding-left: 12px; font-size: 0.9em; color: rgba(255,255,255,0.6);">
+                                Constitucional, penal,<br>civil, fiscal, internacional,<br>procesal, laboral,<br>ambiental, económico,<br>municipal
+                            </div>
+                            <div style="color: var(--accent-red); font-weight: 700; margin-top: 10px; margin-bottom: 4px;">⚖️ Principios</div>
+                            <div style="padding-left: 12px; font-size: 0.9em; color: rgba(255,255,255,0.6);">
+                                Legalidad, interés público,<br>seguridad jurídica,<br>debido proceso,<br>proporcionalidad...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 1: EVOLUCIÓN HISTÓRICA ========== -->
+            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">📜</span>
+                <h2>Evolución Histórica</h2>
+                <p style="color: rgba(255,255,255,0.5);">Del "el rey manda" al "la ley manda"</p>
+            </section>
+            
+            <!-- Antigüedad -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🏛️</span> Antecedentes de la antigüedad</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">El derecho administrativo existía mucho antes de llamarse así.</p>
+                
+                <div class="grid-3">
+                    <div class="card card-accent-blue fragment" style="text-align: center;">
+                        <span style="font-size: 2em;">🇬🇷</span>
+                        <h4 style="color: var(--accent-blue); margin-top: 8px;">Grecia</h4>
+                        <p style="font-size: 0.75em;">Magistraturas colegiadas, rendición de cuentas, elección popular. Aristóteles distinguió funciones deliberativas, ejecutivas y judiciales.</p>
+                    </div>
+                    <div class="card card-accent-orange fragment" style="text-align: center;">
+                        <span style="font-size: 2em;">🏛️</span>
+                        <h4 style="color: var(--accent-orange); margin-top: 8px;">Roma</h4>
+                        <p style="font-size: 0.75em;"><em>Fiscus</em> (patrimonio del Estado), magistrados con competencias, contratación pública, expropiación por utilidad pública.</p>
+                    </div>
+                    <div class="card card-accent-purple fragment" style="text-align: center;">
+                        <span style="font-size: 2em;">📜</span>
+                        <h4 style="color: var(--accent-purple); margin-top: 8px;">Edad Media</h4>
+                        <p style="font-size: 0.75em;">Glosadores en Bolonia. Siete Partidas de Alfonso X (1265): bases del derecho administrativo español.</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment" style="margin-top: 16px;">
+                    <div class="ff-label">📖 Dato histórico</div>
+                    <p style="font-size: 0.85em;">El <strong>Código de Hammurabi</strong> (1760 a.C.) contenía más de 2,500 normas, muchas de naturaleza administrativa. El <strong>Deuteronomio</strong> (1400-1200 a.C.) reunía más de 5,000 disposiciones.</p>
+                </div>
+            </section>
+            
+            <!-- Estado de Policía -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">👑</span> El Estado de Policía</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Antes del constitucionalismo, el rey era la ley.</p>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Estado de Policía (Polizeistaat)</div>
+                    <div class="def-text">
+                        Forma de gobierno donde la autoridad del monarca es <strong>ilimitada</strong> y el súbdito carece de todo medio de defensa frente a las determinaciones discrecionales del poder público.
+                    </div>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-red">
+                        <h4 style="color: var(--accent-red);">😡 Principios del absolutismo</h4>
+                        <ul>
+                            <li style="font-size: 0.85em;"><strong>"Quod regis placuit, legis est"</strong><br><em>Lo que al rey le placía, eso era ley</em></li>
+                            <li style="font-size: 0.85em;"><strong>"The king can do no wrong"</strong><br><em>El rey nunca comete daño</em></li>
+                        </ul>
+                    </div>
+                    <div class="card card-accent-orange">
+                        <h4 style="color: var(--accent-orange);">🎭 Ejemplo actual</h4>
+                        <p style="font-size: 0.85em;">Imagina que tu jefe pudiera despedirte sin razón, sin pagar liquidación, y no pudieras hacer nada. <strong>Eso era el absolutismo.</strong></p>
+                        <p style="font-size: 0.8em; color: var(--accent-orange);">Hoy tendrías derecho a un juicio laboral. ⚖️</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Constitucionalismo -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗽</span> El nacimiento del constitucionalismo</h2>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">📅 Fecha clave</div>
+                    <p style="font-size: 1.1em;"><strong>1789 — Revolución Francesa</strong></p>
+                    <p style="font-size: 0.85em;">La Declaración de los Derechos del Hombre y del Ciudadano cambió todo: <span class="highlight">el rey ya no podía imponer su voluntad sin límites</span>. El poder debía respetar los derechos inalienables del hombre.</p>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">🇫🇷 Modelo Francés</h4>
+                        <p style="font-size: 0.8em;">Separación rígida de poderes. El rey pierde poder. Se crea el <strong>Consejo de Estado</strong> (1799) para resolver conflictos entre el Estado y los ciudadanos.</p>
+                    </div>
+                    <div class="card card-accent-green">
+                        <h4 style="color: var(--accent-green);">🇺🇸 Modelo Americano</h4>
+                        <p style="font-size: 0.8em;">Constitución de 1787 con sistema de <strong>frenos y contrapesos</strong> (checks and balances). No tan rígida la separación.</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">🇲🇽 ¿Y México?</div>
+                    <p style="font-size: 0.85em;">El DA mexicano arranca con la Constitución de <strong>1917</strong>. Pero el primer estudio sistemático fue de <strong>Gabino Fraga en 1934</strong> — obra fundacional de la disciplina.</p>
+                </div>
+            </section>
+            
+            <!-- Jurisdicción administrativa -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚖️</span> Jurisdicción administrativa</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">¿Quién juzga a la administración?</p>
+                
+                <div class="card card-accent-blue fragment">
+                    <h4 style="color: var(--accent-blue);">🇫🇷 Consejo de Estado Francés (1799)</h4>
+                    <p style="font-size: 0.85em;">Napoleón creó un órgano del Ejecutivo para resolver controversias entre la administración y los particulares. Solucionó el vacío de justicia que dejaba la separación rígida de poderes de Montesquieu.</p>
+                </div>
+                
+                <div class="card card-accent-orange fragment">
+                    <h4 style="color: var(--accent-orange);">⚖️ Arrêt Blanco (1873)</h4>
+                    <p style="font-size: 0.85em;">Una niña, Agnès Blanco, fue atropellada por una vagoneta de la Manufactura de Tabacos del Estado. El Tribunal de Conflictos declaró que <strong>la responsabilidad del Estado se rige por el derecho público, no el civil</strong>. Hito fundacional.</p>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-green">
+                        <h4 style="color: var(--accent-green);">🇲🇽 Teodosio Lares (1853)</h4>
+                        <p style="font-size: 0.8em;">Primer administrativista mexicano. Creó la primera ley de arreglo de lo contencioso-administrativo. Vigente solo 2 años (Revolución de Ayutla).</p>
+                    </div>
+                    <div class="card card-accent-purple">
+                        <h4 style="color: var(--accent-purple);">🇲🇽 Tribunal Fiscal (1936) → TFJA</h4>
+                        <p style="font-size: 0.8em;">Creado a instancias de Gabino Fraga y otros. Primeras sentencias anuladas por amparo (violaba art. 49). Se reformó el art. 104 constitucional para hacerlo autónomo.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Timeline de México -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🇲🇽</span> Evolución del DA en México</h2>
+                
+                <div class="timeline">
+                    <div class="timeline-item fragment">
+                        <div class="year">1521 — 1810</div>
+                        <div class="event"><strong>Época colonial:</strong> Las Leyes de Indias regulaban toda la administración. Centralismo extremo.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">1812</div>
+                        <div class="event"><strong>Constitución de Cádiz:</strong> Llegan soberanía nacional, división de poderes y derechos fundamentales a América.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">1853</div>
+                        <div class="event"><strong>Teodosio Lares:</strong> Primera ley de jurisdicción contencioso-administrativa en México (efímera).</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">1855 — 1872</div>
+                        <div class="event"><strong>Leyes de Reforma:</strong> Separación Iglesia-Estado, educación laica, secularización. La administración crece.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">1876 — 1911</div>
+                        <div class="event"><strong>Porfiriato:</strong> Centralización administrativa, primeras secretarías modernas, códigos administrativos, ferrocarriles y telégrafos.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">1917</div>
+                        <div class="event"><strong>Constitución actual:</strong> Derechos sociales, Estado social de derecho. Arts. 27, 28, 123, 130 amplían el DA.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">1934</div>
+                        <div class="event"><strong>Gabino Fraga:</strong> Publica la obra fundacional del DA mexicano. Sistematiza la disciplina.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">1936</div>
+                        <div class="event"><strong>Tribunal Fiscal:</strong> Se crea el Tribunal Fiscal de la Federación (hoy TFJA).</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">1994 — 2002</div>
+                        <div class="event"><strong>Consolidación:</strong> LFPA vigente (1994), reforma art. 113: responsabilidad directa y objetiva del Estado (2002).</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Instituciones que perviven -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">👻</span> Instituciones del absolutismo que perviven</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Algunos fantasmas del pasado siguen entre nosotros...</p>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-red fragment">
+                        <h4 style="color: var(--accent-red);">1. Indemandabilidad del Estado</h4>
+                        <p style="font-size: 0.8em;">Antes: demandar al rey = traición.</p>
+                        <p style="font-size: 0.8em;"><strong>Hoy:</strong> Ya puedes demandar al Estado (TFJA, amparo), pero sigue siendo lento y complicado. ⏳</p>
+                    </div>
+                    <div class="card card-accent-orange fragment">
+                        <h4 style="color: var(--accent-orange);">2. Irresponsabilidad del soberano</h4>
+                        <p style="font-size: 0.8em;">Antes: el rey no pagaba daños.</p>
+                        <p style="font-size: 0.8em;"><strong>Hoy:</strong> Desde 2002, el Estado responde directamente. Pero ¿siempre cumple? 🤔</p>
+                    </div>
+                    <div class="card card-accent-purple fragment">
+                        <h4 style="color: var(--accent-purple);">3. El "acto del príncipe"</h4>
+                        <p style="font-size: 0.8em;">Antes: cédulas reales de expropiación sin pago.</p>
+                        <p style="font-size: 0.8em;"><strong>Hoy:</strong> Se disfraza con "interés público". Si no se fundamenta, puede ser arbitrariedad. ⚠️</p>
+                    </div>
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">4. Doble personalidad del Estado</h4>
+                        <p style="font-size: 0.8em;">Antes: el Estado era "persona de derecho público" y "de derecho privado" según le convenía.</p>
+                        <p style="font-size: 0.8em;"><strong>Hoy:</strong> Se superó. El Estado tiene <strong>una sola personalidad</strong>. 🎯</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Escuelas del DA -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🎓</span> Las escuelas del DA</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">¿Cómo explican los expertos qué es el derecho administrativo?</p>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">🇫🇷 Escuela Francesa</h4>
+                        <p style="font-size: 0.8em;"><strong>Servicio público</strong> (Duguit): El DA existe porque el Estado presta servicios a la gente.</p>
+                        <p style="font-size: 0.8em;"><strong>Potencia pública</strong> (Hauriou): El DA existe porque el Estado tiene poder para imponer su voluntad.</p>
+                    </div>
+                    <div class="card card-accent-purple fragment">
+                        <h4 style="color: var(--accent-purple);">🇩🇪 Escuela Alemana</h4>
+                        <p style="font-size: 0.8em;"><strong>Kelsen:</strong> El DA es un nivel inferior al constitucional en un sistema escalonado.</p>
+                        <p style="font-size: 0.8em;"><strong>Forsthoff:</strong> Inventó la idea del "Estado de bienestar" (Daseinsvorsorge).</p>
+                    </div>
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">🇮🇹 Escuela Italiana</h4>
+                        <p style="font-size: 0.8em;"><strong>Zanobini y Giannini:</strong> Enfoque sistemático y dogmático. Definieron el acto administrativo con precisión.</p>
+                    </div>
+                    <div class="card card-accent-pink fragment">
+                        <h4 style="color: var(--accent-pink);">🇲🇽 Escuela Mexicana</h4>
+                        <p style="font-size: 0.8em;"><strong>Gabino Fraga (1934):</strong> Padre del DA mexicano. Adoptó criterio orgánico (Poder Ejecutivo).</p>
+                        <p style="font-size: 0.8em;"><strong>Roldán Xopa, Fernández Ruiz:</strong> Evolucionaron hacia criterio mixto.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Doctrina comparada -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📖</span> Doctrina comparada</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">¿Qué dicen los grandes autores mexicanos?</p>
+                
+                <table class="comparison-table fragment">
+                    <thead>
+                        <tr>
+                            <th>Tema</th>
+                            <th>Gabino Fraga</th>
+                            <th>José Roldán Xopa</th>
+                            <th>Jorge Fernández Ruiz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Concepto de DA</strong></td>
+                            <td>Normas que regulan la organización y funcionamiento del Poder Ejecutivo</td>
+                            <td>Derecho estatutario de la administración; régimen jurídico general</td>
+                            <td>Rama del derecho público que regula organización, funcionamiento y control de la AP</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Criterio definitorio</strong></td>
+                            <td>Orgánico (Poder Ejecutivo)</td>
+                            <td>Mixto, énfasis en función administrativa</td>
+                            <td>Mixto, complementado con fines del Estado</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Prerrogativas</strong></td>
+                            <td>Potestades de la soberanía estatal</td>
+                            <td>Facultades exorbitantes por interés público</td>
+                            <td>Poderes de la Constitución, limitados por DDHH</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="fun-fact fragment" style="margin-top: 16px;">
+                    <div class="ff-label">💡 Evolución</div>
+                    <p style="font-size: 0.85em;">Fraga (1934) partió del criterio orgánico. Roldán Xopa y Fernández Ruiz evolucionaron hacia el <strong>criterio mixto</strong>, que es el prevaleciente en el siglo XXI.</p>
+                </div>
+            </section>
+            
+            <!-- SECCIÓN 2: CONCEPTO -->
+            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">📚</span>
+                <h2>Concepto de Derecho Administrativo</h2>
+                <p style="color: rgba(255,255,255,0.5);">¿Qué demonios es esto?</p>
+            </section>
+            
+            <!-- Definición -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📖</span> Definición</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Definición general</div>
+                    <div class="def-text">
+                        Conjunto de normas jurídicas que regulan la <strong>organización</strong> y el <strong>funcionamiento</strong> de la administración pública, así como las <strong>relaciones</strong> entre esta y los particulares.
+                    </div>
+                </div>
+                
+                <p class="fragment" style="font-size: 0.85em; color: rgba(255,255,255,0.6); text-align: center; margin-top: 20px;">
+                    Pero... ¿cómo lo definen los expertos? Veamos 4 criterios:
+                </p>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">a) Criterio legalista</h4>
+                        <p style="font-size: 0.8em;">DA = leyes administrativas.</p>
+                        <p style="font-size: 0.75em; color: var(--accent-red);">❌ Insuficiente: ignora principios, costumbre, jurisprudencia.</p>
+                    </div>
+                    <div class="card card-accent-purple">
+                        <h4 style="color: var(--accent-purple);">b) Criterio orgánico</h4>
+                        <p style="font-size: 0.8em;">DA = lo que hace el Poder Ejecutivo.</p>
+                        <p style="font-size: 0.75em; color: var(--accent-red);">❌ Insuficiente: la administración también hace contratos privados.</p>
+                    </div>
+                    <div class="card card-accent-green">
+                        <h4 style="color: var(--accent-green);">c) Criterio material</h4>
+                        <p style="font-size: 0.8em;">DA = la función administrativa, sin importar quién la haga.</p>
+                        <p style="font-size: 0.75em; color: var(--accent-orange);">⚠️ Más completo, pero falta el sujeto.</p>
+                    </div>
+                    <div class="card card-accent-pink">
+                        <h4 style="color: var(--accent-pink);">d) Criterio mixto ✅</h4>
+                        <p style="font-size: 0.8em;">DA = organización + actividad + función administrativa.</p>
+                        <p style="font-size: 0.75em; color: var(--accent-green);">✅ El más aceptado actualmente.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Ejemplo: Netflix -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🎬</span> Ejemplo: ¿Netflix es derecho administrativo?</h2>
+                
+                <div class="card card-accent-purple fragment">
+                    <p style="font-size: 0.9em;">Netflix llegó a México y necesitó:</p>
+                    <ul>
+                        <li style="font-size: 0.85em;">Permiso de la <strong>IFT</strong> para operar plataformas digitales</li>
+                        <li style="font-size: 0.85em;">Registro ante el <strong>SAT</strong> para tributar</li>
+                        <li style="font-size: 0.85em;">Cumplir con la <strong>Ley Federal de Protección de Datos</strong></li>
+                        <li style="font-size: 0.85em;">Acuerdo con el <strong>IMPI</strong> sobre propiedad intelectual</li>
+                    </ul>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Reflexión</div>
+                    <p style="font-size: 0.9em;">Todo eso es <strong>derecho administrativo</strong>. Sin él, no podrías ver tu serie favorita legalmente. 🍿</p>
+                </div>
+                
+                <p class="fragment" style="text-align: center; font-size: 0.9em; color: var(--accent-purple);">
+                    <strong>El DA regula CÓMO llega Netflix, no QUÉ series produce.</strong>
+                </p>
+            </section>
+            
+            <!-- SECCIÓN 3: CARACTERES -->
+            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">⚡</span>
+                <h2>Caracteres del Derecho Administrativo</h2>
+                <p style="color: rgba(255,255,255,0.5);">Lo que lo hace diferente de todo lo demás</p>
+            </section>
+            
+            <!-- 5 caracteres -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚡</span> Los 5 caracteres</h2>
+                
+                <div class="grid-3">
+                    <div class="principle-card fragment">
+                        <div class="p-icon">🧬</div>
+                        <div class="p-name">Autónomo</div>
+                        <div class="p-desc">Tiene sus propios principios e instituciones. Se consolidó con el <em>arrêt</em> Blanco (1873).</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">🔄</div>
+                        <div class="p-name">Dinámico</div>
+                        <div class="p-desc">"Lo único permanente es el cambio." Se adapta a la sociedad constantemente.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">🇲🇽</div>
+                        <div class="p-name">Localista</div>
+                        <div class="p-desc">Cada país tiene el suyo. No se puede copiar de otros (a diferencia del civil).</div>
+                    </div>
+                </div>
+                
+                <div class="grid-2" style="margin-top: 16px;">
+                    <div class="principle-card fragment">
+                        <div class="p-icon">💪</div>
+                        <div class="p-name">Exorbitante</div>
+                        <div class="p-desc">La administración tiene facultades que los particulares NO tienen: autotutela, ejecutoriedad, presunción de legalidad.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">🏗️</div>
+                        <div class="p-name">Intervencionista</div>
+                        <div class="p-desc">~218 de las 250 leyes federales son administrativas. El Estado mete la mano en todo.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Ejemplo: exorbitante -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">💪</span> ¿Por qué "exorbitante"?</h2>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">📱 Ejemplo cotidiano</div>
+                    <p style="font-size: 0.9em;">Tu proveedor de telefonía celular te cobra de más. <strong>¿Qué puedes hacer?</strong></p>
+                    <ul>
+                        <li style="font-size: 0.85em;">Llamar a atención a clientes (si contestan...)</li>
+                    </ul>
+                    <p style="font-size: 0.9em; margin-top: 12px;">Ahora, si la <strong>PROFECO</strong> determina que te cobraron de más, puede:</p>
+                    <ul>
+                        <li style="font-size: 0.85em;"><strong>Obligar</strong> a la empresa a devolverte el dinero</li>
+                        <li style="font-size: 0.85em;"><strong>Multar</strong> a la empresa</li>
+                        <li style="font-size: 0.85em;"><strong>Cerrar</strong> el establecimiento si persiste</li>
+                    </ul>
+                    <p style="font-size: 0.85em; margin-top: 12px; color: var(--accent-pink);">
+                        <strong>¿Tú puedes hacer eso con otro particular?</strong> ¡No! Esa es la diferencia. La administración tiene facultades <em>exorbitantes</em>.
+                    </p>
+                </div>
+            </section>
+            
+            <!-- SECCIÓN 4: FUNCIÓN ADMINISTRATIVA -->
+            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🏛️</span>
+                <h2>La Función Administrativa</h2>
+                <p style="color: rgba(255,255,255,0.5);">¿Quién hace qué en el Estado?</p>
+            </section>
+            
+            <!-- Tres funciones -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🏛️</span> Las 3 funciones del Estado</h2>
+                
+                <div class="grid-3">
+                    <div class="card card-accent-blue fragment" style="text-align: center;">
+                        <span style="font-size: 2.5em;">📜</span>
+                        <h3 style="color: var(--accent-blue); margin-top: 12px;">Legislativa</h3>
+                        <p style="font-size: 0.8em;"><strong>Crea leyes</strong> generales, abstractas, impersonales.</p>
+                        <p style="font-size: 0.75em; color: rgba(255,255,255,0.5);">→ Poder Legislativo</p>
+                    </div>
+                    <div class="card card-accent-green fragment" style="text-align: center;">
+                        <span style="font-size: 2.5em;">⚙️</span>
+                        <h3 style="color: var(--accent-green); margin-top: 12px;">Administrativa</h3>
+                        <p style="font-size: 0.8em;"><strong>Ejecuta</strong> actividades concretas, prácticas, continuas.</p>
+                        <p style="font-size: 0.75em; color: rgba(255,255,255,0.5);">→ Poder Ejecutivo</p>
+                    </div>
+                    <div class="card card-accent-purple fragment" style="text-align: center;">
+                        <span style="font-size: 2.5em;">⚖️</span>
+                        <h3 style="color: var(--accent-purple); margin-top: 12px;">Jurisdiccional</h3>
+                        <p style="font-size: 0.8em;"><strong>Resuelve</strong> conflictos con cosa juzgada.</p>
+                        <p style="font-size: 0.75em; color: rgba(255,255,255,0.5);">→ Poder Judicial</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment" style="margin-top: 24px;">
+                    <div class="ff-label">⚠️ Pero ojo...</div>
+                    <p style="font-size: 0.85em;">La realidad es más compleja: <strong>cada poder ejerce funciones de los otros</strong>. El Ejecutivo emite reglamentos (función legislativa material). Los tribunales administrativos resuelven conflictos (función jurisdiccional).</p>
+                </div>
+            </section>
+            
+            <!-- Ejemplo de funciones -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🏫</span> Ejemplo: La UCC y las 3 funciones</h2>
+                
+                <div class="card card-accent-blue fragment">
+                    <h4 style="color: var(--accent-blue);">📜 Función legislativa</h4>
+                    <p style="font-size: 0.85em;">La SEP publica el <strong>Acuerdo 4.1.1.</strong> que establece los planes de estudio de licenciatura en Derecho. <em>Eso es crear una norma general.</em></p>
+                </div>
+                
+                <div class="card card-accent-green fragment">
+                    <h4 style="color: var(--accent-green);">⚙️ Función administrativa</h4>
+                    <p style="font-size: 0.85em;">La UCC solicita a la SEP la <strong>revalidación</strong> de un plan de estudios. La SEP lo revisa y autoriza. <em>Eso es administración.</em></p>
+                </div>
+                
+                <div class="card card-accent-purple fragment">
+                    <h4 style="color: var(--accent-purple);">⚖️ Función jurisdiccional</h4>
+                    <p style="font-size: 0.85em;">Un alumno demanda a la SEP porque le negaron la revalidación sin fundamento. El <strong>TFJA</strong> resuelve. <em>Eso es jurisdicción.</em></p>
+                </div>
+            </section>
+            
+            <!-- Criterios de distinción -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🔍</span> ¿Cómo distinguir la función administrativa?</h2>
+                
+                <div class="grid-3">
+                    <div class="card card-accent-blue fragment" style="text-align: center;">
+                        <span style="font-size: 1.8em;">👤</span>
+                        <h4 style="color: var(--accent-blue); margin-top: 6px;">Criterio formal (subjetivo)</h4>
+                        <p style="font-size: 0.75em;">Atiende al <strong>órgano</strong>: la función administrativa es la que realiza el Poder Ejecutivo.</p>
+                    </div>
+                    <div class="card card-accent-green fragment" style="text-align: center;">
+                        <span style="font-size: 1.8em;">⚙️</span>
+                        <h4 style="color: var(--accent-green); margin-top: 6px;">Criterio material (objetivo)</h4>
+                        <p style="font-size: 0.75em;">Atiende a la <strong>naturaleza</strong>: actividad concreta, práctica y continua para satisfacer necesidades colectivas.</p>
+                    </div>
+                    <div class="card card-accent-purple fragment" style="text-align: center;">
+                        <span style="font-size: 1.8em;">🏛️</span>
+                        <h4 style="color: var(--accent-purple); margin-top: 6px;">Criterio orgánico</h4>
+                        <p style="font-size: 0.75em;">Pertenece formalmente al <strong>Ejecutivo</strong>, aunque materialmente la ejercen los 3 poderes.</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment" style="margin-top: 12px;">
+                    <div class="ff-label">💡 ¿Por qué importa?</div>
+                    <p style="font-size: 0.8em;">El Ejecutivo emite reglamentos (función legislativa material). Los tribunales administrativos resuelven conflictos (función jurisdiccional material). <strong>Los poderes se mezclan.</strong></p>
+                </div>
+            </section>
+            
+            <!-- SECCIÓN 5: RELACIONES -->
+            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🔗</span>
+                <h2>Relaciones con otras ramas</h2>
+                <p style="color: rgba(255,255,255,0.5);">El DA no vive solo</p>
+            </section>
+            
+            <!-- Relaciones -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🔗</span> ¿Con quién se relaciona el DA?</h2>
+                
+                <div class="grid-2">
+                    <div>
+                        <div class="card card-accent-blue fragment">
+                            <h4 style="color: var(--accent-blue);">🏛️ Constitucional</h4>
+                            <p style="font-size: 0.8em;">El DA es "derecho constitucional concretizado". Desarrolla los principios de la Constitución.</p>
+                        </div>
+                        <div class="card card-accent-purple fragment">
+                            <h4 style="color: var(--accent-purple);">🔒 Penal</h4>
+                            <p style="font-size: 0.8em;">Delitos de servidores públicos. La administración puede presentar querellas.</p>
+                        </div>
+                        <div class="card card-accent-green fragment">
+                            <h4 style="color: var(--accent-green);">🏠 Civil</h4>
+                            <p style="font-size: 0.8em;">El Código Civil es supletorio. El Estado contrata, arrienda, dona.</p>
+                        </div>
+                        <div class="card card-accent-orange fragment">
+                            <h4 style="color: var(--accent-orange);">💰 Fiscal</h4>
+                            <p style="font-size: 0.8em;">Fue subrama del DA. Comparten procedimientos de fiscalización y ejecución.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card card-accent-pink fragment">
+                            <h4 style="color: var(--accent-pink);">🌍 Internacional</h4>
+                            <p style="font-size: 0.8em;">Los tratados inciden en la actividad administrativa (DDHH, comercio, medio ambiente).</p>
+                        </div>
+                        <div class="card card-accent-red fragment">
+                            <h4 style="color: var(--accent-red);">⚒️ Procesal</h4>
+                            <p style="font-size: 0.8em;">Comparten principios: debido proceso, audiencia, defensa, prueba.</p>
+                        </div>
+                        <div class="card card-accent-blue fragment">
+                            <h4 style="color: var(--accent-blue);">👷 Laboral</h4>
+                            <p style="font-size: 0.8em;">El Estado es el empleador más grande. El DA regula ingreso, permanencia y separación.</p>
+                        </div>
+                        <div class="card card-accent-green fragment">
+                            <h4 style="color: var(--accent-green);">🌿 Ambiental</h4>
+                            <p style="font-size: 0.8em;">SEMARNAT, Profepa, CONAGUA ejercen potestades administrativas.</p>
+                        </div>
+                        <div class="card card-accent-orange fragment">
+                            <h4 style="color: var(--accent-orange);">💼 Económico</h4>
+                            <p style="font-size: 0.8em;">Rectonomía económica (arts. 25, 26, 27, 28), COFECE, concesiones, regulación de monopolios.</p>
+                        </div>
+                        <div class="card card-accent-pink fragment">
+                            <h4 style="color: var(--accent-pink);">🏘️ Municipal</h4>
+                            <p style="font-size: 0.8em;">Art. 115: municipio como base. Servicios públicos locales (agua, drenaje, alumbrado).</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- SECCIÓN 6: PRINCIPIOS -->
+            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">⚖️</span>
+                <h2>Principios del Derecho Administrativo</h2>
+                <p style="color: rgba(255,255,255,0.5);">Las reglas del juego</p>
+            </section>
+            
+            <!-- Principios (2 slides) -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚖️</span> Principios (1/2)</h2>
+                
+                <div class="grid-2">
+                    <div class="principle-card fragment">
+                        <div class="p-icon">📜</div>
+                        <div class="p-name">Legalidad</div>
+                        <div class="p-desc">La administración solo puede hacer lo que la ley le permite. Fundamentación + motivación.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">👥</div>
+                        <div class="p-name">Supremacía del interés público</div>
+                        <div class="p-desc">El interés colectivo prevalece sobre el particular, pero dentro del marco constitucional.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">🔒</div>
+                        <div class="p-name">Seguridad jurídica</div>
+                        <div class="p-desc">Certeza sobre las consecuencias. Plazos, prescripción, confianza legítima.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">🎙️</div>
+                        <div class="p-name">Debido proceso</div>
+                        <div class="p-desc">Ser oído, ofrecer pruebas, alegar, recurrir. Art. 14 constitucional.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">⚖️</div>
+                        <div class="p-name">Proporcionalidad</div>
+                        <div class="p-desc">Idónea + necesaria + proporcional en sentido estricto. Límite a la discrecionalidad.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">🤝</div>
+                        <div class="p-name">Buena fe</div>
+                        <div class="p-desc">Lealtad y rectitud. La confianza legítima protege expectativas generadas.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚖️</span> Principios (2/2)</h2>
+                
+                <div class="grid-2">
+                    <div class="principle-card fragment">
+                        <div class="p-icon">✅</div>
+                        <div class="p-name">Presunción de legalidad</div>
+                        <div class="p-desc">Los actos se presumen válidos hasta que alguien los anule. iuris tantum.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">🏃</div>
+                        <div class="p-name">Ejecutoriedad y autotutela</div>
+                        <div class="p-desc">La administración ejecuta sus propios actos sin acudir al juez.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">🎯</div>
+                        <div class="p-name">Objetividad e imparcialidad</div>
+                        <div class="p-desc">Basada en hechos, sin favoritismos. Eficiencia en resultados.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">👁️</div>
+                        <div class="p-name">Transparencia</div>
+                        <div class="p-desc">Acceso a información, justificación de decisiones, escrutinio ciudadano. Art. 6°.</div>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment" style="margin-top: 20px;">
+                    <div class="ff-label">💡 ¿Por qué importan?</div>
+                    <p style="font-size: 0.85em;">Si la administración viola estos principios, <strong>su acto puede ser nulo</strong>. Son tu escudo como ciudadano. 🛡️</p>
+                </div>
+            </section>
+            
+            <!-- Ejemplo: proporcionalidad -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚖️</span> Ejemplo: Proporcionalidad</h2>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">🚗 Caso real</div>
+                    <p style="font-size: 0.9em;">Un policía de tránsito te pone una <strong>multa de $5,000</strong> por estacionarte 2 minutos en un lugar prohibido.</p>
+                </div>
+                
+                <div class="grid-3 fragment">
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">1. Idoneidad</h4>
+                        <p style="font-size: 0.8em;">¿La multa es apta para evitar que te estaciones ahí? <strong>Sí.</strong> ✅</p>
+                    </div>
+                    <div class="card card-accent-purple">
+                        <h4 style="color: var(--accent-purple);">2. Necesidad</h4>
+                        <p style="font-size: 0.8em;">¿No había una medida menos gravosa? <strong>Una amonestación habría bastado.</strong> ❌</p>
+                    </div>
+                    <div class="card card-accent-pink">
+                        <h4 style="color: var(--accent-pink);">3. Proporcionalidad</h4>
+                        <p style="font-size: 0.8em;">¿$5,000 por 2 minutos es excesivo? <strong>Sí, es desproporcionado.</strong> ❌</p>
+                    </div>
+                </div>
+                
+                <div class="card card-accent-green fragment" style="text-align: center; margin-top: 16px;">
+                    <p style="font-size: 0.9em;">⚖️ <strong>Conclusión:</strong> La multa viola el principio de proporcionalidad. Puedes impugnarla ante el Tribunal de Justicia Administrativa de tu estado.</p>
+                </div>
+            </section>
+            
+            <!-- Legislación comentada -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📜</span> Legislación aplicable</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Los artículos constitucionales que fundamentan el DA</p>
+                
+                <div class="card card-accent-green fragment">
+                    <h4 style="color: var(--accent-green);">Art. 49 CPEUM — División de poderes</h4>
+                    <p style="font-size: 0.8em; font-style: italic; color: rgba(255,255,255,0.7);">"El Supremo Poder de la Federación se divide para su ejercicio en Legislativo, Ejecutivo y Judicial..."</p>
+                    <p style="font-size: 0.8em; margin-top: 8px;"><strong>Comentario:</strong> Base de la distinción entre función administrativa y demás funciones del Estado.</p>
+                </div>
+                
+                <div class="card card-accent-blue fragment">
+                    <h4 style="color: var(--accent-blue);">Art. 90 CPEUM — Administración Pública Federal</h4>
+                    <p style="font-size: 0.8em; font-style: italic; color: rgba(255,255,255,0.7);">"La Administración Pública Federal será centralizada y paraestatal conforme a la Ley Orgánica que expida el Congreso..."</p>
+                    <p style="font-size: 0.8em; margin-top: 8px;"><strong>Comentario:</strong> Funda la estructura dual de la APF. Da origen a la LOAPF.</p>
+                </div>
+                
+                <div class="card card-accent-purple fragment">
+                    <h4 style="color: var(--accent-purple);">Art. 113 CPEUM — Responsabilidades</h4>
+                    <p style="font-size: 0.8em; font-style: italic; color: rgba(255,255,255,0.7);">"Las leyes sobre responsabilidades administrativas de los servidores públicos, determinan sus obligaciones a fin de salvaguardar la legalidad, honradez, lealtad, imparcialidad y eficiencia..."</p>
+                    <p style="font-size: 0.8em; margin-top: 8px;"><strong>Comentario:</strong> Funda el sistema de responsabilidades y la responsabilidad patrimonial del Estado (reforma 2002).</p>
+                </div>
+            </section>
+            
+            <!-- QUIZ -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🧠</span> Autoevaluación</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Pon a prueba lo que aprendiste</p>
+                
+                <div class="quiz-card fragment">
+                    <div class="quiz-q">❓ 1. ¿Qué fue el <em>arrêt</em> Blanco de 1873?</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        a) La Constitución de México
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">
+                        b) Sentencia que estableció que la responsabilidad del Estado se rige por el derecho público ✅
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        c) El primer tratado de derecho administrativo
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        d) Una ley francesa sobre servicios públicos
+                    </div>
+                </div>
+                
+                <div class="quiz-card fragment">
+                    <div class="quiz-q">❓ 2. ¿Cuál es el criterio MÁS aceptado para definir el DA?</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        a) Legalista
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        b) Orgánico
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        c) Material
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">
+                        d) Mixto ✅
+                    </div>
+                </div>
+                
+                <div class="quiz-card fragment">
+                    <div class="quiz-q">❓ 3. La teoría de la doble personalidad del Estado fue superada porque:</div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">
+                        a) La personalidad jurídica es indivisible ✅
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        b) El Estado no puede contratar con particulares
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        c) Los tratados internacionales la prohibieron
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        d) El derecho romano la declaró obsoleta
+                    </div>
+                </div>
+                
+                <div class="quiz-card fragment">
+                    <div class="quiz-q">❓ 4. En México, la responsabilidad patrimonial directa y objetiva del Estado se introdujo en:</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        a) La Constitución de 1917
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        b) La reforma constitucional de 1982
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">
+                        c) La reforma al artículo 113 constitucional de 2002 ✅
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        d) La Ley de Responsabilidades de 2016
+                    </div>
+                </div>
+                
+                <div class="quiz-card fragment">
+                    <div class="quiz-q">❓ 5. El principio de proporcionalidad exige que las medidas administrativas sean:</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        a) Únicamente legales
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">
+                        b) Idóneas, necesarias y proporcionales en sentido estricto ✅
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        c) Aprobadas por el Congreso
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        d) Convenientes para la mayoría
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ESQUEMA DE SÍNTESIS -->
+            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🗂️</span>
+                <h2>Esquema de Síntesis</h2>
+                <p style="color: rgba(255,255,255,0.5);">Todo lo que vimos en una imagen</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗂️</span> Síntesis de la Unidad</h2>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 0.75em;">
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">I. Evolución histórica</h4>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Antigüedad → Estado policía → Constitucionalismo</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Instituciones que perviven: indemandabilidad, irresponsabilidad, acto del príncipe, doble personalidad</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Jurisdicción: Consejo de Estado → arrêt Blanco → TFJA</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Escuelas: servicio público, potencia pública, alemana, italiana, mexicana</p>
+                    </div>
+                    <div class="card card-accent-purple">
+                        <h4 style="color: var(--accent-purple);">II. Concepto y caracteres</h4>
+                        <p style="font-size: 0.85em; margin: 4px 0;">4 criterios: legalista, orgánico, material, <strong>mixto (prevaleciente)</strong></p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">5 caracteres: autónomo, dinámico, localista, exorbitante, intervencionista</p>
+                    </div>
+                    <div class="card card-accent-green">
+                        <h4 style="color: var(--accent-green);">III. Función administrativa</h4>
+                        <p style="font-size: 0.85em; margin: 4px 0;">3 funciones: legislativa, administrativa, jurisdiccional</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Criterios de distinción: formal, material, orgánico</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Cada poder ejerce funciones de los otros</p>
+                    </div>
+                    <div class="card card-accent-orange">
+                        <h4 style="color: var(--accent-orange);">IV. Relaciones y principios</h4>
+                        <p style="font-size: 0.85em; margin: 4px 0;">10 ramas: constitucional, penal, civil, fiscal, internacional, procesal, laboral, ambiental, económico, municipal</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">10 principios: legalidad → transparencia</p>
+                    </div>
+                </div>
+                
+                <div class="definition-box fragment" style="margin-top: 12px;">
+                    <div class="def-title">Idea central</div>
+                    <div class="def-text" style="font-size: 0.85em;">El Derecho Administrativo es el <strong>derecho que te afecta todos los días</strong>. Regula CÓMO el Estado actúa frente a ti, no QUÉ hace. Y tiene principios que son tu escudo como ciudadano.</div>
+                </div>
+            </section>
+            
+            <!-- CASOS PRÁCTICOS -->
+            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">📋</span>
+                <h2>Casos Prácticos</h2>
+                <p style="color: rgba(255,255,255,0.5);">Aplica lo que aprendiste</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📋</span> Caso 1: La expropiación sin indemnización</h2>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">📝 Planteamiento</div>
+                    <p style="font-size: 0.85em;">El Gobierno Federal emite un decreto expropiatorio sobre 500 hectáreas en el Edo. de México para un aeropuerto. La indemnización se pagará "con cargo al presupuesto del siguiente ejercicio fiscal, conforme a la disponibilidad presupuestaria".</p>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-red">
+                        <h4 style="color: var(--accent-red);">⚠️ Problema</h4>
+                        <p style="font-size: 0.8em;">El particular alega que condicionar el pago a la voluntad del Congreso es un "acto del príncipe" — reminiscencia del absolutismo.</p>
+                    </div>
+                    <div class="card card-accent-green">
+                        <h4 style="color: var(--accent-green);">⚖️ Preguntas</h4>
+                        <ul style="font-size: 0.75em;">
+                            <li>¿Qué institución del absolutismo identificas?</li>
+                            <li>¿Cuál es el fundamento constitucional (art. 27)?</li>
+                            <li>¿Es equiparable a confiscación?</li>
+                            <li>¿Qué vía de impugnación procede?</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📋</span> Caso 2: La CFE y la transparencia</h2>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">📝 Planteamiento</div>
+                    <p style="font-size: 0.85em;">Un ciudadano pide a la CFE información sobre costos de generación. La CFE niega: "información reservada por seguridad nacional". El INAI ordena entregarla. La CFE se niega: "el INAI no tiene competencia en actividades estratégicas".</p>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-orange">
+                        <h4 style="color: var(--accent-orange);">🤔 Reflexión</h4>
+                        <p style="font-size: 0.8em;">¿Qué institución del absolutismo subyace en la argumentación de la CFE? (Pista: ¿quién decide qué es "reservado"?)</p>
+                    </div>
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">⚖️ Resolución</h4>
+                        <p style="font-size: 0.8em;">El INAI tiene competencia. La transparencia es un derecho humano (art. 6° CPEUM). La CFE debe cumplir o enfrentar una queja por incumplimiento.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- RESUMEN -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📋</span> Resumen de la Unidad</h2>
+                
+                <div class="grid-2">
+                    <div>
+                        <div class="card card-accent-blue fragment">
+                            <h4 style="color: var(--accent-blue);">📜 Historia</h4>
+                            <p style="font-size: 0.8em;">Estado policía → Constitucionalismo → DA moderno. El <em>arrêt</em> Blanco (1873) es el hito fundacional.</p>
+                        </div>
+                        <div class="card card-accent-purple fragment">
+                            <h4 style="color: var(--accent-purple);">📚 Concepto</h4>
+                            <p style="font-size: 0.8em;">El criterio mixto combina organización + función administrativa. Es el más aceptado.</p>
+                        </div>
+                        <div class="card card-accent-pink fragment">
+                            <h4 style="color: var(--accent-pink);">⚡ Caracteres</h4>
+                            <p style="font-size: 0.8em;">Autónomo, dinámico, localista, exorbitante, intervencionista.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card card-accent-green fragment">
+                            <h4 style="color: var(--accent-green);">🏛️ Función</h4>
+                            <p style="font-size: 0.8em;">La administrativa es concreta, práctica y continua. Cada poder ejerce funciones de los otros.</p>
+                        </div>
+                        <div class="card card-accent-orange fragment">
+                            <h4 style="color: var(--accent-orange);">🔗 Relaciones</h4>
+                            <p style="font-size: 0.8em;">El DA toca todo: constitucional, penal, civil, fiscal, ambiental, laboral...</p>
+                        </div>
+                        <div class="card card-accent-red fragment">
+                            <h4 style="color: var(--accent-red);">⚖️ Principios</h4>
+                            <p style="font-size: 0.8em;">Legalidad, interés público, debido proceso, proporcionalidad, transparencia... Son tu escudo.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- CIERRE -->
+            <section class="title-slide" data-background-gradient="linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%)">
+                <span style="font-size: 4em;">🎓</span>
+                <h1 style="font-size: 2em; margin-top: 20px;">¡Listo para la Unidad 1!</h1>
+                <p style="color: rgba(255,255,255,0.6); font-size: 1.1em; margin-top: 20px;">
+                    El Derecho Administrativo no es aburrido.<br>
+                    <span style="color: var(--accent-blue); font-weight: 600;">Es el derecho que te afecta todos los días.</span>
+                </p>
+                <div style="margin-top: 40px;">
+                    <p style="font-size: 0.8em; color: rgba(255,255,255,0.4);">
+                        <i class="fa-solid fa-book"></i> Lectura: Hamdan, Tema I y II<br>
+                        <i class="fa-solid fa-scale-balanced"></i> Fernández Ruiz, Caps. I-III y VIII<br>
+                        <i class="fa-solid fa-pen"></i> Preparar cuestionario de estudio
+                    </p>
+                </div>
+                <p style="margin-top: 40px; font-size: 0.7em; color: rgba(255,255,255,0.3);">
+                    Presiona <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">Esc</kbd> para ver la vista general • <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">F</kbd> para pantalla completa
+                </p>
+            </section>
+            
+        </div>
+    </div>
+    
+    <!-- Reveal.js -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            width: 1280,
+            height: 800,
+            margin: 0.04,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: true,
+            controls: true,
+            controlsLayout: 'edges',
+            controlsTutorial: false,
+            plugins: [RevealNotes, RevealMarkdown, RevealHighlight]
+        });
+    </script>
+</body>
+</html>
