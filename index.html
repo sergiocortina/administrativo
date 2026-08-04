@@ -12,11 +12,11 @@
             background: #0a0a1a;
             color: rgba(255,255,255,0.85);
             min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
         }
         .hero {
             text-align: center;
@@ -24,7 +24,7 @@
         }
         .hero h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2.8em;
+            font-size: 2.6em;
             font-weight: 800;
             background: linear-gradient(135deg, #4f8cff, #a855f7, #ec4899);
             -webkit-background-clip: text;
@@ -32,116 +32,250 @@
             background-clip: text;
             margin-bottom: 12px;
         }
-        .hero p {
-            font-size: 1.1em;
+        .hero .subtitle {
+            font-size: 1.05em;
             color: rgba(255,255,255,0.5);
             font-weight: 300;
+            margin-bottom: 20px;
         }
-        .cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        .hero .meta {
+            display: inline-flex;
             gap: 20px;
-            max-width: 900px;
-            width: 100%;
+            flex-wrap: wrap;
+            justify-content: center;
         }
-        .card {
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 16px;
-            padding: 28px;
+        .hero .meta span {
+            font-size: 0.8em;
+            color: rgba(255,255,255,0.35);
+        }
+        .hero .meta span strong {
+            color: rgba(255,255,255,0.6);
+        }
+        .progress-bar {
+            background: rgba(255,255,255,0.08);
+            border-radius: 10px;
+            height: 6px;
+            margin: 30px auto 0;
+            max-width: 400px;
+            overflow: hidden;
+        }
+        .progress-bar .fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #4f8cff, #a855f7);
+            width: 6.67%;
+            transition: width 1s ease;
+        }
+        .progress-label {
+            text-align: center;
+            font-size: 0.75em;
+            color: rgba(255,255,255,0.3);
+            margin-top: 8px;
+        }
+        .units {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 16px;
+            margin-top: 40px;
+        }
+        .unit {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 14px;
+            padding: 22px;
             text-decoration: none;
             color: rgba(255,255,255,0.85);
             transition: all 0.3s ease;
             display: block;
+            position: relative;
         }
-        .card:hover {
+        .unit:hover {
             border-color: #4f8cff;
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(79,140,255,0.15);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(79,140,255,0.12);
         }
-        .card .num {
-            font-size: 0.7em;
+        .unit .num {
+            font-size: 0.65em;
             font-weight: 700;
             color: #4f8cff;
             letter-spacing: 2px;
             text-transform: uppercase;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
-        .card h2 {
+        .unit h3 {
             font-family: 'Playfair Display', serif;
-            font-size: 1.3em;
+            font-size: 1.1em;
             font-weight: 700;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: white;
+            line-height: 1.3;
         }
-        .card p {
-            font-size: 0.85em;
-            color: rgba(255,255,255,0.5);
-            line-height: 1.5;
+        .unit p {
+            font-size: 0.78em;
+            color: rgba(255,255,255,0.4);
+            line-height: 1.4;
         }
-        .card .badge {
+        .unit .badge {
             display: inline-block;
-            background: linear-gradient(135deg, #4f8cff, #a855f7);
-            color: white;
-            padding: 4px 12px;
-            border-radius: 20px;
-            font-size: 0.65em;
+            padding: 3px 10px;
+            border-radius: 16px;
+            font-size: 0.6em;
             font-weight: 600;
-            margin-top: 14px;
+            margin-top: 12px;
         }
-        .card.pending {
-            opacity: 0.4;
+        .unit .badge.available {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+        }
+        .unit .badge.soon {
+            background: rgba(255,255,255,0.08);
+            color: rgba(255,255,255,0.3);
+        }
+        .unit.pending {
+            opacity: 0.35;
             pointer-events: none;
+        }
+        .unit.pending:hover {
+            border-color: rgba(255,255,255,0.08);
+            transform: none;
+            box-shadow: none;
         }
         footer {
             margin-top: 60px;
             text-align: center;
-            color: rgba(255,255,255,0.25);
-            font-size: 0.75em;
+            color: rgba(255,255,255,0.2);
+            font-size: 0.7em;
+            line-height: 1.6;
         }
     </style>
 </head>
 <body>
-    <div class="hero">
-        <h1>Derecho Administrativo</h1>
-        <p>Licenciatura en Derecho — UCC · Ago-Dic 2026</p>
+    <div class="container">
+        <div class="hero">
+            <h1>Derecho Administrativo</h1>
+            <p class="subtitle">Licenciatura en Derecho — Univ. del Caribe de Chetumal</p>
+            <div class="meta">
+                <span><strong>Prof.:</strong> Cortina Ceballos Sergio Armando</span>
+                <span><strong>Grupo:</strong> 3° A</span>
+                <span><strong>Periodo:</strong> Ago-Dic 2026</span>
+            </div>
+            <div class="progress-bar">
+                <div class="fill"></div>
+            </div>
+            <div class="progress-label">1 de 15 unidades disponibles</div>
+        </div>
+        
+        <div class="units">
+            <a class="unit" href="diapositivas/unidad-01-introduccion-da.html">
+                <div class="num">Unidad 01</div>
+                <h3>Introducción al Derecho Administrativo</h3>
+                <p>Evolución histórica, concepto, caracteres, función administrativa, relaciones y principios.</p>
+                <span class="badge available">Disponible</span>
+            </a>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 02</div>
+                <h3>Fuentes del Derecho Administrativo</h3>
+                <p>Constitución, ley, reglamento, tratados, jurisprudencia, costumbre y doctrina.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 03</div>
+                <h3>La Organización Administrativa</h3>
+                <p>Centralización, desconcentración, descentralización, paraestatales y órganos autónomos.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 04</div>
+                <h3>El Servidor Público</h3>
+                <p>Concepto, clasificación, derechos, obligaciones y Servicio Profesional de Carrera.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 05</div>
+                <h3>Teoría del Acto Administrativo</h3>
+                <p>Elementos, clasificaciones, validez, eficacia, notificación y silencio administrativo.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 06</div>
+                <h3>El Procedimiento Administrativo</h3>
+                <p>Principios, fases, formas de terminación y debido proceso administrativo.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 07</div>
+                <h3>Ineficacias del Acto Administrativo</h3>
+                <p>Nulidad, anulabilidad, vicios, saneamiento y extinción del acto.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 08</div>
+                <h3>El Contrato Administrativo</h3>
+                <p>Concepto, cláusulas exorbitantes, licitación y equilibrio financiero.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 09</div>
+                <h3>El Servicio Público y la Concesión</h3>
+                <p>Teoría del servicio público, concesiones, APP y formas de prestación.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 10</div>
+                <h3>Control de la Administración Pública</h3>
+                <p>Control interno, externo, constitucional y social.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 11</div>
+                <h3>El Patrimonio del Estado y la Expropiación</h3>
+                <p>Bienes nacionales, expropiación por causa de utilidad pública.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 12</div>
+                <h3>Responsabilidad Patrimonial del Estado</h3>
+                <p>Responsabilidad directa, objetiva, subsiria y daño indemnizable.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 13</div>
+                <h3>Recursos Administrativos</h3>
+                <p>Revocación, revisión, reclamación y juicio contencioso administrativo.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 14</div>
+                <h3>Juicio de Amparo, Controversia y Acción de Inconstitucionalidad</h3>
+                <p>Medios de defensa constitucional contra actos de la administración.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+            
+            <div class="unit pending">
+                <div class="num">Unidad 15</div>
+                <h3>Responsabilidades Administrativas de los Servidores Públicos</h3>
+                <p>Responsabilidades política, administrativa, penal y patrimonial.</p>
+                <span class="badge soon">Próximamente</span>
+            </div>
+        </div>
+        
+        <footer>
+            Lic. en Derecho Esc. v14 · Plan 2009 · Universidad del Caribe de Chetumal<br>
+            Ago-Dic 2026
+        </footer>
     </div>
-    
-    <div class="cards">
-        <a class="card" href="diapositivas/unidad-01-introduccion-da.html">
-            <div class="num">Unidad 01</div>
-            <h2>Introducción al Derecho Administrativo</h2>
-            <p>Evolución histórica, concepto, caracteres, función administrativa, relaciones y principios.</p>
-            <span class="badge">Disponible</span>
-        </a>
-        
-        <div class="card pending">
-            <div class="num">Unidad 02</div>
-            <h2>Fuentes del Derecho Administrativo</h2>
-            <p>Próximamente.</p>
-        </div>
-        
-        <div class="card pending">
-            <div class="num">Unidad 03</div>
-            <h2>La Organización Administrativa</h2>
-            <p>Próximamente.</p>
-        </div>
-        
-        <div class="card pending">
-            <div class="num">Unidad 04</div>
-            <h2>El Servidor Público</h2>
-            <p>Próximamente.</p>
-        </div>
-        
-        <div class="card pending">
-            <div class="num">Unidad 05</div>
-            <h2>Teoría del Acto Administrativo</h2>
-            <p>Próximamente.</p>
-        </div>
-    </div>
-    
-    <footer>
-        Prof. Cortina Ceballos Sergio Armando · Lic. en Derecho Esc. v14
-    </footer>
 </body>
 </html>
