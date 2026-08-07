@@ -531,6 +531,31 @@
             color: rgba(255,255,255,0.5);
         }
         
+        /* ====== SCROLL VERTICAL (TODAS LAS DIAPOSITIVAS) ====== */
+        .reveal .slides section {
+            overflow-y: auto;
+            max-height: 100%;
+            padding-bottom: 40px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.05);
+            border-radius: 3px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-thumb {
+            background: rgba(79,140,255,0.4);
+            border-radius: 3px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-thumb:hover {
+            background: rgba(79,140,255,0.6);
+        }
+        
         /* ====== RESPONSIVE ====== */
         @media (max-width: 768px) {
             .grid-2, .grid-3 {
@@ -579,6 +604,74 @@
                     <i class="fa-solid fa-building-columns"></i> Universidad Cristóbal Colón · Facultad de Derecho
                 </p>
                 <a href="../index.html" style="display: inline-block; margin-top: 24px; font-size: 0.7em; color: rgba(255,255,255,0.3); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px; transition: all 0.3s;"><i class="fa-solid fa-arrow-left"></i> Volver al índice</a>
+            </section>
+            
+            <!-- ========== MAPA DEL CURSO ========== -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗺️</span> Mapa del Curso: Derecho Administrativo</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 16px;">15 unidades que te convertirán en experto en la materia</p>
+                
+                <div style="font-family: 'Consolas', monospace; font-size: 0.62em; line-height: 1.5; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);">
+                    <div style="text-align: center; font-weight: 700; font-size: 1.15em; margin-bottom: 14px; color: var(--accent-blue);">📚 DERECHO ADMINISTRATIVO — Licenciatura en Derecho</div>
+                    
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+                        <!-- Fundamentos -->
+                        <div>
+                            <div style="color: var(--accent-blue); font-weight: 700; margin-bottom: 6px; font-size: 1.05em;">📘 FUNDAMENTOS</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-blue);">1.</span> Introducción al DA<br>
+                                <span style="color: var(--accent-blue);">2.</span> Fuentes del DA
+                            </div>
+                            
+                            <!-- Organización -->
+                            <div style="color: var(--accent-green); font-weight: 700; margin-top: 12px; margin-bottom: 6px; font-size: 1.05em;">🏛️ ORGANIZACIÓN</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-green);">3.</span> Organización Administrativa<br>
+                                <span style="color: var(--accent-green);">4.</span> El Servidor Público
+                            </div>
+                        </div>
+                        
+                        <!-- Acto y Procedimiento -->
+                        <div>
+                            <div style="color: var(--accent-purple); font-weight: 700; margin-bottom: 6px; font-size: 1.05em;">📜 ACTO Y PROCEDIMIENTO</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-purple);">5.</span> Teoría del Acto Administrativo<br>
+                                <span style="color: var(--accent-purple);">6.</span> El Procedimiento Administrativo<br>
+                                <span style="color: var(--accent-purple);">7.</span> Ineficacias del Acto
+                            </div>
+                            
+                            <!-- Contratación -->
+                            <div style="color: var(--accent-orange); font-weight: 700; margin-top: 12px; margin-bottom: 6px; font-size: 1.05em;">📋 CONTRATACIÓN Y SERVICIOS</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-orange);">8.</span> Contrato Administrativo<br>
+                                <span style="color: var(--accent-orange);">9.</span> Servicio Público y Concesión
+                            </div>
+                        </div>
+                        
+                        <!-- Control y Responsabilidades -->
+                        <div>
+                            <div style="color: var(--accent-pink); font-weight: 700; margin-bottom: 6px; font-size: 1.05em;">🔍 CONTROL</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-pink);">10.</span> Control de la AP<br>
+                                <span style="color: var(--accent-pink);">11.</span> Patrimonio y Expropiación<br>
+                                <span style="color: var(--accent-pink);">12.</span> Responsabilidad Patrimonial
+                            </div>
+                            
+                            <!-- Impugnación y Responsabilidades -->
+                            <div style="color: var(--accent-red); font-weight: 700; margin-top: 12px; margin-bottom: 6px; font-size: 1.05em;">⚖️ IMPUGNACIÓN</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-red);">13.</span> Recursos Administrativos<br>
+                                <span style="color: var(--accent-red);">14.</span> Amparo y Controversia<br>
+                                <span style="color: var(--accent-red);">15.</span> Responsabilidades
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment" style="margin-top: 12px;">
+                    <div class="ff-label">💡 Lo que aprenderás</div>
+                    <p style="font-size: 0.8em;">Desde qué es el derecho administrativo hasta cómo impugnar un acto de la autoridad. <strong>Todo lo que necesitas para entender y defender tus derechos frente a la administración pública.</strong></p>
+                </div>
             </section>
             
             <!-- ========== ¿POR QUÉ IMPORTA? ========== -->
@@ -1027,23 +1120,23 @@
                     Pero... ¿cómo lo definen los expertos? Veamos 4 criterios:
                 </p>
                 
-                <div class="grid-2 fragment">
-                    <div class="card card-accent-blue">
+                <div class="grid-2">
+                    <div class="card card-accent-blue fragment">
                         <h4 style="color: var(--accent-blue);">a) Criterio legalista</h4>
                         <p style="font-size: 0.8em;">DA = leyes administrativas.</p>
                         <p style="font-size: 0.75em; color: var(--accent-red);">❌ Insuficiente: ignora principios, costumbre, jurisprudencia.</p>
                     </div>
-                    <div class="card card-accent-purple">
+                    <div class="card card-accent-purple fragment">
                         <h4 style="color: var(--accent-purple);">b) Criterio orgánico</h4>
                         <p style="font-size: 0.8em;">DA = lo que hace el Poder Ejecutivo.</p>
                         <p style="font-size: 0.75em; color: var(--accent-red);">❌ Insuficiente: la administración también hace contratos privados.</p>
                     </div>
-                    <div class="card card-accent-green">
+                    <div class="card card-accent-green fragment">
                         <h4 style="color: var(--accent-green);">c) Criterio material</h4>
                         <p style="font-size: 0.8em;">DA = la función administrativa, sin importar quién la haga.</p>
                         <p style="font-size: 0.75em; color: var(--accent-orange);">⚠️ Más completo, pero falta el sujeto.</p>
                     </div>
-                    <div class="card card-accent-pink">
+                    <div class="card card-accent-pink fragment">
                         <h4 style="color: var(--accent-pink);">d) Criterio mixto ✅</h4>
                         <p style="font-size: 0.8em;">DA = organización + actividad + función administrativa.</p>
                         <p style="font-size: 0.75em; color: var(--accent-green);">✅ El más aceptado actualmente.</p>
@@ -1389,6 +1482,12 @@
                 <div class="card card-accent-green fragment" style="text-align: center; margin-top: 16px;">
                     <p style="font-size: 0.9em;">⚖️ <strong>Conclusión:</strong> La multa viola el principio de proporcionalidad. Puedes impugnarla ante el Tribunal de Justicia Administrativa de tu estado.</p>
                 </div>
+                
+                <div class="card card-accent-blue fragment" style="margin-top: 12px;">
+                    <h4 style="color: var(--accent-blue);">📜 Fundamento constitucional</h4>
+                    <p style="font-size: 0.8em; font-style: italic; color: rgba(255,255,255,0.7);">Párrafos 5 y 6 del art. 21 CPEUM: "En todos los juicios del orden criminal... las sentencias deberán ser fundadas y motivadas... Las penas que se impongan en los juicios de carácter criminal serán proporcionales a la infracción, a la persona y a las circunstancias."</p>
+                    <p style="font-size: 0.8em; margin-top: 8px;"><strong>Comentario:</strong> El principio de proporcionalidad tiene rango constitucional y aplica tanto en materia penal como administrativa sancionadora.</p>
+                </div>
             </section>
             
             <!-- Legislación comentada -->
@@ -1677,6 +1776,37 @@
             controlsTutorial: false,
             disableLayout: true,
             plugins: [RevealNotes, RevealMarkdown, RevealHighlight]
+        });
+
+        // Click en cualquier lugar avanza la diapositiva
+        document.addEventListener('click', function(e) {
+            // No interferir con links, botones, opciones de quiz, scrollbar
+            if (e.target.closest('a, button, .quiz-option, [onclick], input, select, textarea')) {
+                return;
+            }
+            // No interferir si se hace click en la scrollbar
+            var slide = Reveal.getCurrentSlide();
+            if (e.target === slide || slide.contains(e.target)) {
+                Reveal.navigateNext();
+            }
+        });
+
+        // Mapeo de teclas de volumen para scroll
+        document.addEventListener('keydown', function(e) {
+            // Teclas de volumen: 174 (bajar), 175 (subir)
+            if (e.keyCode === 174 || e.keyCode === 175) {
+                e.preventDefault();
+                var slide = Reveal.getCurrentSlide();
+                var scrollAmount = 100;
+                
+                if (e.keyCode === 175) {
+                    // Volumen arriba = scroll arriba
+                    slide.scrollTop -= scrollAmount;
+                } else {
+                    // Volumen abajo = scroll abajo
+                    slide.scrollTop += scrollAmount;
+                }
+            }
         });
 
         // Animación automática de leyes administrativas
