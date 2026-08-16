@@ -1,0 +1,2160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 2 — Fuentes del Derecho Administrativo</title>
+    
+    <!-- Reveal.js CSS + Theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --r-background-color: #0a0a1a;
+            --r-main-font: 'Inter', sans-serif;
+            --r-heading-font: 'Playfair Display', serif;
+            --r-main-font-size: 24px;
+            --accent-blue: #4f8cff;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --glass: rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.1);
+        }
+        
+        .reveal {
+            font-family: var(--r-main-font);
+        }
+        
+        .reveal .slides {
+            text-align: left;
+        }
+        
+        .reveal .slides section {
+            padding: 20px 40px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .reveal .slides section * {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .reveal .slides p, .reveal .slides li, .reveal .slides h1, .reveal .slides h2, .reveal .slides h3, .reveal .slides h4 {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+            margin-right: 0;
+            padding-right: 0;
+        }
+        
+        /* ====== TITLE SLIDE ====== */
+        .reveal .slides section.title-slide {
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%);
+        }
+        
+        .reveal .slides section.title-slide h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4em;
+            font-weight: 900;
+            background: linear-gradient(135deg, #4f8cff, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .reveal .slides section.title-slide .subtitle {
+            font-size: 1em;
+            color: rgba(255,255,255,0.6);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .reveal .slides section.title-slide .unit-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.7em;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+        
+        /* ====== SECTION HEADERS ====== */
+        .reveal .slides section.section-header {
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%);
+        }
+        
+        .reveal .slides section.section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4f8cff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+        
+        .reveal .slides section.section-header .section-icon {
+            font-size: 2.5em;
+            margin-bottom: 14px;
+            display: block;
+        }
+        
+        /* ====== CONTENT CARDS ====== */
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 14px 16px;
+            margin: 8px 0;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .card p, .card li, .card h4 {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+            font-size: 0.85em;
+        }
+        
+        .card-accent-blue { border-left: 4px solid var(--accent-blue); }
+        .card-accent-purple { border-left: 4px solid var(--accent-purple); }
+        .card-accent-pink { border-left: 4px solid var(--accent-pink); }
+        .card-accent-green { border-left: 4px solid var(--accent-green); }
+        .card-accent-orange { border-left: 4px solid var(--accent-orange); }
+        .card-accent-red { border-left: 4px solid var(--accent-red); }
+        
+        /* ====== GRIDS ====== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 14px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 14px;
+        }
+        
+        .grid-2 > .card, .grid-3 > .card {
+            margin: 0;
+            min-width: 0;
+        }
+        
+        /* ====== HEADINGS ====== */
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            color: white;
+            font-weight: 700;
+        }
+        
+        .reveal h2 {
+            font-size: 1.4em;
+            margin-bottom: 14px;
+        }
+        
+        .reveal h3 {
+            font-size: 1.05em;
+            color: var(--accent-blue);
+            margin-bottom: 8px;
+        }
+        
+        .reveal h4 {
+            font-size: 0.9em;
+            color: var(--accent-purple);
+        }
+        
+        /* ====== TEXT ====== */
+        .reveal p, .reveal li {
+            color: rgba(255,255,255,0.85);
+            line-height: 1.6;
+        }
+        
+        .reveal ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .reveal ul li {
+            padding: 3px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .reveal ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+        
+        /* ====== HIGHLIGHTS ====== */
+        .highlight {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+        
+        .highlight-purple {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+        
+        .highlight-pink {
+            color: var(--accent-pink);
+            font-weight: 600;
+        }
+        
+        .highlight-green {
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+        
+        .highlight-orange {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+        
+        /* ====== EMOJI ICONS ====== */
+        .icon-lg {
+            font-size: 1.6em;
+            display: inline-block;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        
+        .icon-xl {
+            font-size: 3em;
+            display: block;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        
+        /* ====== TIMELINE ====== */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 10px;
+            padding: 8px 14px;
+            background: var(--glass);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 18px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            border: 2px solid #0a0a1a;
+        }
+        
+        .timeline-item .year {
+            font-size: 0.75em;
+            color: var(--accent-blue);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .timeline-item .event {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.8);
+            margin-top: 4px;
+        }
+        
+        /* ====== QUOTE / DEFINITION ====== */
+        .definition-box {
+            background: linear-gradient(135deg, rgba(79,140,255,0.15), rgba(168,85,247,0.15));
+            border: 1px solid rgba(79,140,255,0.3);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin: 14px 0;
+            position: relative;
+        }
+        
+        .definition-box::before {
+            content: '📖';
+            font-size: 1.5em;
+            position: absolute;
+            top: -12px;
+            left: 20px;
+        }
+        
+        .definition-box .def-title {
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        
+        .definition-box .def-text {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.5;
+        }
+        
+        /* ====== COMPARISON TABLE ====== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 0.65em;
+            margin-top: 12px;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 8px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 7px 12px;
+            border-bottom: 1px solid var(--glass-border);
+            color: rgba(255,255,255,0.85);
+        }
+        
+        .comparison-table tr:nth-child(even) td {
+            background: var(--glass);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* ====== FUN FACT / CURIOSITY ====== */
+        .fun-fact {
+            background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(239,68,68,0.1));
+            border: 1px solid rgba(245,158,11,0.3);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 10px 0;
+            font-size: 0.85em;
+        }
+        
+        .fun-fact .ff-label {
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* ====== QUIZ CARD ====== */
+        .quiz-card {
+            background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(79,140,255,0.15));
+            border: 1px solid rgba(16,185,129,0.3);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin: 10px 0;
+        }
+        
+        .quiz-card .quiz-q {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+        
+        .quiz-option {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 7px 14px;
+            margin: 4px 0;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-option:hover {
+            border-color: var(--accent-green);
+            background: rgba(16,185,129,0.1);
+        }
+        
+        .quiz-option.correct {
+            border-color: var(--accent-green);
+            background: rgba(16,185,129,0.2);
+            color: var(--accent-green);
+        }
+        
+        .quiz-option.wrong {
+            border-color: var(--accent-red);
+            background: rgba(239,68,68,0.1);
+            opacity: 0.6;
+        }
+        
+        /* ====== PRINCIPLE CARDS ====== */
+        .principle-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+        }
+        
+        .principle-card .p-icon {
+            font-size: 1.6em;
+            margin-bottom: 6px;
+        }
+        
+        .principle-card .p-name {
+            font-weight: 700;
+            font-size: 0.8em;
+            color: white;
+            margin-bottom: 4px;
+        }
+        
+        .principle-card .p-desc {
+            font-size: 0.65em;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.3;
+        }
+        
+        /* ====== REAL LIFE EXAMPLE ====== */
+        .real-life {
+            background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(168,85,247,0.15));
+            border: 1px solid rgba(236,72,153,0.3);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 10px 0;
+        }
+        
+        .real-life .rl-label {
+            color: var(--accent-pink);
+            font-weight: 700;
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        
+        /* ====== COUNTER ====== */
+        .counter-number {
+            font-size: 3em;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        .counter-label {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8em;
+            margin-top: 8px;
+        }
+        
+        /* ====== PROGRESS BAR ====== */
+        .progress-bar {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            height: 8px;
+            margin: 8px 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar .fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            transition: width 1s ease;
+        }
+        
+        /* ====== REVEAL OVERRIDES ====== */
+        .reveal .slides section .fragment.visible {
+            opacity: 1;
+        }
+        
+        .reveal .slide-number {
+            font-family: 'Inter', sans-serif;
+            font-size: 14px;
+            color: rgba(255,255,255,0.5);
+        }
+        
+        /* ====== SCROLL VERTICAL (TODAS LAS DIAPOSITIVAS) ====== */
+        .reveal .slides section {
+            overflow-y: auto;
+            max-height: 100%;
+            padding-bottom: 40px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.05);
+            border-radius: 3px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-thumb {
+            background: rgba(79,140,255,0.4);
+            border-radius: 3px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-thumb:hover {
+            background: rgba(79,140,255,0.6);
+        }
+        
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .reveal .slides section {
+                padding: 20px 30px;
+            }
+        }
+        
+        /* ====== SPECIAL EFFECTS ====== */
+        .glow-text {
+            text-shadow: 0 0 20px rgba(79,140,255,0.5), 0 0 40px rgba(168,85,247,0.3);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* ====== TOP-RIGHT BUTTONS (índice + pantalla completa) ====== */
+        .fullscreen-btn, .index-btn {
+            position: fixed;
+            top: 16px;
+            z-index: 9999;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid var(--glass-border);
+            background: rgba(10,10,26,0.65);
+            backdrop-filter: blur(10px);
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
+        
+        .fullscreen-btn {
+            right: 16px;
+        }
+        
+        .index-btn {
+            right: 76px;
+        }
+        
+        .fullscreen-btn:hover, .fullscreen-btn:active,
+        .index-btn:hover, .index-btn:active {
+            border-color: var(--accent-blue);
+            background: rgba(79,140,255,0.25);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        /* ====== FRAGMENT COUNTER (mostrados/total por diapositiva) ====== */
+        .fragment-counter {
+            position: fixed;
+            top: 22px;
+            right: 142px;
+            z-index: 9999;
+            height: 38px;
+            padding: 0 14px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            background: rgba(10,10,26,0.65);
+            backdrop-filter: blur(10px);
+            color: rgba(255,255,255,0.9);
+            font-family: 'Consolas', monospace;
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            white-space: nowrap;
+        }
+        
+        .fragment-counter.has-fragments {
+            display: flex;
+        }
+        
+        .fragment-counter .fc-current {
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+    <!-- Contador de elementos por diapositiva (mostrados/total) + botones superiores -->
+    <div class="fragment-counter" id="fragment-counter" title="Elementos de la diapositiva (mostrados/total)">
+        <span class="fc-current">0</span>/<span class="fc-total">0</span>
+    </div>
+    
+    <button class="index-btn" id="index-btn" title="Ir al índice de la unidad" aria-label="Ir al índice de la unidad">
+        <i class="fa-solid fa-list-ul"></i>
+    </button>
+    
+    <button class="fullscreen-btn" id="fullscreen-btn" title="Pantalla completa" aria-label="Pantalla completa">
+        <i class="fa-solid fa-expand"></i>
+    </button>
+    
+    <div class="reveal">
+        <div class="slides">
+        
+            <!-- ========== PORTADA ========== -->
+            <section class="title-slide" data-background-gradient="linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%)">
+                <span class="unit-badge">Unidad 2</span>
+                <h1 style="margin-top: 30px;">Fuentes del<br>Derecho Administrativo</h1>
+                <p class="subtitle">¿De dónde sale el derecho administrativo?</p>
+                <p style="color: rgba(255,255,255,0.4); font-size: 0.7em; margin-top: 40px;">
+                    <i class="fa-solid fa-graduation-cap"></i> Mtro. Sergio Armando Cortina Ceballos<br>
+                    <i class="fa-solid fa-building-columns"></i> Universidad Cristóbal Colón · Facultad de Derecho
+                </p>
+                <a href="../index.html" style="display: inline-block; margin-top: 24px; font-size: 0.7em; color: rgba(255,255,255,0.3); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px; transition: all 0.3s;"><i class="fa-solid fa-arrow-left"></i> Volver al índice</a>
+            </section>
+            
+            <!-- ========== ¿DÓNDE ESTAMOS? ========== -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗺️</span> ¿Dónde estamos en el curso?</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 16px;">Unidad 1 nos dijo <em>qué es</em> el DA. Unidad 2 nos dice <em>de dónde sale</em>.</p>
+                
+                <div style="font-family: 'Consolas', monospace; font-size: 0.62em; line-height: 1.5; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+                        <!-- Fundamentos -->
+                        <div>
+                            <div style="color: var(--accent-blue); font-weight: 700; margin-bottom: 6px; font-size: 1.05em;">📘 FUNDAMENTOS</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-blue);">1.</span> Introducción al DA ✅<br>
+                                <span style="color: var(--accent-green);">2.</span> <strong style="color: var(--accent-green);">Fuentes del DA ◀ ESTAMOS AQUÍ</strong>
+                            </div>
+                            
+                            <!-- Organización -->
+                            <div style="color: var(--accent-green); font-weight: 700; margin-top: 12px; margin-bottom: 6px; font-size: 1.05em;">🏛️ ORGANIZACIÓN</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-green);">3.</span> Organización Administrativa<br>
+                                <span style="color: var(--accent-green);">4.</span> El Servidor Público
+                            </div>
+                        </div>
+                        
+                        <!-- Acto y Procedimiento -->
+                        <div>
+                            <div style="color: var(--accent-purple); font-weight: 700; margin-bottom: 6px; font-size: 1.05em;">📜 ACTO Y PROCEDIMIENTO</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-purple);">5.</span> Teoría del Acto Administrativo<br>
+                                <span style="color: var(--accent-purple);">6.</span> El Procedimiento Administrativo<br>
+                                <span style="color: var(--accent-purple);">7.</span> Ineficacias del Acto
+                            </div>
+                            
+                            <!-- Contratación -->
+                            <div style="color: var(--accent-orange); font-weight: 700; margin-top: 12px; margin-bottom: 6px; font-size: 1.05em;">📋 CONTRATACIÓN Y SERVICIOS</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-orange);">8.</span> Contrato Administrativo<br>
+                                <span style="color: var(--accent-orange);">9.</span> Servicio Público y Concesión
+                            </div>
+                        </div>
+                        
+                        <!-- Control y Responsabilidades -->
+                        <div>
+                            <div style="color: var(--accent-pink); font-weight: 700; margin-bottom: 6px; font-size: 1.05em;">🔍 CONTROL</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-pink);">10.</span> Control de la AP<br>
+                                <span style="color: var(--accent-pink);">11.</span> Patrimonio y Expropiación<br>
+                                <span style="color: var(--accent-pink);">12.</span> Responsabilidad Patrimonial
+                            </div>
+                            
+                            <!-- Impugnación -->
+                            <div style="color: var(--accent-red); font-weight: 700; margin-top: 12px; margin-bottom: 6px; font-size: 1.05em;">⚖️ IMPUGNACIÓN</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-red);">13.</span> Recursos Administrativos<br>
+                                <span style="color: var(--accent-red);">14.</span> Amparo y Controversia<br>
+                                <span style="color: var(--accent-red);">15.</span> Responsabilidades
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment" style="margin-top: 12px;">
+                    <div class="ff-label">💡 Por qué importa esta unidad</div>
+                    <p style="font-size: 0.8em;">Para saber si un acto de la administración es <strong>válido</strong>, primero hay que saber <strong>qué norma lo sustenta y qué rango tiene</strong>. Sin fuentes no hay derecho administrativo.</p>
+                </div>
+            </section>
+            
+            <!-- ========== ¿POR QUÉ IMPORTA? ========== -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🤔</span> ¿Por qué estudiar las fuentes?</h2>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Dato que te sorprenderá</div>
+                    <p><strong>El 98% del orden jurídico mexicano son leyes administrativas.</strong> Y toda esa normativa proviene de unas pocas fuentes que vamos a ordenar hoy.</p>
+                </div>
+                
+                <div class="grid-3 fragment">
+                    <div class="card card-accent-blue" style="text-align: center;">
+                        <span class="icon-lg">📜</span>
+                        <p style="font-size: 0.8em;"><strong>Todo tiene un origen</strong><br>Cada acto de la autoridad debe apoyarse en una norma de rango suficiente.</p>
+                    </div>
+                    <div class="card card-accent-purple" style="text-align: center;">
+                        <span class="icon-lg">⚖️</span>
+                        <p style="font-size: 0.8em;"><strong>Jerarquía = poder</strong><br>Una circular no puede contradecir una ley. Saber el rango decide quién gana.</p>
+                    </div>
+                    <div class="card card-accent-pink" style="text-align: center;">
+                        <span class="icon-lg">🛡️</span>
+                        <p style="font-size: 0.8em;"><strong>Tu defensa</strong><br>Impugnar un acto mal fundado es impugnar su fuente. Sin fuentes, no hay defensa.</p>
+                    </div>
+                </div>
+                
+                <p class="fragment" style="text-align: center; color: rgba(255,255,255,0.5); font-size: 0.8em; margin-top: 24px;">
+                    ⬇️ <em>Usa las flechas del teclado o haz clic para avanzar</em>
+                </p>
+            </section>
+            
+            <!-- CANTIDAD DE LEYES -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🧮</span> ¿Cuánto derecho administrativo hay?</h2>
+                
+                <div class="grid-2" style="margin-top: 30px;">
+                    <div class="card card-accent-blue fragment" style="text-align: center;">
+                        <div class="counter-number" data-count="120" data-suffix="+">0+</div>
+                        <div class="counter-label">leyes federales administrativas vigentes</div>
+                    </div>
+                    <div class="card card-accent-purple fragment" style="text-align: center;">
+                        <div class="counter-number" data-count="98" data-suffix="%">0%</div>
+                        <div class="counter-label">del orden jurídico nacional es administrativo</div>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment" id="dato-final-leyes" style="margin-top: 30px;">
+                    <div class="ff-label">📚 Y todas emanan de una fuente suprema</div>
+                    <p style="font-size: 0.9em;">La Constitución es la raíz del árbol: de ella nacen las leyes, los reglamentos, los tratados, la jurisprudencia... <strong>Hoy vamos a ordenar ese árbol.</strong> 🌳</p>
+                </div>
+            </section>
+            
+            <!-- ========== PLAN DE LA UNIDAD ========== -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗺️</span> Qué veremos hoy</h2>
+                
+                <div class="grid-2">
+                    <div>
+                        <div class="card card-accent-blue fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">📜</span>
+                            <div>
+                                <h4 style="color: var(--accent-blue); margin: 0;">1. La Constitución</h4>
+                                <p style="font-size: 0.75em; margin: 0;">La fuente suprema (art. 133)</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-green fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">📚</span>
+                            <div>
+                                <h4 style="color: var(--accent-green); margin: 0;">2. La Ley</h4>
+                                <p style="font-size: 0.75em; margin: 0;">La fuente más vasta (+120 leyes)</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-orange fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">📋</span>
+                            <div>
+                                <h4 style="color: var(--accent-orange); margin: 0;">3. El Reglamento</h4>
+                                <p style="font-size: 0.75em; margin: 0;">La voz del Presidente (art. 89-I)</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-pink fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">🌍</span>
+                            <div>
+                                <h4 style="color: var(--accent-pink); margin: 0;">4. Tratados internacionales</h4>
+                                <p style="font-size: 0.75em; margin: 0;">DDHH vs. comercio</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card card-accent-purple fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">⚖️</span>
+                            <div>
+                                <h4 style="color: var(--accent-purple); margin: 0;">5. La Jurisprudencia</h4>
+                                <p style="font-size: 0.75em; margin: 0;">Lo que dicen los tribunales</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-red fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">🤝</span>
+                            <div>
+                                <h4 style="color: var(--accent-red); margin: 0;">6. Costumbre y principios</h4>
+                                <p style="font-size: 0.75em; margin: 0;">Fuentes indirectas</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-blue fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">📖</span>
+                            <div>
+                                <h4 style="color: var(--accent-blue); margin: 0;">7. La Doctrina</h4>
+                                <p style="font-size: 0.75em; margin: 0;">Lo que dicen los juristas</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-green fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">🧩</span>
+                            <div>
+                                <h4 style="color: var(--accent-green); margin: 0;">+ Jerarquía y antinomias</h4>
+                                <p style="font-size: 0.75em; margin: 0;">¿Quién gana cuando chocan?</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- MAPA CONCEPTUAL -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗺️</span> Mapa Conceptual</h2>
+                
+                <div style="font-family: 'Consolas', monospace; font-size: 0.7em; line-height: 1.6; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 20px 24px; border: 1px solid var(--glass-border);">
+                    <div style="text-align: center; font-weight: 700; font-size: 1.1em; margin-bottom: 12px; color: var(--accent-blue);">Fuentes del Derecho Administrativo</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <div>
+                            <div style="color: var(--accent-green); font-weight: 700; margin-bottom: 4px;">📜 Fuentes formales (directas)</div>
+                            <div style="padding-left: 12px; font-size: 0.9em; color: rgba(255,255,255,0.6);">
+                                ├── La Constitución (fuente suprema)<br>
+                                │&nbsp;&nbsp;&nbsp;├── Art. 133: supremacía<br>
+                                │&nbsp;&nbsp;&nbsp;├── Control difuso<br>
+                                │&nbsp;&nbsp;&nbsp;└── Bloque de constitucionalidad<br>
+                                ├── La Ley<br>
+                                │&nbsp;&nbsp;&nbsp;├── Orgánicas (LOAPF)<br>
+                                │&nbsp;&nbsp;&nbsp;├── Reglamentarias (LFPA)<br>
+                                │&nbsp;&nbsp;&nbsp;├── Ordinarias<br>
+                                │&nbsp;&nbsp;&nbsp;└── Marco (facultades coincidentes)<br>
+                                ├── El Reglamento (art. 89-I)<br>
+                                │&nbsp;&nbsp;&nbsp;├── Ejecutivo vs. autónomo<br>
+                                │&nbsp;&nbsp;&nbsp;└── Circulares y acuerdos<br>
+                                └── Tratados internacionales<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;├── DDHH (rango constitucional)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── Otra índole (rango legal)
+                            </div>
+                        </div>
+                        <div>
+                            <div style="color: var(--accent-orange); font-weight: 700; margin-bottom: 4px;">🧩 Fuentes materiales (indirectas)</div>
+                            <div style="padding-left: 12px; font-size: 0.9em; color: rgba(255,255,255,0.6);">
+                                ├── La Jurisprudencia<br>
+                                ├── La Costumbre (prácticas administrativas)<br>
+                                ├── Principios generales del derecho<br>
+                                └── Doctrina (fuente orientadora)
+                            </div>
+                            <div style="color: var(--accent-red); font-weight: 700; margin-top: 14px; margin-bottom: 4px;">🧩 ¿Y si chocan?</div>
+                            <div style="padding-left: 12px; font-size: 0.9em; color: rgba(255,255,255,0.6);">
+                                ├── Jerárquico<br>
+                                ├── Cronológico<br>
+                                ├── Especialidad<br>
+                                └── Competencia
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== ÍNDICE DE LA UNIDAD ========== -->
+            <section data-background-color="#0a0a1a" id="indice">
+                <h2><span class="icon-lg">📑</span> Índice de la Unidad 2</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Toca o haz clic en un tema para ir directo a él</p>
+                
+                <div class="grid-2" style="margin-top: 10px;">
+                    <a class="card card-accent-blue" href="#/sec-constitucion" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-blue); margin: 0;">1. La Constitución</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Supremacía, art. 133, control difuso, jerarquía</p>
+                    </a>
+                    <a class="card card-accent-green" href="#/sec-ley" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-green); margin: 0;">2. La Ley</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Clases, federal vs. general, procedimiento legislativo</p>
+                    </a>
+                    <a class="card card-accent-orange" href="#/sec-reglamento" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-orange); margin: 0;">3. El Reglamento</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Art. 89-I, clases y límites</p>
+                    </a>
+                    <a class="card card-accent-pink" href="#/sec-tratados" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-pink); margin: 0;">4. Tratados internacionales</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Jerarquía DDHH y reforma 2011</p>
+                    </a>
+                    <a class="card card-accent-purple" href="#/sec-jurisprudencia" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-purple); margin: 0;">5. La Jurisprudencia</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Órganos y precedentes 2021</p>
+                    </a>
+                    <a class="card card-accent-red" href="#/sec-costumbre" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-red); margin: 0;">6. Costumbre y principios</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Fuentes indirectas</p>
+                    </a>
+                    <a class="card card-accent-blue" href="#/sec-doctrina" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-blue); margin: 0;">7. La Doctrina</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Fuente orientadora</p>
+                    </a>
+                    <a class="card card-accent-green" href="#/doctrina-comparada" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-green); margin: 0;">📖 Doctrina comparada</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Hamdan, Roldán Xopa y Fernández Ruiz</p>
+                    </a>
+                    <a class="card card-accent-purple" href="#/legislacion" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-purple); margin: 0;">📜 Legislación aplicable</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Arts. 133, 89-I, 1° y 124</p>
+                    </a>
+                    <a class="card card-accent-green" href="#/quiz" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-green); margin: 0;">🧠 Autoevaluación</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">5 preguntas interactivas</p>
+                    </a>
+                    <a class="card card-accent-orange" href="#/sintesis" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-orange); margin: 0;">🗂️ Esquema de síntesis</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Todo en una imagen</p>
+                    </a>
+                    <a class="card card-accent-red" href="#/casos" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-red); margin: 0;">📋 Casos prácticos</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Aplica lo aprendido</p>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 1: LA CONSTITUCIÓN ========== -->
+            <section class="section-header" id="sec-constitucion" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">📜</span>
+                <h2>1. La Constitución</h2>
+                <p style="color: rgba(255,255,255,0.5);">La fuente suprema, primaria y legitimadora</p>
+            </section>
+            
+            <!-- Fuente suprema -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📜</span> La fuente suprema</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">De la Constitución provienen todas las demás fuentes: leyes, reglamentos, disposiciones generales, jurisprudencia, costumbre y principios.</p>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">¿Qué es la Constitución? (Martínez Morales)</div>
+                    <div class="def-text">
+                        "Ley fundamental de un Estado, escrita o no, que establece la forma de gobierno, la organización y funcionamiento de los poderes públicos, y reconoce los derechos fundamentales de las personas."
+                    </div>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">🗂️ Contiene todo</h4>
+                        <p style="font-size: 0.85em;">La organización y funcionamiento del Estado, las atribuciones de los órganos públicos y los <strong>derechos fundamentales frente al propio Estado</strong>.</p>
+                    </div>
+                    <div class="card card-accent-red">
+                        <h4 style="color: var(--accent-red);">⚠️ Sanción inevitable</h4>
+                        <p style="font-size: 0.85em;">Toda ley contraria a la Constitución trae la sanción de derecho: <strong>la nulidad</strong>. Como decía Tena Ramírez: la Constitución es <em>la norma de normas</em>.</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Dato clave</div>
+                    <p style="font-size: 0.85em;">La administración existe para <strong>aplicar y ejecutar las leyes</strong> y hacer efectivos los derechos humanos. Por eso su fuente de arranque es la Constitución.</p>
+                </div>
+            </section>
+            
+            <!-- Antecedentes históricos -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⏳</span> Antecedentes de la supremacía constitucional</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">La idea de que "hay una ley más alta que el rey" tiene más de 2,000 años.</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item fragment">
+                        <div class="year">Siglo III a.C. — Grecia</div>
+                        <div class="event">Votar una <em>psefima</em> (ley secundaria) contraria a la <em>nomoi</em> (ley fundamental) era <strong>crimen</strong>: la ley secundaria se anulaba.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">1215 — Inglaterra</div>
+                        <div class="event"><strong>Carta Magna:</strong> los terratenientes la impusieron al rey Juan sin Tierra. La Carta era la ley suprema a la que debía ajustarse el rey.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">1263 — Aragón</div>
+                        <div class="event"><em>Privilegium aragonum generale:</em> los señores feudales obligaron a los reyes a respetar derechos, so pena de <strong>nulidad de las decisiones reales</strong>. Se creó un procurador vigilante.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">Edad Media tardía</div>
+                        <div class="event">Santo Tomás de Aquino (<em>Suma Teológica</em>): los principios del <strong>derecho natural</strong> son leyes anteriores al Estado; si la ley los contradice, es nula.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">Siglo XVIII</div>
+                        <div class="event">Nace el <strong>constitucionalismo moderno</strong>: Constituciones de EE. UU. (1787) y Francia (1791).</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">México</div>
+                        <div class="event">El principio se recogió por primera vez en la Constitución de <strong>1824</strong> y se consolidó en las de <strong>1857</strong> y <strong>1917</strong>.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Artículo 133 -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📜</span> El artículo 133 constitucional</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">La piedra angular del sistema de fuentes</p>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Art. 133 CPEUM — La "Ley Suprema de toda la Unión"</div>
+                    <div class="def-text" style="font-style: italic;">
+                        "Esta Constitución, las leyes del Congreso de la Unión que emanen de ella y todos los tratados que estén de acuerdo con la misma... serán la Ley Suprema de toda la Unión. Los jueces de cada entidad federativa se arreglarán a dicha Constitución, leyes y tratados, a pesar de las disposiciones en contrario..."
+                    </div>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-green">
+                        <h4 style="color: var(--accent-green);">✅ ¿Leyes federales &gt; leyes locales?</h4>
+                        <p style="font-size: 0.8em;"><strong>No.</strong> Rigen competencias distintas (pacto federal, art. 124). Ambas son leyes en sentido formal y material.</p>
+                    </div>
+                    <div class="card card-accent-orange">
+                        <h4 style="color: var(--accent-orange);">⚠️ La excepción: leyes marco</h4>
+                        <p style="font-size: 0.8em;">En <strong>facultades coincidentes</strong> (educación, salud, medio ambiente, pesca, turismo, protección civil, deportes...), la ley marco <strong>sí prevalece</strong> sobre las leyes locales.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Control difuso -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🔍</span> El control difuso de constitucionalidad</h2>
+                
+                <div class="card card-accent-blue fragment">
+                    <h4 style="color: var(--accent-blue);">📜 Fundamento: art. 1° CPEUM</h4>
+                    <p style="font-size: 0.85em; font-style: italic;">"Todas las autoridades, en el ámbito de sus competencias, tienen la obligación de promover, respetar, proteger y garantizar los derechos humanos..."</p>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-purple">
+                        <h4 style="color: var(--accent-purple);">📖 Roldán Xopa</h4>
+                        <p style="font-size: 0.8em;">Cualquier autoridad puede <strong>inaplicar</strong> una norma contraria a los DDHH de la Constitución o los tratados. Pero la SCJN (exp. varios 912/2010) lo reserva a quienes ejercen <strong>funciones jurisdiccionales</strong>.</p>
+                    </div>
+                    <div class="card card-accent-green">
+                        <h4 style="color: var(--accent-green);">📖 Hamdan Amad</h4>
+                        <p style="font-size: 0.8em;">Posición más amplia: <strong>todas las autoridades</strong>, incluidas las administrativas, deben abstenerse de aplicar normas inconstitucionales. En el ámbito administrativo, la facultad se concentra en el <strong>Consejero Jurídico del Ejecutivo Federal</strong>.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Jerarquía normativa -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🏔️</span> La jerarquía normativa</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">La pirámide del sistema jurídico mexicano</p>
+                
+                <table class="comparison-table fragment">
+                    <thead>
+                        <tr>
+                            <th>Nivel</th>
+                            <th>Tipo de norma</th>
+                            <th>Fundamento</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>1°</strong></td>
+                            <td>Constitución Política de los EUM</td>
+                            <td>Art. 133 CPEUM</td>
+                        </tr>
+                        <tr>
+                            <td><strong>2°</strong></td>
+                            <td>Tratados de DDHH (mismo rango que la Constitución, con límite de restricciones constitucionales)</td>
+                            <td>Art. 1°; CT 293/2011</td>
+                        </tr>
+                        <tr>
+                            <td><strong>3°</strong></td>
+                            <td>Leyes generales y federales; tratados no DDHH</td>
+                            <td>Art. 133; P./J. 20/2014</td>
+                        </tr>
+                        <tr>
+                            <td><strong>4°</strong></td>
+                            <td>Reglamentos (ejecutivos, autónomos, delegados)</td>
+                            <td>Art. 89-I CPEUM</td>
+                        </tr>
+                        <tr>
+                            <td><strong>5°</strong></td>
+                            <td>Disposiciones administrativas generales (decretos, acuerdos, circulares, NOM)</td>
+                            <td>LOAPF, LFPA</td>
+                        </tr>
+                        <tr>
+                            <td><strong>6°</strong></td>
+                            <td>Jurisprudencia obligatoria (SCJN, TCC, TFJA)</td>
+                            <td>Arts. 215-230 LA; LFJA</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7°</strong></td>
+                            <td>Principios generales del derecho y costumbre (supletorios)</td>
+                            <td>Art. 14 CPEUM</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- Antinomias -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚔️</span> Solución de antinomias</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">¿Qué pasa cuando dos normas del mismo rango se contradicen?</p>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">1. Jerárquico</h4>
+                        <p style="font-size: 0.8em;"><em>Lex superior derogat legi inferiori</em><br>La norma superior prevalece sobre la inferior.</p>
+                    </div>
+                    <div class="card card-accent-purple fragment">
+                        <h4 style="color: var(--accent-purple);">2. Cronológico</h4>
+                        <p style="font-size: 0.8em;"><em>Lex posterior derogat legi priori</em><br>La norma posterior deroga a la anterior.</p>
+                    </div>
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">3. Especialidad</h4>
+                        <p style="font-size: 0.8em;"><em>Lex specialis derogat legi generali</em><br>La norma especial prevalece sobre la general.</p>
+                    </div>
+                    <div class="card card-accent-orange fragment">
+                        <h4 style="color: var(--accent-orange);">4. Competencia</h4>
+                        <p style="font-size: 0.8em;">La norma emitida por la <strong>autoridad competente</strong> prevalece sobre la emitida por autoridad incompetente.</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Regla de oro</div>
+                    <p style="font-size: 0.85em;">El principio <strong>jerárquico</strong> se aplica entre normas de distinto rango; los demás, entre normas <strong>del mismo rango</strong>.</p>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 2: LA LEY ========== -->
+            <section class="section-header" id="sec-ley" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">📚</span>
+                <h2>2. La Ley</h2>
+                <p style="color: rgba(255,255,255,0.5);">La fuente más vasta del derecho administrativo</p>
+            </section>
+            
+            <!-- Clases de leyes -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📚</span> Las 4 clases de leyes (Hamdan)</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Todas las leyes federales tienen la misma jerarquía. La clasificación atiende a su contenido y función.</p>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">a) Ley reglamentaria</h4>
+                        <p style="font-size: 0.8em;">Desarrolla un precepto constitucional estableciendo las bases de una materia.</p>
+                        <p style="font-size: 0.75em; color: rgba(255,255,255,0.5);"><strong>Ejemplo:</strong> Ley Federal del Trabajo (art. 123)</p>
+                    </div>
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">b) Ley orgánica</h4>
+                        <p style="font-size: 0.8em;">Establece la organización, funcionamiento y competencias de los órganos del Estado.</p>
+                        <p style="font-size: 0.75em; color: rgba(255,255,255,0.5);"><strong>Ejemplo:</strong> LOAPF (arts. 89 y 90)</p>
+                    </div>
+                    <div class="card card-accent-purple fragment">
+                        <h4 style="color: var(--accent-purple);">c) Ley ordinaria</h4>
+                        <p style="font-size: 0.8em;">Regula una materia comprendida en el art. 73 constitucional.</p>
+                        <p style="font-size: 0.75em; color: rgba(255,255,255,0.5);"><strong>Ejemplo:</strong> Código Civil Federal</p>
+                    </div>
+                    <div class="card card-accent-orange fragment">
+                        <h4 style="color: var(--accent-orange);">d) Ley marco</h4>
+                        <p style="font-size: 0.8em;">Establece las bases de coordinación Federación–entidades federativas en materias <strong>concurrentes</strong>.</p>
+                        <p style="font-size: 0.75em; color: rgba(255,255,255,0.5);"><strong>Ejemplo:</strong> Ley General de Salud</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Leyes federales vs generales -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚖️</span> Leyes federales vs. leyes generales</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Una distinción crucial en el sistema de fuentes (Fernández Ruiz)</p>
+                
+                <table class="comparison-table fragment">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Ley federal</th>
+                            <th>Ley general</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Qué regula</strong></td>
+                            <td>Materias de <strong>competencia exclusiva</strong> de la Federación (art. 73)</td>
+                            <td><strong>Distribuye competencias</strong> en materias concurrentes (bases, principios, coordinación)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>A quién vincula</strong></td>
+                            <td>Solo a la administración pública federal</td>
+                            <td>A los <strong>tres órdenes de gobierno</strong> (eficacia vertical)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ejemplos</strong></td>
+                            <td>Código Penal Federal, Ley de Vías Generales de Comunicación</td>
+                            <td>Ley General de Salud, de Educación, de Transparencia</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">⚔️ En conflicto</div>
+                    <p style="font-size: 0.85em;">La ley general prevalece sobre la ley <strong>local</strong> en la materia concurrente, pero <strong>no</strong> sobre la ley federal en materia exclusiva.</p>
+                </div>
+            </section>
+            
+            <!-- Procedimiento legislativo -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🏛️</span> El procedimiento legislativo</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Para que una ley administrativa adquiera validez</p>
+                
+                <div class="timeline">
+                    <div class="timeline-item fragment">
+                        <div class="year">1. Iniciativa (art. 71)</div>
+                        <div class="event">Presidente, diputados y senadores, legislaturas estatales y ciudadanos (0.13% del padrón). En materia administrativa, <strong>la mayoría viene del Ejecutivo</strong>.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">2. Discusión y aprobación (art. 72)</div>
+                        <div class="event">Dictamen en comisiones → pleno → votación → revisión por la Cámara revisora.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">3. Promulgación</div>
+                        <div class="event">El Ejecutivo puede ejercer <strong>veto</strong> (con observaciones). Si el Congreso insiste por 2/3, la ley se promulga.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">4. Publicación (DOF)</div>
+                        <div class="event">El art. 3° del Código Civil Federal: obligatoria desde el día siguiente, salvo plazo distinto.</div>
+                    </div>
+                    <div class="timeline-item fragment">
+                        <div class="year">5. Vacatio legis</div>
+                        <div class="event">Periodo entre publicación y entrada en vigor, para que los destinatarios se preparen. Las leyes orgánicas suelen tener <em>vacatio</em> más amplia.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3: EL REGLAMENTO ========== -->
+            <section class="section-header" id="sec-reglamento" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">📋</span>
+                <h2>3. El Reglamento</h2>
+                <p style="color: rgba(255,255,255,0.5);">La voz del Presidente para ejecutar las leyes</p>
+            </section>
+            
+            <!-- Definición de reglamento -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📋</span> ¿Qué es el reglamento?</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Definición (Martínez Morales)</div>
+                    <div class="def-text">
+                        "Disposición general, abstracta e impersonal, de carácter administrativo, emitida por el Presidente de la República en ejercicio de la facultad que le confiere el <strong>artículo 89, fracción I</strong>, de la Constitución, para proveer en la esfera administrativa a la exacta observancia de las leyes."
+                    </div>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">📜 Materialmente legislativo</h4>
+                        <p style="font-size: 0.8em;">Contiene normas <strong>generales, abstractas e impersonales</strong>, como una ley.</p>
+                    </div>
+                    <div class="card card-accent-orange">
+                        <h4 style="color: var(--accent-orange);">🏛️ Formalmente administrativo</h4>
+                        <p style="font-size: 0.8em;">Lo emite el <strong>Presidente</strong>, no el Congreso. Por eso está subordinado a la ley.</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">⚠️ El límite clave</div>
+                    <p style="font-size: 0.85em;">El reglamento <strong>no puede ir más allá de la ley</strong> (<em>ultra vires</em>): no puede crear requisitos, cargas u obligaciones no previstos legalmente.</p>
+                </div>
+            </section>
+            
+            <!-- Clases de reglamento -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗂️</span> Clases de reglamento</h2>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">a) Ejecutivo ✅ el más común</h4>
+                        <p style="font-size: 0.8em;">Desarrolla y detalla una ley para hacer posible su aplicación. Está subordinado a ella y no puede excederla.</p>
+                    </div>
+                    <div class="card card-accent-purple fragment">
+                        <h4 style="color: var(--accent-purple);">b) Autónomo ⚠️ controvertido</h4>
+                        <p style="font-size: 0.8em;">No desarrolla una ley específica: regula directamente materias de organización administrativa. En México es discutible porque el art. 89-I habla de "exacta observancia de las leyes".</p>
+                    </div>
+                    <div class="card card-accent-orange fragment">
+                        <h4 style="color: var(--accent-orange);">c) Delegado</h4>
+                        <p style="font-size: 0.8em;">Se emite por <strong>autorización expresa del legislador</strong> para regular materias que normalmente corresponderían a la ley.</p>
+                    </div>
+                    <div class="card card-accent-red fragment">
+                        <h4 style="color: var(--accent-red);">d) De necesidad o urgencia</h4>
+                        <p style="font-size: 0.8em;">Se emite en situaciones excepcionales sin ley previa. <strong>Muy limitado</strong> en el sistema mexicano.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Otras disposiciones -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗂️</span> Otras disposiciones administrativas generales</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">No todo lo que emite la administración es reglamento</p>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">📜 Decretos del Ejecutivo</h4>
+                        <p style="font-size: 0.8em;">Contenido general o particular (declaratorias, expropiaciones).</p>
+                    </div>
+                    <div class="card card-accent-purple fragment">
+                        <h4 style="color: var(--accent-purple);">📝 Acuerdos generales</h4>
+                        <p style="font-size: 0.8em;">Emitidos por secretarios de Estado; incluyen criterios de interpretación.</p>
+                    </div>
+                    <div class="card card-accent-orange fragment">
+                        <h4 style="color: var(--accent-orange);">📨 Circulares</h4>
+                        <p style="font-size: 0.8em;">Instrucciones a subordinados jerárquicos.</p>
+                    </div>
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">🏭 Normas Oficiales Mexicanas (NOM)</h4>
+                        <p style="font-size: 0.8em;">Regulaciones <strong>técnicas obligatorias</strong> (seguridad, salud, etiquetado).</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Ojo</div>
+                    <p style="font-size: 0.85em;">Las circulares <strong>no pueden modificar la ley</strong>: solo instruyen a los subordinados. Si contradicen la LFPA, son inválidas.</p>
+                </div>
+            </section>
+            
+            <!-- Límites de la potestad reglamentaria -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🔒</span> Límites de la potestad reglamentaria</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">La facultad del Presidente no es absoluta</p>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-red fragment">
+                        <h4 style="color: var(--accent-red);">1. Reserva de ley</h4>
+                        <p style="font-size: 0.8em;">Ciertas materias solo pueden regularse por ley formal (DDHH, libertades, cargas fiscales — art. 31-IV). El reglamento no las puede tocar.</p>
+                    </div>
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">2. Primacía de la ley</h4>
+                        <p style="font-size: 0.8em;">No puede exceder la ley (<em>ultra vires</em>), ni añadir requisitos, ni modificar o contradecir disposiciones legales.</p>
+                    </div>
+                    <div class="card card-accent-purple fragment">
+                        <h4 style="color: var(--accent-purple);">3. Control judicial</h4>
+                        <p style="font-size: 0.8em;">Amparo indirecto, amparo directo contra actos de aplicación, contencioso ante el TFJA y control difuso.</p>
+                    </div>
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">4. Inderogabilidad singular</h4>
+                        <p style="font-size: 0.8em;">La administración <strong>no puede apartarse de sus propios reglamentos</strong> en casos concretos sin justificación legal. Igualdad y seguridad jurídica.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 4: TRATADOS INTERNACIONALES ========== -->
+            <section class="section-header" id="sec-tratados" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🌍</span>
+                <h2>4. Tratados Internacionales</h2>
+                <p style="color: rgba(255,255,255,0.5);">Los compromisos internacionales del Estado mexicano</p>
+            </section>
+            
+            <!-- Jerarquía de tratados -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🌍</span> ¿Qué rango tienen los tratados?</h2>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">🤝 Tratados de DDHH</h4>
+                        <p style="font-size: 0.85em;">Por el art. 1° constitucional tienen <strong>la misma jerarquía que la Constitución</strong>: forman parte del <strong>bloque de constitucionalidad</strong>.</p>
+                        <p style="font-size: 0.75em; color: rgba(255,255,255,0.5);">Pero por la CT 293/2011: si la Constitución contiene restricciones, <strong>prevalecen las restricciones constitucionales</strong>.</p>
+                    </div>
+                    <div class="card card-accent-orange fragment">
+                        <h4 style="color: var(--accent-orange);">💼 Tratados de otra índole</h4>
+                        <p style="font-size: 0.85em;">Comerciales, de inversión, cooperación: tienen <strong>la misma jerarquía que las leyes internas</strong>.</p>
+                        <p style="font-size: 0.75em; color: rgba(255,255,255,0.5);">Se resuelven con los principios de ley posterior y ley especial.</p>
+                    </div>
+                </div>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">🏛️ Consecuencia para la administración</div>
+                    <p style="font-size: 0.85em;">La administración debe <strong>ajustar su actuación a los tratados</strong>: pueden ser fuente de derechos para los administrados y exigen <strong>interpretación conforme</strong> de las normas internas.</p>
+                </div>
+            </section>
+            
+            <!-- Reforma 2011 -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚡</span> La reforma de DDHH de 2011</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Publicada el 10 de junio de 2011: transformó el sistema de fuentes</p>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">1. Bloque de constitucionalidad</h4>
+                        <p style="font-size: 0.8em;">Los DDHH de la Constitución y de los tratados son <strong>igualmente vinculantes</strong>: ambos forman el parámetro de control de regularidad constitucional.</p>
+                    </div>
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">2. Principio pro persona</h4>
+                        <p style="font-size: 0.8em;">Toda autoridad debe aplicar <strong>la norma más protectora</strong> a la persona, venga de la Constitución o de un tratado (art. 1°, 2° párrafo).</p>
+                    </div>
+                    <div class="card card-accent-purple fragment">
+                        <h4 style="color: var(--accent-purple);">3. Control difuso y convencionalidad</h4>
+                        <p style="font-size: 0.8em;">La SCJN (exp. varios 912/2010): los jueces deben hacer control de convencionalidad <em>ex officio</em> entre normas internas y tratados.</p>
+                    </div>
+                    <div class="card card-accent-orange fragment">
+                        <h4 style="color: var(--accent-orange);">4. Reparación integral</h4>
+                        <p style="font-size: 0.8em;">Restitución, compensación, rehabilitación, satisfacción y garantías de no repetición. Impacta la responsabilidad patrimonial del Estado.</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Para la clase</div>
+                    <p style="font-size: 0.85em;">La obligación de <strong>promover, respetar, proteger y garantizar</strong> los DDHH vincula a la administración en todos sus niveles y actuaciones.</p>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 5: LA JURISPRUDENCIA ========== -->
+            <section class="section-header" id="sec-jurisprudencia" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">⚖️</span>
+                <h2>5. La Jurisprudencia</h2>
+                <p style="color: rgba(255,255,255,0.5);">La interpretación reiterada y obligatoria de la ley</p>
+            </section>
+            
+            <!-- Jurisprudencia tipos -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚖️</span> ¿Quién emite jurisprudencia?</h2>
+                
+                <div class="grid-3">
+                    <div class="card card-accent-blue fragment" style="text-align: center;">
+                        <span style="font-size: 2em;">🏛️</span>
+                        <h4 style="color: var(--accent-blue); margin-top: 8px;">SCJN</h4>
+                        <p style="font-size: 0.75em;">Pleno y Salas. Jurisprudencia obligatoria para órganos jurisdiccionales y autoridades administrativas.</p>
+                    </div>
+                    <div class="card card-accent-purple fragment" style="text-align: center;">
+                        <span style="font-size: 2em;">⚖️</span>
+                        <h4 style="color: var(--accent-purple); margin-top: 8px;">TCC</h4>
+                        <p style="font-size: 0.75em;">Tribunales Colegiados de Circuito. Obligatoria dentro de su circuito.</p>
+                    </div>
+                    <div class="card card-accent-green fragment" style="text-align: center;">
+                        <span style="font-size: 2em;">📋</span>
+                        <h4 style="color: var(--accent-green); margin-top: 8px;">TFJA</h4>
+                        <p style="font-size: 0.75em;">Pleno y Salas del Tribunal Federal de Justicia Administrativa. Obligatoria en materia administrativa.</p>
+                    </div>
+                </div>
+                
+                <div class="grid-3 fragment" style="margin-top: 14px;">
+                    <div class="card card-accent-orange">
+                        <h4 style="color: var(--accent-orange);">🔁 Reiteración</h4>
+                        <p style="font-size: 0.75em;">Cinco sentencias consecutivas en el mismo sentido, no interrumpidas.</p>
+                    </div>
+                    <div class="card card-accent-pink">
+                        <h4 style="color: var(--accent-pink);">⚔️ Contradicción de tesis</h4>
+                        <p style="font-size: 0.75em;">Cuando tribunales sustentan criterios contradictorios; la SCJN define el criterio.</p>
+                    </div>
+                    <div class="card card-accent-red">
+                        <h4 style="color: var(--accent-red);">🔄 Sustitución</h4>
+                        <p style="font-size: 0.75em;">Cambio de criterio justificado por el órgano emisor.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Sistema de precedentes 2021 -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📜</span> El nuevo sistema de precedentes (2021)</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">La reforma a la Ley de Amparo transformó el modelo de jurisprudencia</p>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">⬆️⬇️ Precedentes verticales y horizontales</h4>
+                        <p style="font-size: 0.8em;">Los criterios de la SCJN vinculan a todos los tribunales (vertical); los de Plenos de Circuito y TCC, dentro de su circunscripción (horizontal).</p>
+                    </div>
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">💪 Obligatoriedad reforzada</h4>
+                        <p style="font-size: 0.8em;">Ya no se necesitan 5 sentencias: <strong>una sola sentencia</strong> aprobada por mayoría calificada puede constituir precedente obligatorio.</p>
+                    </div>
+                    <div class="card card-accent-purple fragment">
+                        <h4 style="color: var(--accent-purple);">🎯 Ratio decidendi</h4>
+                        <p style="font-size: 0.8em;">Las sentencias deben identificar la <strong>razón decisoria</strong> que justifica la decisión. Solo la <em>ratio decidendi</em> vincula; el <em>obiter dictum</em> no.</p>
+                    </div>
+                    <div class="card card-accent-orange fragment">
+                        <h4 style="color: var(--accent-orange);">📢 Transparencia</h4>
+                        <p style="font-size: 0.8em;">Los precedentes se publican en el <strong>Semanario Judicial de la Federación</strong> y en el sistema de consulta de la SCJN.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 6: COSTUMBRE Y PRINCIPIOS ========== -->
+            <section class="section-header" id="sec-costumbre" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🤝</span>
+                <h2>6. Costumbre y Principios Generales</h2>
+                <p style="color: rgba(255,255,255,0.5);">Las fuentes indirectas del derecho administrativo</p>
+            </section>
+            
+            <!-- Costumbre -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🕯️</span> La costumbre y las prácticas administrativas</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Función limitada, principalmente supletoria e interpretativa</p>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">a) Costumbre secundum legem</h4>
+                        <p style="font-size: 0.8em;">Interpreta una norma cuando la ley remite expresamente a ella (p. ej. usos mercantiles en contratación pública). <strong>No puede contradecir la ley.</strong></p>
+                    </div>
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">b) Precedente administrativo</h4>
+                        <p style="font-size: 0.8em;">La actuación reiterada genera <strong>expectativas legítimas</strong>. La administración no puede apartarse sin causa justificada (igualdad y seguridad jurídica).</p>
+                    </div>
+                    <div class="card card-accent-orange fragment">
+                        <h4 style="color: var(--accent-orange);">c) Inderogabilidad singular</h4>
+                        <p style="font-size: 0.8em;">Prohíbe apartarse de las disposiciones generales propias mediante actos de efectos particulares, salvo habilitación legal expresa.</p>
+                    </div>
+                    <div class="card card-accent-purple fragment">
+                        <h4 style="color: var(--accent-purple);">d) Usos administrativos</h4>
+                        <p style="font-size: 0.8em;">Criterios del SAT, guías y manuales: no vinculan, pero generan estándares que la administración debe observar (art. 5° LFPA).</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Principios 1/2 -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚖️</span> Principios generales (1/2)</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Ideas fundamentales que informan todo el ordenamiento (art. 14 CPEUM)</p>
+                
+                <div class="grid-2">
+                    <div class="principle-card fragment">
+                        <div class="p-icon">📜</div>
+                        <div class="p-name">Legalidad</div>
+                        <div class="p-desc">Toda actuación debe estar fundada (competencia) y motivada (razones). Art. 16 CPEUM; LFPA art. 3-IV y V.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">🔒</div>
+                        <div class="p-name">Seguridad jurídica</div>
+                        <div class="p-desc">Irretroactividad, cosa juzgada, plazos precisos, prescripción y confianza legítima.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">🎙️</div>
+                        <div class="p-name">Debido proceso</div>
+                        <div class="p-desc">Notificación, pruebas, alegatos y resolución fundada. LFPA arts. 14-16; art. 8° CADH.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">⚖️</div>
+                        <div class="p-name">Proporcionalidad</div>
+                        <div class="p-desc">Idoneidad + necesidad + proporcionalidad en sentido estricto. Límite a la discrecionalidad.</div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Principios 2/2 -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚖️</span> Principios generales (2/2)</h2>
+                
+                <div class="grid-2">
+                    <div class="principle-card fragment">
+                        <div class="p-icon">🤝</div>
+                        <div class="p-name">Buena fe y confianza legítima</div>
+                        <div class="p-desc">Lealtad y rectitud. Protege al particular que confió en la apariencia de legalidad y en prácticas reiteradas.</div>
+                    </div>
+                    <div class="principle-card fragment">
+                        <div class="p-icon">👥</div>
+                        <div class="p-name">Interés público</div>
+                        <div class="p-desc">Justifica potestades exorbitantes, pero debe ponderarse con los DDHH. No es carta blanca (P./J. 56/2011).</div>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment" style="margin-top: 20px;">
+                    <div class="ff-label">💡 Triple función</div>
+                    <p style="font-size: 0.85em;">Los principios operan como: <strong>(i)</strong> criterios interpretativos, <strong>(ii)</strong> fuentes supletorias ante ausencia de ley (art. 14) y <strong>(iii)</strong> límites a la discrecionalidad administrativa.</p>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 7: LA DOCTRINA ========== -->
+            <section class="section-header" id="sec-doctrina" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">📖</span>
+                <h2>7. La Doctrina</h2>
+                <p style="color: rgba(255,255,255,0.5);">Lo que dicen los juristas... y por qué importa</p>
+            </section>
+            
+            <!-- Doctrina -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📖</span> La doctrina: fuente orientadora</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">No es obligatoria ni directamente aplicable, pero es indispensable</p>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">🔎 Interpretativa</h4>
+                        <p style="font-size: 0.8em;">Proporciona criterios que tribunales y autoridades citan como apoyo argumentativo.</p>
+                    </div>
+                    <div class="card card-accent-purple fragment">
+                        <h4 style="color: var(--accent-purple);">🗂️ Sistematizadora</h4>
+                        <p style="font-size: 0.8em;">Organiza y clasifica normas y jurisprudencia: Fraga, Fernández Ruiz, Roldán Xopa, Martínez Morales, Hamdan.</p>
+                    </div>
+                    <div class="card card-accent-pink fragment">
+                        <h4 style="color: var(--accent-pink);">🔍 Crítica</h4>
+                        <p style="font-size: 0.8em;">Evalúa calidad y coherencia de las instituciones; señala áreas de reforma. El debate previo a la reforma de 2011 es ejemplo.</p>
+                    </div>
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">🌱 Creadora</h4>
+                        <p style="font-size: 0.8em;">La confianza legítima, la proporcionalidad y el bloque de constitucionalidad nacieron en la doctrina antes de llegar a la ley.</p>
+                    </div>
+                </div>
+                
+                <div class="card card-accent-red fragment">
+                    <h4 style="color: var(--accent-red);">⚠️ Su límite</h4>
+                    <p style="font-size: 0.8em;">No es vinculante: jueces y autoridades pueden apartarse de la doctrina si fundan y motivan su decisión en otras fuentes. La doctrina no crea derechos por sí misma.</p>
+                </div>
+            </section>
+            
+            <!-- DOCTRINA COMPARADA -->
+            <section data-background-color="#0a0a1a" id="doctrina-comparada">
+                <h2><span class="icon-lg">📖</span> Doctrina comparada</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">¿Qué dice cada autor sobre las fuentes?</p>
+                
+                <table class="comparison-table fragment">
+                    <thead>
+                        <tr>
+                            <th>Tema</th>
+                            <th>Hamdan Amad</th>
+                            <th>Roldán Xopa</th>
+                            <th>Fernández Ruiz</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Tratados DDHH</strong></td>
+                            <td>Misma jerarquía que la Constitución; restricciones constitucionales prevalecen</td>
+                            <td>Bloque de constitucionalidad con principio pro persona</td>
+                            <td>Rango constitucional; interpretación conforme</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Reglamento autónomo</strong></td>
+                            <td>No reconocido (art. 89-I solo prevé ejecutivo)</td>
+                            <td>Existencia limitada en materia organizativa</td>
+                            <td>Solo en materias organizativas internas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Valor de la costumbre</strong></td>
+                            <td>Función limitada; la ley es la principal fuente</td>
+                            <td>Prácticas generan expectativas legítimas</td>
+                            <td>Interpretativa; no deroga ley</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Jerarquía normativa</strong></td>
+                            <td>Pirámide kelseniana de 7 niveles; leyes federales y locales, mismo rango</td>
+                            <td>Énfasis en distribución competencial (art. 124)</td>
+                            <td>Distingue leyes federales y generales con efectos diversos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Valor de la doctrina</strong></td>
+                            <td>Fuente orientadora; citada en sentencias del TFJA</td>
+                            <td>No vinculante, relevante como criterio interpretativo</td>
+                            <td>Gran valor formativo y sistematizador</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- LEGISLACIÓN APLICABLE -->
+            <section data-background-color="#0a0a1a" id="legislacion">
+                <h2><span class="icon-lg">📜</span> Legislación aplicable</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Los artículos que debes memorizar de esta unidad</p>
+                
+                <div class="card card-accent-green fragment">
+                    <h4 style="color: var(--accent-green);">Art. 133 CPEUM — La "Ley Suprema de toda la Unión"</h4>
+                    <p style="font-size: 0.8em;">Define la jerarquía fundamental: Constitución + leyes del Congreso + tratados, frente a las constituciones y leyes locales.</p>
+                </div>
+                
+                <div class="card card-accent-orange fragment">
+                    <h4 style="color: var(--accent-orange);">Art. 89, fracción I, CPEUM — Facultad reglamentaria</h4>
+                    <p style="font-size: 0.8em;">"Proveer en la esfera administrativa a la exacta observancia de las leyes." Define el alcance y el límite del reglamento.</p>
+                </div>
+                
+                <div class="card card-accent-blue fragment">
+                    <h4 style="color: var(--accent-blue);">Arts. 1° y 124 CPEUM</h4>
+                    <p style="font-size: 0.8em;">El 1° funda el control difuso, el bloque de constitucionalidad y el principio pro persona. El 124 distribuye competencias: lo no concedido a la Federación se reserva a los Estados.</p>
+                </div>
+            </section>
+            
+            <!-- QUIZ -->
+            <section data-background-color="#0a0a1a" id="quiz">
+                <h2><span class="icon-lg">🧠</span> Autoevaluación</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Pon a prueba lo que aprendiste</p>
+                
+                <div class="quiz-card fragment">
+                    <div class="quiz-q">❓ 1. Según el art. 133, la "Ley Suprema de toda la Unión" está integrada por:</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        a) La Constitución y las leyes federales únicamente
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">
+                        b) La Constitución, las leyes del Congreso de la Unión y los tratados internacionales ✅
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        c) Las leyes federales y las constituciones estatales
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        d) Los tratados internacionales exclusivamente
+                    </div>
+                </div>
+                
+                <div class="quiz-card fragment">
+                    <div class="quiz-q">❓ 2. La facultad reglamentaria del Presidente se fundamenta en:</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        a) El artículo 133 constitucional
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">
+                        b) El artículo 89, fracción I, constitucional ✅
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        c) La LOAPF
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        d) El artículo 73 constitucional
+                    </div>
+                </div>
+                
+                <div class="quiz-card fragment">
+                    <div class="quiz-q">❓ 3. <em>Lex specialis derogat legi generali</em> significa:</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        a) La ley posterior deroga a la anterior
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        b) La ley superior deroga a la inferior
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">
+                        c) La ley especial prevalece sobre la general ✅
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        d) La ley escrita prevalece sobre la costumbre
+                    </div>
+                </div>
+                
+                <div class="quiz-card fragment">
+                    <div class="quiz-q">❓ 4. Los tratados internacionales en materia de DDHH:</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        a) Tienen jerarquía inferior a las leyes federales
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        b) Tienen la misma jerarquía que los reglamentos
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">
+                        c) Forman parte del bloque de constitucionalidad ✅
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        d) Carecen de aplicación en el ámbito administrativo
+                    </div>
+                </div>
+                
+                <div class="quiz-card fragment">
+                    <div class="quiz-q">❓ 5. La <em>vacatio legis</em> es:</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        a) El período entre la promulgación y la publicación de la ley
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">
+                        b) El período entre la publicación y la entrada en vigor de la ley ✅
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        c) El derecho del Ejecutivo a vetar una ley
+                    </div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">
+                        d) La facultad del Congreso para modificar una ley
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ESQUEMA DE SÍNTESIS -->
+            <section class="section-header" id="sintesis" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🗂️</span>
+                <h2>Esquema de Síntesis</h2>
+                <p style="color: rgba(255,255,255,0.5);">Todo lo que vimos en una imagen</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗂️</span> Síntesis de la Unidad</h2>
+                
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px; font-size: 0.75em;">
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">I. La Constitución (fuente suprema)</h4>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Art. 133: "Ley Suprema de toda la Unión"</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Control difuso + bloque de constitucionalidad</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Pirámide de 7 niveles; antinomias: jerárquico, cronológico, especialidad, competencia</p>
+                    </div>
+                    <div class="card card-accent-green">
+                        <h4 style="color: var(--accent-green);">II. La Ley y el Reglamento</h4>
+                        <p style="font-size: 0.85em; margin: 4px 0;">4 clases: reglamentaria, orgánica, ordinaria, marco</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Federales vs. generales (concurrentes)</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Reglamento (art. 89-I): ejecutivo, autónomo, delegado, necesidad; límites: reserva de ley, primacía, control, inderogabilidad</p>
+                    </div>
+                    <div class="card card-accent-purple">
+                        <h4 style="color: var(--accent-purple);">III. Tratados y jurisprudencia</h4>
+                        <p style="font-size: 0.85em; margin: 4px 0;">DDHH: rango constitucional; otros: rango legal</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Reforma 2011: bloque, pro persona, reparación integral</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Jurisprudencia: SCJN, TCC, TFJA; precedentes 2021 con <em>ratio decidendi</em></p>
+                    </div>
+                    <div class="card card-accent-orange">
+                        <h4 style="color: var(--accent-orange);">IV. Fuentes indirectas</h4>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Costumbre: secundum legem, precedente administrativo, usos</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Principios: legalidad, seguridad, debido proceso, proporcionalidad, buena fe, interés público</p>
+                        <p style="font-size: 0.85em; margin: 4px 0;">Doctrina: interpretativa, sistematizadora, crítica, creadora (no vinculante)</p>
+                    </div>
+                </div>
+                
+                <div class="definition-box fragment" style="margin-top: 12px;">
+                    <div class="def-title">Idea central</div>
+                    <div class="def-text" style="font-size: 0.85em;">Toda norma administrativa tiene un <strong>rango</strong> y un <strong>origen</strong>. Saber jerarquizar las fuentes te permite saber <strong>qué norma gana</strong> y <strong>cuándo un acto de la autoridad es inválido</strong> por apoyarse en la fuente equivocada.</div>
+                </div>
+            </section>
+            
+            <!-- CASOS PRÁCTICOS -->
+            <section class="section-header" id="casos" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">📋</span>
+                <h2>Casos Prácticos</h2>
+                <p style="color: rgba(255,255,255,0.5);">Aplica lo que aprendiste</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📋</span> Caso 1: Reglamento vs. ley</h2>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">📝 Planteamiento</div>
+                    <p style="font-size: 0.85em;">El Presidente expide un reglamento de la Ley de Migración que exige, para la residencia temporal, una <strong>"carta de buenos antecedentes"</strong> que la ley no prevé. Un extranjero la solicita y se la niegan por no presentarla.</p>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-red">
+                        <h4 style="color: var(--accent-red);">⚠️ Problema</h4>
+                        <ul style="font-size: 0.8em;">
+                            <li>¿Puede el reglamento crear requisitos no previstos en la ley?</li>
+                            <li>¿Qué principio se viola?</li>
+                            <li>¿Qué vía tiene el extranjero para impugnar?</li>
+                            <li>¿Podría un juez inaplicar el reglamento? ¿Con qué fundamento?</li>
+                        </ul>
+                    </div>
+                    <div class="card card-accent-green">
+                        <h4 style="color: var(--accent-green);">⚖️ Pistas para resolver</h4>
+                        <ul style="font-size: 0.8em;">
+                            <li>Art. 89-I: el reglamento solo "provee a la exacta observancia de las leyes"</li>
+                            <li>Principio de <strong>primacía de la ley</strong> y prohibición de <em>ultra vires</em></li>
+                            <li>Vías: amparo indirecto o contencioso ante el TFJA</li>
+                            <li>Control difuso: un juez puede inaplicarlo</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📋</span> Caso 2: Tratado vs. ley interna</h2>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">📝 Planteamiento</div>
+                    <p style="font-size: 0.85em;">México suscribe un tratado sobre acceso a la información: <em>"todas las sesiones de órganos colegiados serán públicas, salvo votación calificada"</em>. La ley interna: las sesiones del Consejo Nacional de Seguridad <em>"serán siempre reservadas"</em>. Un periodista solicita acceso.</p>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-orange">
+                        <h4 style="color: var(--accent-orange);">🤔 Preguntas</h4>
+                        <ul style="font-size: 0.8em;">
+                            <li>¿Qué jerarquía tiene este tratado?</li>
+                            <li>¿Prevalece el tratado o la ley interna?</li>
+                            <li>¿Cambiaría tu respuesta si el tratado fuera de <strong>derechos humanos</strong>?</li>
+                        </ul>
+                    </div>
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">💡 Pistas</h4>
+                        <ul style="font-size: 0.8em;">
+                            <li>Tratado no DDHH: mismo rango que la ley → se resuelve por <strong>ley posterior / ley especial</strong></li>
+                            <li>Tratado DDHH: rango constitucional → <strong>bloque de constitucionalidad</strong> y pro persona</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📋</span> Caso 3: Circulares y prácticas del SAT</h2>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">📝 Planteamiento</div>
+                    <p style="font-size: 0.85em;">Durante 10 años, el SAT permitió deducir medicamentos homeopáticos. Emite una <strong>circular</strong> que los excluye y la aplica <strong>retroactivamente</strong> a ejercicios no prescritos.</p>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-red">
+                        <h4 style="color: var(--accent-red);">🤔 Preguntas</h4>
+                        <ul style="font-size: 0.8em;">
+                            <li>¿Qué naturaleza jurídica tiene la circular? ¿Es fuente del DA?</li>
+                            <li>¿Puede modificar un criterio aplicado 10 años?</li>
+                            <li>¿Es válida la aplicación retroactiva?</li>
+                            <li>¿Qué principios pueden invocar los contribuyentes?</li>
+                        </ul>
+                    </div>
+                    <div class="card card-accent-green">
+                        <h4 style="color: var(--accent-green);">💡 Pistas</h4>
+                        <ul style="font-size: 0.8em;">
+                            <li>La circular es una disposición administrativa general de rango inferior</li>
+                            <li>Precedente administrativo + <strong>confianza legítima</strong></li>
+                            <li>Irretroactividad (art. 14) + seguridad jurídica + buena fe</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- RESUMEN -->
+            <section data-background-color="#0a0a1a" id="resumen">
+                <h2><span class="icon-lg">📋</span> Resumen de la Unidad</h2>
+                
+                <div class="grid-2">
+                    <div>
+                        <div class="card card-accent-blue fragment">
+                            <h4 style="color: var(--accent-blue);">📜 La Constitución manda</h4>
+                            <p style="font-size: 0.8em;">Fuente suprema (art. 133). De ella emanan todas las demás. Pirámide de 7 niveles + 4 reglas de antinomias.</p>
+                        </div>
+                        <div class="card card-accent-green fragment">
+                            <h4 style="color: var(--accent-green);">📚 La ley es la base de todo acto</h4>
+                            <p style="font-size: 0.8em;">+120 leyes. 4 clases: reglamentaria, orgánica, ordinaria, marco. Federal vs. general: competencias distintas.</p>
+                        </div>
+                        <div class="card card-accent-orange fragment">
+                            <h4 style="color: var(--accent-orange);">📋 El reglamento obedece a la ley</h4>
+                            <p style="font-size: 0.8em;">Art. 89-I. No puede exceder la ley (<em>ultra vires</em>). Límites: reserva de ley, primacía, control, inderogabilidad singular.</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card card-accent-pink fragment">
+                            <h4 style="color: var(--accent-pink);">🌍 Los tratados obligan</h4>
+                            <p style="font-size: 0.8em;">DDHH = rango constitucional (reforma 2011, pro persona). Otros = rango legal. Interpretación conforme.</p>
+                        </div>
+                        <div class="card card-accent-purple fragment">
+                            <h4 style="color: var(--accent-purple);">⚖️ Tribunales y doctrina</h4>
+                            <p style="font-size: 0.8em;">Jurisprudencia obligatoria (SCJN, TCC, TFJA; precedentes 2021). Doctrina: orientadora, no vinculante.</p>
+                        </div>
+                        <div class="card card-accent-red fragment">
+                            <h4 style="color: var(--accent-red);">🤝 Principios y costumbre</h4>
+                            <p style="font-size: 0.8em;">Legalidad, seguridad, debido proceso, proporcionalidad, buena fe, interés público. La costumbre no deroga la ley.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- CIERRE -->
+            <section class="title-slide" id="cierre" data-background-gradient="linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%)">
+                <span style="font-size: 4em;">🎓</span>
+                <h1 style="font-size: 2em; margin-top: 20px;">¡Listo para la Unidad 2!</h1>
+                <p style="color: rgba(255,255,255,0.6); font-size: 1.1em; margin-top: 20px;">
+                    Las fuentes no son teoría aburrida.<br>
+                    <span style="color: var(--accent-blue); font-weight: 600;">Son el ADN de todo acto de la autoridad.</span>
+                </p>
+                <div style="margin-top: 40px;">
+                    <p style="font-size: 0.8em; color: rgba(255,255,255,0.4);">
+                        <i class="fa-solid fa-book"></i> Lectura: Hamdan, Tema III<br>
+                        <i class="fa-solid fa-scale-balanced"></i> Fernández Ruiz, Caps. IV-VI · Roldán Xopa, Caps. 3-4<br>
+                        <i class="fa-solid fa-pen"></i> Preparar cuestionario de estudio
+                    </p>
+                </div>
+                <p style="margin-top: 40px; font-size: 0.7em; color: rgba(255,255,255,0.3);">
+                    Presiona <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">Esc</kbd> para ver la vista general • <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">F</kbd> para pantalla completa
+                </p>
+                <a href="../index.html" style="display: inline-block; margin-top: 20px; font-size: 0.75em; color: rgba(255,255,255,0.4); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 20px; transition: all 0.3s;"><i class="fa-solid fa-arrow-left"></i> Volver al índice de unidades</a>
+            </section>
+            
+        </div>
+    </div>
+    
+    <!-- Reveal.js -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: 'c/t',
+            width: 1100,
+            height: 700,
+            margin: 0.04,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: true,
+            controls: true,
+            controlsLayout: 'edges',
+            controlsTutorial: false,
+            disableLayout: true,
+            plugins: [RevealNotes, RevealMarkdown, RevealHighlight]
+        });
+
+        // Click en cualquier lugar avanza la diapositiva
+        document.addEventListener('click', function(e) {
+            // No interferir con links, botones, opciones de quiz, scrollbar
+            if (e.target.closest('a, button, .quiz-option, [onclick], input, select, textarea')) {
+                return;
+            }
+            // No interferir si se hace click en la scrollbar
+            var slide = Reveal.getCurrentSlide();
+            if (e.target === slide || slide.contains(e.target)) {
+                Reveal.navigateNext();
+            }
+        });
+
+        // Mapeo de teclas de volumen para scroll
+        document.addEventListener('keydown', function(e) {
+            // Teclas de volumen: 174 (bajar), 175 (subir)
+            if (e.keyCode === 174 || e.keyCode === 175) {
+                e.preventDefault();
+                var slide = Reveal.getCurrentSlide();
+                var scrollAmount = 100;
+                
+                if (e.keyCode === 175) {
+                    // Volumen arriba = scroll arriba
+                    slide.scrollTop -= scrollAmount;
+                } else {
+                    // Volumen abajo = scroll abajo
+                    slide.scrollTop += scrollAmount;
+                }
+            }
+        });
+
+        // Animación de contadores (120+ leyes, 98%)
+        function animateCounter(el) {
+            var target = parseInt(el.getAttribute('data-count'), 10);
+            var suffix = el.getAttribute('data-suffix') || '';
+            var duration = 1500;
+            var start = null;
+            
+            function step(ts) {
+                if (!start) start = ts;
+                var progress = Math.min((ts - start) / duration, 1);
+                var val = Math.floor(progress * target);
+                el.textContent = val + suffix;
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    el.textContent = target + suffix;
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        Reveal.on('slidechanged', function(event) {
+            // Contadores animados
+            event.currentSlide.querySelectorAll('[data-count]').forEach(function(el) {
+                if (!el.dataset.done) {
+                    el.dataset.done = '1';
+                    animateCounter(el);
+                }
+            });
+        });
+
+        // Botón de pantalla completa (móvil y escritorio)
+        var fullscreenBtn = document.getElementById('fullscreen-btn');
+        var fullscreenIcon = fullscreenBtn.querySelector('i');
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                var el = document.documentElement;
+                if (el.requestFullscreen) {
+                    el.requestFullscreen();
+                } else if (el.webkitRequestFullscreen) {
+                    el.webkitRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                }
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleFullscreen();
+        });
+
+        function updateFullscreenIcon() {
+            var isFull = document.fullscreenElement || document.webkitFullscreenElement;
+            if (isFull) {
+                fullscreenIcon.className = 'fa-solid fa-compress';
+                fullscreenBtn.title = 'Salir de pantalla completa';
+                fullscreenBtn.setAttribute('aria-label', 'Salir de pantalla completa');
+            } else {
+                fullscreenIcon.className = 'fa-solid fa-expand';
+                fullscreenBtn.title = 'Pantalla completa';
+                fullscreenBtn.setAttribute('aria-label', 'Pantalla completa');
+            }
+        }
+
+        document.addEventListener('fullscreenchange', updateFullscreenIcon);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
+
+        // Botón de índice: salta a la diapositiva de índice de la unidad (vía API de Reveal para evitar carreras con el hash)
+        document.getElementById('index-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            var slideIndice = document.getElementById('indice');
+            if (slideIndice) {
+                var idx = Reveal.getIndices(slideIndice);
+                Reveal.slide(idx.h, idx.v, idx.f);
+            }
+        });
+
+        // Contador de fragmentos por diapositiva (mostrados/total) junto al botón de índice
+        var fragmentCounter = document.getElementById('fragment-counter');
+        var fcCurrent = fragmentCounter.querySelector('.fc-current');
+        var fcTotal = fragmentCounter.querySelector('.fc-total');
+
+        function updateFragmentCounter() {
+            var slide = Reveal.getCurrentSlide();
+            var total = slide.querySelectorAll('.fragment').length;
+            var shown = slide.querySelectorAll('.fragment.visible').length;
+            if (total > 0) {
+                fcCurrent.textContent = shown;
+                fcTotal.textContent = total;
+                fragmentCounter.classList.add('has-fragments');
+            } else {
+                fcCurrent.textContent = 0;
+                fcTotal.textContent = 0;
+                fragmentCounter.classList.remove('has-fragments');
+            }
+        }
+
+        Reveal.on('slidechanged', updateFragmentCounter);
+        Reveal.on('fragmentshown', updateFragmentCounter);
+        Reveal.on('fragmenthidden', updateFragmentCounter);
+    </script>
+</body>
+</html>

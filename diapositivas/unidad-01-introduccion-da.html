@@ -588,9 +588,92 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.05); }
         }
+        
+        /* ====== TOP-RIGHT BUTTONS (índice + pantalla completa) ====== */
+        .fullscreen-btn, .index-btn {
+            position: fixed;
+            top: 16px;
+            z-index: 9999;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid var(--glass-border);
+            background: rgba(10,10,26,0.65);
+            backdrop-filter: blur(10px);
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
+        
+        .fullscreen-btn {
+            right: 16px;
+        }
+        
+        .index-btn {
+            right: 76px;
+        }
+        
+        .fullscreen-btn:hover, .fullscreen-btn:active,
+        .index-btn:hover, .index-btn:active {
+            border-color: var(--accent-blue);
+            background: rgba(79,140,255,0.25);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        /* ====== FRAGMENT COUNTER (mostrados/total por diapositiva) ====== */
+        .fragment-counter {
+            position: fixed;
+            top: 22px;
+            right: 142px;
+            z-index: 9999;
+            height: 38px;
+            padding: 0 14px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            background: rgba(10,10,26,0.65);
+            backdrop-filter: blur(10px);
+            color: rgba(255,255,255,0.9);
+            font-family: 'Consolas', monospace;
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            white-space: nowrap;
+        }
+        
+        .fragment-counter.has-fragments {
+            display: flex;
+        }
+        
+        .fragment-counter .fc-current {
+            color: var(--accent-blue);
+        }
     </style>
 </head>
 <body>
+    <!-- Contador de elementos por diapositiva (mostrados/total) + botones superiores -->
+    <div class="fragment-counter" id="fragment-counter" title="Elementos de la diapositiva (mostrados/total)">
+        <span class="fc-current">0</span>/<span class="fc-total">0</span>
+    </div>
+    
+    <button class="index-btn" id="index-btn" title="Ir al índice de la unidad" aria-label="Ir al índice de la unidad">
+        <i class="fa-solid fa-list-ul"></i>
+    </button>
+    
+    <button class="fullscreen-btn" id="fullscreen-btn" title="Pantalla completa" aria-label="Pantalla completa">
+        <i class="fa-solid fa-expand"></i>
+    </button>
+    
     <div class="reveal">
         <div class="slides">
         
@@ -815,8 +898,65 @@
                 </div>
             </section>
             
+            <!-- ========== ÍNDICE DE LA UNIDAD ========== -->
+            <section data-background-color="#0a0a1a" id="indice">
+                <h2><span class="icon-lg">📑</span> Índice de la Unidad 1</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Toca o haz clic en un tema para ir directo a él</p>
+                
+                <div class="grid-2" style="margin-top: 10px;">
+                    <a class="card card-accent-blue" href="#/sec-evolucion" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-blue); margin: 0;">1. Evolución histórica</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Del rey absoluto al Estado de derecho</p>
+                    </a>
+                    <a class="card card-accent-purple" href="#/sec-concepto" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-purple); margin: 0;">2. Concepto</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">¿Qué dice la doctrina?</p>
+                    </a>
+                    <a class="card card-accent-pink" href="#/sec-caracteres" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-pink); margin: 0;">3. Caracteres</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Lo que hace único al DA</p>
+                    </a>
+                    <a class="card card-accent-green" href="#/sec-funcion" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-green); margin: 0;">4. Función administrativa</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">¿Quién hace qué?</p>
+                    </a>
+                    <a class="card card-accent-orange" href="#/sec-relaciones" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-orange); margin: 0;">5. Relaciones con otras ramas</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">El DA y sus amigos</p>
+                    </a>
+                    <a class="card card-accent-red" href="#/sec-principios" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-red); margin: 0;">6. Principios</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Las reglas del juego</p>
+                    </a>
+                    <a class="card card-accent-blue" href="#/doctrina-comparada" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-blue); margin: 0;">📖 Doctrina comparada</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Fraga, Roldán Xopa y Fernández Ruiz</p>
+                    </a>
+                    <a class="card card-accent-green" href="#/legislacion" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-green); margin: 0;">📜 Legislación aplicable</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Arts. 49, 90 y 113</p>
+                    </a>
+                    <a class="card card-accent-green" href="#/quiz" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-green); margin: 0;">🧠 Autoevaluación</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">5 preguntas interactivas</p>
+                    </a>
+                    <a class="card card-accent-orange" href="#/sintesis" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-orange); margin: 0;">🗂️ Esquema de síntesis</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Todo en una imagen</p>
+                    </a>
+                    <a class="card card-accent-red" href="#/casos" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-red); margin: 0;">📋 Casos prácticos</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Aplica lo aprendido</p>
+                    </a>
+                    <a class="card card-accent-purple" href="#/resumen" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-purple); margin: 0;">📋 Resumen de la unidad</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Repaso final</p>
+                    </a>
+                </div>
+            </section>
+            
             <!-- ========== SECCIÓN 1: EVOLUCIÓN HISTÓRICA ========== -->
-            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+            <section class="section-header" id="sec-evolucion" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
                 <span class="section-icon">📜</span>
                 <h2>Evolución Histórica</h2>
                 <p style="color: rgba(255,255,255,0.5);">Del "el rey manda" al "la ley manda"</p>
@@ -1057,7 +1197,7 @@
             </section>
             
             <!-- Doctrina comparada -->
-            <section data-background-color="#0a0a1a">
+            <section data-background-color="#0a0a1a" id="doctrina-comparada">
                 <h2><span class="icon-lg">📖</span> Doctrina comparada</h2>
                 <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">¿Qué dicen los grandes autores mexicanos?</p>
                 
@@ -1099,7 +1239,7 @@
             </section>
             
             <!-- SECCIÓN 2: CONCEPTO -->
-            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+            <section class="section-header" id="sec-concepto" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
                 <span class="section-icon">📚</span>
                 <h2>Concepto de Derecho Administrativo</h2>
                 <p style="color: rgba(255,255,255,0.5);">¿Qué demonios es esto?</p>
@@ -1169,7 +1309,7 @@
             </section>
             
             <!-- SECCIÓN 3: CARACTERES -->
-            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+            <section class="section-header" id="sec-caracteres" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
                 <span class="section-icon">⚡</span>
                 <h2>Caracteres del Derecho Administrativo</h2>
                 <p style="color: rgba(255,255,255,0.5);">Lo que lo hace diferente de todo lo demás</p>
@@ -1234,7 +1374,7 @@
             </section>
             
             <!-- SECCIÓN 4: FUNCIÓN ADMINISTRATIVA -->
-            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+            <section class="section-header" id="sec-funcion" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
                 <span class="section-icon">🏛️</span>
                 <h2>La Función Administrativa</h2>
                 <p style="color: rgba(255,255,255,0.5);">¿Quién hace qué en el Estado?</p>
@@ -1320,7 +1460,7 @@
             </section>
             
             <!-- SECCIÓN 5: RELACIONES -->
-            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+            <section class="section-header" id="sec-relaciones" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
                 <span class="section-icon">🔗</span>
                 <h2>Relaciones con otras ramas</h2>
                 <p style="color: rgba(255,255,255,0.5);">El DA no vive solo</p>
@@ -1379,7 +1519,7 @@
             </section>
             
             <!-- SECCIÓN 6: PRINCIPIOS -->
-            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+            <section class="section-header" id="sec-principios" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
                 <span class="section-icon">⚖️</span>
                 <h2>Principios del Derecho Administrativo</h2>
                 <p style="color: rgba(255,255,255,0.5);">Las reglas del juego</p>
@@ -1491,7 +1631,7 @@
             </section>
             
             <!-- Legislación comentada -->
-            <section data-background-color="#0a0a1a">
+            <section data-background-color="#0a0a1a" id="legislacion">
                 <h2><span class="icon-lg">📜</span> Legislación aplicable</h2>
                 <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Los artículos constitucionales que fundamentan el DA</p>
                 
@@ -1515,7 +1655,7 @@
             </section>
             
             <!-- QUIZ -->
-            <section data-background-color="#0a0a1a">
+            <section data-background-color="#0a0a1a" id="quiz">
                 <h2><span class="icon-lg">🧠</span> Autoevaluación</h2>
                 <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Pon a prueba lo que aprendiste</p>
                 
@@ -1601,7 +1741,7 @@
             </section>
             
             <!-- ESQUEMA DE SÍNTESIS -->
-            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+            <section class="section-header" id="sintesis" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
                 <span class="section-icon">🗂️</span>
                 <h2>Esquema de Síntesis</h2>
                 <p style="color: rgba(255,255,255,0.5);">Todo lo que vimos en una imagen</p>
@@ -1643,7 +1783,7 @@
             </section>
             
             <!-- CASOS PRÁCTICOS -->
-            <section class="section-header" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+            <section class="section-header" id="casos" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
                 <span class="section-icon">📋</span>
                 <h2>Casos Prácticos</h2>
                 <p style="color: rgba(255,255,255,0.5);">Aplica lo que aprendiste</p>
@@ -1695,7 +1835,7 @@
             </section>
             
             <!-- RESUMEN -->
-            <section data-background-color="#0a0a1a">
+            <section data-background-color="#0a0a1a" id="resumen">
                 <h2><span class="icon-lg">📋</span> Resumen de la Unidad</h2>
                 
                 <div class="grid-2">
@@ -1731,7 +1871,7 @@
             </section>
             
             <!-- CIERRE -->
-            <section class="title-slide" data-background-gradient="linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%)">
+            <section class="title-slide" id="cierre" data-background-gradient="linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%)">
                 <span style="font-size: 4em;">🎓</span>
                 <h1 style="font-size: 2em; margin-top: 20px;">¡Listo para la Unidad 1!</h1>
                 <p style="color: rgba(255,255,255,0.6); font-size: 1.1em; margin-top: 20px;">
@@ -1871,6 +2011,82 @@
                 }, 1000);
             }
         });
+
+        // Botón de pantalla completa (móvil y escritorio)
+        var fullscreenBtn = document.getElementById('fullscreen-btn');
+        var fullscreenIcon = fullscreenBtn.querySelector('i');
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                var el = document.documentElement;
+                if (el.requestFullscreen) {
+                    el.requestFullscreen();
+                } else if (el.webkitRequestFullscreen) {
+                    el.webkitRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                }
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleFullscreen();
+        });
+
+        function updateFullscreenIcon() {
+            var isFull = document.fullscreenElement || document.webkitFullscreenElement;
+            if (isFull) {
+                fullscreenIcon.className = 'fa-solid fa-compress';
+                fullscreenBtn.title = 'Salir de pantalla completa';
+                fullscreenBtn.setAttribute('aria-label', 'Salir de pantalla completa');
+            } else {
+                fullscreenIcon.className = 'fa-solid fa-expand';
+                fullscreenBtn.title = 'Pantalla completa';
+                fullscreenBtn.setAttribute('aria-label', 'Pantalla completa');
+            }
+        }
+
+        document.addEventListener('fullscreenchange', updateFullscreenIcon);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
+
+        // Botón de índice: salta a la diapositiva de índice de la unidad (vía API de Reveal para evitar carreras con el hash)
+        document.getElementById('index-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            var slideIndice = document.getElementById('indice');
+            if (slideIndice) {
+                var idx = Reveal.getIndices(slideIndice);
+                Reveal.slide(idx.h, idx.v, idx.f);
+            }
+        });
+
+        // Contador de fragmentos por diapositiva (mostrados/total) junto al botón de índice
+        var fragmentCounter = document.getElementById('fragment-counter');
+        var fcCurrent = fragmentCounter.querySelector('.fc-current');
+        var fcTotal = fragmentCounter.querySelector('.fc-total');
+
+        function updateFragmentCounter() {
+            var slide = Reveal.getCurrentSlide();
+            var total = slide.querySelectorAll('.fragment').length;
+            var shown = slide.querySelectorAll('.fragment.visible').length;
+            if (total > 0) {
+                fcCurrent.textContent = shown;
+                fcTotal.textContent = total;
+                fragmentCounter.classList.add('has-fragments');
+            } else {
+                fcCurrent.textContent = 0;
+                fcTotal.textContent = 0;
+                fragmentCounter.classList.remove('has-fragments');
+            }
+        }
+
+        Reveal.on('slidechanged', updateFragmentCounter);
+        Reveal.on('fragmentshown', updateFragmentCounter);
+        Reveal.on('fragmenthidden', updateFragmentCounter);
     </script>
 </body>
 </html>
