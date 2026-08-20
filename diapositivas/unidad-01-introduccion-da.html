@@ -526,9 +526,84 @@
         }
         
         .reveal .slide-number {
-            font-family: 'Inter', sans-serif;
-            font-size: 14px;
-            color: rgba(255,255,255,0.5);
+            display: none !important;
+        }
+        
+        /* ====== NAVEGADOR DE DIAPOSITIVAS (clicable) ====== */
+        .slide-nav {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            z-index: 9999;
+            height: 38px;
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            background: rgba(10,10,26,0.7);
+            backdrop-filter: blur(10px);
+            color: rgba(255,255,255,0.7);
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        .slide-nav:hover {
+            border-color: var(--accent-blue);
+            color: white;
+        }
+        
+        .slide-nav .slide-nav-display {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .slide-nav .slide-nav-current {
+            color: var(--accent-blue);
+        }
+        
+        .slide-nav .slide-nav-sep {
+            color: rgba(255,255,255,0.3);
+            margin: 0 2px;
+        }
+        
+        .slide-nav .slide-nav-input {
+            display: none;
+            width: 50px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--accent-blue);
+            color: var(--accent-blue);
+            font-family: 'Consolas', monospace;
+            font-size: 1em;
+            font-weight: 700;
+            text-align: center;
+            outline: none;
+            padding: 2px 0;
+            -moz-appearance: textfield;
+        }
+        
+        .slide-nav .slide-nav-input::-webkit-outer-spin-button,
+        .slide-nav .slide-nav-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        .slide-nav.editing .slide-nav-display {
+            display: none;
+        }
+        
+        .slide-nav.editing .slide-nav-input {
+            display: inline-block;
         }
         
         /* ====== SCROLL VERTICAL (TODAS LAS DIAPOSITIVAS) ====== */
@@ -673,6 +748,16 @@
     <button class="fullscreen-btn" id="fullscreen-btn" title="Pantalla completa" aria-label="Pantalla completa">
         <i class="fa-solid fa-expand"></i>
     </button>
+    
+    <!-- Navegador de diapositivas (clickeable para saltar a un número) -->
+    <div class="slide-nav" id="slide-nav" title="Clic para ir a una diapositiva">
+        <div class="slide-nav-display">
+            <span class="slide-nav-current" id="slide-nav-current">1</span>
+            <span class="slide-nav-sep">/</span>
+            <span id="slide-nav-total">1</span>
+        </div>
+        <input type="number" class="slide-nav-input" id="slide-nav-input" min="1" placeholder="">
+    </div>
     
     <div class="reveal">
         <div class="slides">
@@ -1958,7 +2043,7 @@
     <script>
         Reveal.initialize({
             hash: true,
-            slideNumber: 'c/t',
+            slideNumber: false,
             width: 1100,
             height: 700,
             margin: 0.04,
@@ -2142,6 +2227,64 @@
         Reveal.on('slidechanged', updateFragmentCounter);
         Reveal.on('fragmentshown', updateFragmentCounter);
         Reveal.on('fragmenthidden', updateFragmentCounter);
+
+        // Navegador de diapositivas: clickeable para saltar a un número
+        var slideNav = document.getElementById('slide-nav');
+        var slideNavCurrent = document.getElementById('slide-nav-current');
+        var slideNavTotal = document.getElementById('slide-nav-total');
+        var slideNavInput = document.getElementById('slide-nav-input');
+        var slideNavDisplay = slideNav.querySelector('.slide-nav-display');
+
+        function updateSlideNav() {
+            var indices = Reveal.getIndices();
+            var total = Reveal.getTotalSlides();
+            slideNavCurrent.textContent = indices.h + 1;
+            slideNavTotal.textContent = total;
+        }
+
+        function openSlideNavInput() {
+            var indices = Reveal.getIndices();
+            slideNavInput.value = indices.h + 1;
+            slideNav.classList.add('editing');
+            slideNavInput.focus();
+            slideNavInput.select();
+        }
+
+        function closeSlideNavInput() {
+            slideNav.classList.remove('editing');
+            updateSlideNav();
+        }
+
+        function navigateToSlide() {
+            var num = parseInt(slideNavInput.value, 10);
+            var total = Reveal.getTotalSlides();
+            if (!isNaN(num) && num >= 1 && num <= total) {
+                Reveal.slide(num - 1);
+            }
+            closeSlideNavInput();
+        }
+
+        slideNav.addEventListener('click', function(e) {
+            if (e.target === slideNavInput) return;
+            e.stopPropagation();
+            openSlideNavInput();
+        });
+
+        slideNavInput.addEventListener('keydown', function(e) {
+            e.stopPropagation();
+            if (e.key === 'Enter') {
+                navigateToSlide();
+            } else if (e.key === 'Escape') {
+                closeSlideNavInput();
+            }
+        });
+
+        slideNavInput.addEventListener('blur', function() {
+            closeSlideNavInput();
+        });
+
+        Reveal.on('slidechanged', updateSlideNav);
+        updateSlideNav();
     </script>
 </body>
 </html>
