@@ -1,0 +1,2319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 3 — La Organización Administrativa</title>
+    
+    <!-- Reveal.js CSS + Theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --r-background-color: #0a0a1a;
+            --r-main-font: 'Inter', sans-serif;
+            --r-heading-font: 'Playfair Display', serif;
+            --r-main-font-size: 24px;
+            --accent-blue: #4f8cff;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --glass: rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.1);
+        }
+        
+        .reveal {
+            font-family: var(--r-main-font);
+        }
+        
+        .reveal .slides {
+            text-align: left;
+        }
+        
+        .reveal .slides section {
+            padding: 20px 40px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .reveal .slides section * {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .reveal .slides p, .reveal .slides li, .reveal .slides h1, .reveal .slides h2, .reveal .slides h3, .reveal .slides h4 {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+            margin-right: 0;
+            padding-right: 0;
+        }
+        
+        /* ====== TITLE SLIDE ====== */
+        .reveal .slides section.title-slide {
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%);
+        }
+        
+        .reveal .slides section.title-slide h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4em;
+            font-weight: 900;
+            background: linear-gradient(135deg, #4f8cff, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .reveal .slides section.title-slide .subtitle {
+            font-size: 1em;
+            color: rgba(255,255,255,0.6);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .reveal .slides section.title-slide .unit-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.7em;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+        
+        /* ====== SECTION HEADERS ====== */
+        .reveal .slides section.section-header {
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%);
+        }
+        
+        .reveal .slides section.section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4f8cff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+        
+        .reveal .slides section.section-header .section-icon {
+            font-size: 2.5em;
+            margin-bottom: 14px;
+            display: block;
+        }
+        
+        /* ====== CONTENT CARDS ====== */
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 14px 16px;
+            margin: 8px 0;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .card p, .card li, .card h4 {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+            font-size: 0.85em;
+        }
+        
+        .card-accent-blue { border-left: 4px solid var(--accent-blue); }
+        .card-accent-purple { border-left: 4px solid var(--accent-purple); }
+        .card-accent-pink { border-left: 4px solid var(--accent-pink); }
+        .card-accent-green { border-left: 4px solid var(--accent-green); }
+        .card-accent-orange { border-left: 4px solid var(--accent-orange); }
+        .card-accent-red { border-left: 4px solid var(--accent-red); }
+        
+        /* ====== GRIDS ====== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 14px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 14px;
+        }
+        
+        .grid-2 > .card, .grid-3 > .card {
+            margin: 0;
+            min-width: 0;
+        }
+        
+        /* ====== HEADINGS ====== */
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            color: white;
+            font-weight: 700;
+        }
+        
+        .reveal h2 {
+            font-size: 1.4em;
+            margin-bottom: 14px;
+        }
+        
+        .reveal h3 {
+            font-size: 1.05em;
+            color: var(--accent-blue);
+            margin-bottom: 8px;
+        }
+        
+        .reveal h4 {
+            font-size: 0.9em;
+            color: var(--accent-purple);
+        }
+        
+        /* ====== TEXT ====== */
+        .reveal p, .reveal li {
+            color: rgba(255,255,255,0.85);
+            line-height: 1.6;
+        }
+        
+        .reveal ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .reveal ul li {
+            padding: 3px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .reveal ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+        
+        /* ====== HIGHLIGHTS ====== */
+        .highlight {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+        
+        .highlight-purple {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+        
+        .highlight-pink {
+            color: var(--accent-pink);
+            font-weight: 600;
+        }
+        
+        .highlight-green {
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+        
+        .highlight-orange {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+        
+        /* ====== EMOJI ICONS ====== */
+        .icon-lg {
+            font-size: 1.6em;
+            display: inline-block;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        
+        .icon-xl {
+            font-size: 3em;
+            display: block;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        
+        /* ====== TIMELINE ====== */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 10px;
+            padding: 8px 14px;
+            background: var(--glass);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 18px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            border: 2px solid #0a0a1a;
+        }
+        
+        .timeline-item .year {
+            font-size: 0.75em;
+            color: var(--accent-blue);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .timeline-item .event {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.8);
+            margin-top: 4px;
+        }
+        
+        /* ====== QUOTE / DEFINITION ====== */
+        .definition-box {
+            background: linear-gradient(135deg, rgba(79,140,255,0.15), rgba(168,85,247,0.15));
+            border: 1px solid rgba(79,140,255,0.3);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin: 14px 0;
+            position: relative;
+        }
+        
+        .definition-box::before {
+            content: '📖';
+            font-size: 1.5em;
+            position: absolute;
+            top: -12px;
+            left: 20px;
+        }
+        
+        .definition-box .def-title {
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        
+        .definition-box .def-text {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.5;
+        }
+        
+        /* ====== COMPARISON TABLE ====== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 0.65em;
+            margin-top: 12px;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 8px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 7px 12px;
+            border-bottom: 1px solid var(--glass-border);
+            color: rgba(255,255,255,0.85);
+        }
+        
+        .comparison-table tr:nth-child(even) td {
+            background: var(--glass);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* ====== FUN FACT / CURIOSITY ====== */
+        .fun-fact {
+            background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(239,68,68,0.1));
+            border: 1px solid rgba(245,158,11,0.3);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 10px 0;
+            font-size: 0.85em;
+        }
+        
+        .fun-fact .ff-label {
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* ====== QUIZ CARD ====== */
+        .quiz-card {
+            background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(79,140,255,0.15));
+            border: 1px solid rgba(16,185,129,0.3);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin: 10px 0;
+        }
+        
+        .quiz-card .quiz-q {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+        
+        .quiz-option {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 7px 14px;
+            margin: 4px 0;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-option:hover {
+            border-color: var(--accent-green);
+            background: rgba(16,185,129,0.1);
+        }
+        
+        .quiz-option.correct {
+            border-color: var(--accent-green);
+            background: rgba(16,185,129,0.2);
+            color: var(--accent-green);
+        }
+        
+        .quiz-option.wrong {
+            border-color: var(--accent-red);
+            background: rgba(239,68,68,0.1);
+            opacity: 0.6;
+        }
+        
+        .quiz-explanation {
+            font-size: 0.75em;
+            color: rgba(255,255,255,0.7);
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: rgba(16,185,129,0.08);
+            border-left: 3px solid var(--accent-green);
+            border-radius: 6px;
+        }
+        
+        /* ====== PRINCIPLE CARDS ====== */
+        .principle-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+        }
+        
+        .principle-card .p-icon {
+            font-size: 1.6em;
+            margin-bottom: 6px;
+        }
+        
+        .principle-card .p-name {
+            font-weight: 700;
+            font-size: 0.8em;
+            color: white;
+            margin-bottom: 4px;
+        }
+        
+        .principle-card .p-desc {
+            font-size: 0.65em;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.3;
+        }
+        
+        /* ====== REAL LIFE EXAMPLE ====== */
+        .real-life {
+            background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(168,85,247,0.15));
+            border: 1px solid rgba(236,72,153,0.3);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 10px 0;
+        }
+        
+        .real-life .rl-label {
+            color: var(--accent-pink);
+            font-weight: 700;
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        
+        /* ====== LEGAL BOX (green citations) ====== */
+        .legal-box {
+            background: linear-gradient(135deg, rgba(16,185,129,0.13), rgba(16,185,129,0.05));
+            border: 1px solid rgba(16,185,129,0.3);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 10px 0;
+        }
+        
+        .legal-box .lb-label {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        
+        .legal-box .lb-text {
+            font-size: 0.82em;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.5;
+        }
+        
+        /* ====== COUNTER ====== */
+        .counter-number {
+            font-size: 3em;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        .counter-label {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8em;
+            margin-top: 8px;
+        }
+        
+        /* ====== PROGRESS BAR ====== */
+        .progress-bar {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            height: 8px;
+            margin: 8px 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar .fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            transition: width 1s ease;
+        }
+        
+        /* ====== REVEAL OVERRIDES ====== */
+        .reveal .slides section .fragment.visible {
+            opacity: 1;
+        }
+        
+        .reveal .slide-number {
+            display: none !important;
+        }
+        
+        /* ====== NAVEGADOR DE DIAPOSITIVAS (clicable) ====== */
+        .slide-nav {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            z-index: 9999;
+            height: 38px;
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            background: rgba(10,10,26,0.7);
+            backdrop-filter: blur(10px);
+            color: rgba(255,255,255,0.7);
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        .slide-nav:hover {
+            border-color: var(--accent-blue);
+            color: white;
+        }
+        
+        .slide-nav .slide-nav-display {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .slide-nav .slide-nav-current {
+            color: var(--accent-blue);
+        }
+        
+        .slide-nav .slide-nav-sep {
+            color: rgba(255,255,255,0.3);
+            margin: 0 2px;
+        }
+        
+        .slide-nav .slide-nav-input {
+            display: none;
+            width: 50px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--accent-blue);
+            color: var(--accent-blue);
+            font-family: 'Consolas', monospace;
+            font-size: 1em;
+            font-weight: 700;
+            text-align: center;
+            outline: none;
+            padding: 2px 0;
+            -moz-appearance: textfield;
+        }
+        
+        .slide-nav .slide-nav-input::-webkit-outer-spin-button,
+        .slide-nav .slide-nav-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        .slide-nav.editing .slide-nav-display {
+            display: none;
+        }
+        
+        .slide-nav.editing .slide-nav-input {
+            display: inline-block;
+        }
+        
+        /* ====== SCROLL VERTICAL (TODAS LAS DIAPOSITIVAS) ====== */
+        .reveal .slides section {
+            overflow-y: auto;
+            max-height: 100%;
+            padding-bottom: 40px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.05);
+            border-radius: 3px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-thumb {
+            background: rgba(79,140,255,0.4);
+            border-radius: 3px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-thumb:hover {
+            background: rgba(79,140,255,0.6);
+        }
+        
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .reveal .slides section {
+                padding: 20px 30px;
+            }
+        }
+        
+        /* ====== SPECIAL EFFECTS ====== */
+        .glow-text {
+            text-shadow: 0 0 20px rgba(79,140,255,0.5), 0 0 40px rgba(168,85,247,0.3);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* ====== TOP-RIGHT BUTTONS (índice + pantalla completa) ====== */
+        .fullscreen-btn, .index-btn {
+            position: fixed;
+            top: 16px;
+            z-index: 9999;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid var(--glass-border);
+            background: rgba(10,10,26,0.65);
+            backdrop-filter: blur(10px);
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
+        
+        .fullscreen-btn {
+            right: 16px;
+        }
+        
+        .index-btn {
+            right: 76px;
+        }
+        
+        .fullscreen-btn:hover, .fullscreen-btn:active,
+        .index-btn:hover, .index-btn:active {
+            border-color: var(--accent-blue);
+            background: rgba(79,140,255,0.25);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        /* ====== FRAGMENT COUNTER (mostrados/total por diapositiva) ====== */
+        .fragment-counter {
+            position: fixed;
+            top: 22px;
+            right: 142px;
+            z-index: 9999;
+            height: 38px;
+            padding: 0 14px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            background: rgba(10,10,26,0.65);
+            backdrop-filter: blur(10px);
+            color: rgba(255,255,255,0.9);
+            font-family: 'Consolas', monospace;
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            white-space: nowrap;
+        }
+        
+        .fragment-counter.has-fragments {
+            display: flex;
+        }
+        
+        .fragment-counter .fc-current {
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+    <!-- Contador de elementos por diapositiva (mostrados/total) + botones superiores -->
+    <div class="fragment-counter" id="fragment-counter" title="Elementos de la diapositiva (mostrados/total)">
+        <span class="fc-current">0</span>/<span class="fc-total">0</span>
+    </div>
+    
+    <button class="index-btn" id="index-btn" title="Ir al índice de la unidad" aria-label="Ir al índice de la unidad">
+        <i class="fa-solid fa-list-ul"></i>
+    </button>
+    
+    <button class="fullscreen-btn" id="fullscreen-btn" title="Pantalla completa" aria-label="Pantalla completa">
+        <i class="fa-solid fa-expand"></i>
+    </button>
+    
+    <!-- Navegador de diapositivas (clickeable para saltar a un número) -->
+    <div class="slide-nav" id="slide-nav" title="Clic para ir a una diapositiva">
+        <div class="slide-nav-display">
+            <span class="slide-nav-current" id="slide-nav-current">1</span>
+            <span class="slide-nav-sep">/</span>
+            <span id="slide-nav-total">1</span>
+        </div>
+        <input type="number" class="slide-nav-input" id="slide-nav-input" min="1" placeholder="">
+    </div>
+    
+    <div class="reveal">
+        <div class="slides">
+        
+            <!-- ========== PORTADA ========== -->
+            <section class="title-slide" data-background-gradient="linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%)">
+                <span class="unit-badge">Unidad 3</span>
+                <h1 style="margin-top: 30px;">La Organización<br>Administrativa</h1>
+                <p class="subtitle">¿Cómo se estructura el aparato del Estado?</p>
+                <p style="color: rgba(255,255,255,0.4); font-size: 0.7em; margin-top: 40px;">
+                    <i class="fa-solid fa-graduation-cap"></i> Mtro. Sergio Armando Cortina Ceballos<br>
+                    <i class="fa-solid fa-building-columns"></i> Universidad Cristóbal Colón · 2026
+                </p>
+                <a href="../index.html" style="display: inline-block; margin-top: 24px; font-size: 0.7em; color: rgba(255,255,255,0.3); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px; transition: all 0.3s;"><i class="fa-solid fa-arrow-left"></i> Volver al índice</a>
+            </section>
+            
+            <!-- ========== ¿DÓNDE ESTAMOS? ========== -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗺️</span> ¿Dónde estamos en el curso?</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 16px;">Unidad 1 nos dijo <em>qué es</em> el DA. Unidad 2 nos dijo <em>de dónde sale</em>. Unidad 3 nos dice <em>cómo se organiza</em>.</p>
+                
+                <div style="font-family: 'Consolas', monospace; font-size: 0.62em; line-height: 1.5; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+                        <!-- Fundamentos -->
+                        <div>
+                            <div style="color: var(--accent-blue); font-weight: 700; margin-bottom: 6px; font-size: 1.05em;">📘 FUNDAMENTOS</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-blue);">1.</span> Introducción al DA<br>
+                                <span style="color: var(--accent-blue);">2.</span> Fuentes del DA
+                            </div>
+                            
+                            <!-- Organización -->
+                            <div style="color: var(--accent-green); font-weight: 700; margin-top: 12px; margin-bottom: 6px; font-size: 1.05em;">🏛️ ORGANIZACIÓN</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-green);">3.</span> <strong style="color: var(--accent-green);">Organización Administrativa ◀ ESTAMOS AQUÍ</strong><br>
+                                <span style="color: var(--accent-green);">4.</span> El Servidor Público
+                            </div>
+                        </div>
+                        
+                        <!-- Acto y Procedimiento -->
+                        <div>
+                            <div style="color: var(--accent-purple); font-weight: 700; margin-bottom: 6px; font-size: 1.05em;">📜 ACTO Y PROCEDIMIENTO</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-purple);">5.</span> Teoría del Acto Administrativo<br>
+                                <span style="color: var(--accent-purple);">6.</span> El Procedimiento Administrativo<br>
+                                <span style="color: var(--accent-purple);">7.</span> Ineficacias del Acto
+                            </div>
+                            
+                            <!-- Contratación -->
+                            <div style="color: var(--accent-orange); font-weight: 700; margin-top: 12px; margin-bottom: 6px; font-size: 1.05em;">📋 CONTRATACIÓN Y SERVICIOS</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-orange);">8.</span> Contrato Administrativo<br>
+                                <span style="color: var(--accent-orange);">9.</span> Servicio Público y Concesión
+                            </div>
+                        </div>
+                        
+                        <!-- Control y Responsabilidades -->
+                        <div>
+                            <div style="color: var(--accent-pink); font-weight: 700; margin-bottom: 6px; font-size: 1.05em;">🔍 CONTROL</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-pink);">10.</span> Control de la AP<br>
+                                <span style="color: var(--accent-pink);">11.</span> Patrimonio y Expropiación<br>
+                                <span style="color: var(--accent-pink);">12.</span> Responsabilidad Patrimonial
+                            </div>
+                            
+                            <!-- Impugnación -->
+                            <div style="color: var(--accent-red); font-weight: 700; margin-top: 12px; margin-bottom: 6px; font-size: 1.05em;">⚖️ IMPUGNACIÓN</div>
+                            <div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">
+                                <span style="color: var(--accent-red);">13.</span> Recursos Administrativos<br>
+                                <span style="color: var(--accent-red);">14.</span> Amparo y Controversia<br>
+                                <span style="color: var(--accent-red);">15.</span> Responsabilidades
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment" style="margin-top: 12px;">
+                    <div class="ff-label">💡 Por qué importa esta unidad</div>
+                    <p style="font-size: 0.8em;">Para saber si un acto de la administración es <strong>válido</strong>, hay que saber <strong>qué órgano lo emitió, con qué competencia y bajo qué jerarquía</strong>. Sin organización administrativa no hay acto válido.</p>
+                </div>
+            </section>
+            
+            <!-- ========== ¿POR QUÉ IMPORTA? ========== -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🤔</span> ¿Por qué estudiar las formas de organización?</h2>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Dato que te sorprenderá</div>
+                    <p><strong>México tiene más de 300 entidades paraestatales y decenas de órganos constitucionales autónomos.</strong> Toda esa estructura se explica con apenas cinco formas de organización que vamos a dominar hoy.</p>
+                </div>
+                
+                <div class="grid-3 fragment">
+                    <div class="card card-accent-blue" style="text-align: center;">
+                        <span class="icon-lg">🏛️</span>
+                        <p style="font-size: 0.8em;"><strong>Quién decide</strong><br>La forma de organización define si un órgano tiene personalidad jurídica y autonomía.</p>
+                    </div>
+                    <div class="card card-accent-purple" style="text-align: center;">
+                        <span class="icon-lg">⚖️</span>
+                        <p style="font-size: 0.8em;"><strong>Jerarquía = mando</strong><br>De la centralización nace el poder de mandar, vigilar y sancionar.</p>
+                    </div>
+                    <div class="card card-accent-pink" style="text-align: center;">
+                        <span class="icon-lg">🛡️</span>
+                        <p style="font-size: 0.8em;"><strong>Tu defensa</strong><br>Impugnar un acto mal emitido es impugnar la competencia de quien lo dictó.</p>
+                    </div>
+                </div>
+                
+                <p class="fragment" style="text-align: center; color: rgba(255,255,255,0.5); font-size: 0.8em; margin-top: 24px;">
+                    ⬇️ <em>Usa las flechas del teclado o haz clic para avanzar</em>
+                </p>
+            </section>
+            
+            <!-- CANTIDAD DE ORGANISMOS -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🧮</span> ¿Cuánta organización administrativa hay?</h2>
+                
+                <div class="grid-2" style="margin-top: 30px;">
+                    <div class="card card-accent-blue fragment" style="text-align: center;">
+                        <div class="counter-number" data-count="20" data-suffix="">0</div>
+                        <div class="counter-label">Secretarías de Estado en la administración centralizada (LOAPF)</div>
+                    </div>
+                    <div class="card card-accent-purple fragment" style="text-align: center;">
+                        <div class="counter-number" data-count="300" data-suffix="+">0+</div>
+                        <div class="counter-label">entidades paraestatales y órganos autónomos en el aparato federal</div>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment" id="dato-final-leyes" style="margin-top: 30px;">
+                    <div class="ff-label">📚 Y todo se reduce a unas pocas formas</div>
+                    <p style="font-size: 0.9em;">Centralización, desconcentración, descentralización, órganos con competencia funcional propia y órganos constitucionales autónomos son las <strong>5 llaves</strong> para descifrar la estructura del Estado. 🔑</p>
+                </div>
+            </section>
+            
+            <!-- ========== PLAN DE LA UNIDAD ========== -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗺️</span> Qué veremos hoy</h2>
+                
+                <div class="grid-2">
+                    <div>
+                        <div class="card card-accent-blue fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">🏛️</span>
+                            <div>
+                                <h4 style="color: var(--accent-blue); margin: 0;">1. Bases constitucionales</h4>
+                                <p style="font-size: 0.75em; margin: 0;">Arts. 90, 93 y 89 CPEUM</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-green fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">🧩</span>
+                            <div>
+                                <h4 style="color: var(--accent-green); margin: 0;">2. Formas de organización</h4>
+                                <p style="font-size: 0.75em; margin: 0;">Centralización, desconcentración, descentralización</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-orange fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">🏢</span>
+                            <div>
+                                <h4 style="color: var(--accent-orange); margin: 0;">3. APF (LOAPF)</h4>
+                                <p style="font-size: 0.75em; margin: 0;">Centralizada y paraestatal</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-pink fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">🪜</span>
+                            <div>
+                                <h4 style="color: var(--accent-pink); margin: 0;">4. Jerarquía y poderes</h4>
+                                <p style="font-size: 0.75em; margin: 0;">Los 8 poderes jerárquicos</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="card card-accent-purple fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">🎯</span>
+                            <div>
+                                <h4 style="color: var(--accent-purple); margin: 0;">5. Competencia</h4>
+                                <p style="font-size: 0.75em; margin: 0;">Concepto, clases y conflictos (art. 24)</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-red fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">🧷</span>
+                            <div>
+                                <h4 style="color: var(--accent-red); margin: 0;">6. Sectorización</h4>
+                                <p style="font-size: 0.75em; margin: 0;">Coordinadores de sector</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-blue fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">🛡️</span>
+                            <div>
+                                <h4 style="color: var(--accent-blue); margin: 0;">7. Reguladores autónomos</h4>
+                                <p style="font-size: 0.75em; margin: 0;">"Desconcentración de nuevo tipo"</p>
+                            </div>
+                        </div>
+                        <div class="card card-accent-green fragment" style="display: flex; align-items: center; gap: 16px;">
+                            <span style="font-size: 2em;">🧠</span>
+                            <div>
+                                <h4 style="color: var(--accent-green); margin: 0;">+ Autoevaluación y casos</h4>
+                                <p style="font-size: 0.75em; margin: 0;">Aplica lo aprendido</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- MAPA CONCEPTUAL -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗺️</span> Mapa Conceptual</h2>
+                
+                <div style="font-family: 'Consolas', monospace; font-size: 0.62em; line-height: 1.6; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 18px 22px; border: 1px solid var(--glass-border);">
+                    <div style="text-align: center; font-weight: 700; font-size: 1.1em; margin-bottom: 12px; color: var(--accent-blue);">Organización Administrativa</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+                        <div>
+                            <div style="color: var(--accent-green); font-weight: 700; margin-bottom: 4px;">🏛️ Bases constitucionales</div>
+                            <div style="padding-left: 12px; font-size: 0.9em; color: rgba(255,255,255,0.6);">
+                                ├── Art. 90 CPEUM (centralizada y paraestatal)<br>
+                                ├── Art. 93 CPEUM (informar al Congreso)<br>
+                                └── Art. 89 CPEUM (facultades del Presidente)
+                            </div>
+                            <div style="color: var(--accent-blue); font-weight: 700; margin-top: 10px; margin-bottom: 4px;">🧩 Formas de organización</div>
+                            <div style="padding-left: 12px; font-size: 0.9em; color: rgba(255,255,255,0.6);">
+                                ├── Centralización<br>
+                                ├── Desconcentración (art. 17 LOAPF)<br>
+                                ├── Descentralización<br>
+                                │&nbsp;&nbsp;&nbsp;├── Por servicio<br>
+                                │&nbsp;&nbsp;&nbsp;├── Por región<br>
+                                │&nbsp;&nbsp;&nbsp;└── Por colaboración<br>
+                                ├── Órganos c. funcional propia<br>
+                                └── Órganos constitucionales autónomos
+                            </div>
+                        </div>
+                        <div>
+                            <div style="color: var(--accent-orange); font-weight: 700; margin-bottom: 4px;">🏢 APF (LOAPF)</div>
+                            <div style="padding-left: 12px; font-size: 0.9em; color: rgba(255,255,255,0.6);">
+                                ├── Centralizada (art. 1 y 2)<br>
+                                └── Paraestatal (art. 3)<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;├── Organismos descentralizados<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;├── Empresas participación estatal<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;├── Fideicomisos públicos<br>
+                                &nbsp;&nbsp;&nbsp;&nbsp;└── Empresas públicas del Estado
+                            </div>
+                            <div style="color: var(--accent-red); font-weight: 700; margin-top: 10px; margin-bottom: 4px;">⚙️ Mecanismos de relación</div>
+                            <div style="padding-left: 12px; font-size: 0.9em; color: rgba(255,255,255,0.6);">
+                                ├── Jerarquía (8 poderes)<br>
+                                ├── Competencia (art. 24 LOAPF)<br>
+                                │&nbsp;&nbsp;&nbsp;├── Positivos / negativos<br>
+                                │&nbsp;&nbsp;&nbsp;└── Resuelve el Presidente (Gobernación)<br>
+                                ├── Sectorización (coordinadores)<br>
+                                └── Reguladores autónomos (nuevo tipo)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== ÍNDICE DE LA UNIDAD ========== -->
+            <section data-background-color="#0a0a1a" id="indice">
+                <h2><span class="icon-lg">📑</span> Índice de la Unidad 3</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">Toca o haz clic en un tema para ir directo a él</p>
+                
+                <div class="grid-2" style="margin-top: 10px;">
+                    <a class="card card-accent-blue" href="#/seccion-3-1" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-blue); margin: 0;">3.1 Bases constitucionales</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Arts. 90, 93 y 89 CPEUM</p>
+                    </a>
+                    <a class="card card-accent-green" href="#/seccion-3-2" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-green); margin: 0;">3.2 Formas de organización</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Clasificación doctrinal</p>
+                    </a>
+                    <a class="card card-accent-orange" href="#/seccion-3-2-1" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-orange); margin: 0;">3.2.1 Centralización</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Subordinación al Ejecutivo</p>
+                    </a>
+                    <a class="card card-accent-pink" href="#/seccion-3-2-2" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-pink); margin: 0;">3.2.2 Desconcentración</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Art. 17 LOAPF</p>
+                    </a>
+                    <a class="card card-accent-purple" href="#/seccion-3-2-3" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-purple); margin: 0;">3.2.3 Descentralización</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Por servicio, región y colaboración</p>
+                    </a>
+                    <a class="card card-accent-red" href="#/seccion-3-2-4" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-red); margin: 0;">3.2.4 Competencia funcional propia</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Órganos técnicos (Hamdan)</p>
+                    </a>
+                    <a class="card card-accent-blue" href="#/seccion-3-2-5" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-blue); margin: 0;">3.2.5 Órganos constitucionales autónomos</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Banxico, INE, CNDH, INAI</p>
+                    </a>
+                    <a class="card card-accent-green" href="#/seccion-3-3" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-green); margin: 0;">3.3 Administración Pública Federal (LOAPF)</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Centralizada y paraestatal</p>
+                    </a>
+                    <a class="card card-accent-orange" href="#/seccion-3-4" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-orange); margin: 0;">3.4 Jerarquía y poderes jerárquicos</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Los 8 poderes</p>
+                    </a>
+                    <a class="card card-accent-purple" href="#/seccion-3-5" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-purple); margin: 0;">3.5 Competencia administrativa</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Conflictos (art. 24 LOAPF)</p>
+                    </a>
+                    <a class="card card-accent-red" href="#/seccion-3-6" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-red); margin: 0;">3.6 Sectorización</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Coordinadores de sector</p>
+                    </a>
+                    <a class="card card-accent-blue" href="#/seccion-3-7" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-blue); margin: 0;">3.7 Órganos reguladores autónomos</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">"Desconcentración de nuevo tipo"</p>
+                    </a>
+                    <a class="card card-accent-green" href="#/doctrina-comparada" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-green); margin: 0;">📖 Doctrina comparada</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Fraga, Roldán Xopa, Fernández Ruiz, Hamdan</p>
+                    </a>
+                    <a class="card card-accent-purple" href="#/legislacion" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-purple); margin: 0;">📜 Legislación aplicable</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Arts. 90, 89, 93 CPEUM; 1, 2, 3, 10, 17, 24, 26 LOAPF</p>
+                    </a>
+                    <a class="card card-accent-green" href="#/quiz" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-green); margin: 0;">🧠 Autoevaluación</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Más de 10 preguntas interactivas</p>
+                    </a>
+                    <a class="card card-accent-orange" href="#/sintesis" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-orange); margin: 0;">🗂️ Esquema de síntesis</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">Todo en una imagen</p>
+                    </a>
+                    <a class="card card-accent-red" href="#/casos" style="display: block; text-decoration: none;">
+                        <h4 style="color: var(--accent-red); margin: 0;">📋 Casos prácticos</h4>
+                        <p style="font-size: 0.75em; margin: 4px 0 0;">4 casos para aplicar</p>
+                    </a>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.1: BASES CONSTITUCIONALES ========== -->
+            <section class="section-header" id="seccion-3-1" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🏛️</span>
+                <h2>3.1 Bases constitucionales</h2>
+                <p style="color: rgba(255,255,255,0.5);">El marco de la CPEUM: arts. 90, 93 y 89</p>
+            </section>
+            
+            <!-- 3.1 contenido -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🏛️</span> El marco constitucional</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">La Constitución Política de los Estados Unidos Mexicanos establece el marco fundamental dentro del cual se estructura la administración pública.</p>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Artículo 90 CPEUM (piedra angular)</div>
+                    <div class="def-text">
+                        "La Administración Pública Federal será centralizada y paraestatal conforme a la Ley Orgánica que expida el Congreso." Este precepto constituye la <strong>piedra angular del diseño organizativo del Poder Ejecutivo</strong>, al establecer una división dual: la administración centralizada (Presidencia, Secretarías de Estado y Consejería Jurídica) y la paraestatal (organismos descentralizados, empresas de participación estatal, instituciones nacionales de crédito y fideicomisos públicos) — Roldán Xopa, Cap. 5, p. 215.
+                    </div>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">📜 Artículo 93 CPEUM</h4>
+                        <p style="font-size: 0.82em;">Obliga a los secretarios a <strong>informar al Congreso</strong> sobre el estado de sus ramos, consolidando un sistema de <strong>rendición de cuentas</strong> que vincula a la administración con el Poder Legislativo (Fernández Ruiz, Edo. Méx., Cap. V, p. 91).</p>
+                    </div>
+                    <div class="card card-accent-red">
+                        <h4 style="color: var(--accent-red);">⚠️ Artículo 89 CPEUM</h4>
+                        <p style="font-size: 0.82em;">Enumera facultades del Presidente clave para la organización: nombrar/remover secretarios (fr. II), facultad reglamentaria (fr. I) y disponer del Ejército (fr. VI). El Ejecutivo es <strong>jefe de la administración</strong> — Roldán Xopa, Cap. 5, p. 216.</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Dato clave</div>
+                    <p style="font-size: 0.85em;">La Constitución no solo define la estructura básica, sino que <strong>distribuye las competencias fundamentales</strong> entre el Ejecutivo y los demás poderes, fijando los límites en que la ley orgánica puede desarrollar la organización (Fernández Ruiz).</p>
+                </div>
+            </section>
+            
+            <!-- 3.1 definición de AP -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📖</span> ¿Qué es la Administración Pública?</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Diccionario de Rafael Martínez Morales</div>
+                    <div class="def-text">
+                        "Conjunto de órganos administrativos que ejercen la función administrativa del Estado." Esta definición implica una distinción fundamental: <strong>la administración pública no es el Estado mismo</strong>, sino un conjunto de órganos a través de los cuales el Estado realiza la función administrativa.
+                    </div>
+                </div>
+                
+                <div class="card card-accent-purple fragment">
+                    <h4 style="color: var(--accent-purple);">🧠 Consecuencia jurídica</h4>
+                    <p style="font-size: 0.85em;">Al no ser el Estado, la administración <strong>actúa a través de órganos con distinta naturaleza</strong>: unos sin personalidad jurídica (centralizados), otros con personalidad y patrimonio propios (descentralizados/paraestatales) y otros dotados de autonomía constitucional.</p>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 El Ejecutivo decide la orientación</div>
+                    <p style="font-size: 0.85em;">Roldán Xopa precisa que el Ejecutivo "corresponde decidir la orientación de las políticas públicas y proveer en la esfera administrativa a la exacta observancia de las leyes". De ahí nace el poder de mando que veremos en 3.4.</p>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.2: FORMAS DE ORGANIZACIÓN ========== -->
+            <section class="section-header" id="seccion-3-2" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🧩</span>
+                <h2>3.2 Formas de organización administrativa</h2>
+                <p style="color: rgba(255,255,255,0.5);">La clasificación doctrinal de las técnicas de organización</p>
+            </section>
+            
+            <!-- 3.2 intro -->
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🧩</span> Las formas de organización</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.85em;">La doctrina ha desarrollado una clasificación que, con variaciones entre autores, coincide en sus elementos esenciales.</p>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-green">
+                        <h4 style="color: var(--accent-green);">🌿 Fernández Ruiz (Edo. Méx.)</h4>
+                        <p style="font-size: 0.8em;">Identifica <strong>cuatro formas fundamentales</strong>: centralización, desconcentración, descentralización y sectorización (Cap. V, p. 91).</p>
+                    </div>
+                    <div class="card card-accent-orange">
+                        <h4 style="color: var(--accent-orange);">🕌 Hamdan (Tema V)</h4>
+                        <p style="font-size: 0.8em;">Añade una <strong>quinta categoría</strong>: los órganos con competencia funcional propia (p. 71).</p>
+                    </div>
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">⚖️ Roldán Xopa (ITAM)</h4>
+                        <p style="font-size: 0.8em;">Parte de la <strong>distinción constitucional</strong> centralizada/paraestatal y trata centralización, desconcentración y descentralización como técnicas (p. 216).</p>
+                    </div>
+                    <div class="card card-accent-purple">
+                        <h4 style="color: var(--accent-purple);">📘 Gabino Fraga</h4>
+                        <p style="font-size: 0.8em;">Centralización, desconcentración y descentralización (por región, servicio y colaboración).</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Eje de la distinción</div>
+                    <p style="font-size: 0.85em;">La clave para clasificar un órgano es preguntarse: <strong>¿tiene personalidad jurídica propia? ¿está subordinado jerárquicamente? ¿goza de autonomía?</strong></p>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.2.1 CENTRALIZACIÓN ========== -->
+            <section class="section-header" id="seccion-3-2-1" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🏛️</span>
+                <h2>3.2.1 La centralización administrativa</h2>
+                <p style="color: rgba(255,255,255,0.5);">Subordinación jerárquica directa al titular del Ejecutivo</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🏛️</span> Concepto de centralización</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Hamdan, Tema V, p. 71</div>
+                    <div class="def-text">
+                        Forma de organización en la cual los órganos <strong>carecen de personalidad jurídica y patrimonio propios</strong> y están jerárquicamente subordinados de manera inmediata al titular del órgano Ejecutivo, quien <strong>concentra la facultad de decisión</strong>.
+                    </div>
+                </div>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Fernández Ruiz, Edo. Méx., Cap. V, p. 92</div>
+                    <div class="def-text">
+                        "Forma o tendencia organizacional consistente en <strong>reunir en un punto de convergencia</strong>, configurado como un ente central, la toma de decisiones del poder público."
+                    </div>
+                </div>
+                
+                <div class="card card-accent-red fragment">
+                    <h4 style="color: var(--accent-red);">📖 Diccionario de Martínez Morales</h4>
+                    <p style="font-size: 0.82em;">"Forma de organización de los entes públicos en su dependencia con el jefe del ejecutivo; implica una manera de distribuir el poder y la competencia en los subordinados."</p>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚖️</span> Características y efectos</h2>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">✅ Ventajas</h4>
+                        <ul style="font-size: 0.78em;">
+                            <li>Unidad de dirección, de impulsión y de acción.</li>
+                            <li>Administración uniforme, coordinada y fuerte.</li>
+                            <li>Decisiones concentradas en el vértice (Presidencia).</li>
+                        </ul>
+                    </div>
+                    <div class="card card-accent-red fragment">
+                        <h4 style="color: var(--accent-red);">⚠️ Desventajas</h4>
+                        <ul style="font-size: 0.78em;">
+                            <li>Lejanía del administrado.</li>
+                            <li>Erradicación de la iniciativa individual.</li>
+                            <li>Burocratismo y excesivo formalismo procesal (Fernández Ruiz, p. 93).</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="legal-box fragment">
+                    <div class="lb-label">📜 Base legal (LOAPF)</div>
+                    <div class="lb-text">
+                        La administración centralizada se integra por la <strong>Oficina de la Presidencia de la República</strong>, las <strong>Secretarías de Estado</strong> (Gobernación, Relaciones Exteriores, Defensa, Marina, Seguridad, Hacienda, Bienestar, Medio Ambiente, Energía, Economía, Agricultura, Infraestructura, Anticorrupción, Educación, Ciencia, Salud, Trabajo, Desarrollo Agrario, Cultura, Turismo) y la <strong>Consejería Jurídica del Ejecutivo Federal</strong> (arts. 1, 2 y 26 LOAPF).
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.2.2 DESCONCENTRACIÓN ========== -->
+            <section class="section-header" id="seccion-3-2-2" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🔀</span>
+                <h2>3.2.2 La desconcentración administrativa</h2>
+                <p style="color: rgba(255,255,255,0.5);">Traslado parcial de competencia dentro de la centralización (art. 17 LOAPF)</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🔀</span> Concepto y naturaleza</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Fernández Ruiz, Edo. Méx., Cap. V, p. 97</div>
+                    <div class="def-text">
+                        Forma de organización en la que se <strong>traslada parcialmente la competencia y el poder decisorio</strong> de un órgano superior a uno inferior, ya sea preexistente o de nueva creación, dentro de una <strong>relación de jerarquía</strong>; el órgano desconcentrado se mantiene en la estructura de la administración centralizada.
+                    </div>
+                </div>
+                
+                <div class="card card-accent-orange fragment">
+                    <h4 style="color: var(--accent-orange);">🕌 Hamdan, Tema V, p. 72</h4>
+                    <p style="font-size: 0.82em;">Órganos jerárquicamente subordinados a las secretarías, con facultades delegadas en <strong>materia y territorio específicos</strong>. Carecen de personalidad jurídica y patrimonio propios (art. 17 LOAPF).</p>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Desconcentración vs. Delegación</div>
+                    <p style="font-size: 0.85em;"><strong>Delegación:</strong> acto de apoderamiento que transfiere facultades a quien no las tiene. <strong>Desconcentración:</strong> modo de organización institucional que asigna a órganos desconcentrados funciones y relaciones con la organización (Roldán Xopa, p. 231). Una es de <em>establecimiento de funciones</em>; la otra, de <em>establecimiento orgánico</em>.</p>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📋</span> Características y excepciones</h2>
+                
+                <div class="card card-accent-blue fragment">
+                    <h4 style="color: var(--accent-blue);">📜 6 características (art. 17 LOAPF, Roldán Xopa p. 231)</h4>
+                    <ul style="font-size: 0.78em;">
+                        <li>1) Forman parte de una dependencia de la administración centralizada.</li>
+                        <li>2) Mantienen subordinación jerárquica del titular del ramo.</li>
+                        <li>3) Poseen autonomía para el ejercicio de la competencia otorgada.</li>
+                        <li>4) Creados/modificados/extintos por instrumento de derecho público (ley, reglamento, acuerdo o decreto).</li>
+                        <li>5) Su competencia se limita a cierta materia o territorio.</li>
+                        <li>6) Carecen de personalidad jurídica.</li>
+                    </ul>
+                </div>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">🔍 Excepción peculiar</div>
+                    <p style="font-size: 0.85em;">El <strong>IPN, el INBA y el INAH</strong> son órganos desconcentrados <em>dotados de personalidad jurídica y patrimonio</em>. Al tener personalidad poseen autonomía orgánica que los acerca a los organismos descentralizados, pero la calificación legal como desconcentrados impone la subordinación al titular de la dependencia (Roldán Xopa, p. 231).</p>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.2.3 DESCENTRALIZACIÓN ========== -->
+            <section class="section-header" id="seccion-3-2-3" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🌐</span>
+                <h2>3.2.3 La descentralización administrativa</h2>
+                <p style="color: rgba(255,255,255,0.5);">Creación de personas jurídicas distintas al Estado</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🌐</span> Concepto general</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Fernández Ruiz, Edo. Méx., Cap. V, p. 99</div>
+                    <div class="def-text">
+                        Tendencia organizativa en cuya virtud se <strong>confiere personalidad jurídica propia</strong> a ciertos entes, a los que se otorga <strong>relativa autonomía orgánica</strong> respecto del órgano central, para encargarles la realización de actividades administrativas específicas.
+                    </div>
+                </div>
+                
+                <div class="card card-accent-purple fragment">
+                    <h4 style="color: var(--accent-purple);">📖 Diccionario de Martínez Morales</h4>
+                    <p style="font-size: 0.82em;">"La expresión descentralización se reserva para significar a determinados organismos del poder ejecutivo que guardan con éste una relación indirecta." Surge de la necesidad de imprimir dinamismo mediante el ahorro de pasos del poder jerárquico.</p>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Tres tipos (Gabino Fraga)</div>
+                    <p style="font-size: 0.85em;">Fernández Ruiz (siguiendo a Gabino Fraga) distingue: <strong>por servicio, por región y por colaboración</strong>. Veámoslos a continuación.</p>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🛎️</span> a) Descentralización por servicio</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Fernández Ruiz, Edo. Méx., Cap. V, p. 100</div>
+                    <div class="def-text">
+                        Surgió en Francia como delegación de funciones de la administración centralizada a un ente encargado de un <strong>servicio público</strong>. Crea una nueva persona jurídica con esfera de competencia, órganos propios y poder de decisión (ente autónomo en España, ente autárquico en Argentina, organismo descentralizado en México).
+                    </div>
+                </div>
+                
+                <div class="card card-accent-green fragment">
+                    <h4 style="color: var(--accent-green);">🏥 Ejemplos en México (Hamdan, p. 80)</h4>
+                    <ul style="font-size: 0.78em;">
+                        <li>IMSS, ISSSTE, INFONAVIT</li>
+                        <li>UNAM, UAM</li>
+                        <li>ASA, Capufe, Correos de México</li>
+                    </ul>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🗺️</span> b) Descentralización por región</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Fernández Ruiz, Edo. Méx., Cap. V, p. 101</div>
+                    <div class="def-text">
+                        Instauración de una estructura administrativa para manejar intereses colectivos de la población de una <strong>circunscripción territorial específica</strong>, como el municipio.
+                    </div>
+                </div>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">⚠️ Controversia doctrinal</div>
+                    <p style="font-size: 0.85em;">Fernández Ruiz (p. 102) sostiene que en un <strong>Estado federal como México</strong> es inadmisible considerar al gobierno municipal como descentralización administrativa, pues es obra de la <strong>descentralización política</strong>. Hamdan, en cambio, ve en la descentralización por región la base del municipio como organización político-territorial.</p>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🤝</span> c) Descentralización por colaboración</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Fernández Ruiz, Edo. Méx., Cap. V, p. 102</div>
+                    <div class="def-text">
+                        Se presenta cuando la administración <strong>adolece de insuficiencia financiera, técnica u organizacional</strong> y transfiere la facultad de prestación a <strong>particulares mediante concesión</strong>. Quedan a cargo de particulares que se colocan en los linderos del derecho público y privado.
+                    </div>
+                </div>
+                
+                <div class="card card-accent-pink fragment">
+                    <h4 style="color: var(--accent-pink);">🎯 Ejemplo paradigmático</h4>
+                    <p style="font-size: 0.82em;">La <strong>concesión de servicio público</strong> (telecom, energía, transportes) es el ejemplo típico: el particular asume una tarea originariamente estatal.</p>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Clasificación de Hamdan</div>
+                    <p style="font-size: 0.85em;">Hamdan clasifica la descentralización en <strong>mínima</strong> (transferencia limitada con fuerte control), <strong>media</strong> (transferencia amplia con fuerte control) y <strong>máxima</strong> (transferencia total con mínimo control). Para él, la organización descentralizada mexicana es más técnica que autárquica.</p>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.2.4 ÓRGANOS CON COMPETENCIA FUNCIONAL PROPIA ========== -->
+            <section class="section-header" id="seccion-3-2-4" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🎛️</span>
+                <h2>3.2.4 Órganos con competencia funcional propia</h2>
+                <p style="color: rgba(255,255,255,0.5);">La cuarta categoría de Hamdan (Tema V, p. 73)</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🎛️</span> Concepto y naturaleza</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Hamdan, Tema V, p. 73</div>
+                    <div class="def-text">
+                        Órganos que, <strong>sin personalidad jurídica ni patrimonio propios</strong>, ejercen una <strong>competencia propia y originaria por razón de la materia</strong>, insertos en un órgano secundario constitucional (secretarías). Reciben su competencia <strong>directamente por la ley</strong> que los crea, no por delegación de las secretarías. Suelen tener funciones técnicas y de regulación.
+                    </div>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">🔍 Ejemplos (Hamdan, p. 74)</h4>
+                        <ul style="font-size: 0.74em;">
+                            <li>Comisión Nacional Bancaria y de Valores (CNBV)</li>
+                            <li>Comisión Nacional de Seguros y Fianzas (CNSF)</li>
+                            <li>Comisión Nacional de Inversión Extranjera</li>
+                            <li>Comisión Nacional de Salarios Mínimos</li>
+                            <li>Comisión para el Retiro (Consar)</li>
+                            <li>Comisión Federal de Impacto Regulatorio</li>
+                            <li>Cofepris, SAT, Conapesca, Inafed, Conagua</li>
+                        </ul>
+                    </div>
+                    <div class="card card-accent-purple">
+                        <h4 style="color: var(--accent-purple);">🧬 Características</h4>
+                        <ul style="font-size: 0.74em;">
+                            <li>Son órganos de decisión, supervisión y vigilancia (reguladores).</li>
+                            <li>Creados por ley.</li>
+                            <li>Técnicos y especializados en una materia.</li>
+                            <li>Dependen orgánicamente de una secretaría, pero gozan de autonomía técnica e incluso orgánica.</li>
+                            <li>Son colegiados.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.2.5 ÓRGANOS CONSTITUCIONALES AUTÓNOMOS ========== -->
+            <section class="section-header" id="seccion-3-2-5" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🛡️</span>
+                <h2>3.2.5 Órganos constitucionales autónomos</h2>
+                <p style="color: rgba(255,255,255,0.5);">Creados en la propia Constitución (Hamdan, p. 81)</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🛡️</span> Concepto y ejemplos</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Hamdan, Tema V, p. 81</div>
+                    <div class="def-text">
+                        Organismos creados en la <strong>propia Constitución</strong> que realizan una función administrativa altamente técnica y gozan de <strong>autonomía orgánica y funcional</strong>. No forman parte de ningún poder tradicional y actúan con plena independencia funcional y de gestión.
+                    </div>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-green">
+                        <h4 style="color: var(--accent-green);">🏦 Ejemplos</h4>
+                        <ul style="font-size: 0.76em;">
+                            <li>Banco de México (Banxico)</li>
+                            <li>Instituto Nacional Electoral (INE)</li>
+                            <li>INEGI</li>
+                            <li>CNDH</li>
+                            <li>COFECE</li>
+                            <li>IFT</li>
+                            <li>INAI</li>
+                        </ul>
+                    </div>
+                    <div class="card card-accent-red">
+                        <h4 style="color: var(--accent-red);">⚠️ Debate doctrinal</h4>
+                        <p style="font-size: 0.78em;">Su proliferación ha generado debate sobre el <strong>"vaciamiento" de la administración centralizada</strong> y sus efectos en la gobernabilidad (Roldán Xopa, p. 248). Responden a la necesidad de funciones de alta especialización con independencia del ciclo sexenal.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.3 APF SEGÚN LOAPF ========== -->
+            <section class="section-header" id="seccion-3-3" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🏢</span>
+                <h2>3.3 La Administración Pública Federal (LOAPF)</h2>
+                <p style="color: rgba(255,255,255,0.5);">El desarrollo del art. 90 CPEUM</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">📜</span> El mandato de la LOAPF</h2>
+                
+                <div class="legal-box fragment">
+                    <div class="lb-label">📜 Artículo 1° LOAPF</div>
+                    <div class="lb-text">
+                        "La presente Ley establece las bases de organización de la Administración Pública Federal, centralizada y paraestatal. La Oficina de la Presidencia de la República, las Secretarías de Estado y la Consejería Jurídica del Ejecutivo Federal, integran la Administración Pública Centralizada. Los organismos descentralizados, las empresas de participación estatal, las instituciones nacionales de crédito, las organizaciones auxiliares nacionales de crédito, las instituciones nacionales de seguros y de fianzas y los fideicomisos, componen la administración pública paraestatal."
+                    </div>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">🏛️ Centralizada</h4>
+                        <p style="font-size: 0.8em;">Presidencia + Secretarías de Estado + Consejería Jurídica. <strong>Sin personalidad jurídica propia</strong>: el único con personalidad es el Estado mismo (Hamdan, p. 74).</p>
+                    </div>
+                    <div class="card card-accent-orange">
+                        <h4 style="color: var(--accent-orange);">🏗️ Paraestatal</h4>
+                        <p style="font-size: 0.8em;">Organismos descentralizados, empresas de participación estatal, instituciones de crédito, fideicomisos y empresas públicas del Estado. <strong>Con personalidad y patrimonio propios</strong>.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.3.1 CENTRALIZADA ========== -->
+            <section class="section-header" id="seccion-3-3-1" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🏛️</span>
+                <h2>3.3.1 Administración pública centralizada</h2>
+                <p style="color: rgba(255,255,255,0.5);">Arts. 1° y 2° LOAPF</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🏛️</span> Integración y órganos</h2>
+                
+                <div class="card card-accent-blue fragment">
+                    <h4 style="color: var(--accent-blue);">📜 Base legal (arts. 1° y 2° LOAPF)</h4>
+                    <p style="font-size: 0.82em;">Integrada por la <strong>Presidencia de la República</strong>, las <strong>Secretarías de Estado</strong> y la <strong>Consejería Jurídica del Ejecutivo Federal</strong>. No tiene personalidad jurídica propia: es el canal de actuación del Estado.</p>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-purple">
+                        <h4 style="color: var(--accent-purple);">⚖️ Competencia de los órganos</h4>
+                        <ul style="font-size: 0.75em;">
+                            <li>Órganos secundarios <strong>constitucionales</strong> (secretarías): competencia <em>directamente por ley</em>.</li>
+                            <li>Órganos secundarios <strong>no constitucionales</strong>: competencia por <em>delegación</em> (reglamento interior).</li>
+                            <li>Titular = secretario, con fuero constitucional y sujeto a juicio político.</li>
+                        </ul>
+                    </div>
+                    <div class="card card-accent-orange">
+                        <h4 style="color: var(--accent-orange);">📜 Artículo 10 LOAPF</h4>
+                        <p style="font-size: 0.78em;">Las Secretarías tienen <strong>igual rango</strong>, sin preeminencia. No obstante, la <strong>Secretaría de Gobernación coordina</strong> las acciones de la APF para cumplir sus objetivos (párrafo segundo).</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Las 20 Secretarías (art. 26 LOAPF)</div>
+                    <p style="font-size: 0.78em;">Gobernación, Relaciones Exteriores, Defensa, Marina, Seguridad, Hacienda, Bienestar, Medio Ambiente, Energía, Economía, Agricultura, Infraestructura, Anticorrupción y Buen Gobierno, Educación, Ciencia Humanidades Tecnología e Innovación, Salud, Trabajo, Desarrollo Agrario Territorial y Urbano, Cultura y Turismo.</p>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.3.2 PARAESTATAL ========== -->
+            <section class="section-header" id="seccion-3-3-2" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🏗️</span>
+                <h2>3.3.2 Administración pública paraestatal</h2>
+                <p style="color: rgba(255,255,255,0.5);">Artículo 3° LOAPF</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🏗️</span> El catálogo del art. 3° LOAPF</h2>
+                
+                <div class="legal-box fragment">
+                    <div class="lb-label">📜 Artículo 3° LOAPF</div>
+                    <div class="lb-text">
+                        El Poder Ejecutivo se auxiliará de: <strong>organismos descentralizados</strong>; <strong>empresas de participación estatal, instituciones nacionales de crédito, organizaciones auxiliares nacionales de crédito e instituciones nacionales de seguros y de fianzas</strong>; <strong>fideicomisos públicos</strong>; y las <strong>empresas públicas del Estado</strong>.
+                    </div>
+                </div>
+                
+                <div class="card card-accent-red fragment">
+                    <h4 style="color: var(--accent-red);">💬 Nota de Hamdan (p. 79)</h4>
+                    <p style="font-size: 0.8em;">Critica el término "paraestatal" (significa "paralelo o junto a", no "derivado de"); lo técnico sería "descentralizada". Pero la Constitución y la ley usan "paraestatal", así que es la denominación oficial.</p>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🧱</span> Las entidades paraestatales en detalle</h2>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">🏥 Organismos descentralizados</h4>
+                        <p style="font-size: 0.78em;">Creados por ley o decreto, con <strong>personalidad jurídica y patrimonio propios</strong> (Roldán Xopa, p. 250). Regulados por la <strong>LFEP</strong>. Su objeto (art. 14 LFEP): áreas estratégicas/prioritarias, servicio público/social, o asistencia/seguridad social (Hamdan, p. 81).</p>
+                    </div>
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">🏦 Empresas de participación estatal mayoritaria</h4>
+                        <p style="font-size: 0.78em;">Estado con >50% del capital; o acciones reservadas; o facultad de nombrar director general, vetar decisiones o mayoría en junta (Hamdan, p. 82). Art. 46 LOAPF enumera sociedades nacionales de crédito y demás sociedades de participación mayoritaria.</p>
+                    </div>
+                    <div class="card card-accent-orange fragment">
+                        <h4 style="color: var(--accent-orange);">💰 Fideicomisos públicos</h4>
+                        <p style="font-size: 0.78em;">Patrimonios afectos a un fin público, <strong>carecen de personalidad jurídica</strong> y actúan por conducto del fiduciario (generalmente una institución de crédito) — Hamdan, p. 79.</p>
+                    </div>
+                    <div class="card card-accent-purple fragment">
+                        <h4 style="color: var(--accent-purple);">🏭 Empresas públicas del Estado</h4>
+                        <p style="font-size: 0.78em;">Nueva categoría incorporada en la reforma de 2025 del art. 3° fracción IV, para diferenciarlas de los organismos descentralizados tradicionales.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.4 JERARQUÍA ========== -->
+            <section class="section-header" id="seccion-3-4" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🪜</span>
+                <h2>3.4 Jerarquía administrativa y poderes jerárquicos</h2>
+                <p style="color: rgba(255,255,255,0.5);">La base de la centralización (Fernández Ruiz, p. 94)</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🪜</span> ¿Qué es la jerarquía?</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Fernández Ruiz, Edo. Méx., Cap. V, p. 94</div>
+                    <div class="def-text">
+                        La base de la centralización es su organización <strong>jerárquica estructurada piramidalmente</strong>: los órganos inferiores se subordinan a los inmediatos superiores hasta llegar al vértice, el Presidente de la República. La jerarquía es el <strong>vínculo jurídico</strong> que relaciona órganos y funcionarios por medio de poderes de subordinación, para dotar de unidad y coherencia a la actividad administrativa.
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 De la pirámide nacen 8 poderes</div>
+                    <p style="font-size: 0.85em;">El vértice (Presidente) concentra la facultad de decisión, coacción y designación. De esa posición derivan los <strong>ocho poderes jerárquicos</strong> que veremos a continuación.</p>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚡</span> Los 8 poderes jerárquicos (1/2)</h2>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">1️⃣ Poder de nombramiento</h4>
+                        <p style="font-size: 0.76em;">Facultad del superior para designar discrecionalmente a sus colaboradores. El Presidente nombra a los titulares de la AP centralizada y demás empleados no determinados de otro modo (Fernández Ruiz, p. 94; Roldán Xopa, p. 218).</p>
+                    </div>
+                    <div class="card card-accent-purple fragment">
+                        <h4 style="color: var(--accent-purple);">2️⃣ Poder de remoción</h4>
+                        <p style="font-size: 0.76em;">Presidente y gobernadores pueden cesar libremente a colaboradores (art. 89 fr. II CPEUM). "La otra cara del nombramiento" (Roldán Xopa, p. 219).</p>
+                    </div>
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">3️⃣ Poder de mando</h4>
+                        <p style="font-size: 0.76em;">Ordenar o instruir a inferiores, señalando lineamientos o predeterminando el sentido de los actos. Su complemento es el <strong>deber de obediencia</strong> (Roldán Xopa, p. 217).</p>
+                    </div>
+                    <div class="card card-accent-orange fragment">
+                        <h4 style="color: var(--accent-orange);">4️⃣ Poder de decisión</h4>
+                        <p style="font-size: 0.76em;">Elegir entre alternativas de resolución. Los superiores emiten los actos administrativos; a los inferiores corresponde realizar los trámites hasta dejarlos en estado de resolución (Fernández Ruiz, p. 95).</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🛡️</span> Los 8 poderes jerárquicos (2/2)</h2>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-red fragment">
+                        <h4 style="color: var(--accent-red);">5️⃣ Poder de vigilancia</h4>
+                        <p style="font-size: 0.76em;">Inspeccionar y vigilar la actuación de subordinados mediante visitas, inspecciones, auditorías (Fernández Ruiz, p. 95).</p>
+                    </div>
+                    <div class="card card-accent-pink fragment">
+                        <h4 style="color: var(--accent-pink);">6️⃣ Poder disciplinario</h4>
+                        <p style="font-size: 0.76em;">Reprimir o sancionar administrativamente: de la amonestación a la inhabilitación, pasando por suspensión y destitución (p. 96).</p>
+                    </div>
+                    <div class="card card-accent-blue fragment">
+                        <h4 style="color: var(--accent-blue);">7️⃣ Poder de revisión</h4>
+                        <p style="font-size: 0.76em;">Revisar la actuación del inferior y suspender, modificar, anular o confirmar sus actos. <strong>Distinto al recurso de revisión</strong>, que es del administrado afectado (p. 97).</p>
+                    </div>
+                    <div class="card card-accent-green fragment">
+                        <h4 style="color: var(--accent-green);">8️⃣ Resolver conflictos de competencia</h4>
+                        <p style="font-size: 0.76em;">Precisar qué órgano inferior es competente cuando varios o ninguno lo pretenden. Su inexistencia provocaría el caos o la parálisis de la administración (p. 97).</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.5 COMPETENCIA ========== -->
+            <section class="section-header" id="seccion-3-5" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🎯</span>
+                <h2>3.5 La competencia administrativa</h2>
+                <p style="color: rgba(255,255,255,0.5);">El conjunto de facultades que la ley otorga a cada órgano</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🎯</span> Concepto y clasificación</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Martínez Morales (Diccionario, "Competencia")</div>
+                    <div class="def-text">
+                        "La esfera de atribuciones de los entes y órganos públicos determinada por el derecho positivo." Es un <strong>elemento esencial del acto administrativo</strong>: todo acto debe ser emitido por órgano competente.
+                    </div>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">📚 Clasificación</h4>
+                        <ul style="font-size: 0.76em;">
+                            <li><strong>Por materia:</strong> naturaleza del asunto.</li>
+                            <li><strong>Por territorio:</strong> ámbito geográfico.</li>
+                            <li><strong>Por grado:</strong> nivel jerárquico del órgano.</li>
+                            <li><strong>Por cuantía:</strong> valor económico del asunto.</li>
+                        </ul>
+                    </div>
+                    <div class="card card-accent-purple">
+                        <h4 style="color: var(--accent-purple);">📜 Distribución (LOAPF)</h4>
+                        <p style="font-size: 0.78em;">La LOAPF distribuye la competencia entre Secretarías por razón de materia (art. 26); los reglamentos interiores la distribuyen dentro de cada secretaría.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">⚖️</span> Conflictos de competencia</h2>
+                
+                <div class="grid-2">
+                    <div class="card card-accent-orange fragment">
+                        <h4 style="color: var(--accent-orange);">➕ Positivos</h4>
+                        <p style="font-size: 0.8em;">Dos o más órganos <strong>se consideran competentes</strong> para el mismo asunto.</p>
+                    </div>
+                    <div class="card card-accent-red fragment">
+                        <h4 style="color: var(--accent-red);">➖ Negativos</h4>
+                        <p style="font-size: 0.8em;"><strong>Ninguno se considera competente</strong> y se niega a conocer.</p>
+                    </div>
+                </div>
+                
+                <div class="legal-box fragment">
+                    <div class="lb-label">📜 Artículo 24 LOAPF</div>
+                    <div class="lb-text">
+                        Cuando una Secretaría considere que otra se avoca a un asunto de su competencia, o que debiendo conocer se niega, <strong>el Presidente de la República resolverá, por conducto de la Secretaría de Gobernación</strong>, a qué dependencia corresponde el despacho del mismo. El superior jerárquico común es quien resuelve el conflicto.
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.6 SECTORIZACIÓN ========== -->
+            <section class="section-header" id="seccion-3-6" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🧷</span>
+                <h2>3.6 La sectorización</h2>
+                <p style="color: rgba(255,255,255,0.5);">Agrupación de entidades paraestatales por ramo</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🧷</span> La técnica de sectorización</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Concepto</div>
+                    <div class="def-text">
+                        Técnica mediante la cual las <strong>entidades paraestatales se agrupan en sectores homogéneos</strong> coordinados por una Secretaría de Estado que funge como <strong>"coordinadora de sector"</strong>. Cada secretaría coordina las entidades cuyo objeto corresponde al ramo de su competencia.
+                    </div>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-blue">
+                        <h4 style="color: var(--accent-blue);">⚡ Ejemplos</h4>
+                        <ul style="font-size: 0.78em;">
+                            <li><strong>SE:</strong> coordina a PEMEX y CFE.</li>
+                            <li><strong>Salud:</strong> coordina institutos nacionales de salud.</li>
+                            <li><strong>SEP:</strong> coordina instituciones educativas descentralizadas.</li>
+                        </ul>
+                    </div>
+                    <div class="card card-accent-purple">
+                        <h4 style="color: var(--accent-purple);">🪑 El coordinador de sector</h4>
+                        <p style="font-size: 0.78em;">Preside la junta de gobierno del organismo descentralizado y alinea las políticas de la entidad con las públicas del ramo (Roldán Xopa, p. 250).</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== SECCIÓN 3.7 ÓRGANOS REGULADORES AUTÓNOMOS ========== -->
+            <section class="section-header" id="seccion-3-7" data-background-gradient="linear-gradient(135deg, #0a0a1a, #1a1a3e)">
+                <span class="section-icon">🛡️</span>
+                <h2>3.7 Órganos reguladores autónomos</h2>
+                <p style="color: rgba(255,255,255,0.5);">La "desconcentración de nuevo tipo" (Roldán Xopa, p. 232)</p>
+            </section>
+            
+            <section data-background-color="#0a0a1a">
+                <h2><span class="icon-lg">🔄</span> La nueva desconcentración</h2>
+                
+                <div class="definition-box fragment">
+                    <div class="def-title">Roldán Xopa, Cap. 5, p. 232</div>
+                    <div class="def-text">
+                        Fenómeno de creación de órganos desconcentrados con <strong>amplia autonomía técnica, de gestión y presupuestaria</strong>. Sus titulares son designados por el Ejecutivo <strong>con intervención del Senado</strong>, gozan de <strong>periodos escalonados</strong> que trascienden el sexenio y solo pueden ser removidos por causas graves.
+                    </div>
+                </div>
+                
+                <div class="grid-2 fragment">
+                    <div class="card card-accent-green">
+                        <h4 style="color: var(--accent-green);">🏛️ Ejemplos</h4>
+                        <ul style="font-size: 0.76em;">
+                            <li>CNBV (banca y valores)</li>
+                            <li>CNSF (seguros y fianzas)</li>
+                            <li>CONSAR (ahorro para el retiro)</li>
+                            <li>COFECE (competencia económica)</li>
+                            <li>CRE (energía)</li>
+                            <li>IFT (telecomunicaciones)</li>
+                        </ul>
+                    </div>
+                    <div class="card card-accent-red">
+                        <h4 style="color: var(--accent-red);">⚠️ La tensión</h4>
+                        <p style="font-size: 0.78em;">Roldán Xopa (p. 237) advierte que excluir a secretarios y al Ejecutivo de la conducción provoca "estructuras aisladas" y "severos problemas". Detrás del modelo hay "enorme desconfianza en la capacidad del Estado para regular la economía" (p. 238): el <strong>"vaciamiento" de la administración centralizada</strong>.</p>
+                    </div>
+                </div>
+                
+                <div class="fun-fact fragment">
+                    <div class="ff-label">💡 Justificación</div>
+                    <p style="font-size: 0.85em;">La autonomía busca que las decisiones en sectores estratégicos se tomen con criterios <strong>técnicos y no políticos</strong>. El reto es conciliarla con la conducción política del Ejecutivo.</p>
+                </div>
+            </section>
+            
+            <!-- ========== DOCTRINA COMPARADA ========== -->
+            <section data-background-color="#0a0a1a" id="doctrina-comparada">
+                <h2><span class="icon-lg">📖</span> Doctrina comparada</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.8em;">Cuatro grandes autores frente a las formas de organización</p>
+                
+                <div style="overflow-x: auto;">
+                <table class="comparison-table fragment">
+                    <thead>
+                        <tr>
+                            <th>Tema</th>
+                            <th>Gabino Fraga</th>
+                            <th>Roldán Xopa</th>
+                            <th>Fernández Ruiz</th>
+                            <th>Hamdan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Clasificación de formas</td>
+                            <td>Centralización, desconcentración, descentralización (región, servicio, colaboración)</td>
+                            <td>Distinción constitucional: centralizada y paraestatal; técnicas: centralización, desconcentración, descentralización</td>
+                            <td>Centralización, desconcentración, descentralización y sectorización</td>
+                            <td>Centralización, descentralización, desconcentración y órganos con competencia funcional propia</td>
+                        </tr>
+                        <tr>
+                            <td>Naturaleza de la desconcentración</td>
+                            <td>Forma de delegación de facultades con subordinación</td>
+                            <td>Modo de establecimiento orgánico, distinto a la delegación; órganos de nuevo tipo con autonomía</td>
+                            <td>Transferencia parcial dentro de la misma persona jurídica, manteniendo jerarquía</td>
+                            <td>Órganos subordinados con facultades delegadas en materia y territorio</td>
+                        </tr>
+                        <tr>
+                            <td>Descentralización y municipio</td>
+                            <td>El municipio es descentralización por región</td>
+                            <td>El municipio es descentralización política, no administrativa</td>
+                            <td>En México es resultado de descentralización política, no administrativa</td>
+                            <td>La descentralización por región tiene como base el municipio</td>
+                        </tr>
+                        <tr>
+                            <td>Autonomía de reguladores</td>
+                            <td>No desarrolla el tema</td>
+                            <td>Autonomía instrumental; riesgos de "vaciamiento" y "feudalización"</td>
+                            <td>Aborda la autonomía técnica de órganos desconcentrados</td>
+                            <td>Propugna la conversión de órganos con competencia funcional propia en autónomos constitucionales</td>
+                        </tr>
+                    </tbody>
+                </table>
+                </div>
+            </section>
+            
+            <!-- ========== LEGISLACIÓN APLICABLE ========== -->
+            <section data-background-color="#0a0a1a" id="legislacion">
+                <h2><span class="icon-lg">📜</span> Legislación aplicable comentada</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.8em;">Los preceptos clave y su comentario</p>
+                
+                <div class="legal-box fragment">
+                    <div class="lb-label">📜 Artículo 90 CPEUM</div>
+                    <div class="lb-text">
+                        "La Administración Pública Federal será centralizada y paraestatal conforme a la Ley Orgánica que expida el Congreso..." <strong>Comentario:</strong> estructura dual y fundamento de la LOAPF. La centralizada carece de personalidad jurídica propia; las paraestatales sí la tienen.
+                    </div>
+                </div>
+                
+                <div class="legal-box fragment">
+                    <div class="lb-label">📜 Artículo 89, fracción II, CPEUM</div>
+                    <div class="lb-text">
+                        Facultad del Presidente de "nombrar y remover libremente a los secretarios de Estado..." <strong>Comentario:</strong> vértice del poder jerárquico. El Constituyente prevé excepciones (funcionarios que requieren ratificación del Senado), limitando el poder presidencial.
+                    </div>
+                </div>
+                
+                <div class="legal-box fragment">
+                    <div class="lb-label">📜 Artículo 93 CPEUM</div>
+                    <div class="lb-text">
+                        Los Secretarios "darán cuenta al Congreso del estado que guarden sus respectivos ramos." <strong>Comentario:</strong> rendición de cuentas al Legislativo. El refrendo del art. 92 genera responsabilidad compartida Ejecutivo-secretarios.
+                    </div>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a" id="legislacion-2">
+                <h2><span class="icon-lg">📜</span> Legislación aplicable (LOAPF)</h2>
+                
+                <div class="legal-box fragment">
+                    <div class="lb-label">📜 Artículo 1° LOAPF</div>
+                    <div class="lb-text">
+                        Define componentes de cada sector. La inclusión de las "Empresas Públicas del Estado" (fr. IV del art. 3°, 2025) refleja la evolución del sector paraestatal.
+                    </div>
+                </div>
+                
+                <div class="legal-box fragment">
+                    <div class="lb-label">📜 Artículo 17 LOAPF</div>
+                    <div class="lb-text">
+                        Base legal de los órganos desconcentrados: mantienen subordinación jerárquica (se diferencian de los descentralizados) pero tienen facultades específicas para resolver (se diferencian de meras unidades sin facultades decisorias).
+                    </div>
+                </div>
+                
+                <div class="legal-box fragment">
+                    <div class="lb-label">📜 Artículos 24 y 26 LOAPF</div>
+                    <div class="lb-text">
+                        El <strong>art. 24</strong> resuelve conflictos de competencia vía Presidencia/SEGOB. El <strong>art. 26</strong> enlista las 20 Secretarías (efecto constitutivo: no existe una Secretaría si no está en la ley; reforma 2025 creó Anticorrupción y Ciencia).
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== ESQUEMA DE SÍNTESIS ========== -->
+            <section data-background-color="#0a0a1a" id="sintesis">
+                <h2><span class="icon-lg">🗂️</span> Esquema de Síntesis</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.78em;">Toda la unidad en un vistazo</p>
+                
+                <div style="font-family: 'Consolas', monospace; font-size: 0.55em; line-height: 1.5; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+                        <div>
+                            <div style="color: var(--accent-blue); font-weight: 700;">I. FUNDAMENTO CONSTITUCIONAL</div>
+                            <div style="padding-left: 12px;">A. Art. 90: APF centralizada y paraestatal<br>B. Art. 89: facultades del Presidente (I reglamentaria, II nombramiento/remoción)<br>C. Art. 93: informar al Congreso</div>
+                            <div style="color: var(--accent-green); font-weight: 700; margin-top: 8px;">II. FORMAS DE ORGANIZACIÓN</div>
+                            <div style="padding-left: 12px;">A. Centralización (sin personalidad)<br>B. Desconcentración (art. 17, dentro de centralizada)<br>C. Descentralización: por servicio / región / colaboración<br>D. Órganos constitucionales autónomos (Banxico, INE, CNDH, INAI)</div>
+                        </div>
+                        <div>
+                            <div style="color: var(--accent-orange); font-weight: 700;">III. APF (LOAPF)</div>
+                            <div style="padding-left: 12px;">A. Centralizada: Presidencia + 20 Secretarías + Consejería<br>B. Paraestatal: organismos descentralizados, empresas participación estatal, fideicomisos, empresas públicas del Estado</div>
+                            <div style="color: var(--accent-red); font-weight: 700; margin-top: 8px;">IV. PODERES JERÁRQUICOS</div>
+                            <div style="padding-left: 12px;">Nombramiento, remoción, mando, decisión, vigilancia, disciplinario, revisión, resolver conflictos</div>
+                            <div style="color: var(--accent-purple); font-weight: 700; margin-top: 8px;">V. COMPETENCIA</div>
+                            <div style="padding-left: 12px;">Por materia/territorio/grado/cuantía. Conflictos +/−. Resuelve superior (art. 24)</div>
+                            <div style="color: var(--accent-pink); font-weight: 700; margin-top: 8px;">VI. REGULADORES AUTÓNOMOS</div>
+                            <div style="padding-left: 12px;">Desconcentración de nuevo tipo. CNBV, CNSF, CONSAR, COFECE, CRE, IFT</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- ========== AUTOEVALUACIÓN ========== -->
+            <section data-background-color="#0a0a1a" id="quiz">
+                <h2><span class="icon-lg">🧠</span> Autoevaluación (1/2)</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.78em;">Toca la opción que consideres correcta. <span style="color: var(--accent-green);">Verde = bien</span> · <span style="color: var(--accent-red);">Rojo = mal</span></p>
+                
+                <div class="quiz-card quiz-question fragment">
+                    <div class="quiz-q">❓ 1. Según el artículo 90 CPEUM, la Administración Pública Federal será:</div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">Centralizada y paraestatal conforme a la Ley Orgánica del Congreso</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Únicamente centralizada y jerárquica</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Exclusivamente descentralizada por servicio</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Federal, local y municipal</div>
+                    <div class="quiz-explanation">El art. 90 consagra la estructura dual: administración <strong>centralizada y paraestatal</strong>, desarrollada por la LOAPF.</div>
+                </div>
+                
+                <div class="quiz-card quiz-question fragment">
+                    <div class="quiz-q">❓ 2. La desconcentración se diferencia de la descentralización porque el órgano desconcentrado:</div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">Carece de personalidad jurídica y permanece en la administración centralizada</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Crea una nueva persona jurídica distinta al Estado</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Se transfiere a particulares por concesión</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Goza de autonomía constitucional plena</div>
+                    <div class="quiz-explanation">El desconcentrado (art. 17 LOAPF) mantiene subordinación jerárquica y <strong>no tiene personalidad jurídica</strong>; el descentralizado sí.</div>
+                </div>
+                
+                <div class="quiz-card quiz-question fragment">
+                    <div class="quiz-q">❓ 3. ¿Cuál de los siguientes NO es un órgano constitucional autónomo?</div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">El Servicio de Administración Tributaria (SAT)</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">El Banco de México (Banxico)</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">El INE</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">La CNDH</div>
+                    <div class="quiz-explanation">El SAT es un <strong>órgano con competencia funcional propia</strong> (Hamdan), subordinado a Hacienda; no está creado en la Constitio.</div>
+                </div>
+                
+                <div class="quiz-card quiz-question fragment">
+                    <div class="quiz-q">❓ 4. ¿Cuántos son los poderes que integran la relación jerárquica?</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">4</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">6</div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">8</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">10</div>
+                    <div class="quiz-explanation">Fernández Ruiz enumera 8: nombramiento, remoción, mando, decisión, vigilancia, disciplinario, revisión y resolver conflictos.</div>
+                </div>
+                
+                <div class="quiz-card quiz-question fragment">
+                    <div class="quiz-q">❓ 5. Conforme al artículo 24 LOAPF, ¿quién resuelve los conflictos de competencia?</div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">El Presidente, por conducto de la Secretaría de Gobernación</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">La Suprema Corte de Justicia</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">El Senado de la República</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">El Congreso de la Unión</div>
+                    <div class="quiz-explanation">El superior jerárquico común (el Presidente vía SEGOB) decide qué dependencia es competente.</div>
+                </div>
+                
+                <div class="quiz-card quiz-question fragment">
+                    <div class="quiz-q">❓ 6. La descentralización administrativa por colaboración se presenta mediante:</div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">La concesión del servicio a particulares por insuficiencia del Estado</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">La creación de un organismo descentralizado por servicio</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">La subordinación jerárquica de un órgano</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Un fideicomiso público</div>
+                    <div class="quiz-explanation">Por colaboración, el Estado transfiere la prestación a particulares vía concesión (Fernández Ruiz, p. 102).</div>
+                </div>
+            </section>
+            
+            <section data-background-color="#0a0a1a" id="quiz2">
+                <h2><span class="icon-lg">🧠</span> Autoevaluación (2/2)</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.78em;">Continuación del cuestionario interactivo.</p>
+                
+                <div class="quiz-card quiz-question fragment">
+                    <div class="quiz-q">❓ 7. Hamdan añade como "quinta categoría" de organización a:</div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">Los órganos con competencia funcional propia</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">La sectorización</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">La delegación de facultades</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">La centralización</div>
+                    <div class="quiz-explanation">Hamdan (Tema V, p. 73) identifica una cuarta categoría aparte de las tres clásicas: órganos con competencia funcional propia.</div>
+                </div>
+                
+                <div class="quiz-card quiz-question fragment">
+                    <div class="quiz-q">❓ 8. La técnica de sectorización agrupa entidades paraestatales coordinadas por:</div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">Una Secretaría de Estado que funge como coordinadora de sector</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">El Presidente de manera directa e individual</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">El Senado de la República</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">La Secretaría de Hacienda en todos los casos</div>
+                    <div class="quiz-explanation">El coordinador de sector (una secretaría) preside la junta de gobierno y alinea políticas (Roldán Xopa, p. 250).</div>
+                </div>
+                
+                <div class="quiz-card quiz-question fragment">
+                    <div class="quiz-q">❓ 9. Petróleos Mexicanos (PEMEX) está sectorizado en:</div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">La Secretaría de Energía</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">La Secretaría de Educación Pública</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">La Secretaría de Salud</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">La Consejería Jurídica</div>
+                    <div class="quiz-explanation">La SE coordina a PEMEX y CFE; la SEP a instituciones educativas; Salud a institutos nacionales de salud.</div>
+                </div>
+                
+                <div class="quiz-card quiz-question fragment">
+                    <div class="quiz-q">❓ 10. La "desconcentración de nuevo tipo" implica que sus titulares son designados:</div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">Por el Ejecutivo con intervención del Senado y periodos escalonados</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Por elección popular directa</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Únicamente por el Senado sin intervención del Ejecutivo</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">De manera vitalicia e inamovible</div>
+                    <div class="quiz-explanation">Roldán Xopa (p. 232): designación del Ejecutivo con Senado, periodos escalonados que trascienden el sexenio.</div>
+                </div>
+                
+                <div class="quiz-card quiz-question fragment">
+                    <div class="quiz-q">❓ 11. Para Fernández Ruiz, en un Estado federal el municipio es:</div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">Obra de la descentralización política, no administrativa</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Descentralización administrativa por región</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Una forma de centralización</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Un órgano desconcentrado</div>
+                    <div class="quiz-explanation">Fernández Ruiz (p. 102) sostiene que en México el municipio es resultado de la descentralización política.</div>
+                </div>
+                
+                <div class="quiz-card quiz-question fragment">
+                    <div class="quiz-q">❓ 12. El artículo 17 de la LOAPF es la base legal de:</div>
+                    <div class="quiz-option" onclick="this.classList.add('correct')">Los órganos administrativos desconcentrados</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Los organismos descentralizados</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Los fideicomisos públicos</div>
+                    <div class="quiz-option" onclick="this.classList.add('wrong')">Los órganos constitucionales autónomos</div>
+                    <div class="quiz-explanation">El art. 17 LOAPF regula a los órganos desconcentrados jerárquicamente subordinados con facultades específicas.</div>
+                </div>
+            </section>
+            
+            <!-- ========== CASOS PRÁCTICOS ========== -->
+            <section data-background-color="#0a0a1a" id="casos">
+                <h2><span class="icon-lg">📋</span> Casos prácticos</h2>
+                <p style="color: rgba(255,255,255,0.5); font-size: 0.78em;">Aplica lo aprendido a situaciones reales</p>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">🔥 Caso 1 — Conflicto de competencia SEMARNAT / SENER</div>
+                    <p style="font-size: 0.82em;">SEMARNAT y SENER disputan autorizar un parque eólico en el Golfo. SEMARNAT alega afectación a área natural protegida (impacto ambiental); SENER dice que la CRE (desconcentrado de SENER) autoriza generación eléctrica. <strong>Preguntas:</strong> 1) ¿Tipo de conflicto? 2) Procedimiento según art. 24 LOAPF. 3) Relevancia de que la CRE sea desconcentrado autónomo. 4) Principios a ponderar.</p>
+                </div>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">⚖️ Caso 2 — Límites de la autonomía de COFECE</div>
+                    <p style="font-size: 0.82em;">COFECE (autónomo) declara prácticas monopólicas y multa al 8% de ingresos. El Secretario de SICT anuncia que "instruirá" a sus representantes en el Consejo de Gobierno para impugnar. <strong>Preguntas:</strong> 1) ¿Puede "instruir" el voto? 2) Naturaleza jurídica de COFECE y su relación con el Ejecutivo. 3) Vías del Ejecutivo para impugnar. 4) Tensión autonomía vs. conducción política.</p>
+                </div>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">🏛️ Caso 3 — Naturaleza jurídica del IMPI</div>
+                    <p style="font-size: 0.82em;">El IMPI (descentralizado sectorizado en Economía) declara nula una patente farmacéutica. La empresa impugna alegando que al ser descentralizado no puede ejercer funciones de autoridad. <strong>Preguntas:</strong> 1) ¿Es correcta la argumentación? 2) Tesis 2a. CCXXIV/2001 sobre facultades de imperio. 3) Diferencia con los actos de PEMEX. 4) Si el IMPI no tuviera personalidad, ¿cambiaría?</p>
+                </div>
+                
+                <div class="real-life fragment">
+                    <div class="rl-label">🎓 Caso 4 — Creación de un órgano desconcentrado</div>
+                    <p style="font-size: 0.82em;">El Congreso crea la "Agencia Nacional de Evaluación Educativa" como desconcentrado de la SEP, con autonomía técnica, de gestión y presupuestaria; director nombrado por el Presidente con no objeción del Senado, 8 años de cargo, remoción por causa grave. <strong>Preguntas:</strong> 1) ¿Puede el Congreso crear desconcentrados por ley? 2) Tesis P./J. 49/2007 sobre quién crea desconcentrados. 3) Constitucionalidad del nombramiento. 4) ¿El periodo de 8 años vulnera al Ejecutivo?</p>
+                </div>
+            </section>
+            
+            <!-- ========== CIERRE ========== -->
+            <section class="title-slide" id="cierre" data-background-gradient="linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%)">
+                <span style="font-size: 4em;">🎓</span>
+                <h1 style="font-size: 2em; margin-top: 20px;">¡Listo para la Unidad 3!</h1>
+                <p style="color: rgba(255,255,255,0.6); font-size: 1.1em; margin-top: 20px;">
+                    La organización no es burocracia fría.<br>
+                    <span style="color: var(--accent-blue); font-weight: 600;">Es la arquitectura del poder público.</span>
+                </p>
+                <div style="margin-top: 40px;">
+                    <p style="font-size: 0.8em; color: rgba(255,255,255,0.4);">
+                        <i class="fa-solid fa-book"></i> Lectura: Hamdan, Tema V · Roldán Xopa, Cap. 5<br>
+                        <i class="fa-solid fa-scale-balanced"></i> Fernández Ruiz, Edo. Méx. Cap. V · Martínez Morales, Diccionario<br>
+                        <i class="fa-solid fa-pen"></i> Preparar cuestionario y casos prácticos
+                    </p>
+                </div>
+                <p style="margin-top: 40px; font-size: 0.7em; color: rgba(255,255,255,0.3);">
+                    Presiona <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">Esc</kbd> para ver la vista general • <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">F</kbd> para pantalla completa
+                </p>
+                <a href="../index.html" style="display: inline-block; margin-top: 20px; font-size: 0.75em; color: rgba(255,255,255,0.4); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 20px; transition: all 0.3s;"><i class="fa-solid fa-arrow-left"></i> Volver al índice de unidades</a>
+            </section>
+            
+        </div>
+    </div>
+    
+    <!-- Reveal.js -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: false,
+            width: 1100,
+            height: 700,
+            margin: 0.04,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: true,
+            controls: true,
+            controlsLayout: 'edges',
+            controlsTutorial: false,
+            disableLayout: true,
+            plugins: [RevealNotes, RevealMarkdown, RevealHighlight]
+        });
+
+        // Click en cualquier lugar avanza la diapositiva
+        document.addEventListener('click', function(e) {
+            // No interferir con links, botones, opciones de quiz, scrollbar
+            if (e.target.closest('a, button, .quiz-option, [onclick], input, select, textarea')) {
+                return;
+            }
+            // No interferir si se hace click en la scrollbar
+            var slide = Reveal.getCurrentSlide();
+            if (e.target === slide || slide.contains(e.target)) {
+                Reveal.navigateNext();
+            }
+        });
+
+        // Mapeo de teclas de volumen para scroll
+        document.addEventListener('keydown', function(e) {
+            // Teclas de volumen: 174 (bajar), 175 (subir)
+            if (e.keyCode === 174 || e.keyCode === 175) {
+                e.preventDefault();
+                var slide = Reveal.getCurrentSlide();
+                var scrollAmount = 100;
+                
+                if (e.keyCode === 175) {
+                    // Volumen arriba = scroll arriba
+                    slide.scrollTop -= scrollAmount;
+                } else {
+                    // Volumen abajo = scroll abajo
+                    slide.scrollTop += scrollAmount;
+                }
+            }
+        });
+
+        // Animación de contadores (20 Secretarías, 300+ entidades)
+        function animateCounter(el) {
+            var target = parseInt(el.getAttribute('data-count'), 10);
+            var suffix = el.getAttribute('data-suffix') || '';
+            var duration = 1500;
+            var start = null;
+            
+            function step(ts) {
+                if (!start) start = ts;
+                var progress = Math.min((ts - start) / duration, 1);
+                var val = Math.floor(progress * target);
+                el.textContent = val + suffix;
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    el.textContent = target + suffix;
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        Reveal.on('slidechanged', function(event) {
+            // Contadores animados
+            event.currentSlide.querySelectorAll('[data-count]').forEach(function(el) {
+                if (!el.dataset.done) {
+                    el.dataset.done = '1';
+                    animateCounter(el);
+                }
+            });
+        });
+
+        // Botón de pantalla completa (móvil y escritorio)
+        var fullscreenBtn = document.getElementById('fullscreen-btn');
+        var fullscreenIcon = fullscreenBtn.querySelector('i');
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                var el = document.documentElement;
+                if (el.requestFullscreen) {
+                    el.requestFullscreen();
+                } else if (el.webkitRequestFullscreen) {
+                    el.webkitRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                }
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleFullscreen();
+        });
+
+        function updateFullscreenIcon() {
+            var isFull = document.fullscreenElement || document.webkitFullscreenElement;
+            if (isFull) {
+                fullscreenIcon.className = 'fa-solid fa-compress';
+                fullscreenBtn.title = 'Salir de pantalla completa';
+                fullscreenBtn.setAttribute('aria-label', 'Salir de pantalla completa');
+            } else {
+                fullscreenIcon.className = 'fa-solid fa-expand';
+                fullscreenBtn.title = 'Pantalla completa';
+                fullscreenBtn.setAttribute('aria-label', 'Pantalla completa');
+            }
+        }
+
+        document.addEventListener('fullscreenchange', updateFullscreenIcon);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
+
+        // Botón de índice: salta a la diapositiva de índice de la unidad (vía API de Reveal para evitar carreras con el hash)
+        document.getElementById('index-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            var slideIndice = document.getElementById('indice');
+            if (slideIndice) {
+                var idx = Reveal.getIndices(slideIndice);
+                Reveal.slide(idx.h, idx.v, idx.f);
+            }
+        });
+
+        // Contador de fragmentos por diapositiva (mostrados/total) junto al botón de índice
+        var fragmentCounter = document.getElementById('fragment-counter');
+        var fcCurrent = fragmentCounter.querySelector('.fc-current');
+        var fcTotal = fragmentCounter.querySelector('.fc-total');
+
+        function updateFragmentCounter() {
+            var slide = Reveal.getCurrentSlide();
+            var total = slide.querySelectorAll('.fragment').length;
+            var shown = slide.querySelectorAll('.fragment.visible').length;
+            if (total > 0) {
+                fcCurrent.textContent = shown;
+                fcTotal.textContent = total;
+                fragmentCounter.classList.add('has-fragments');
+            } else {
+                fcCurrent.textContent = 0;
+                fcTotal.textContent = 0;
+                fragmentCounter.classList.remove('has-fragments');
+            }
+        }
+
+        Reveal.on('slidechanged', updateFragmentCounter);
+        Reveal.on('fragmentshown', updateFragmentCounter);
+        Reveal.on('fragmenthidden', updateFragmentCounter);
+
+        // Navegador de diapositivas: clickeable para saltar a un número
+        var slideNav = document.getElementById('slide-nav');
+        var slideNavCurrent = document.getElementById('slide-nav-current');
+        var slideNavTotal = document.getElementById('slide-nav-total');
+        var slideNavInput = document.getElementById('slide-nav-input');
+
+        function updateSlideNav() {
+            var indices = Reveal.getIndices();
+            var total = Reveal.getTotalSlides();
+            slideNavCurrent.textContent = indices.h + 1;
+            slideNavTotal.textContent = total;
+        }
+
+        function openSlideNavInput() {
+            var indices = Reveal.getIndices();
+            slideNavInput.value = indices.h + 1;
+            slideNav.classList.add('editing');
+            slideNavInput.focus();
+            slideNavInput.select();
+        }
+
+        function closeSlideNavInput() {
+            slideNav.classList.remove('editing');
+            updateSlideNav();
+        }
+
+        function navigateToSlide() {
+            var num = parseInt(slideNavInput.value, 10);
+            var total = Reveal.getTotalSlides();
+            if (!isNaN(num) && num >= 1 && num <= total) {
+                Reveal.slide(num - 1);
+            }
+            closeSlideNavInput();
+        }
+
+        slideNav.addEventListener('click', function(e) {
+            if (e.target === slideNavInput) return;
+            e.stopPropagation();
+            openSlideNavInput();
+        });
+
+        slideNavInput.addEventListener('keydown', function(e) {
+            e.stopPropagation();
+            if (e.key === 'Enter') {
+                navigateToSlide();
+            } else if (e.key === 'Escape') {
+                closeSlideNavInput();
+            }
+        });
+
+        slideNavInput.addEventListener('blur', function() {
+            closeSlideNavInput();
+        });
+
+        Reveal.on('slidechanged', updateSlideNav);
+        updateSlideNav();
+    </script>
+</body>
+</html>
