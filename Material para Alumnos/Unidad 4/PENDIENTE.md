@@ -1,0 +1,1 @@
+﻿Los PDFs de la Unidad 4 (Unidad 4.pdf, Cuestionario.pdf, Autoevaluacion.pdf, Taller.pdf) se generan desde 'unidades/04-el-servidor-publico.md' / 'output/typ-v2/04-el-servidor-publico.typ' con el pipeline del proyecto (md2typ.py + typst compile).

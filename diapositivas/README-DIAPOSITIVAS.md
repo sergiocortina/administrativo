@@ -118,3 +118,8 @@ Ver `../AGENTS.md` para las fuentes doctrinales y legales completas.
 - ~40 diapositivas
 - Secciones: Portada → Ubicación en el curso → Por qué importa → Contadores de leyes → Plan → Mapa conceptual → Constitución → Ley → Reglamento → Tratados → Jurisprudencia → Costumbre y principios → Doctrina → Doctrina comparada → Legislación → Quiz → Síntesis → Casos → Resumen → Cierre
 - Contiene animación de contadores (120+ leyes y 98%) en la diapositiva de estadísticas
+
+### Unidad 4: El Servidor Público
+- 90 diapositivas (agrupadas por tema, no una por micro-concepto)
+- Secciones: Portada → ¿Dónde estamos? → Por qué importa → Objetivos → Competencias → Mapa conceptual → Índice → 4.1 Concepto (art. 108) → 4.2 Clasificación (designación, función, regularidad) → 4.3 Naturaleza jurídica (teorías) → 4.4 Sujeción especial → 4.5 Marco constitucional (123-B, Título Cuarto) → 4.6 Sistema de responsabilidades (5 vertientes) → 4.7 Servicio Profesional de Carrera → 4.8 Derechos y obligaciones → 4.9 Suplencia y delegación → Doctrina comparada → Jurisprudencia → Legislación → Esquema → Autoevaluación (10) → Casos (4) → Actividades → Taller → Material para Alumnos → Cierre
+- Archivo: `unidad-04-el-servidor-publico.html`

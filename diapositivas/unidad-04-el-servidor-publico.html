@@ -1,0 +1,1606 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 4 — El Servidor Público</title>
+    
+    <!-- Reveal.js CSS + Theme -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --r-background-color: #0a0a1a;
+            --r-main-font: 'Inter', sans-serif;
+            --r-heading-font: 'Playfair Display', serif;
+            --r-main-font-size: 24px;
+            --accent-blue: #4f8cff;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --glass: rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.1);
+        }
+        
+        .reveal {
+            font-family: var(--r-main-font);
+        }
+        
+        .reveal .slides {
+            text-align: left;
+        }
+        
+        .reveal .slides section {
+            padding: 20px 40px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .reveal .slides section * {
+            max-width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .reveal .slides p, .reveal .slides li, .reveal .slides h1, .reveal .slides h2, .reveal .slides h3, .reveal .slides h4 {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+            margin-right: 0;
+            padding-right: 0;
+        }
+        
+        /* ====== TITLE SLIDE ====== */
+        .reveal .slides section.title-slide {
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%);
+        }
+        
+        .reveal .slides section.title-slide h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.4em;
+            font-weight: 900;
+            background: linear-gradient(135deg, #4f8cff, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1.2;
+            margin-bottom: 16px;
+        }
+        
+        .reveal .slides section.title-slide .subtitle {
+            font-size: 1em;
+            color: rgba(255,255,255,0.6);
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .reveal .slides section.title-slide .unit-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 8px 24px;
+            border-radius: 30px;
+            font-size: 0.7em;
+            font-weight: 600;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-top: 30px;
+        }
+        
+        /* ====== SECTION HEADERS ====== */
+        .reveal .slides section.section-header {
+            text-align: center;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%);
+        }
+        
+        .reveal .slides section.section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            font-weight: 800;
+            background: linear-gradient(135deg, #4f8cff, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 16px;
+        }
+        
+        .reveal .slides section.section-header .section-icon {
+            font-size: 2.5em;
+            margin-bottom: 14px;
+            display: block;
+        }
+        
+        /* ====== CONTENT CARDS ====== */
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 14px;
+            padding: 14px 16px;
+            margin: 8px 0;
+            backdrop-filter: blur(10px);
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+        
+        .card p, .card li, .card h4 {
+            overflow-wrap: break-word;
+            word-wrap: break-word;
+            hyphens: auto;
+            font-size: 0.85em;
+        }
+        
+        .card-accent-blue { border-left: 4px solid var(--accent-blue); }
+        .card-accent-purple { border-left: 4px solid var(--accent-purple); }
+        .card-accent-pink { border-left: 4px solid var(--accent-pink); }
+        .card-accent-green { border-left: 4px solid var(--accent-green); }
+        .card-accent-orange { border-left: 4px solid var(--accent-orange); }
+        .card-accent-red { border-left: 4px solid var(--accent-red); }
+        
+        /* ====== GRIDS ====== */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 14px;
+        }
+        
+        .grid-3 {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 10px;
+            margin-top: 14px;
+        }
+        
+        .grid-2 > .card, .grid-3 > .card {
+            margin: 0;
+            min-width: 0;
+        }
+        
+        /* ====== HEADINGS ====== */
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+            color: white;
+            font-weight: 700;
+        }
+        
+        .reveal h2 {
+            font-size: 1.4em;
+            margin-bottom: 14px;
+        }
+        
+        .reveal h3 {
+            font-size: 1.05em;
+            color: var(--accent-blue);
+            margin-bottom: 8px;
+        }
+        
+        .reveal h4 {
+            font-size: 0.9em;
+            color: var(--accent-purple);
+        }
+        
+        /* ====== TEXT ====== */
+        .reveal p, .reveal li {
+            color: rgba(255,255,255,0.85);
+            line-height: 1.6;
+        }
+        
+        .reveal ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .reveal ul li {
+            padding: 3px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+        
+        .reveal ul li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent-blue);
+            font-weight: 700;
+        }
+        
+        /* ====== HIGHLIGHTS ====== */
+        .highlight {
+            color: var(--accent-blue);
+            font-weight: 600;
+        }
+        
+        .highlight-purple {
+            color: var(--accent-purple);
+            font-weight: 600;
+        }
+        
+        .highlight-pink {
+            color: var(--accent-pink);
+            font-weight: 600;
+        }
+        
+        .highlight-green {
+            color: var(--accent-green);
+            font-weight: 600;
+        }
+        
+        .highlight-orange {
+            color: var(--accent-orange);
+            font-weight: 600;
+        }
+        
+        /* ====== EMOJI ICONS ====== */
+        .icon-lg {
+            font-size: 1.6em;
+            display: inline-block;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+        
+        .icon-xl {
+            font-size: 3em;
+            display: block;
+            text-align: center;
+            margin-bottom: 16px;
+        }
+        
+        /* ====== TIMELINE ====== */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+            margin: 20px 0;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--accent-blue), var(--accent-purple), var(--accent-pink));
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 10px;
+            padding: 8px 14px;
+            background: var(--glass);
+            border-radius: 8px;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -26px;
+            top: 18px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--accent-blue);
+            border: 2px solid #0a0a1a;
+        }
+        
+        .timeline-item .year {
+            font-size: 0.75em;
+            color: var(--accent-blue);
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        .timeline-item .event {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.8);
+            margin-top: 4px;
+        }
+        
+        /* ====== QUOTE / DEFINITION ====== */
+        .definition-box {
+            background: linear-gradient(135deg, rgba(79,140,255,0.15), rgba(168,85,247,0.15));
+            border: 1px solid rgba(79,140,255,0.3);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin: 14px 0;
+            position: relative;
+        }
+        
+        .definition-box::before {
+            content: '📖';
+            font-size: 1.5em;
+            position: absolute;
+            top: -12px;
+            left: 20px;
+        }
+        
+        .definition-box .def-title {
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-blue);
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+        
+        .definition-box .def-text {
+            font-size: 0.85em;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.5;
+        }
+        
+        /* ====== COMPARISON TABLE ====== */
+        .comparison-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0;
+            border-radius: 10px;
+            overflow: hidden;
+            font-size: 0.65em;
+            margin-top: 12px;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            color: white;
+            padding: 8px 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        .comparison-table td {
+            padding: 7px 12px;
+            border-bottom: 1px solid var(--glass-border);
+            color: rgba(255,255,255,0.85);
+        }
+        
+        .comparison-table tr:nth-child(even) td {
+            background: var(--glass);
+        }
+        
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        /* ====== FUN FACT / CURIOSITY ====== */
+        .fun-fact {
+            background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(239,68,68,0.1));
+            border: 1px solid rgba(245,158,11,0.3);
+            border-radius: 10px;
+            padding: 12px 16px;
+            margin: 10px 0;
+            font-size: 0.85em;
+        }
+        
+        .fun-fact .ff-label {
+            color: var(--accent-orange);
+            font-weight: 700;
+            font-size: 0.7em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* ====== QUIZ CARD ====== */
+        .quiz-card {
+            background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(79,140,255,0.15));
+            border: 1px solid rgba(16,185,129,0.3);
+            border-radius: 14px;
+            padding: 16px 20px;
+            margin: 10px 0;
+        }
+        
+        .quiz-card .quiz-q {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 0.95em;
+            margin-bottom: 8px;
+        }
+        
+        .quiz-option {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 7px 14px;
+            margin: 4px 0;
+            color: rgba(255,255,255,0.8);
+            font-size: 0.8em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .quiz-option:hover {
+            border-color: var(--accent-green);
+            background: rgba(16,185,129,0.1);
+        }
+        
+        .quiz-option.correct {
+            border-color: var(--accent-green);
+            background: rgba(16,185,129,0.2);
+            color: var(--accent-green);
+        }
+        
+        .quiz-option.wrong {
+            border-color: var(--accent-red);
+            background: rgba(239,68,68,0.1);
+            opacity: 0.6;
+        }
+        
+        .quiz-explanation {
+            font-size: 0.75em;
+            color: rgba(255,255,255,0.7);
+            margin-top: 8px;
+            padding: 8px 12px;
+            background: rgba(16,185,129,0.08);
+            border-left: 3px solid var(--accent-green);
+            border-radius: 6px;
+        }
+        
+        /* ====== PRINCIPLE CARDS ====== */
+        .principle-card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            border-radius: 12px;
+            padding: 14px;
+            text-align: center;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+        
+        .principle-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent-blue);
+        }
+        
+        .principle-card .p-icon {
+            font-size: 1.6em;
+            margin-bottom: 6px;
+        }
+        
+        .principle-card .p-name {
+            font-weight: 700;
+            font-size: 0.8em;
+            color: white;
+            margin-bottom: 4px;
+        }
+        
+        .principle-card .p-desc {
+            font-size: 0.65em;
+            color: rgba(255,255,255,0.6);
+            line-height: 1.3;
+        }
+        
+        /* ====== REAL LIFE EXAMPLE ====== */
+        .real-life {
+            background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(168,85,247,0.15));
+            border: 1px solid rgba(236,72,153,0.3);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 10px 0;
+        }
+        
+        .real-life .rl-label {
+            color: var(--accent-pink);
+            font-weight: 700;
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 6px;
+        }
+        
+        /* ====== LEGAL BOX (green citations) ====== */
+        .legal-box {
+            background: linear-gradient(135deg, rgba(16,185,129,0.13), rgba(16,185,129,0.05));
+            border: 1px solid rgba(16,185,129,0.3);
+            border-radius: 12px;
+            padding: 14px 18px;
+            margin: 10px 0;
+        }
+        
+        .legal-box .lb-label {
+            color: var(--accent-green);
+            font-weight: 700;
+            font-size: 0.65em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 6px;
+        }
+        
+        .legal-box .lb-text {
+            font-size: 0.82em;
+            color: rgba(255,255,255,0.9);
+            line-height: 1.5;
+        }
+        
+        /* ====== COUNTER ====== */
+        .counter-number {
+            font-size: 3em;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-align: center;
+        }
+        
+        .counter-label {
+            text-align: center;
+            color: rgba(255,255,255,0.6);
+            font-size: 0.8em;
+            margin-top: 8px;
+        }
+        
+        /* ====== PROGRESS BAR ====== */
+        .progress-bar {
+            background: rgba(255,255,255,0.1);
+            border-radius: 10px;
+            height: 8px;
+            margin: 8px 0;
+            overflow: hidden;
+        }
+        
+        .progress-bar .fill {
+            height: 100%;
+            border-radius: 10px;
+            background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
+            transition: width 1s ease;
+        }
+        
+        /* ====== REVEAL OVERRIDES ====== */
+        .reveal .slides section .fragment.visible {
+            opacity: 1;
+        }
+        
+        .reveal .slide-number {
+            display: none !important;
+        }
+        
+        /* ====== NAVEGADOR DE DIAPOSITIVAS (clicable) ====== */
+        .slide-nav {
+            position: fixed;
+            bottom: 16px;
+            left: 16px;
+            z-index: 9999;
+            height: 38px;
+            padding: 0 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            background: rgba(10,10,26,0.7);
+            backdrop-filter: blur(10px);
+            color: rgba(255,255,255,0.7);
+            font-family: 'Consolas', monospace;
+            font-size: 0.9em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        .slide-nav:hover {
+            border-color: var(--accent-blue);
+            color: white;
+        }
+        
+        .slide-nav .slide-nav-display {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .slide-nav .slide-nav-current {
+            color: var(--accent-blue);
+        }
+        
+        .slide-nav .slide-nav-sep {
+            color: rgba(255,255,255,0.3);
+            margin: 0 2px;
+        }
+        
+        .slide-nav .slide-nav-input {
+            display: none;
+            width: 50px;
+            background: transparent;
+            border: none;
+            border-bottom: 2px solid var(--accent-blue);
+            color: var(--accent-blue);
+            font-family: 'Consolas', monospace;
+            font-size: 1em;
+            font-weight: 700;
+            text-align: center;
+            outline: none;
+            padding: 2px 0;
+            -moz-appearance: textfield;
+        }
+        
+        .slide-nav .slide-nav-input::-webkit-outer-spin-button,
+        .slide-nav .slide-nav-input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        .slide-nav.editing .slide-nav-display {
+            display: none;
+        }
+        
+        .slide-nav.editing .slide-nav-input {
+            display: inline-block;
+        }
+        
+        /* ====== SCROLL VERTICAL (TODAS LAS DIAPOSITIVAS) ====== */
+        .reveal .slides section {
+            overflow-y: auto;
+            max-height: 100%;
+            padding-bottom: 40px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-track {
+            background: rgba(255,255,255,0.05);
+            border-radius: 3px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-thumb {
+            background: rgba(79,140,255,0.4);
+            border-radius: 3px;
+        }
+        
+        .reveal .slides section::-webkit-scrollbar-thumb:hover {
+            background: rgba(79,140,255,0.6);
+        }
+        
+        /* ====== RESPONSIVE ====== */
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+            .reveal .slides section {
+                padding: 20px 30px;
+            }
+        }
+        
+        /* ====== SPECIAL EFFECTS ====== */
+        .glow-text {
+            text-shadow: 0 0 20px rgba(79,140,255,0.5), 0 0 40px rgba(168,85,247,0.3);
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.8s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        /* ====== TOP-RIGHT BUTTONS (índice + pantalla completa) ====== */
+        .fullscreen-btn, .index-btn {
+            position: fixed;
+            top: 16px;
+            z-index: 9999;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: 1px solid var(--glass-border);
+            background: rgba(10,10,26,0.65);
+            backdrop-filter: blur(10px);
+            color: rgba(255,255,255,0.85);
+            font-size: 1.1em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            -webkit-tap-highlight-color: transparent;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+        }
+        
+        .fullscreen-btn {
+            right: 16px;
+        }
+        
+        .index-btn {
+            right: 76px;
+        }
+        
+        .fullscreen-btn:hover, .fullscreen-btn:active,
+        .index-btn:hover, .index-btn:active {
+            border-color: var(--accent-blue);
+            background: rgba(79,140,255,0.25);
+            color: white;
+            transform: scale(1.05);
+        }
+        
+        /* ====== FRAGMENT COUNTER (mostrados/total por diapositiva) ====== */
+        .fragment-counter {
+            position: fixed;
+            top: 22px;
+            right: 142px;
+            z-index: 9999;
+            height: 38px;
+            padding: 0 14px;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            background: rgba(10,10,26,0.65);
+            backdrop-filter: blur(10px);
+            color: rgba(255,255,255,0.9);
+            font-family: 'Consolas', monospace;
+            font-size: 0.85em;
+            font-weight: 700;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+            white-space: nowrap;
+        }
+        
+        .fragment-counter.has-fragments {
+            display: flex;
+        }
+        
+        .fragment-counter .fc-current {
+            color: var(--accent-blue);
+        }
+    </style>
+</head>
+<body>
+    <!-- Contador de elementos por diapositiva (mostrados/total) + botones superiores -->
+    <div class="fragment-counter" id="fragment-counter" title="Elementos de la diapositiva (mostrados/total)">
+        <span class="fc-current">0</span>/<span class="fc-total">0</span>
+    </div>
+
+    <button class="index-btn" id="index-btn" title="Ir al índice de la unidad" aria-label="Ir al índice de la unidad">
+        <i class="fa-solid fa-list-ul"></i>
+    </button>
+
+    <button class="fullscreen-btn" id="fullscreen-btn" title="Pantalla completa" aria-label="Pantalla completa">
+        <i class="fa-solid fa-expand"></i>
+    </button>
+
+    <!-- Navegador de diapositivas (clickeable para saltar a un número) -->
+    <div class="slide-nav" id="slide-nav" title="Clic para ir a una diapositiva">
+        <div class="slide-nav-display">
+            <span class="slide-nav-current" id="slide-nav-current">1</span>
+            <span class="slide-nav-sep">/</span>
+            <span id="slide-nav-total">1</span>
+        </div>
+        <input type="number" class="slide-nav-input" id="slide-nav-input" min="1" placeholder="">
+    </div>
+
+    <div class="reveal">
+        <div class="slides">
+<section class="title-slide">
+<span class="unit-badge">Unidad 4</span>
+<h1 style="margin-top: 30px;">El Servidor<br>Público</h1>
+<p class="subtitle">¿Quién trabaja para el Estado y cómo se le exige responsabilidad?</p>
+<p style="color: rgba(255,255,255,0.4); font-size: 0.7em; margin-top: 40px;">
+    <i class="fa-solid fa-graduation-cap"></i> Mtro. Sergio Armando Cortina Ceballos<br>
+    <i class="fa-solid fa-building-columns"></i> Universidad Cristóbal Colón · 2026
+</p>
+<a href="../index.html" style="display: inline-block; margin-top: 24px; font-size: 0.7em; color: rgba(255,255,255,0.3); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice</a>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗺️</span> ¿Dónde estamos en el curso?</h2><p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Unidad 1: <em>qué es</em> el DA · Unidad 2: <em>de dónde sale</em> · Unidad 3: <em>cómo se organiza</em> · Unidad 4: <em>quién lo hace y cómo se le responsabiliza</em>.</p><div style="font-family: 'Consolas', monospace; font-size: 0.62em; line-height: 1.5; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);"><div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;"><div><div style="color: var(--accent-blue); font-weight: 700; margin-bottom: 6px;">📘 FUNDAMENTOS</div><div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">1. Introducción al DA<br>2. Fuentes del DA</div><div style="color: var(--accent-green); font-weight: 700; margin-top: 12px; margin-bottom: 6px;">🏛️ ORGANIZACIÓN</div><div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">3. La Organización Administrativa<br><strong style="color: var(--accent-green);">4. El Servidor Público ◀ ESTAMOS AQUÍ</strong></div></div><div><div style="color: var(--accent-purple); font-weight: 700; margin-bottom: 6px;">📜 ACTO Y PROCEDIMIENTO</div><div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">5. Teoría del Acto Administrativo<br>6. El Procedimiento Administrativo<br>7. Ineficacias del Acto</div><div style="color: var(--accent-orange); font-weight: 700; margin-top: 12px; margin-bottom: 6px;">📋 CONTRATACIÓN Y SERVICIOS</div><div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">8. Contrato Administrativo<br>9. Servicio Público y Concesión</div></div><div><div style="color: var(--accent-pink); font-weight: 700; margin-bottom: 6px;">🔍 CONTROL</div><div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">10. Control de la AP<br>11. Patrimonio y Expropiación<br>12. Responsabilidad Patrimonial</div><div style="color: var(--accent-red); font-weight: 700; margin-top: 12px; margin-bottom: 6px;">⚖️ IMPUGNACIÓN</div><div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">13. Recursos Administrativos<br>14. Amparo y Controversia<br>15. Responsabilidades</div></div></div></div><div class="fun-fact fragment"><div class="ff-label">💡 Por qué importa</div><p style="font-size: 0.82em;">El Derecho Administrativo no actúa solo: <strong>actúa por medio de personas</strong>. Conocer quién es servidor público, cómo accede al cargo y cómo se le exige responsabilidad es la clave para entender todo el control de la administración.</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🤔</span> ¿Por qué estudiar al servidor público?</h2><div class="grid-3" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">🧑⚖️</h4><p style="font-size: 0.82em; margin: 4px 0 0;"><strong>Quién actúa.</strong> El Estado actúa siempre por medio de personas físicas (teoría del órgano).</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">⚖️</h4><p style="font-size: 0.82em; margin: 4px 0 0;"><strong>Régimen especial.</strong> El servidor tiene deberes y límites que el particular común no tiene.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">🛡️</h4><p style="font-size: 0.82em; margin: 4px 0 0;"><strong>Tu defensa.</strong> Impugnar un acto es, muchas veces, cuestionar quién lo dictó y si era legítimo.</p></div>
+</div><div class="fun-fact fragment"><div class="ff-label">💡 Dato</div><p style="font-size: 0.82em;">El <strong>artículo 108 de la Constitución</strong> define al servidor público de la manera más amplia posible: desde el Presidente hasta «toda persona que desempeñe un empleo, cargo o comisión de cualquier naturaleza». Casi cualquier función del Estado recae en un servidor público.</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎯</span> Objetivos de aprendizaje</h2><p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Al finalizar la unidad el estudiante será capaz de:</p><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">1. Identificar</h4><p style="font-size: 0.82em; margin: 4px 0 0;">El concepto constitucional de servidor público y sus elementos conforme al art. 108 CPEUM.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">2. Distinguir</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Las clases de servidores según su designación, funciones y régimen jurídico aplicable.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">3. Analizar</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Las teorías de la relación Estado-servidor, en especial la teoría del órgano y del acto-unión.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">4. Comprender</h4><p style="font-size: 0.82em; margin: 4px 0 0;">El sistema de responsabilidades en sus cinco vertientes: política, penal, administrativa, patrimonial y laboral.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">5. Evaluar</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Críticamente el Servicio Profesional de Carrera como mecanismo de profesionalización.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">6. Explicar</h4><p style="font-size: 0.82em; margin: 4px 0 0;">El régimen de sujeción especial que distingue al servidor del administrado común.</p></div>
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">7. Distinguir (II)</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Entre funcionarios legítimos, de hecho y usurpadores, y las consecuencias de sus actos.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Competencias a desarrollar</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Análisis normativo</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Interpretar y aplicar el marco constitucional y legal de la función pública (LGRASP, LFTSE).</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Argumentación jurídica</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Fundamentar la procedencia de cada responsabilidad y sus procedimientos aplicables.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Pensamiento crítico</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Evaluar las tensiones entre profesionalización y libre designación del Ejecutivo.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Resolución de casos</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Identificar la responsabilidad específica y determinar procedimiento y sanción conforme al sistema mexicano.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗺️</span> Mapa Conceptual</h2><div style="font-family: 'Consolas', monospace; font-size: 0.58em; line-height: 1.55; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border); white-space: pre;">I. CONCEPTO (art. 108 CPEUM)
+II. CLASIFICACIÓN
+  A. Por designación
+  B. Por función (confianza / base / carrera)
+  C. Por regularidad (legítimo / de hecho / usurpador)
+III. NATURALEZA DE LA RELACIÓN
+  A. Teoría del órgano (prevaleciente)
+  B. Teoría del acto-unión
+  C. Teoría del acto mixto
+  D. Relación de sujeción especial
+IV. MARCO CONSTITUCIONAL (arts. 108-114, 123-B)
+V. SISTEMA DE RESPONSABILIDADES (5 vertientes)
+VI. SERVICIO PROFESIONAL DE CARRERA
+VII. DERECHOS Y OBLIGACIONES
+VIII. SUPLENCIA Y DELEGACIÓN DE FIRMA</div>
+</section>
+<section data-background-color="#0a0a1a" id="indice">
+<h2><span class="icon-lg">📑</span> Índice de la Unidad 4</h2><p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Toca o haz clic en un tema para ir directo a él</p><div class="grid-2" style="margin-top: 10px;">
+<a class="card card-accent-blue" href="#/seccion-4-1" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;">4.1 Concepto de servidor público</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Art. 108 CPEUM y definiciones doctrinales</p></a><a class="card card-accent-green" href="#/seccion-4-2" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-green); margin: 0;">4.2 Clasificación</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Designación, función y regularidad</p></a><a class="card card-accent-purple" href="#/seccion-4-3" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-purple); margin: 0;">4.3 Naturaleza jurídica de la relación</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Teorías: órgano, acto-unión, acto mixto</p></a><a class="card card-accent-pink" href="#/seccion-4-4" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-pink); margin: 0;">4.4 Relación especial de sujeción</h4><p style="font-size: 0.75em; margin: 4px 0 0;">El debilitamiento de derechos</p></a><a class="card card-accent-orange" href="#/seccion-4-5" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-orange); margin: 0;">4.5 Marco constitucional</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Art. 123-B y Título Cuarto (108–114)</p></a><a class="card card-accent-red" href="#/seccion-4-6" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-red); margin: 0;">4.6 Sistema de responsabilidades</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Cinco vertientes</p></a><a class="card card-accent-blue" href="#/seccion-4-7" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;">4.7 Servicio Profesional de Carrera</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Ley 2003 y subsistemas</p></a><a class="card card-accent-green" href="#/seccion-4-8" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-green); margin: 0;">4.8 Derechos y obligaciones</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Catálogo de la LFTSE</p></a><a class="card card-accent-purple" href="#/seccion-4-9" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-purple); margin: 0;">4.9 Suplencia y delegación de firma</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Dos figuras del ejercicio de atribuciones</p></a><a class="card card-accent-pink" href="#/seccion-4-10" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-pink); margin: 0;">Doctrina, jurisprudencia y legislación</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Cuadro comparado, tesis y artículos</p></a><a class="card card-accent-orange" href="#/seccion-4-11" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-orange); margin: 0;">Esquema, autoevaluación, casos y taller</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Aplicación práctica</p></a>
+</div>
+</section>
+<section class="section-header" id="seccion-4-1">
+<h2><span class="icon-lg">🔘</span> 4.1 Concepto de servidor público</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> La base constitucional: artículo 108</h2><div class="legal-box fragment"><div class="lb-label">Artículo 108 CPEUM</div><div class="lb-text">«Para los efectos de las responsabilidades a que alude este Título se reputarán como servidores públicos a los representantes de elección popular, a los miembros del Poder Judicial de la Federación, los funcionarios y empleados y, en general, a toda persona que desempeñe un empleo, cargo o comisión de cualquier naturaleza en el Congreso de la Unión o en la Administración Pública Federal, así como a los servidores públicos de los organismos a los que esta Constitución otorgue autonomía...»</div></div><div class="fun-fact fragment"><div class="ff-label">💡 Clave</div><p style="font-size: 0.82em;">Es el concepto <strong>más amplio</strong> de nuestro ordenamiento. No importa el nivel ni la jerarquía: si se desempeña un empleo, cargo o comisión en el Estado, se es servidor público para efectos de responsabilidades.</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Elementos del concepto (art. 108)</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Representantes de elección popular</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Diputados, senadores, gobernadores, presidente, ayuntamientos.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Miembros del Poder Judicial</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Ministros, magistrados y jueces federales.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Funcionarios y empleados</h4><p style="font-size: 0.82em; margin: 4px 0 0;">De la Administración Pública Federal, centralizada y paraestatal.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">«En general, toda persona»</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Que desempeñe empleo, cargo o comisión de cualquier naturaleza.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">Congreso de la Unión</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Órgano legislativo federal.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Organismos autónomos</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Los que la Constitución dote de autonomía (INE, Banxico, CNDH, etc.).</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📖</span> Definición doctrinal: Martínez Morales</h2><div class="definition-box fragment"><div class="def-title">Martínez Morales (Diccionario)</div><p class="def-text">«La persona física que realiza función pública de cualquier naturaleza». Encierra dos elementos esenciales: la <strong>persona física</strong> que presta servicios al Estado y la <strong>función pública</strong> como contenido de la prestación.</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📖</span> Definición doctrinal: Hamdan Amad</h2><div class="definition-box fragment"><div class="def-title">Hamdan Amad (Tema VI, p. 89)</div><p class="def-text">«Las personas que prestan sus servicios al Estado, brindan un servicio de utilidad social y por lo general manejan recursos públicos», sujetas a un régimen especial.</p></div><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Requisito 1</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Capacidad legal.</p></div>
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Requisito 2</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Ser nombrada por otro servidor facultado.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Requisito 3</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Cumplir requisitos de ley: nacionalidad, escolaridad, edad.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Requisito 4</h4><p style="font-size: 0.82em; margin: 4px 0 0;">No incurrir en prohibiciones (parentesco, inhabilitación).</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧑⚖️</span> Titular de órgano vs. servidor público (Roldán Xopa)</h2><div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Distinción fundamental</h4><p style="font-size: 0.82em; margin: 4px 0 0;">No son sinónimos. La <strong>titularidad</strong> implica un vínculo por la aptitud de ejercer atribuciones del órgano; la <strong>calidad de servidor</strong> se refiere al tipo de relación jurídica personal con la entidad (Roldán Xopa, Cap. 5, p. 201).</p></div><div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Ejemplo límite</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Hay titulares que no son servidores públicos: <em>notarios y corredores públicos</em>, particulares que ejercen funciones públicas.</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">💡</span> Síntesis del concepto</h2><div class="grid-3" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Persona física</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Quien presta el servicio.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Función pública</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Contenido de la prestación.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Empleo/cargo/comisión</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Cualquier vínculo con el Estado.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Régimen especial</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Ley del cargo que se ocupa.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">Responsabilidad</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Alcance del Título Cuarto.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Autonomía</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Incluye organismos constitucionales autónomos.</p></div>
+</div>
+</section>
+<section class="section-header" id="seccion-4-2">
+<h2><span class="icon-lg">🧬</span> 4.2 Clasificación de los servidores públicos</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧬</span> Criterios de clasificación</h2><div class="grid-3" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Por designación</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Cómo accede al cargo.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Por función</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Confianza, base o carrera.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Por regularidad</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Legitimidad del nombramiento.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🔢</span> 4.2.1 Por la forma de designación</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">a) Elección democrática</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Presidente, diputados, senadores, gobernadores, asambleístas y ayuntamientos (Hamdan, p. 90).</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">b) Colaboración Ejecutivo-Legislativo</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Ministros SCJN, embajadores, empleados superiores de Hacienda, titulares de OCA y Fiscal General (Hamdan, p. 91).</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">c) Designación directa del Presidente</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Secretarios de Estado y Consejero Jurídico, libre nombramiento y remoción (art. 89-II CPEUM).</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">d) Designación del superior jerárquico</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Subsecretarios, oficiales mayores, directores generales en la centralizada (Hamdan, p. 91).</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">e) Acto-unión / prestación de servicios</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Base y confianza: relación laboral con jornada, sueldo, lugar y horario.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧬</span> 4.2.2 Por la naturaleza de sus funciones — Servidores de confianza</h2><div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Vínculo por nombramiento</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Se vinculan mediante un nombramiento que define su competencia por materia, territorio y jerarquía o grado, dotándolos de representatividad suficiente (Hamdan, p. 90).</p></div><div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Funciones de confianza (LFTSE)</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Dirección; toma de decisiones (directores generales, de área, adjuntos, subdirectores, jefes de departamento); inspección, vigilancia y fiscalización; manejo de fondos; auditoría; control de adquisiciones; investigación científica; asesoría; secretarios particulares (Hamdan, p. 92).</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧬</span> 4.2.2 — Servidores de base</h2><div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Sin facultades de decisión</h4><p style="font-size: 0.82em; margin: 4px 0 0;">No incluidos en el art. 5 de la LFTSE; no tienen representatividad. Deben ser mexicanos (sustituidos por extranjeros solo si no hay nacionales).</p></div><div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Estabilidad</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Inamovibles tras 6 meses continuos sin nota desfavorable; si son despedidos injustificadamente pueden reclamar indemnización o reinstalación. Sus derechos son irrenunciables (Hamdan, p. 91). Fernández Ruiz: los de base son los que no son de confianza.</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧬</span> 4.2.2 — Cuadro comparativo: confianza vs base</h2><div class="comparison-table fragment"><table style="width:100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.6em;">
+<thead><tr><th></th><th>De confianza</th><th>De base</th></tr></thead>
+<tbody>
+<tr><td>Vínculo</td><td>Nombramiento por competencia</td><td>Acto-unión</td></tr>
+<tr><td>Decisiones</td><td>Dirección, inspección, fiscalización</td><td>Ejecución material</td></tr>
+<tr><td>Estabilidad</td><td>No hay; excluidos de LFTSE</td><td>Inamovibles tras 6 meses</td></tr>
+<tr><td>Derechos</td><td>Solo salario y seg. social (123-B XIV)</td><td>Irrenunciables; reinstalación</td></tr>
+</tbody></table></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧭</span> 4.2.3 Por su regularidad — Legítimos y de hecho</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Legítimos (de iure)</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Reúnen todos los requisitos: el órgano existe legalmente y el servidor cumple y mantiene los requisitos para el cargo (Hamdan, p. 101).</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Funcionarios de hecho (de facto)</h4><p style="font-size: 0.82em; margin: 4px 0 0;">No reúnen requisitos o dejan de reunirlos, pero actúan con apariencia pública y legítima: sus actos son válidos frente a terceros (salvo mala fe) — Hamdan, p. 101.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧭</span> Legitimidad de origen (Vallarta) y usurpadores</h2><div class="definition-box fragment"><div class="def-title">Vallarta (s. XIX)</div><p class="def-text">«La legitimidad se refiere a la persona... y la competencia se relaciona con la entidad moral que se llama autoridad». Legitimidad y competencia son distintas: el acto de un <em>de facto</em> puede ser válido frente a terceros aunque el nombramiento adolezca de vicios (citado por Roldán Xopa, p. 203).</p></div><div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Usurpadores</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Se atribuyen por engaño el carácter de servidor y ejercen funciones: nulidad absoluta de sus actos + delito de usurpación (art. 250 CPF, Hamdan, p. 102).</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">💡</span> Síntesis de la clasificación</h2><div class="grid-3" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Elección / nombramiento</h4><p style="font-size: 0.82em; margin: 4px 0 0;">5 formas de designación.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Confianza / base / carrera</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Por función.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Legítimo / de hecho / usurpador</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Por regularidad.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">De iure</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Requisitos plenos.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">De facto</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Actos válidos frente a terceros.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Usurpador</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Nulidad absoluta + delito.</p></div>
+</div>
+</section>
+<section class="section-header" id="seccion-4-3">
+<h2><span class="icon-lg">⚙️</span> 4.3 Naturaleza jurídica de la relación</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚙️</span> Teorías explicativas (introducción)</h2><p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">La doctrina ha desarrollado diversas teorías para explicar la relación jurídica entre el Estado y sus servidores.</p><div class="grid-3" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Mandato</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Superada</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Representación</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Superada</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Órgano</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Prevaleciente</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Contractualista</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Limitada</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">Acto-unión</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Francesa</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Acto mixto</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Fernández Ruiz</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚙️</span> Teorías superadas: mandato y representación</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Teoría del mandato (superada)</h4><p style="font-size: 0.82em; margin: 4px 0 0;">El mandato es contrato entre particulares; no cabe en relación de derecho público donde el Estado actúa investido de imperio.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Teoría de la representación (superada)</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Presupone representante y representado distintos; en la teoría del órgano el servidor es parte del Estado mismo.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">✅</span> Teoría del órgano (prevaleciente)</h2><div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">La teoría vigente</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Fernández Ruiz (Edo. Méx., p. 32): el Estado actúa por personas físicas; el órgano carece de personalidad propia y forma con el Estado una sola unidad. El servidor <strong>es parte del Estado</strong>. Surgió del reconocimiento de la personalidad jurídica del Estado.</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚙️</span> Acto-unión, acto mixto y contractualista</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">Teoría del acto-unión (solución francesa)</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Hamdan (p. 95): hay acuerdo de voluntades, pero régimen preestablecido que las partes no pueden modificar, salvo el Reglamento de Condiciones de Trabajo (sindicatos-Estado).</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Teoría del acto mixto (Fernández Ruiz, p. 380)</h4><p style="font-size: 0.82em; margin: 4px 0 0;">No es solo contractual, administrativa unilateral o estatutaria: es un acto mixto con parte estatutaria, parte de acto unilateral y parte contractual/administrativa.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Teoría contractualista (aplicación limitada)</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Relación de naturaleza contractual regulada por derecho laboral; los de base celebran acto-unión, pero confianza y altos funcionarios están bajo régimen estatutario.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">💡</span> Síntesis de la naturaleza</h2><div class="grid-3" style="margin-top: 12px;">
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Órgano</h4><p style="font-size: 0.82em; margin: 4px 0 0;">El servidor es el Estado.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">Acto-unión</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Acuerdo + régimen fijo.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Acto mixto</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Estatutaria + unilateral + contractual.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Sujeción especial</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Derechos reconfigurados.</p></div>
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Mandato / representación</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Superadas.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Contractualista</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Aplicación limitada.</p></div>
+</div>
+</section>
+<section class="section-header" id="seccion-4-4">
+<h2><span class="icon-lg">🔗</span> 4.4 La relación especial de sujeción</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🔗</span> Concepto (Roldán Xopa, p. 206)</h2><div class="definition-box fragment"><div class="def-title">Relación especial de sujeción</div><p class="def-text">De origen alemán: entre el servidor y el órgano hay una relación distinta a la de los administrados. Supone un «debilitamiento o minorización de los derechos fundamentales... como consecuencia de una relación cualificada con los poderes públicos». El estatuto del servidor se subordina al cumplimiento de la función de interés público.</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🔗</span> Ejemplos de la sujeción especial</h2><div class="grid-3" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">🦸 Soldado</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Subordina su autonomía e incluso su vida para cumplir una orden.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">🚒 Bombero</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Se somete a riesgos extraordinarios para cumplir la función pública.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">🦷 Médico</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Tiene limitada su objeción de conciencia para interrumpir un embarazo cuando la ley obliga.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🔗</span> Reconocimiento jurisprudencial</h2><div class="legal-box fragment"><div class="lb-label">Tesis 1a. CCXLIV/2011</div><div class="lb-text">La relación de sujeción especial justifica limitaciones a ciertos derechos fundamentales que no serían admisibles respecto de los particulares, siempre que sean <strong>proporcionales y necesarias</strong> para el cumplimiento de la función pública. La jurisprudencia también ha declarado que la relación entre policías y la administración es de carácter administrativo y no laboral.</div></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🔗</span> Límites de la sujeción especial</h2><div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Proporcionalidad y necesidad</h4><p style="font-size: 0.82em; margin: 4px 0 0;">La minoración de derechos debe ser proporcional y necesaria; no es ilimitada. El interés público reconfigura pero no elimina los derechos fundamentales.</p></div>
+</section>
+<section class="section-header" id="seccion-4-5">
+<h2><span class="icon-lg">📜</span> 4.5 Marco constitucional de los servidores públicos</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📅</span> 4.5.1 Artículo 123, apartado B — contexto</h2><div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Reforma 5 dic 1960</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Dividió el art. 123 en apartado A (sector privado) y apartado B (trabajadores al servicio del Estado).</p></div><div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Antes de 1960</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Los trabajadores del Estado carecían de régimen laboral específico y el Presidente removía libremente. En 1938 se publicó el Estatuto de los Trabajadores al Servicio de los Poderes de la Unión, vigente hasta 1960 (Hamdan, p. 94).</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📅</span> 4.5.1 — Fracciones del apartado B</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">I</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Jornada máx. diurna 8 h / nocturna 7 h.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">IV</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Dos periodos de vacaciones al año.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">VIII</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Derecho a la sindicalización.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">X</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Derecho a la huelga.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">XI</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Derecho a la seguridad social.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">XIV</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Protección al salario y seg. social para trabajadores de confianza.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🏛️</span> 4.5.2 Título Cuarto de la CPEUM (arts. 108–114)</h2><div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Sistema constitucional de responsabilidades</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Reformado 28 dic 1982 (sistema vigente) y 27 may 2015 (Sistema Nacional Anticorrupción). Denominado «De las Responsabilidades de los Servidores Públicos, Particulares Vinculados con Faltas Administrativas Graves o Hechos de Corrupción, y Patrimonial del Estado».</p></div><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Art. 108</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Concepto de servidor para responsabilidades.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Art. 109</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Cuatro vertientes + non bis in idem.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Art. 110</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Juicio político.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Art. 111</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Declaración de procedencia (desafuero).</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">Art. 113</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Sistema Nacional Anticorrupción.</p></div>
+</div>
+</section>
+<section class="section-header" id="seccion-4-6">
+<h2><span class="icon-lg">⚖️</span> 4.6 Sistema de responsabilidades</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> Las cinco vertientes</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">1. Política</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Juicio político (art. 110).</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">2. Penal</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Delitos contra la administración pública (CPF, Título Décimo).</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">3. Administrativa</h4><p style="font-size: 0.82em; margin: 4px 0 0;">LGRASP.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">4. Patrimonial</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Del Estado, objetiva y directa.</p></div>
+<div class="card card-accent-pink"><h4 style="color: var(--accent-pink);">5. Laboral</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Tribunal Federal de Conciliación y Arbitraje.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> 4.6.1 Responsabilidad política (juicio político)</h2><div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Procede</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Contra los servidores del art. 110 por actos u omisiones que redunden en perjuicio de intereses públicos fundamentales o de su buen despacho. No por la mera expresión de ideas (art. 109-I).</p></div><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Cámara de Diputados</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Órgano de acusación (mayoría absoluta de presentes).</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Cámara de Senadores</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Jurado de sentencia (mayoría de 2/3 de presentes).</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🔒</span> 4.6.2 Responsabilidad penal</h2><div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Título Décimo CPF</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Ejercicio indebido de servicio público (214) · abuso de autoridad (215) · coalición (216) · uso indebido de atribuciones (217) · concusión (218) · intimidación (219) · tráfico de influencia (221) · cohecho (222) · peculado (223) · enriquecimiento ilícito (224).</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> 4.6.3 Responsabilidad administrativa (LGRASP)</h2><div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Ley General de Responsabilidades Administrativas</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Publicada 18 jul 2016, vigente 19 jul 2017. Sustituyó a la Ley Federal de Responsabilidades Administrativas de los Servidores Públicos; es el reglamentario del Título Cuarto en materia administrativa.</p></div><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Sanciones (art. 109-III)</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Amonestación, suspensión (3 días a 1 año), destitución, inhabilitación (1 a 20 años), sanción económica.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Principios rectores</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Legalidad, honradez, lealtad, imparcialidad y eficiencia (Hamdan, p. 109).</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">💰</span> 4.6.4 Responsabilidad patrimonial</h2><div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Objetiva y directa</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Del Estado por daños de su actividad administrativa irregular (art. 109 párrafo final). Ley Federal de Responsabilidad Patrimonial del Estado (2004). El Estado repite contra el servidor si hubo incumplimiento grave (Hamdan, p. 113).</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">💼</span> 4.6.5 Responsabilidad laboral</h2><div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">Por incumplimiento como trabajador</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Conoce el Tribunal Federal de Conciliación y Arbitraje; para organismos previos (UNAM, IMSS, PEMEX, CFE) conoce la Junta Federal de Conciliación y Arbitraje (Hamdan, p. 115).</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">💡</span> Principio non bis in idem</h2><div class="fun-fact fragment"><div class="ff-label">💡 Clave</div><p style="font-size: 0.82em;">El art. 109 prohíbe la <strong>doble sanción por una misma conducta</strong>. El juicio político es autónomo e independiente de la penal y la administrativa (Tesis P./J. 8/2005).</p></div>
+</section>
+<section class="section-header" id="seccion-4-7">
+<h2><span class="icon-lg">🎯</span> 4.7 El Servicio Profesional de Carrera</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎯</span> Ley del Servicio Profesional de Carrera (2003)</h2><div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Marco</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Publicada 10 abr 2003 en el DOF. Sistema de profesionalización para servidores de confianza de la administración centralizada.</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎯</span> Rangos incluidos</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Director general</h4><p style="font-size: 0.82em; margin: 4px 0 0;"></p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Director de área</h4><p style="font-size: 0.82em; margin: 4px 0 0;"></p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Subdirector de área</h4><p style="font-size: 0.82em; margin: 4px 0 0;"></p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">Jefe de departamento</h4><p style="font-size: 0.82em; margin: 4px 0 0;"></p></div>
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Enlace</h4><p style="font-size: 0.82em; margin: 4px 0 0;"></p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎯</span> Subsistemas del SPC</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Planeación y reclutamiento</h4><p style="font-size: 0.82em; margin: 4px 0 0;"></p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Ingreso</h4><p style="font-size: 0.82em; margin: 4px 0 0;"></p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Desarrollo profesional</h4><p style="font-size: 0.82em; margin: 4px 0 0;"></p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Evaluación del desempeño</h4><p style="font-size: 0.82em; margin: 4px 0 0;"></p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">Separación</h4><p style="font-size: 0.82em; margin: 4px 0 0;"></p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Control</h4><p style="font-size: 0.82em; margin: 4px 0 0;"></p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎯</span> Finalidad</h2><div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Profesionalización por mérito</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Dar continuidad a los programas gubernamentales mediante un sistema basado en el mérito y la capacidad, superando el modelo de libre designación (Fernández Ruiz: «profesionalización y cierta estabilidad... que reconocen y valoran los méritos»).</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎯</span> Críticas y limitaciones</h2><div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Alcance limitado</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Hamdan (p. 100): solo aplica a la administración <strong>centralizada</strong>, dejando fuera la paraestatal y a los miles de servidores de base.</p></div>
+</section>
+<section class="section-header" id="seccion-4-8">
+<h2><span class="icon-lg">📋</span> 4.8 Derechos y obligaciones (LFTSE)</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📋</span> Catálogo de derechos (base)</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Jornadas</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Diurnas (6 am–8 pm) y nocturnas (8 pm–6 am).</p></div>
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Vacaciones</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Dos periodos al año (10 días mín. c/u).</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Maternidad</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Periodo de incapacidad por maternidad.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Compensaciones</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Que incrementan los salarios.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">Pago doble</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Por días extraordinarios.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Aguinaldo</h4><p style="font-size: 0.82em; margin: 4px 0 0;">40 días; 30% adicional por trabajo en vacaciones.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📋</span> Catálogo de obligaciones (base)</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Condiciones</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Respetar las condiciones generales de trabajo.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Moralidad</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Conducirse con moralidad.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">No propaganda</h4><p style="font-size: 0.82em; margin: 4px 0 0;">No realizar actos de propaganda.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">No violencia/corrupción</h4><p style="font-size: 0.82em; margin: 4px 0 0;">No ejercer violencia ni corrupción.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📋</span> El deber de obediencia y sus límites</h2><div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Obediencia jerárquica</h4><p style="font-size: 0.82em; margin: 4px 0 0;">El personal debe obedecer al superior jerárquico, pero con límites: Constitución, ley y reglamentos. El personal auxiliar está obligado a actuar dentro del marco de legalidad (Hamdan, p. 98).</p></div>
+</section>
+<section class="section-header" id="seccion-4-9">
+<h2><span class="icon-lg">🖋️</span> 4.9 Suplencia y delegación de firma</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🖋️</span> La suplencia</h2><div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Opera con el titular</h4><p style="font-size: 0.82em; margin: 4px 0 0;">No implica operación con la competencia del órgano, sino con el titular. Los reglamentos interiores fijan las reglas de suplencia.</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🖋️</span> Suplencia — concepto amplio de ausencia</h2><div class="legal-box fragment"><div class="lb-label">Tesis 2a./J. 189/2006 (2a. Sala)</div><div class="lb-text">Para efectos de la suplencia, «ausencia» es cualquier supuesto en el que el funcionario cuyas facultades se sustituyen se encuentra impedido para atender el asunto (Roldán Xopa, p. 204).</div></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🖋️</span> La delegación de firma</h2><div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">No se delega la competencia</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Posibilita que un funcionario distinto del titular suscriba el acto a nombre y por cuenta de este. Alteración en el ejercicio, no en la titularidad. La firma se entiende en nombre y por cuenta ajena; es <strong>revocable en cualquier momento</strong> (Roldán Xopa, p. 205).</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🖋️</span> Cuadro: suplencia vs delegación</h2><div class="comparison-table fragment"><table style="width:100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.6em;">
+<thead><tr><th></th><th>Suplencia</th><th>Delegación de firma</th></tr></thead>
+<tbody>
+<tr><td>Sobre qué recae</td><td>El titular</td><td>El ejercicio de la competencia</td></tr>
+<tr><td>Transmite competencia</td><td>No</td><td>No</td></tr>
+<tr><td>Revocable</td><td>Según reglamento</td><td>En cualquier momento</td></tr>
+<tr><td>Efecto</td><td>Sustituye al titular</td><td>Otro suscribe a nombre del titular</td></tr>
+</tbody></table></div>
+</section>
+<section class="section-header" id="seccion-4-10">
+<h2><span class="icon-lg">📚</span> Doctrina comparada</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📚</span> Cuadro comparado de autores</h2><div class="comparison-table fragment"><table style="width:100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.5em;">
+<thead><tr><th>Tema</th><th>Gabino Fraga</th><th>José Roldán Xopa</th><th>Jorge Fernández Ruiz</th><th>Fauzi Hamdan</th></tr></thead>
+<tbody>
+<tr><td>Concepto</td><td>Funcionarios y empleados que integran los órganos</td><td>Persona con relación jurídica cualificada (sujeción especial)</td><td>Persona física que realiza función pública (imperio)</td><td>Persona que presta servicios al Estado y maneja recursos</td></tr>
+<tr><td>Naturaleza</td><td>Relación estatutaria de derecho público</td><td>Relación de sujeción especial que reconfigura derechos</td><td>Teoría del órgano + acto mixto</td><td>Acto-unión: acuerdo con régimen preestablecido</td></tr>
+<tr><td>Clasificación</td><td>Altos funcionarios y empleados; base y confianza</td><td>Titulares de órganos y servidores auxiliares</td><td>De base (estabilidad) y confianza</td><td>Por elección, nombramiento y por funciones</td></tr>
+<tr><td>Responsabilidad</td><td>Política, penal, administrativa y civil</td><td>Al órgano y personal (penal, civil, adm., política)</td><td>Título Cuarto: política, penal, adm., patrimonial</td><td>Cinco: política, penal, adm. (LGRASP), patrimonial, laboral</td></tr>
+<tr><td>SPC</td><td>No lo desarrolla</td><td>Crítico: no elimina la conducción política</td><td>Sistema por méritos y continuidad</td><td>Ley 2003 y sus subsistemas</td></tr>
+</tbody></table></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Jurisprudencia relevante (1/2)</h2><div class="legal-box fragment"><div class="lb-label">P./J. 20/2008 (Pleno)</div><div class="lb-text">Servidores públicos: tres categorías — de base, de confianza y de carrera (ingreso por concurso, promoción por mérito).</div></div><div class="legal-box fragment"><div class="lb-label">2a./J. 189/2006 (2a. Sala)</div><div class="lb-text">Suplencia por ausencia: concepto amplio de ausencia — cualquier impedimento para atender el asunto.</div></div><div class="legal-box fragment"><div class="lb-label">2a. CCXXIV/2001 (2a. Sala)</div><div class="lb-text">Organismos descentralizados: es válido dotarlos de facultades de imperio; sus servidores están sujetos al mismo régimen de responsabilidades.</div></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Jurisprudencia relevante (2/2)</h2><div class="legal-box fragment"><div class="lb-label">1a. CCXLIV/2011 (1a. Sala)</div><div class="lb-text">Relación de sujeción especial: justifica limitar ciertos derechos fundamentales, si es proporcional y necesario.</div></div><div class="legal-box fragment"><div class="lb-label">P./J. 8/2005 (Pleno)</div><div class="lb-text">Juicio político: responsabilidad autónoma e independiente de la penal y la administrativa; no hay violación al non bis in idem al sancionar políticamente y también penar o administrar.</div></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📕</span> Legislación aplicable (1/2)</h2><div class="legal-box fragment"><div class="lb-label">Art. 108 CPEUM</div><div class="lb-text">Define el concepto más amplio de servidor público en el ordenamiento mexicano.</div></div><div class="legal-box fragment"><div class="lb-label">Art. 109 fracción III CPEUM</div><div class="lb-text">Principios rectores (legalidad, honradez, lealtad, imparcialidad, eficiencia) y sanciones administrativas: amonestación, suspensión, destitución, inhabilitación y económica.</div></div><div class="legal-box fragment"><div class="lb-label">Art. 110 CPEUM</div><div class="lb-text">Sujetos de juicio político (senadores, diputados, ministros, secretarios, directores generales de organismos descentralizados, empresas de participación estatal, fideicomisos públicos).</div></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📕</span> Legislación aplicable (2/2)</h2><div class="legal-box fragment"><div class="lb-label">Art. 113 CPEUM</div><div class="lb-text">Sistema Nacional Anticorrupción: coordinación de autoridades de todos los órdenes de gobierno (reforma 27 may 2015).</div></div><div class="legal-box fragment"><div class="lb-label">Art. 1° LGRASP</div><div class="lb-text">Ley de orden público (2016) que distribuye competencias para establecer responsabilidades administrativas y sus procedimientos.</div></div>
+</section>
+<section class="section-header" id="seccion-4-11">
+<h2><span class="icon-lg">🌳</span> Esquema de síntesis</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🌳</span> Esquema de la Unidad 4</h2><div style="font-family: 'Consolas', monospace; font-size: 0.58em; line-height: 1.55; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border); white-space: pre;">I. CONCEPTO (art. 108) → empleo, cargo o comisión en Poderes, APF, OCA, entidades y municipios
+II. CLASIFICACIÓN → designación · función (confianza/base/carrera) · regularidad (legítimo/de hecho/usurpador)
+III. NATURALEZA → órgano (prevaleciente) · acto-unión · acto mixto · sujeción especial
+IV. RÉGIMEN → 123-B · Título Cuarto (108-114) · LFTSE · LGRASP · Ley SPC · CPF Título Décimo
+V. RESPONSABILIDADES → política · penal · administrativa · patrimonial · laboral
+VI. SPC → Ley 2003, centralizada, rangos y subsistemas</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Autoevaluación 1 de 10</h2><div class="quiz-card quiz-question fragment">
+<div class="quiz-q">❓ Conforme al art. 108 CPEUM, son servidores públicos, EXCEPTO:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Los representantes de elección popular</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Los miembros del Poder Judicial de la Federación</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">Los particulares que contratan con el Estado</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Los funcionarios de la APF</div>
+<div class="quiz-explanation">El art. 108 enumera a quienes desempeñan empleo, cargo o comisión en el Estado; el particular contratista no es servidor público.</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Autoevaluación 2 de 10</h2><div class="quiz-card quiz-question fragment">
+<div class="quiz-q">❓ La teoría que explica que el servidor forma parte del Estado mismo se denomina:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Teoría del mandato</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Teoría de la representación</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">Teoría del órgano</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Teoría contractualista</div>
+<div class="quiz-explanation">La teoría del órgano (Fernández Ruiz) sostiene que el servidor es parte del Estado, no un sujeto separado.</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Autoevaluación 3 de 10</h2><div class="quiz-card quiz-question fragment">
+<div class="quiz-q">❓ Los funcionarios de hecho se caracterizan porque:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Sus actos son siempre nulos de pleno derecho</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Carecen de apariencia de legalidad</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">Tienen apariencia de legalidad y sus actos son válidos frente a terceros</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Siempre cometen usurpación</div>
+<div class="quiz-explanation">El de facto actúa con apariencia de legalidad; frente a terceros sus actos surten efectos (salvo mala fe del destinatario).</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Autoevaluación 4 de 10</h2><div class="quiz-card quiz-question fragment">
+<div class="quiz-q">❓ Las sanciones aplicables en el juicio político son:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Prisión y multa</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">Destitución e inhabilitación</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Amonestación y suspensión</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Sanción económica y destitución</div>
+<div class="quiz-explanation">El juicio político concluye con destitución e inhabilitación (arts. 109 y 110).</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Autoevaluación 5 de 10</h2><div class="quiz-card quiz-question fragment">
+<div class="quiz-q">❓ La declaración de procedencia (desafuero) es:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Un requisito para iniciar juicio político</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">Un requisito de procedibilidad para ejercitar acción penal contra servidores con fuero</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Una sanción administrativa</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Un recurso administrativo</div>
+<div class="quiz-explanation">Regula el art. 111: permite el ejercicio de la acción penal contra servidores con fuero constitucional.</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Autoevaluación 6 de 10</h2><div class="quiz-card quiz-question fragment">
+<div class="quiz-q">❓ El principio non bis in idem significa que:</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">No pueden imponerse dos sanciones de la misma naturaleza por una sola conducta</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">El servidor solo puede sancionarse una vez en su vida</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Las sanciones administrativas excluyen a las penales</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">El juicio político impide el proceso penal</div>
+<div class="quiz-explanation">El art. 109 prohíbe la doble sanción por una misma conducta (Tesis P./J. 8/2005).</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Autoevaluación 7 de 10</h2><div class="quiz-card quiz-question fragment">
+<div class="quiz-q">❓ Son principios rectores de la conducta del servidor, EXCEPTO:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Legalidad</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Honradez</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">Rentabilidad</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Eficiencia</div>
+<div class="quiz-explanation">Los principios son legalidad, honradez, lealtad, imparcialidad y eficiencia (art. 109-III).</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Autoevaluación 8 de 10</h2><div class="quiz-card quiz-question fragment">
+<div class="quiz-q">❓ Los servidores de base se caracterizan por:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Ser de libre designación y remoción</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">Tener estabilidad en el empleo tras 6 meses de servicio</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Pertenecer exclusivamente al SPC</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Carecer de derechos laborales</div>
+<div class="quiz-explanation">Los de base son inamovibles tras 6 meses continuos sin nota desfavorable (Hamdan, p. 91).</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Autoevaluación 9 de 10</h2><div class="quiz-card quiz-question fragment">
+<div class="quiz-q">❓ El Sistema Nacional Anticorrupción fue creado por reforma de:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">28 de diciembre de 1982</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">10 de abril de 2003</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">27 de mayo de 2015</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">18 de julio de 2016</div>
+<div class="quiz-explanation">El art. 113 (SNA) se creó en la reforma constitucional de 27 de mayo de 2015.</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Autoevaluación 10 de 10</h2><div class="quiz-card quiz-question fragment">
+<div class="quiz-q">❓ La delegación de firma implica:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">El traspaso de la titularidad de la competencia a otro órgano</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">La facultad de un funcionario distinto del titular para suscribir actos a su nombre</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">La creación de un nuevo órgano desconcentrado</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">La suplencia del titular en sus ausencias</div>
+<div class="quiz-explanation">Se delega la firma, no la competencia; es revocable en cualquier momento (Roldán Xopa, p. 205).</div>
+</div>
+</section>
+<section class="section-header" id="seccion-4-11">
+<h2><span class="icon-lg">📋</span> Casos prácticos</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🔥</span> Caso 1 — Declaración de procedencia (desafuero)</h2><div class="real-life fragment"><div class="rl-label">Caso 1</div><p style="font-size: 0.82em;">Un Secretario de Estado es señalado por presuntos 50 mdp de una empresa contratista. La Fiscalía solicita a la Cámara de Diputados la declaración de procedencia. <strong>Preguntas:</strong> 1) ¿Qué artículo la regula? 2) ¿Qué mayoría se requiere en Diputados? 3) ¿Cuáles son sus efectos? 4) Si se niega, ¿puede ser procesado al concluir su encargo?</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🔒</span> Caso 2 — Responsabilidad administrativa de un servidor de confianza</h2><div class="real-life fragment"><div class="rl-label">Caso 2</div><p style="font-size: 0.82em;">El Director General de Administración fracciona un contrato de 15 mdp en tres partes para evadir licitación. <strong>Preguntas:</strong> 1) ¿Falta grave o no grave? 2) ¿Sanciones LGRASP? 3) ¿Tiene estabilidad? 4) ¿Procedimiento del órgano interno de control?</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🏛️</span> Caso 3 — Funcionario de hecho</h2><div class="real-life fragment"><div class="rl-label">Caso 3</div><p style="font-size: 0.82em;">El Jefe de Departamento fue nombrado por un Director sin facultades; emitió autorizaciones durante 6 meses. <strong>Preguntas:</strong> 1) ¿De hecho o usurpador? 2) ¿Válidos los actos? 3) ¿Puede el nuevo Director anular los contratos? 4) ¿Responsabilidad del que nombró sin facultades?</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎓</span> Caso 4 — SPC vs. designación política</h2><div class="real-life fragment"><div class="rl-label">Caso 4</div><p style="font-size: 0.82em;">Un Director de Área ingresó por concurso con evaluaciones sobresalientes y es separado por "reestructuración". <strong>Preguntas:</strong> 1) ¿Derechos como miembro del SPC? 2) ¿Puede el Secretario separarlo? 3) ¿Mecanismos de impugnación? 4) ¿Cómo se resuelve la tensión profesionalización/dirección política?</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎯</span> Actividades en clase</h2><div class="grid-3" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">🔨 Simulación de juicio político</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Tres equipos: Diputados (acusan), Senadores (jurado) y defensa de un Secretario acusado de mal manejo de fondos.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">⚖️ Debate</h4><p style="font-size: 0.82em; margin: 4px 0 0;">«¿El SPC ha sido efectivo contra la corrupción?» Equipo A a favor, Equipo B en contra.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">🔍 Análisis de caso</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Resolver una sentencia del TFJA: identificar hechos, falta, sanción y principios violados.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🛠️</span> Taller — Denuncia por responsabilidad administrativa</h2><div class="real-life fragment"><div class="rl-label">📝 Ejercicio</div><p style="font-size: 0.82em;">Redacta una denuncia dirigida al órgano interno de control de una dependencia federal señalando presuntas faltas administrativas.</p></div><div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Instrucciones</h4><p style="font-size: 0.82em; margin: 4px 0 0;">1) Dependencia y OIC; 2) nombre y cargo del denunciado; 3) hechos con precisión; 4) obligaciones incumplidas (LGRASP); 5) clasifica la falta (grave/no grave); 6) ofrece pruebas; 7) solicita medidas y sanciones.</p></div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📝</span> Taller — Formato sugerido de la denuncia</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Encabezado</h4><p style="font-size: 0.82em; margin: 4px 0 0;">«DENUNCIA POR FALTAS ADMINISTRATIVAS».</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Destinatario</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Titular del Órgano Interno de Control.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Apartados</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Datos del denunciante y del denunciado.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Cuerpo</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Hechos · Obligaciones vulneradas · Clasificación de la falta · Pruebas · Solicitud concreta.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📚</span> Lecturas complementarias</h2><div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Hamdan Amad</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Derecho Administrativo. Tema VI (pp. 89-100) y Tema VII (pp. 101-116).</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Fernández Ruiz</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Derecho Administrativo del Edo. de México. Caps. III y VII.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Roldán Xopa</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Derecho Administrativo. Cap. 5 (pp. 201-207).</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Martínez Morales</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Diccionario de Derecho Administrativo y Burocrático.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">CPEUM</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Arts. 108 a 114 (Título Cuarto) y 123 apartado B.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">LGRASP</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Arts. 1 a 5, faltas administrativas y sanciones.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a" id="material-alumnos">
+<h2><span class="icon-lg">📦</span> Material para Alumnos</h2><p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Descarga los materiales de estudio de la Unidad 4</p><div class="grid-2" style="margin-top: 20px;">
+<div>
+<a class="card card-accent-blue" href="../Material para Alumnos/Unidad 4/Unidad 4.pdf" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;"><i class="fa-solid fa-file-pdf"></i> Unidad 4 — Completo</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Exposición teórica y esquemas</p></a>
+<a class="card card-accent-purple" href="../Material para Alumnos/Unidad 4/Cuestionario.pdf" style="display: block; text-decoration: none; margin-top: 12px;"><h4 style="color: var(--accent-purple); margin: 0;"><i class="fa-solid fa-file-pdf"></i> Cuestionario y Casos</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Preguntas de estudio y casos prácticos</p></a>
+<a class="card card-accent-green" href="../Material para Alumnos/Unidad 4/Autoevaluacion.pdf" style="display: block; text-decoration: none; margin-top: 12px;"><h4 style="color: var(--accent-green); margin: 0;"><i class="fa-solid fa-file-pdf"></i> Autoevaluación</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Reactivo tipo examen con clave</p></a>
+<a class="card card-accent-orange" href="../Material para Alumnos/Unidad 4/Taller.pdf" style="display: block; text-decoration: none; margin-top: 12px;"><h4 style="color: var(--accent-orange); margin: 0;"><i class="fa-solid fa-file-pdf"></i> Taller y Actividades</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Denuncia, simulación y debate</p></a>
+</div>
+<div class="fragment" style="text-align: center;">
+<p style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-bottom: 10px;">Escanea para abrir la Unidad 4</p>
+<div style="display: inline-block; padding: 16px; background: white; border-radius: 12px;"><span style="font-size: 4em;">📱</span></div>
+<p style="color: rgba(255,255,255,0.4); font-size: 0.7em; margin-top: 10px;">(QR por generar)</p></div></div>
+</section>
+<section class="title-slide" id="cierre">
+<span style="font-size: 4em;">🎓</span>
+<h1 style="font-size: 2em; margin-top: 20px;">¡Listo para la Unidad 4!</h1>
+<p style="color: rgba(255,255,255,0.6); font-size: 1.1em; margin-top: 20px;">El Derecho Administrativo <span style="color: var(--accent-blue); font-weight: 600;">actúa por personas</span>.<br>Conocer al servidor es conocer al Estado en acción.</p>
+<div style="margin-top: 40px;"><p style="font-size: 0.8em; color: rgba(255,255,255,0.4);"><i class="fa-solid fa-book"></i> Lectura: Hamdan, Tema VI y VII · Roldán Xopa, Cap. 5<br><i class="fa-solid fa-scale-balanced"></i> Fernández Ruiz, Edo. Méx. Caps. III y VII · Martínez Morales, Diccionario<br><i class="fa-solid fa-pen"></i> Preparar cuestionario, casos prácticos y taller</p></div>
+<p style="margin-top: 40px; font-size: 0.7em; color: rgba(255,255,255,0.3);">Presiona <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">Esc</kbd> para ver la vista general • <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">F</kbd> para pantalla completa</p>
+<a href="../index.html" style="display: inline-block; margin-top: 20px; font-size: 0.75em; color: rgba(255,255,255,0.4); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice de unidades</a>
+</section>
+﻿        </div>
+    </div>
+    
+    <!-- Reveal.js -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: false,
+            width: 1100,
+            height: 700,
+            margin: 0.04,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: true,
+            controls: true,
+            controlsLayout: 'edges',
+            controlsTutorial: false,
+            disableLayout: true,
+            plugins: [RevealNotes, RevealMarkdown, RevealHighlight]
+        });
+
+        // Click en cualquier lugar avanza la diapositiva
+        document.addEventListener('click', function(e) {
+            // No interferir con links, botones, opciones de quiz, scrollbar
+            if (e.target.closest('a, button, .quiz-option, [onclick], input, select, textarea')) {
+                return;
+            }
+            // No interferir si se hace click en la scrollbar
+            var slide = Reveal.getCurrentSlide();
+            if (e.target === slide || slide.contains(e.target)) {
+                Reveal.navigateNext();
+            }
+        });
+
+        // Mapeo de teclas de volumen para scroll
+        document.addEventListener('keydown', function(e) {
+            // Teclas de volumen: 174 (bajar), 175 (subir)
+            if (e.keyCode === 174 || e.keyCode === 175) {
+                e.preventDefault();
+                var slide = Reveal.getCurrentSlide();
+                var scrollAmount = 100;
+                
+                if (e.keyCode === 175) {
+                    // Volumen arriba = scroll arriba
+                    slide.scrollTop -= scrollAmount;
+                } else {
+                    // Volumen abajo = scroll abajo
+                    slide.scrollTop += scrollAmount;
+                }
+            }
+        });
+
+        // Animación de contadores (20 Secretarías, 300+ entidades)
+        function animateCounter(el) {
+            var target = parseInt(el.getAttribute('data-count'), 10);
+            var suffix = el.getAttribute('data-suffix') || '';
+            var duration = 1500;
+            var start = null;
+            
+            function step(ts) {
+                if (!start) start = ts;
+                var progress = Math.min((ts - start) / duration, 1);
+                var val = Math.floor(progress * target);
+                el.textContent = val + suffix;
+                if (progress < 1) {
+                    requestAnimationFrame(step);
+                } else {
+                    el.textContent = target + suffix;
+                }
+            }
+            requestAnimationFrame(step);
+        }
+
+        Reveal.on('slidechanged', function(event) {
+            // Contadores animados
+            event.currentSlide.querySelectorAll('[data-count]').forEach(function(el) {
+                if (!el.dataset.done) {
+                    el.dataset.done = '1';
+                    animateCounter(el);
+                }
+            });
+        });
+
+        // Botón de pantalla completa (móvil y escritorio)
+        var fullscreenBtn = document.getElementById('fullscreen-btn');
+        var fullscreenIcon = fullscreenBtn.querySelector('i');
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                var el = document.documentElement;
+                if (el.requestFullscreen) {
+                    el.requestFullscreen();
+                } else if (el.webkitRequestFullscreen) {
+                    el.webkitRequestFullscreen();
+                }
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                }
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleFullscreen();
+        });
+
+        function updateFullscreenIcon() {
+            var isFull = document.fullscreenElement || document.webkitFullscreenElement;
+            if (isFull) {
+                fullscreenIcon.className = 'fa-solid fa-compress';
+                fullscreenBtn.title = 'Salir de pantalla completa';
+                fullscreenBtn.setAttribute('aria-label', 'Salir de pantalla completa');
+            } else {
+                fullscreenIcon.className = 'fa-solid fa-expand';
+                fullscreenBtn.title = 'Pantalla completa';
+                fullscreenBtn.setAttribute('aria-label', 'Pantalla completa');
+            }
+        }
+
+        document.addEventListener('fullscreenchange', updateFullscreenIcon);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
+
+        // Botón de índice: salta a la diapositiva de índice de la unidad (vía API de Reveal para evitar carreras con el hash)
+        document.getElementById('index-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            var slideIndice = document.getElementById('indice');
+            if (slideIndice) {
+                var idx = Reveal.getIndices(slideIndice);
+                Reveal.slide(idx.h, idx.v, idx.f);
+            }
+        });
+
+        // Contador de fragmentos por diapositiva (mostrados/total) junto al botón de índice
+        var fragmentCounter = document.getElementById('fragment-counter');
+        var fcCurrent = fragmentCounter.querySelector('.fc-current');
+        var fcTotal = fragmentCounter.querySelector('.fc-total');
+
+        function updateFragmentCounter() {
+            var slide = Reveal.getCurrentSlide();
+            var total = slide.querySelectorAll('.fragment').length;
+            var shown = slide.querySelectorAll('.fragment.visible').length;
+            if (total > 0) {
+                fcCurrent.textContent = shown;
+                fcTotal.textContent = total;
+                fragmentCounter.classList.add('has-fragments');
+            } else {
+                fcCurrent.textContent = 0;
+                fcTotal.textContent = 0;
+                fragmentCounter.classList.remove('has-fragments');
+            }
+        }
+
+        Reveal.on('slidechanged', updateFragmentCounter);
+        Reveal.on('fragmentshown', updateFragmentCounter);
+        Reveal.on('fragmenthidden', updateFragmentCounter);
+
+        // Navegador de diapositivas: clickeable para saltar a un número
+        var slideNav = document.getElementById('slide-nav');
+        var slideNavCurrent = document.getElementById('slide-nav-current');
+        var slideNavTotal = document.getElementById('slide-nav-total');
+        var slideNavInput = document.getElementById('slide-nav-input');
+
+        function updateSlideNav() {
+            var indices = Reveal.getIndices();
+            var total = Reveal.getTotalSlides();
+            slideNavCurrent.textContent = indices.h + 1;
+            slideNavTotal.textContent = total;
+        }
+
+        function openSlideNavInput() {
+            var indices = Reveal.getIndices();
+            slideNavInput.value = indices.h + 1;
+            slideNav.classList.add('editing');
+            slideNavInput.focus();
+            slideNavInput.select();
+        }
+
+        function closeSlideNavInput() {
+            slideNav.classList.remove('editing');
+            updateSlideNav();
+        }
+
+        function navigateToSlide() {
+            var num = parseInt(slideNavInput.value, 10);
+            var total = Reveal.getTotalSlides();
+            if (!isNaN(num) && num >= 1 && num <= total) {
+                Reveal.slide(num - 1);
+            }
+            closeSlideNavInput();
+        }
+
+        slideNav.addEventListener('click', function(e) {
+            if (e.target === slideNavInput) return;
+            e.stopPropagation();
+            openSlideNavInput();
+        });
+
+        slideNavInput.addEventListener('keydown', function(e) {
+            e.stopPropagation();
+            if (e.key === 'Enter') {
+                navigateToSlide();
+            } else if (e.key === 'Escape') {
+                closeSlideNavInput();
+            }
+        });
+
+        slideNavInput.addEventListener('blur', function() {
+            closeSlideNavInput();
+        });
+
+        Reveal.on('slidechanged', updateSlideNav);
+        updateSlideNav();
+
+        // ===== Animación de grilla de nombres (Secretarías de Estado) =====
+        const secretarias = [
+            "Gobernación", "Relaciones Exteriores", "Defensa Nacional", "Marina", "Seguridad y Protección Ciudadana",
+            "Hacienda y Crédito Público", "Bienestar", "Medio Ambiente y Recursos Naturales", "Energía", "Economía",
+            "Agricultura y Desarrollo Rural", "Infraestructura, Comunicaciones y Transportes", "Anticorrupción y Buen Gobierno", "Educación Pública", "Ciencia, Humanidades, Tecnología e Innovación",
+            "Salud", "Trabajo y Previsión Social", "Desarrollo Agrario, Territorial y Urbano", "Cultura", "Turismo"
+        ];
+        const secretariasColores = ["blue", "purple", "green", "orange", "pink", "red"];
+        let secInterval = null;
+        Reveal.on('slidechanged', function(event) {
+            clearInterval(secInterval);
+            const grid = event.currentSlide.querySelector('#secretarias-grid');
+            if (grid) {
+                grid.innerHTML = '';
+                let i = 0;
+                secInterval = setInterval(function() {
+                    if (i >= secretarias.length) {
+                        clearInterval(secInterval);
+                        const d = document.getElementById('sec-dato');
+                        if (d) d.style.display = 'block';
+                        return;
+                    }
+                    const color = secretariasColores[i % secretariasColores.length];
+                    const div = document.createElement('div');
+                    div.className = 'card card-accent-' + color;
+                    div.style.cssText = 'padding: 10px 12px; text-align: center; font-size: clamp(9px, 1.05vw, 15px); animation: fadeIn 0.3s ease;';
+                    div.innerHTML = '<div style="font-weight: 700; color: var(--accent-' + color + ');">' + secretarias[i] + '</div>';
+                    grid.appendChild(div);
+                    i++;
+                }, 700);
+            }
+        });
+    </script>
+</body>
+</html>
