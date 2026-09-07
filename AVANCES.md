@@ -303,3 +303,147 @@ Commits: `b3044d5` (presentación) + `afa9b53` (28 ejemplos) → push a `origin/
 > Próxima sesión: crear presentación de la Unidad 6 (El Procedimiento Administrativo)
 > reutilizando la base de U5, con índice hipervinculado, botones, contador y 28+ ejemplos.
 > *Registrado por OpenCode (mimo-v2.5-free) — 2 de septiembre de 2026*
+
+---
+
+## RESUMEN DE LA SESIÓN (6 septiembre 2026)
+
+Se realizaron múltiples mejoras a las presentaciones de Derecho Administrativo (U3, U4, U5) y se trabajó en Marco Jurídico de los Negocios (U2, U3). Se agregó material para alumnos descargable, se limpiaron ejemplos y jurisprudencias, se completaron secciones faltantes en U5, se definieron delitos del CPF y se expandió la LGRASP.
+
+---
+
+## ARCHIVOS CREADOS/MODIFICADOS (6 sep 2026)
+
+### Derecho Administrativo
+
+| Archivo | Descripción | Estado |
+|---------|-------------|--------|
+| `diapositivas/unidad-03-la-organizacion-administrativa.html` | Sección Material para Alumnos (5 PDFs) + enlace en índice | ✅ |
+| `diapositivas/unidad-04-el-servidor-publico.html` | Material Alumnos + 11 slides de delitos CPF + 9 slides LGRASP | ✅ |
+| `diapositivas/unidad-05-teoria-del-acto-administrativo.html` | Material Alumnos + 5.2 completa + 5.3 + 5.4 + 5.7 + 5.8 | ✅ |
+| `Material para Alumnos/Unidad 3/` | 5 PDFs: contenido, casos, cuestionario, actividades, autoevaluación | ✅ |
+| `Material para Alumnos/Unidad 4/` | 4 PDFs: contenido, casos, cuestionario, autoevaluación | ✅ |
+| `Material para Alumnos/Unidad 5/` | 4 PDFs: contenido, cuestionario, taller/evaluación, debate | ✅ |
+
+### Marco Jurídico de los Negocios
+
+| Archivo | Descripción | Estado |
+|---------|-------------|--------|
+| `clase/diapositivas/unidad-02-personas-obligaciones-contratos.html` | Sección Material para Alumnos (4 PDFs) | ✅ |
+| `clase/diapositivas/unidad-03-derecho-mercantil-sociedades.html` | Sección Material para Alumnos (3 PDFs) | ✅ |
+| `clase/Material Alumnos/` | Copia de Material Alumnos dentro del repo para servir desde GitHub Pages | ✅ |
+
+---
+
+## QUÉ SE LOGRÓ (6 sep 2026)
+
+### 1. Material para Alumnos — enlaces de descarga
+
+Agregadas secciones "Material para Alumnos" al final de las presentaciones con tarjetas de descarga (PDF con `download` attribute):
+
+| Unidad | PDFs | Archivos |
+|--------|------|----------|
+| **U3 DA** | Contenido, Casos, Cuestionario, Actividades, Autoevaluación | 5 archivos |
+| **U4 DA** | Contenido, Casos, Cuestionario, Autoevaluación | 4 archivos |
+| **U5 DA** | Contenido, Cuestionario, Taller/Evaluación, Debate | 4 archivos |
+| **U2 MJN** | Contenido, Cuestionario, Evaluación, Taller | 4 archivos |
+| **U3 MJN** | Contenido, Cuestionario, Evaluación/Taller/Lecturas | 3 archivos |
+
+**Regla aprendida:** Los PDFs DEBEN estar dentro del repo git para que GitHub Pages los sirva. Si están fuera (Google Drive), copiarlos al repo primero.
+
+### 2. Limpieza de ejemplos y jurisprudencias (U3, U4, U5)
+
+Eliminados todos los bloques de ejemplos y referencias a tesis/jurisprudencias de las presentaciones:
+
+| Unidad | Eliminado |
+|--------|----------|
+| **U3** | ~8 bloques de ejemplos (Hamdan, sectorización, reguladores) + tesis en casos |
+| **U4** | Ejemplo límite, Ejemplos sujeción especial, Reconocimiento jurisprudencial, 2× Jurisprudencia relevante, tesis P./J. 8/2005, tesis 2a./J. 189/2006 |
+| **U5** | 28 bloques de "Ejemplo práctico" + referencias a tesis |
+
+### 3. U5 completada (secciones faltantes)
+
+Agregadas 5 secciones que faltaban en la presentación:
+
+| Sección | Contenido |
+|---------|----------|
+| **5.2 Elementos** | 6/6 completos: Sujeto, Voluntad, Objeto, Motivo, Finalidad, Forma + 7 notas distintivas |
+| **5.3 Clasificación** | 6 criterios: sujetos, ámbito, destinatarios, contenido, margen, expresión |
+| **5.4 Validez y eficacia** | Presunción de legitimidad, 5 caracteres, tabla nulidad vs. anulabilidad, eficacia |
+| **5.7 Distinciones** | vs. Reglamento, vs. Contrato, vs. Hecho administrativo |
+| **5.8 Doctrina comparada** | Tabla Fraga / Roldán Xopa / Fernández Ruiz |
+
+### 4. Delitos del CPF — diapositivas detalladas (U4)
+
+Reemplazada la diapositiva 40 (lista compacta) con **11 diapositivas detalladas**, una por cada delito del Título Décimo CPF:
+
+| Art. | Delito | Pena |
+|------|--------|------|
+| 214 | Ejercicio indebido de servicio público | 1–7 años |
+| 215 | Abuso de autoridad (16 fracciones) | 1–8 años |
+| 216 | Coalición de servidores públicos | 2–7 años |
+| 217 | Uso ilícito de atribuciones y facultades | 6 meses–12 años |
+| 218 | Concusión | 3 meses–12 años |
+| 219 | Intimidación | 2–9 años |
+| 221 | Tráfico de influencia | 2–6 años |
+| 222 | Cohecho | 3 meses–14 años |
+| 223 | Peculado | 3 meses–14 años |
+| 224 | Enriquecimiento ilícito | Decomiso + 3 meses–14 años |
+
+Cada slide: definición del artículo + card de pena. Fuente: CPF Última Reforma DOF 13-03-2026.
+
+### 5. LGRASP — sección 4.6.3 expandida (U4)
+
+Expandida la sección 4.6.3 de 1 diapositiva a **9 diapositivas detalladas**:
+
+| Slide | Contenido |
+|-------|----------|
+| 1 | Panorama general (vigencia, objeto, sujetos) |
+| 2 | Principios art. 7 (13 principios + directrices + impedimentos) |
+| 3 | Faltas graves (1/2): cohecho, peculado, desvío, uso indebido de información, abuso |
+| 4 | Faltas graves (2/2): conflicto de interés, contratación, enriquecimiento, nepotismo, simulación, encubrimiento, desacato, obstrucción, injerencia |
+| 5 | Faltas no graves (definición + ejemplos) |
+| 6 | Tabla comparativa de sanciones (no graves vs. graves) + escalamiento |
+| 7 | Órgano Interno de Control (funciones + autoridades) |
+| 8 | Sanciones a particulares (multa, inhabilitación) |
+| 9 | Procedimiento sancionador (4 etapas + garantías) |
+
+---
+
+## COMMITS DE LA SESIÓN
+
+| Commit | Descripción |
+|--------|------------|
+| `f6fa3a8` | Material para Alumnos en U3 y U4 |
+| `c6be6f7` | PDFs de U3 y U4 al repo |
+| `abaf728` | Quitar ejemplos y jurisprudencias de U3, U4 y U5 |
+| `ff35dbd` | Material para Alumnos de U5 |
+| `2b69612` | U5 completada (5.2–5.4, 5.7, 5.8) |
+| `ce9c1c3` | Material para Alumnos en U2 y U3 MJN |
+| `5e9ecb7` | Material Alumnos al repo MJN + corrección de rutas |
+| `cbfb8e5` | Delitos CPF definidos en U4 |
+| `9f26ae8` | LGRASP expandida en U4 (9 slides) |
+
+---
+
+## PENDIENTE PARA PRÓXIMA SESIÓN
+
+### Derecho Administrativo
+- [ ] **Crear presentación Unidad 6** — El Procedimiento Administrativo
+- [ ] Crear presentaciones U7–U15
+- [ ] Actualizar `index.html` al publicar cada unidad
+- [ ] Agregar Material para Alumnos a U1 (si se dispone de PDFs)
+
+### Marco Jurídico de los Negocios
+- [ ] Agregar Material para Alumnos a U1
+- [ ] Crear presentaciones U4–U7
+
+### Reglas para futuro
+- [ ] **SIEMPRE copiar los PDFs al repo git** antes de crear enlaces de descarga
+- [ ] Verificar rutas relativas entre `diapositivas/` y `Material Alumnos/`
+
+---
+
+> Próxima sesión: crear presentación de la Unidad 6 (El Procedimiento Administrativo)
+> reutilizando la base de U5, con Material para Alumnos incluido.
+> *Registrado por Buffy (Codebuff/Freebuff) — 6 de septiembre de 2026*
