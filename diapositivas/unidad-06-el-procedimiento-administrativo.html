@@ -1,0 +1,1402 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 6 — El Procedimiento Administrativo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --r-background-color: #0a0a1a;
+            --r-main-font: 'Inter', sans-serif;
+            --r-heading-font: 'Playfair Display', serif;
+            --r-main-font-size: 24px;
+            --accent-blue: #4f8cff;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --glass: rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.1);
+        }
+        .reveal { font-family: var(--r-main-font); }
+        .reveal .slides { text-align: left; }
+        .reveal .slides section { padding: 20px 40px; overflow: hidden; box-sizing: border-box; }
+        .reveal .slides section * { max-width: 100%; box-sizing: border-box; }
+        .reveal .slides p, .reveal .slides li, .reveal .slides h1, .reveal .slides h2, .reveal .slides h3, .reveal .slides h4 { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; margin-right: 0; padding-right: 0; }
+        .reveal .slides section.title-slide { text-align: center; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%); }
+        .reveal .slides section.title-slide h1 { font-family: 'Playfair Display', serif; font-size: 2.4em; font-weight: 900; background: linear-gradient(135deg, #4f8cff, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; margin-bottom: 16px; }
+        .reveal .slides section.title-slide .subtitle { font-size: 1em; color: rgba(255,255,255,0.6); font-weight: 300; letter-spacing: 2px; }
+        .reveal .slides section.title-slide .unit-badge { display: inline-block; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: white; padding: 8px 24px; border-radius: 30px; font-size: 0.7em; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-top: 30px; }
+        .reveal .slides section.section-header { text-align: center; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%); }
+        .reveal .slides section.section-header h2 { font-family: 'Playfair Display', serif; font-size: 2em; font-weight: 800; background: linear-gradient(135deg, #4f8cff, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+        .reveal .slides section.section-header .section-icon { font-size: 2.5em; margin-bottom: 14px; display: block; }
+        .card { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 14px; padding: 14px 16px; margin: 8px 0; backdrop-filter: blur(10px); overflow: hidden; box-sizing: border-box; }
+        .card p, .card li, .card h4 { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; font-size: 0.85em; }
+        .card-accent-blue { border-left: 4px solid var(--accent-blue); }
+        .card-accent-purple { border-left: 4px solid var(--accent-purple); }
+        .card-accent-pink { border-left: 4px solid var(--accent-pink); }
+        .card-accent-green { border-left: 4px solid var(--accent-green); }
+        .card-accent-orange { border-left: 4px solid var(--accent-orange); }
+        .card-accent-red { border-left: 4px solid var(--accent-red); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 14px; }
+        .grid-2 > .card, .grid-3 > .card { margin: 0; min-width: 0; }
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 { color: white; font-weight: 700; }
+        .reveal h2 { font-size: 1.4em; margin-bottom: 14px; }
+        .reveal h3 { font-size: 1.05em; color: var(--accent-blue); margin-bottom: 8px; }
+        .reveal h4 { font-size: 0.9em; color: var(--accent-purple); }
+        .reveal p, .reveal li { color: rgba(255,255,255,0.85); line-height: 1.6; }
+        .reveal ul { list-style: none; padding-left: 0; }
+        .reveal ul li { padding: 3px 0; padding-left: 24px; position: relative; }
+        .reveal ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent-blue); font-weight: 700; }
+        .highlight { color: var(--accent-blue); font-weight: 600; }
+        .highlight-purple { color: var(--accent-purple); font-weight: 600; }
+        .highlight-pink { color: var(--accent-pink); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+        .icon-lg { font-size: 1.6em; display: inline-block; margin-right: 6px; vertical-align: middle; }
+        .definition-box { background: linear-gradient(135deg, rgba(79,140,255,0.15), rgba(168,85,247,0.15)); border: 1px solid rgba(79,140,255,0.3); border-radius: 14px; padding: 16px 20px; margin: 14px 0; position: relative; }
+        .definition-box::before { content: '📖'; font-size: 1.5em; position: absolute; top: -12px; left: 20px; }
+        .definition-box .def-title { font-size: 0.65em; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-blue); font-weight: 700; margin-bottom: 6px; }
+        .definition-box .def-text { font-size: 0.85em; color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .comparison-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.65em; margin-top: 12px; }
+        .comparison-table th { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: white; padding: 8px 12px; text-align: left; font-weight: 600; }
+        .comparison-table td { padding: 7px 12px; border-bottom: 1px solid var(--glass-border); color: rgba(255,255,255,0.85); }
+        .comparison-table tr:nth-child(even) td { background: var(--glass); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table.dense th, .comparison-table.dense td { padding: 5px 10px; }
+        /* Mapa conceptual — diagrama HTML clicable */
+        .md-root { width: fit-content; margin: 0 auto; text-align: center; background: linear-gradient(135deg, rgba(79,140,255,0.22), rgba(168,85,247,0.22)); border: 1px solid rgba(79,140,255,0.45); border-radius: 14px; padding: 9px 30px; box-shadow: 0 0 30px rgba(79,140,255,0.25); }
+        .reveal .md-root h3 { margin: 0; font-size: 0.9em; letter-spacing: 1.5px; text-transform: uppercase; color: white; }
+        .reveal .md-root p { margin: 4px 0 0; font-size: 0.65em; color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.4; }
+        .md-trunk { width: 2px; height: 16px; background: rgba(255,255,255,0.28); margin: 0 auto; }
+        .md-spine { height: 2px; background: rgba(255,255,255,0.28); width: 97%; margin: 0 auto; border-radius: 2px; }
+        .md-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(228px, 1fr)); gap: 12px; }
+        a.md-branch { position: relative; margin-top: 15px; display: block; text-decoration: none; transition: transform 0.25s ease; }
+        a.md-branch::before { content: ''; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); width: 2px; height: 15px; background: rgba(255,255,255,0.28); }
+        a.md-branch:hover { transform: translateY(-3px); }
+        a.md-branch:hover .md-card { border-color: var(--c); box-shadow: 0 8px 24px rgba(0,0,0,0.45); }
+        .md-card { height: 100%; background: var(--glass); border: 1px solid var(--glass-border); border-top: 3px solid var(--c); border-radius: 12px; padding: 9px 12px 8px; }
+        .reveal .md-card h4 { margin: 0 0 7px; font-size: 0.66em; letter-spacing: 0.4px; color: var(--c); text-transform: uppercase; font-weight: 700; }
+        .reveal .md-card ul { list-style: none; margin: 0; padding: 0; }
+        .reveal .md-card li { position: relative; padding: 1.5px 0 1.5px 13px; font-size: 0.55em; line-height: 1.4; color: rgba(255,255,255,0.85); }
+        .reveal .md-card li::before { content: '▸'; position: absolute; left: 0; color: var(--c); font-weight: 700; }
+        .md-chip { display: inline-block; font-size: 0.82em; font-weight: 700; padding: 0 7px; border-radius: 9px; margin-left: 4px; color: var(--c); border: 1px solid var(--c); background: var(--cbg); white-space: nowrap; }
+        .md-chip.strong { background: var(--c); color: #0a0a1a; border-color: var(--c); }
+        .reveal .md-hint { text-align: center; font-size: 0.55em; color: rgba(255,255,255,0.4); margin: 10px 0 0; }
+        .fun-fact { background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(239,68,68,0.1)); border: 1px solid rgba(245,158,11,0.3); border-radius: 10px; padding: 12px 16px; margin: 10px 0; font-size: 0.85em; }
+        .fun-fact .ff-label { color: var(--accent-orange); font-weight: 700; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; }
+        .quiz-card { background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(79,140,255,0.15)); border: 1px solid rgba(16,185,129,0.3); border-radius: 14px; padding: 16px 20px; margin: 10px 0; }
+        .quiz-card .quiz-q { color: var(--accent-green); font-weight: 700; font-size: 0.95em; margin-bottom: 8px; }
+        .quiz-option { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 8px; padding: 7px 14px; margin: 4px 0; color: rgba(255,255,255,0.8); font-size: 0.8em; cursor: pointer; transition: all 0.3s ease; }
+        .quiz-option:hover { border-color: var(--accent-green); background: rgba(16,185,129,0.1); }
+        .quiz-option.correct { border-color: var(--accent-green); background: rgba(16,185,129,0.2); color: var(--accent-green); }
+        .quiz-option.wrong { border-color: var(--accent-red); background: rgba(239,68,68,0.1); opacity: 0.6; }
+        .quiz-explanation { font-size: 0.75em; color: rgba(255,255,255,0.7); margin-top: 8px; padding: 8px 12px; background: rgba(16,185,129,0.08); border-left: 3px solid var(--accent-green); border-radius: 6px; }
+        .real-life { background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(168,85,247,0.15)); border: 1px solid rgba(236,72,153,0.3); border-radius: 12px; padding: 14px 18px; margin: 10px 0; }
+        .real-life .rl-label { color: var(--accent-pink); font-weight: 700; font-size: 0.65em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+        .legal-box { background: linear-gradient(135deg, rgba(16,185,129,0.13), rgba(16,185,129,0.05)); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px; padding: 14px 18px; margin: 10px 0; }
+        .legal-box .lb-label { color: var(--accent-green); font-weight: 700; font-size: 0.65em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .legal-box .lb-text { font-size: 0.82em; color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .reveal .slides section .fragment.visible { opacity: 1; }
+        .reveal .slide-number { display: none !important; }
+        .slide-nav { position: fixed; bottom: 16px; left: 16px; z-index: 9999; height: 38px; padding: 0 16px; display: flex; align-items: center; justify-content: center; border-radius: 20px; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.7); backdrop-filter: blur(10px); color: rgba(255,255,255,0.7); font-family: 'Consolas', monospace; font-size: 0.9em; font-weight: 600; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(0,0,0,0.3); user-select: none; -webkit-user-select: none; }
+        .slide-nav:hover { border-color: var(--accent-blue); color: white; }
+        .slide-nav .slide-nav-display { display: flex; align-items: center; gap: 4px; }
+        .slide-nav .slide-nav-current { color: var(--accent-blue); }
+        .slide-nav .slide-nav-sep { color: rgba(255,255,255,0.3); margin: 0 2px; }
+        .slide-nav .slide-nav-input { display: none; width: 50px; background: transparent; border: none; border-bottom: 2px solid var(--accent-blue); color: var(--accent-blue); font-family: 'Consolas', monospace; font-size: 1em; font-weight: 700; text-align: center; outline: none; padding: 2px 0; -moz-appearance: textfield; }
+        .slide-nav .slide-nav-input::-webkit-outer-spin-button, .slide-nav .slide-nav-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        .slide-nav.editing .slide-nav-display { display: none; }
+        .slide-nav.editing .slide-nav-input { display: inline-block; }
+        .reveal .slides section { overflow-y: auto; max-height: 100%; padding-bottom: 40px; }
+        .reveal .slides section::-webkit-scrollbar { width: 6px; }
+        .reveal .slides section::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 3px; }
+        .reveal .slides section::-webkit-scrollbar-thumb { background: rgba(79,140,255,0.4); border-radius: 3px; }
+        .reveal .slides section::-webkit-scrollbar-thumb:hover { background: rgba(79,140,255,0.6); }
+        @media (max-width: 768px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } .reveal .slides section { padding: 20px 30px; } }
+        .glow-text { text-shadow: 0 0 20px rgba(79,140,255,0.5), 0 0 40px rgba(168,85,247,0.3); }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .fullscreen-btn, .index-btn { position: fixed; top: 16px; z-index: 9999; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.65); backdrop-filter: blur(10px); color: rgba(255,255,255,0.85); font-size: 1.1em; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; -webkit-tap-highlight-color: transparent; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+        .fullscreen-btn { right: 16px; }
+        .index-btn { right: 76px; }
+        .fullscreen-btn:hover, .fullscreen-btn:active, .index-btn:hover, .index-btn:active { border-color: var(--accent-blue); background: rgba(79,140,255,0.25); color: white; transform: scale(1.05); }
+        .fragment-counter { position: fixed; top: 22px; right: 142px; z-index: 9999; height: 38px; padding: 0 14px; display: none; align-items: center; justify-content: center; border-radius: 20px; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.65); backdrop-filter: blur(10px); color: rgba(255,255,255,0.9); font-family: 'Consolas', monospace; font-size: 0.85em; font-weight: 700; letter-spacing: 1px; box-shadow: 0 4px 16px rgba(0,0,0,0.3); white-space: nowrap; }
+        .fragment-counter.has-fragments { display: flex; }
+        .fragment-counter .fc-current { color: var(--accent-blue); }
+    </style>
+</head>
+<body>
+    <div class="fragment-counter" id="fragment-counter" title="Elementos de la diapositiva (mostrados/total)">
+        <span class="fc-current">0</span>/<span class="fc-total">0</span>
+    </div>
+    <button class="index-btn" id="index-btn" title="Ir al índice de la unidad" aria-label="Ir al índice de la unidad">
+        <i class="fa-solid fa-list-ul"></i>
+    </button>
+    <button class="fullscreen-btn" id="fullscreen-btn" title="Pantalla completa" aria-label="Pantalla completa">
+        <i class="fa-solid fa-expand"></i>
+    </button>
+    <div class="slide-nav" id="slide-nav" title="Clic para ir a una diapositiva">
+        <div class="slide-nav-display">
+            <span class="slide-nav-current" id="slide-nav-current">1</span>
+            <span class="slide-nav-sep">/</span>
+            <span id="slide-nav-total">1</span>
+        </div>
+        <input type="number" class="slide-nav-input" id="slide-nav-input" min="1" placeholder="">
+    </div>
+    <div class="reveal">
+        <div class="slides">
+
+<!-- ==================== PORTADA ==================== -->
+<section class="title-slide">
+<span class="unit-badge">Unidad 6</span>
+<h1 style="margin-top: 30px;">El Procedimiento<br>Administrativo</h1>
+<p class="subtitle">Licenciatura en Derecho — Universidad Cristóbal Colón</p>
+<p style="color: rgba(255,255,255,0.4); font-size: 0.7em; margin-top: 40px;">
+    <i class="fa-solid fa-graduation-cap"></i> Mtro. Sergio Armando Cortina Ceballos<br>
+    <i class="fa-solid fa-building-columns"></i> Universidad Cristóbal Colón · 2026
+</p>
+<a href="../index.html" style="display: inline-block; margin-top: 24px; font-size: 0.7em; color: rgba(255,255,255,0.3); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice</a>
+</section>
+
+<!-- ==================== ¿DÓNDE ESTAMOS? ==================== -->
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗺️</span> ¿Dónde estamos en el curso?</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Unidad 1: qué es el DA · Unidad 2: de dónde sale · Unidad 3: cómo se organiza · Unidad 4: quién lo hace · Unidad 5: el acto · <strong>Unidad 6: el procedimiento que lo produce</strong>.</p>
+<div style="font-family: Consolas, monospace; font-size: 0.62em; line-height: 1.5; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+<div>
+<div style="color: var(--accent-blue); font-weight: 700; margin-bottom: 6px;">📘 FUNDAMENTOS</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">1. Introducción al DA<br>2. Fuentes del DA</div>
+<div style="color: var(--accent-green); font-weight: 700; margin-top: 12px; margin-bottom: 6px;">🏛️ ORGANIZACIÓN</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">3. La Organización Administrativa<br>4. El Servidor Público</div>
+</div>
+<div>
+<div style="color: var(--accent-purple); font-weight: 700; margin-bottom: 6px;">📜 ACTO Y PROCEDIMIENTO</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">5. Teoría del Acto Administrativo<br><strong style="color: var(--accent-purple);">6. El Procedimiento Administrativo ◀ ESTAMOS AQUÍ</strong><br>7. Ineficacias del Acto</div>
+</div>
+<div>
+<div style="color: var(--accent-pink); font-weight: 700; margin-bottom: 6px;">🔍 CONTROL</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">10. Control de la AP<br>11. Patrimonio y Responsabilidad<br>12. Juicio Contencioso</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ==================== MAPA CONCEPTUAL ==================== -->
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Mapa Conceptual</h2>
+<div class="md-root">
+<h3>⚖️ Procedimiento Administrativo</h3>
+<p>Cauce formal para la emisión del acto administrativo · garantía de seguridad jurídica</p>
+</div>
+<div class="md-trunk"></div>
+<div class="md-spine"></div>
+<div class="md-grid">
+<a class="md-branch" href="#/seccion-6-1" style="--c: var(--accent-blue); --cbg: rgba(79,140,255,0.12);">
+<div class="md-card">
+<h4>📜 1. Concepto</h4>
+<ul>
+<li>Serie coordinada de actos (Martínez Morales)</li>
+<li>Cauce legal (López Nieto y Mallo)</li>
+<li>Naturaleza instrumental</li>
+<li>Antes de la LFPA (1994)</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-6-2" style="--c: var(--accent-purple); --cbg: rgba(168,85,247,0.12);">
+<div class="md-card">
+<h4>⭐ 2. Principios <span class="md-chip">art. 13</span></h4>
+<ul>
+<li>Economía · Celeridad · Eficacia</li>
+<li>Legalidad · Publicidad · Buena fe</li>
+<li>+ Oficialidad <span class="md-chip">art. 18</span></li>
+<li>+ In dubio pro actione</li>
+<li>+ Gratuidad</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-6-3" style="--c: var(--accent-pink); --cbg: rgba(236,72,153,0.12);">
+<div class="md-card">
+<h4>🧩 3. Fases</h4>
+<ul>
+<li>Iniciación <span class="md-chip">art. 14</span></li>
+<li>Instrucción <span class="md-chip strong">arts. 46-56</span></li>
+<li>Resolución <span class="md-chip">art. 17</span></li>
+<li>Ejecución: voluntaria / forzosa</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-6-4" style="--c: var(--accent-green); --cbg: rgba(16,185,129,0.12);">
+<div class="md-card">
+<h4>🏁 4. Terminación <span class="md-chip">art. 57</span></h4>
+<ul>
+<li>Resolución expresa</li>
+<li>Desistimiento · Renuncia</li>
+<li>Caducidad <span class="md-chip">art. 60</span></li>
+<li>Imposibilidad material</li>
+<li>Convenio entre partes</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-6-5" style="--c: var(--accent-orange); --cbg: rgba(245,158,11,0.12);">
+<div class="md-card">
+<h4>🛡️ 5. Debido proceso <span class="md-chip">art. 14 CPEUM</span></h4>
+<ul>
+<li>Notificación del inicio</li>
+<li>Pruebas y alegatos</li>
+<li>Resolución fundada</li>
+<li>Formalidades esenciales <span class="md-chip strong">P./J. 47/95</span></li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-6-6" style="--c: var(--accent-red); --cbg: rgba(239,68,68,0.12);">
+<div class="md-card">
+<h4>⏱️ 6. Plazos y notificaciones</h4>
+<ul>
+<li>Días y horas hábiles <span class="md-chip">art. 28</span></li>
+<li>Resolver: 3 meses <span class="md-chip strong">art. 17</span></li>
+<li>Prevención: una sola vez <span class="md-chip">art. 17-A</span></li>
+<li>Notificación: eficacia <span class="md-chip">art. 9</span></li>
+<li>Efectos <span class="md-chip">art. 38</span></li>
+</ul>
+</div>
+</a>
+</div>
+<p class="md-hint">🖱️ Haz clic en una rama para ir directo a la sección</p>
+</section>
+
+<!-- ==================== ÍNDICE ==================== -->
+<section data-background-color="#0a0a1a" id="indice">
+<h2><span class="icon-lg">📑</span> Índice de la Unidad 6</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Toca o haz clic en un tema para ir directo a él</p>
+<div class="grid-2" style="margin-top: 10px;">
+<a class="card card-accent-blue" href="#/seccion-6-1" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;">6.1 Concepto y naturaleza</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Definiciones, naturaleza instrumental, contexto histórico</p></a>
+<a class="card card-accent-purple" href="#/seccion-6-2" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-purple); margin: 0;">6.2 Principios del procedimiento</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Art. 13 LFPA + principios doctrinales</p></a>
+<a class="card card-accent-green" href="#/seccion-6-3" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-green); margin: 0;">6.3 Fases del procedimiento</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Iniciación, instrucción, resolución, ejecución</p></a>
+<a class="card card-accent-orange" href="#/seccion-6-4" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-orange); margin: 0;">6.4 Terminación del procedimiento</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Seis formas (art. 57 LFPA)</p></a>
+<a class="card card-accent-pink" href="#/seccion-6-5" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-pink); margin: 0;">6.5 Debido proceso administrativo</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Art. 14 CPEUM y formalidades esenciales</p></a>
+<a class="card card-accent-red" href="#/seccion-6-6" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-red); margin: 0;">6.6 Plazos y notificaciones</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Arts. 28-32 y 35-39 LFPA</p></a>
+<a class="card card-accent-blue" href="#/seccion-6-7" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;">6.7 Doctrina comparada</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Hamdan, Roldán Xopa, Fernández Ruiz</p></a>
+<a class="card card-accent-purple" href="#/seccion-6-8" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-purple); margin: 0;">6.8 Legislación aplicable</h4><p style="font-size: 0.75em; margin: 4px 0 0;">LFPA: artículos comentados y verificados</p></a>
+<a class="card card-accent-green" href="#/seccion-6-9" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-green); margin: 0;">6.9 Esquema de síntesis</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Resumen visual de la unidad</p></a>
+<a class="card card-accent-orange" href="#/seccion-6-10" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-orange); margin: 0;">6.10 Quiz interactivo</h4><p style="font-size: 0.75em; margin: 4px 0 0;">10 preguntas con explicación</p></a>
+<a class="card card-accent-pink" href="#/seccion-6-11" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-pink); margin: 0;">6.11 Casos prácticos</h4><p style="font-size: 0.75em; margin: 4px 0 0;">3 casos con guía de análisis</p></a>
+<a class="card card-accent-red" href="#/material" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-red); margin: 0;">📥 Material para alumnos</h4><p style="font-size: 0.75em; margin: 4px 0 0;">PDFs descargables</p></a>
+</div>
+</section>
+
+<!-- ==================== OBJETIVOS ==================== -->
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎯</span> Objetivos de aprendizaje</h2>
+<div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">1. Comprender</h4><p style="font-size: 0.82em; margin: 4px 0 0;">El concepto, naturaleza y finalidad del procedimiento administrativo como garantía de seguridad jurídica.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">2. Identificar</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Los principios rectores conforme al artículo 13 de la LFPA.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">3. Analizar</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Las cuatro fases del procedimiento: iniciación, instrucción, resolución y ejecución.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">4. Aplicar</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Las reglas de plazos, términos y notificaciones.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">5. Distinguir</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Las seis formas de terminación del artículo 57 LFPA.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">6. Evaluar</h4><p style="font-size: 0.82em; margin: 4px 0 0;">La relación entre el debido proceso legal (art. 14 CPEUM) y el procedimiento administrativo.</p></div>
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">7. Explicar</h4><p style="font-size: 0.82em; margin: 4px 0 0;">El régimen de pruebas en el procedimiento administrativo y sus limitaciones.</p></div>
+</div>
+</section>
+
+<!-- ==================== COMPETENCIAS ==================== -->
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Competencias a desarrollar</h2>
+<div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Gestión procedimental</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Tramitar y dar seguimiento a procedimientos, identificando plazos, fases y requisitos.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Defensa jurídica</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Ejercer los derechos del particular: pruebas, alegatos, impugnación.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Análisis normativo</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Interpretar y aplicar los artículos 13 a 82 de la LFPA a casos concretos.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Argumentación oral y escrita</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Redactar promociones, ofrecer pruebas y formular alegatos en sede administrativa.</p></div>
+</div>
+</section>
+
+<!-- ==================== 6.1 CONCEPTO ==================== -->
+<section class="section-header" id="seccion-6-1">
+<span class="section-icon">📜</span>
+<h2>6.1 Concepto y naturaleza</h2>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📖</span> Definición: Martínez Morales</h2>
+<div class="definition-box fragment">
+<div class="def-title">Martínez Morales (Diccionario, voz «Procedimiento administrativo», p. 339)</div>
+<p class="def-text">La <strong>serie coordinada de medidas tendientes a producir y ejecutar un acto administrativo</strong>. Citando a López Nieto y Mallo, añade que es «el <strong>cauce legal</strong> que los órganos de la administración pública se ven obligados a seguir en la realización de sus funciones y dentro de su competencia respectiva, para producir los actos administrativos».</p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Clave</div>
+<p style="font-size: 0.82em;">Dos ideas esenciales: es un <strong>cauce</strong> (camino preestablecido por la ley) y está orientado a <strong>producir y ejecutar</strong> el acto administrativo. El procedimiento no es el acto: es el camino que conduce a él.</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📖</span> Definición: Fernández Ruiz</h2>
+<div class="definition-box fragment">
+<div class="def-title">Fernández Ruiz (INEHRM, Cap. X, p. 155)</div>
+<p class="def-text">«El <strong>conjunto de actos metódicamente articulado</strong> con el propósito específico de <strong>regular la intervención</strong> de quienes pueden participar en la conformación o impugnación de toda declaración de voluntad de un órgano del poder público en ejercicio de la función administrativa.»</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Qué aporta esta definición</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Destaca la <strong>participación</strong>: el procedimiento no es solo el camino interno de la autoridad, sino el espacio donde el particular <strong>interviene</strong> — aporta pruebas, formula alegatos, impugna. Es la traducción procedimental de la garantía de audiencia.</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📖</span> Definición: Roldán Xopa</h2>
+<div class="definition-box fragment">
+<div class="def-title">Roldán Xopa (p. 324)</div>
+<p class="def-text">El acto administrativo se produce mediante un <strong>procedimiento previo</strong>, integrado por una serie de actos a través de los cuales se <strong>perfecciona la voluntad administrativa</strong>. Distingue entre:</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Órganos de resolución</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Deciden el acto: emiten la declaración de voluntad definitiva.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Órganos de tramitación</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Preparan el acto: instruyen, informan, dictaminan. No deciden, pero construyen el expediente.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Idea central</div>
+<p style="font-size: 0.82em;">La <strong>voluntad administrativa se forma progresivamente</strong>: el procedimiento es el espacio donde convergen las aportaciones de tramitadores, interesados y órganos consultivos antes de que el órgano resolutor emita el acto.</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧭</span> Naturaleza instrumental y contexto</h2>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Naturaleza instrumental</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">El procedimiento <strong>no es un fin en sí mismo</strong>: es un medio para garantizar la <span class="highlight">legalidad</span>, la <span class="highlight">seguridad jurídica</span> y la <span class="highlight">participación del particular</span> en la formación de la voluntad administrativa.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Antes de la LFPA</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">La LFPA se publicó el <strong>4 de agosto de 1994</strong> y entró en vigor el <strong>1 de junio de 1995</strong>. Antes no existía una ley general y uniforme que regulara el procedimiento a nivel federal: se aplicaban supletoriamente las disposiciones del <strong>derecho procesal civil</strong> (Hamdan, Tema X, p. 135).</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Relación acto-procedimiento</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">El acto administrativo es el <strong>resultado</strong>; el procedimiento es el <strong>proceso</strong>. Un acto expedido sin sujetarse al procedimiento vicia su validez: art. 3, fracc. VII LFPA exige «ser expedido sujetándose a las disposiciones relativas al procedimiento administrativo previstas en esta Ley».</p>
+</div>
+</section>
+
+<!-- ==================== 6.2 PRINCIPIOS ==================== -->
+<section class="section-header" id="seccion-6-2">
+<span class="section-icon">⭐</span>
+<h2>6.2 Principios del procedimiento</h2>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Artículo 13 LFPA</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Texto legal</div>
+<p class="lb-text">«La actuación administrativa en el procedimiento se desarrollará con arreglo a los principios de <strong>economía, celeridad, eficacia, legalidad, publicidad y buena fe</strong>.»</p>
+</div>
+<div class="grid-3" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Economía</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Suprimir trámites innecesarios.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Celeridad</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Rapidez; prohibición de dilaciones.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Eficacia</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Mejores resultados.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Legalidad</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Vinculación plena al Derecho.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">Publicidad</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Actuaciones abiertas.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Buena fe</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Prohibición de artimañas.</p></div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">💰</span> Economía y celeridad/eficacia</h2>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">a) Economía</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">La autoridad debe <strong>suprimir los trámites innecesarios</strong>. No se exigen requisitos no previstos en la ley, ni se realizan diligencias que no contribuyan al esclarecimiento del asunto. Se refleja en el <span class="highlight">art. 16, fracc. VI</span>: prohibición de requerir documentos que ya obren en el expediente o que no exijan las normas aplicables.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">b) Celeridad y eficacia</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">El procedimiento debe desarrollarse con rapidez y obtener los mejores resultados. Se prohíben las <strong>dilaciones injustificadas</strong>. Se concreta en plazos cortos: resolución en <span class="highlight">tres meses</span> (art. 17) y prevención de deficiencias <span class="highlight">por una sola vez</span> (art. 17-A).</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> Legalidad, publicidad y buena fe</h2>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">c) Legalidad</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">La administración está <strong>plenamente vinculada al orden jurídico</strong>: toda actuación debe estar prevista o permitida por la ley y enmarcarse en la competencia del órgano. Roldán Xopa (p. 325): el principio de legalidad en el procedimiento implica no solo la sujeción a la ley formal, sino también a los <strong>principios generales del derecho</strong> y a los <strong>derechos fundamentales</strong>.</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">d) Publicidad</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Las actuaciones son <strong>públicas</strong>, salvo excepciones de seguridad nacional o datos personales. Se conecta con los arts. 33-34 LFPA: acceso al estado de tramitación y al expediente.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Buena fe</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Prohíbe a la autoridad emplear <strong>artificios o artimañas</strong> que induzcan a error al particular. Hamdan (Tema X, p. 136): se parte de la buena fe del administrado, con <strong>sanción para quien actúe de mala fe</strong>.</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">➕</span> Principios doctrinales adicionales</h2>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">e) Oficialidad u oficiosidad</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">El procedimiento se <strong>impulsa de oficio</strong> por la autoridad, no requiere impulso a instancia de parte (<span class="highlight">art. 18 LFPA</span>). El interés público justifica que la administración deba continuar el procedimiento incluso si el particular no promueve — salvo caducidad.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">f) In dubio pro actione</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Ante la duda, la autoridad debe interpretar las normas en el sentido <strong>más favorable a la procedencia de la acción</strong>. Hamdan (Tema X, p. 137): «la autoridad debe atender y obsequiar al particular todo lo solicitado, <strong>salvando las deficiencias irrelevantes</strong> e ir al fondo del asunto».</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">g) Gratuidad</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">El procedimiento administrativo <strong>no debe generar costos</strong> para el particular, salvo servicios específicos previstos en la ley.</p>
+</div>
+</section>
+
+<!-- ==================== 6.3 FASES ==================== -->
+<section class="section-header" id="seccion-6-3">
+<span class="section-icon">🧩</span>
+<h2>6.3 Fases del procedimiento</h2>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🚀</span> Fase 1: Iniciación (art. 14 LFPA)</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Texto legal</div>
+<p class="lb-text">«El procedimiento administrativo <strong>podrá iniciarse de oficio o a petición de parte interesada</strong>.»</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">De oficio</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Justificado por el interés público: la autoridad conoce del asunto sin instancia del particular. Puede originarse por impulso de un servidor público, por <strong>denuncia ciudadana</strong> (incluso anónima) o por orden superior (Roldán Xopa, p. 324).</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">A petición de parte</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Requiere <strong>interés jurídico</strong> (calidad jurídica determinada y directamente afectada) o <strong>interés legítimo</strong> (afectación cualificada, aunque no exclusiva, como en materia ambiental). La solicitud debe cumplir los requisitos del <span class="highlight">art. 15 LFPA</span>.</p>
+</div>
+</div>
+<div class="card card-accent-orange fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-orange);">Medidas provisionales desde el inicio</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Iniciado el procedimiento, el órgano administrativo puede adoptar las <strong>medidas provisionales</strong> establecidas en las leyes administrativas de la materia, para asegurar la eficacia de la resolución que pudiera recaer (<span class="highlight">art. 44 LFPA</span>). Complemento: las <strong>medidas de seguridad</strong> de los arts. 81-82 LFPA (Título Quinto).</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📝</span> Requisitos del escrito inicial (art. 15)</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Regla de oro</div>
+<p class="lb-text">«La Administración Pública Federal <strong>no podrá exigir más formalidades que las expresamente previstas en la ley</strong>.»</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Contenido del escrito</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Nombre del promovente (y representante legal) · domicilio para recibir notificaciones · personas autorizadas para recibirlas · petición que se formula · hechos o razones · órgano administrativo a quien se dirige · lugar y fecha · firma (o huella digital).</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Reglas complementarias</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><span class="highlight">Art. 15-A</span>: trámites en original, anexos en copia simple; posible referencia a documentos ya entregados. <span class="highlight">Art. 43</span>: <strong>en ningún caso se podrán rechazar los escritos</strong> en las unidades de recepción. <span class="highlight">Art. 42</span>: el órgano incompetente remite al competente en 5 días.</p>
+</div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚙️</span> Fase 2: Instrucción (arts. 46-56)</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-bottom: 8px;">La fase central del procedimiento. Comprende:</p>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Orden riguroso (art. 46)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Las actuaciones se desahogan en el orden previsto, salvo dispensa expresa motivada. Su incumplimiento es causa de responsabilidad del servidor público.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Incidentes (arts. 47-48)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Las cuestiones incidentales <strong>no suspenden</strong> la tramitación del principal. Se promueven por escrito dentro de 5 días.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Pruebas (arts. 50-52)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Se admiten <strong>toda clase de pruebas, excepto la confesional de las autoridades</strong>. Desahogo: no menor a 3 ni mayor a 15 días. Pruebas supervenientes: hasta antes de la resolución definitiva.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Informes y dictámenes (arts. 53-55)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Por regla general son <strong>facultativos y no vinculantes</strong>. Plazo para emitirlos: 15 días. Si no se reciben, se entiende que <strong>no existe objeción</strong> a las pretensiones del interesado.</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">Alegatos (art. 56)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Concluida la tramitación, las actuaciones se ponen a disposición de los interesados por un plazo <strong>no inferior a 5 ni superior a 10 días</strong> para formular alegatos.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Impulso oficioso (art. 49)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Los actos necesarios para la determinación, conocimiento y comprobación de los hechos se realizan <strong>de oficio</strong> por el órgano que tramita el procedimiento.</p>
+</div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🔬</span> Régimen de pruebas en detalle (arts. 50-52)</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Texto legal (art. 50)</div>
+<p class="lb-text">«En los procedimientos administrativos se admitirán <strong>toda clase de pruebas, excepto la confesional de las autoridades</strong>. No se considerará comprendida en esta prohibición la petición de informes a las autoridades administrativas, respecto de hechos que consten en sus expedientes o de documentos agregados a ellos.»</p>
+</div>
+<div class="grid-3" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">¿Por qué la excepción?</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">La confesión presupone declaración contra interés propio; exigirla a la autoridad rompería la separación entre juez y parte y la imparcialidad del procedimiento.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Prueba de oficio</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">La autoridad puede <strong>allegarse los medios de prueba</strong> que considere necesarios, sin más limitación que las establecidas en la ley (párrafo segundo del art. 50).</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Admisibilidad</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Solo se rechazan las pruebas no ofrecidas conforme a derecho, sin relación con el fondo, improcedentes, innecesarias o contrarias a la moral y al derecho. La resolución debe estar <strong>fundada y motivada</strong>.</p>
+</div>
+</div>
+<div class="card card-accent-orange fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-orange);">Plazos (arts. 51-52)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Desahogo: entre <strong>3 y 15 días</strong> desde la admisión. Pruebas con ulterior desahogo: entre 8 y 15 días. Anticipación de 3 días para el inicio de actuaciones de desahogo. Las <strong>supervenientes</strong> pueden presentarse hasta antes de la resolución definitiva.</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> Fase 3: Resolución</h2>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Resolución expresa</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">La fase culminante: la autoridad debe dictar resolución <strong>fundada y motivada</strong> en un plazo máximo de <span class="highlight">tres meses</span> (art. 17 LFPA). Además, el art. 16, fracc. X, impone la obligación de <strong>dictar resolución expresa sobre cuantas peticiones se formulen</strong>.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Resolución presunta</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Transcurrido el plazo sin resolución, opera el <strong>silencio administrativo</strong> en su modalidad de <span class="highlight">negativa ficta</span> (regla general), salvo que otra disposición prevea la afirmativa ficta. El art. 17 permite al interesado solicitar <strong>constancia</strong>, que debe expedirse dentro de los 2 días hábiles siguientes.</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Resoluciones favorables</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Otorgan derechos, autorizan actividades.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Resoluciones ablatorias</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Imponen obligaciones, sanciones o restricciones.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Congruencia</div>
+<p style="font-size: 0.82em;">El <span class="highlight">art. 59 LFPA</span> exige que la resolución decida <strong>todas las cuestiones planteadas</strong> (y de oficio las derivadas) y, en procedimientos a solicitud de parte, que sea <strong>congruente con las peticiones</strong> formuladas.</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🛠️</span> Fase 4: Ejecución</h2>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Ejecución voluntaria</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">El particular acata el acto administrativo por propia decisión.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Ejecución forzosa</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">La administración hace cumplir el acto mediante coacción, ejerciendo la <strong>autotutela ejecutiva</strong>: multa coercitiva, ejecución subsidiaria, compulsión sobre las personas y vía administrativa de apremio.</p>
+</div>
+</div>
+<div class="definition-box fragment">
+<div class="def-title">Martínez Morales (2° Curso, p. 413)</div>
+<p class="def-text">El procedimiento de ejecución son «las etapas por efectuar para que el acto se cumpla, de manera <strong>voluntaria o por coacción estatal</strong>».</p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Cierre del ciclo</div>
+<p style="font-size: 0.82em;">La definición de Martínez Morales del procedimiento incluye <strong>producir y ejecutar</strong>: la ejecución es parte del procedimiento, no una etapa externa a él. Por eso la coacción administrativa directa (sin acudir al juez) se justifica como atributo de la función administrativa, siempre bajo control jurisdiccional posterior.</p>
+</div>
+</section>
+
+<!-- ==================== 6.4 TERMINACIÓN ==================== -->
+<section class="section-header" id="seccion-6-4">
+<span class="section-icon">🏁</span>
+<h2>6.4 Terminación del procedimiento</h2>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Artículo 57 LFPA: seis formas</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Texto legal</div>
+<p class="lb-text">«Ponen fin al procedimiento administrativo: <strong>I.</strong> La resolución del mismo; <strong>II.</strong> El desistimiento; <strong>III.</strong> La renuncia al derecho en que se funde la solicitud, cuando tal renuncia no esté prohibida por el ordenamiento jurídico; <strong>IV.</strong> La declaración de caducidad; <strong>V.</strong> La imposibilidad material de continuarlo por causas sobrevenidas, y <strong>VI.</strong> El convenio de las partes…»</p>
+</div>
+<div class="grid-3" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">I. Resolución</h4><p style="font-size: 0.72em; margin: 4px 0 0;">Decisión fundada y motivada.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">II. Desistimiento</h4><p style="font-size: 0.72em; margin: 4px 0 0;">El particular se retira antes de la resolución (art. 58).</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">III. Renuncia</h4><p style="font-size: 0.72em; margin: 4px 0 0;">Derecho renunciable, no prohibido por la ley.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">IV. Caducidad</h4><p style="font-size: 0.72em; margin: 4px 0 0;">Paralización imputable al interesado (art. 60).</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">V. Imposibilidad material</h4><p style="font-size: 0.72em; margin: 4px 0 0;">Causas sobrevenidas.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">VI. Convenio</h4><p style="font-size: 0.72em; margin: 4px 0 0;">Entre particular y autoridad.</p></div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🚪</span> Desistimiento y renuncia (art. 58)</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Texto legal (art. 58)</div>
+<p class="lb-text">«Todo interesado podrá <strong>desistirse de su solicitud o renunciar a sus derechos</strong>, cuando éstos no sean de orden e interés públicos. Si el escrito de iniciación se hubiere formulado por dos o más interesados, el desistimiento o la renuncia <strong>sólo afectará a aquél que lo hubiese formulado</strong>.»</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Desistimiento</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Acto del particular que retira su solicitud. Procede siempre que <strong>no se afecte el interés público</strong>. Es individual: cada promovente decide por sí mismo.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Renuncia al derecho</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Requiere que el derecho en que se funda la solicitud sea <strong>renunciable</strong> y que la renuncia no esté prohibida por la ley. No se renuncian derechos irrenunciables (laborales, mínimos constitucionales).</p>
+</div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🕰️</span> Caducidad (art. 60)</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Texto legal (art. 60)</div>
+<p class="lb-text">«En los procedimientos iniciados a instancia del interesado, cuando se produzca su <strong>paralización por causas imputables al mismo</strong>, la Administración Pública Federal le <strong>advertirá</strong> que, transcurridos <strong>tres meses</strong>, se producirá la caducidad del mismo…»</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Procedimientos a instancia de parte</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Paralización por causas <strong>imputables al interesado</strong> + advertencia previa → 3 meses → caducidad y archivo. Contra la declaratoria procede el <strong>recurso de revisión</strong>.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Procedimientos de oficio</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Se entienden caducados a solicitud de parte o de oficio en el plazo de <strong>30 días</strong> contados a partir de la expiración del plazo para dictar resolución.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Efecto clave</div>
+<p style="font-size: 0.82em;">La caducidad <strong>no produce por sí misma la prescripción de las acciones</strong> del particular o de la Administración; pero los procedimientos caducados <strong>no interrumpen ni suspenden</strong> el plazo de prescripción. Diferencia con la <span class="highlight">prescripción de la facultad sancionadora</span> (art. 79: 5 años, contados desde la comisión de la falta o desde que cesó si fuere continua).</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🤝</span> Convenio entre partes (art. 57, fracc. VI)</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Requisitos legales</div>
+<p class="lb-text">El convenio procede «siempre y cuando <strong>no sea contrario al ordenamiento jurídico</strong> ni verse sobre <strong>materias que no sean susceptibles de transacción</strong>, y tenga por objeto <strong>satisfacer el interés público</strong>, con el alcance, efectos y régimen jurídico específico que en cada caso prevea la disposición que lo regula.»</p>
+</div>
+<div class="grid-3" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">No contrario al ordenamiento</h4>
+<p style="font-size: 0.75em; margin: 4px 0 0;">Debe ajustarse a la ley de la materia y a la LFPA.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Materia transigible</h4>
+<p style="font-size: 0.75em; margin: 4px 0 0;">No cabe en materias de orden público indisponible (p. ej., sanciones penales).</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Interés público</h4>
+<p style="font-size: 0.75em; margin: 4px 0 0;">El objeto del convenio debe ser satisfacerlo, no solo conveniencias privadas.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Figura novedosa</div>
+<p style="font-size: 0.82em;">Es la forma de terminación más <strong>innovadora</strong> de la LFPA de 1994: introduce la lógica de la <strong>transacción</strong> en sede administrativa. Ejemplo práctico: los <strong>compromisos de terminación anticipada</strong> en procedimientos de competencia económica (COFECE), previstos en su legislación especial.</p>
+</div>
+</section>
+
+<!-- ==================== 6.5 DEBIDO PROCESO ==================== -->
+<section class="section-header" id="seccion-6-5">
+<span class="section-icon">🛡️</span>
+<h2>6.5 Debido proceso administrativo</h2>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🛡️</span> Artículo 14 CPEUM</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Constitución</div>
+<p class="lb-text">«A ninguna ley se dará efecto retroactivo en perjuicio de cualquiera persona. <strong>Nadie será privado de la libertad o de sus propiedades, posesiones o derechos, sino mediante juicio seguido ante los tribunales previamente establecidos, en el que se cumplan las formalidades esenciales del procedimiento</strong> y, conforme a éstas, en el que se le garanticen las garantías que en su caso corresponden.»</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Aplicación al procedimiento administrativo</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Aunque el art. 14 está pensado para el proceso judicial, la Suprema Corte ha establecido que sus garantías <strong>se extienden al procedimiento administrativo</strong>: las «formalidades esenciales del procedimiento» son las que garantizan una <strong>adecuada y oportuna defensa previa al acto privativo</strong> (tesis P./J. 47/95, Semanario Judicial de la Federación y su Gaceta, Novena Época, Tomo II, diciembre de 1995, p. 133).</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📋</span> Formalidades esenciales (P./J. 47/95)</h2>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">1. Notificación del inicio</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Del procedimiento y de sus consecuencias: el particular debe saber qué se le imputa o qué se tramita.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">2. Oportunidad de ofrecer y desahogar pruebas</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">En defensa de los intereses del particular (arts. 50-52 LFPA).</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">3. Oportunidad de formular alegatos</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Antes de la emisión de la resolución (art. 56 LFPA).</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">4. Resolución fundada</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Que dirima las cuestiones planteadas, fundada y motivada (arts. 3-V y 59 LFPA).</p>
+</div>
+</div>
+<div class="card card-accent-red fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-red);">Rigor especial en materia sancionadora</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Roldán Xopa (p. 413): estas garantías se aplican con <strong>especial rigor en el procedimiento sancionador</strong>, dada su identidad ontológica con la materia penal. Las pruebas obtenidas con violación de derechos fundamentales <strong>no tienen valor probatorio</strong> en procedimiento administrativo alguno.</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🔗</span> Procedimiento, recurso y proceso judicial</h2>
+<div class="grid-3" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Procedimiento administrativo</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Se desarrolla en <strong>sede administrativa</strong>, ante la propia administración.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Recursos administrativos</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Son una <strong>prolongación del procedimiento</strong>: se agotan ante la administración (unidad 13).</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Jurisdicción contencioso-administrativa</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Constituye un <strong>proceso autónomo</strong> ante tribunales (Fernández Ruiz, INEHRM, Cap. X, p. 158).</p>
+</div>
+</div>
+<div class="card card-accent-orange fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-orange);">Relación de complementariedad</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">El procedimiento administrativo y el proceso judicial no se excluyen: el primero resuelve en primera instancia administrativa; el segundo es el <strong>control jurisdiccional</strong> posterior. La interposición de recursos administrativos suele ser requisito para acceder al contencioso (agotamiento de la vía administrativa).</p>
+</div>
+</section>
+
+<!-- ==================== 6.6 PLAZOS Y NOTIFICACIONES ==================== -->
+<section class="section-header" id="seccion-6-6">
+<span class="section-icon">⏱️</span>
+<h2>6.6 Plazos y notificaciones</h2>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📅</span> Plazos y términos (arts. 28-32)</h2>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Días y horas hábiles (arts. 28 y 30)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Inhábiles: sábados, domingos y festivos (1° de enero, 5 de febrero, 21 de marzo, 1° y 5 de mayo, 1° y 16 de septiembre, 20 de noviembre, 1° de diciembre cada seis años, 25 de diciembre). Horario hábil: <strong>8:00 a 18:00</strong>, salvo horarios publicados.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Cómputo (art. 29)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">En plazos por periodos se computan todos los días. Si el último día es inhábil, el plazo se <strong>prorroga al día hábil siguiente</strong>.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Ampliación (art. 31)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">La APF puede ampliar plazos, sin que exceda <strong>la mitad del plazo original</strong>, cuando lo exija el asunto y no se perjudiquen derechos.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Plazo genérico (art. 32)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">A falta de disposición específica, el plazo para trámites diversos <strong>no excederá de 10 días</strong>. El órgano debe informar al interesado dicho plazo.</p>
+</div>
+</div>
+<div class="card card-accent-red fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-red);">Reglas especiales de cómputo</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;"><span class="highlight">Art. 17-B</span>: los plazos para que la autoridad conteste empiezan a correr <strong>al día hábil inmediato siguiente</strong> a la presentación del escrito. <span class="highlight">Art. 17-A</span>: la prevención se hace dentro del primer tercio del plazo de respuesta; el plazo se suspende y reanuda al día hábil siguiente de contestado el requerimiento.</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📨</span> Notificaciones (arts. 35-39)</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Contenido obligatorio (art. 39)</div>
+<p class="lb-text">Toda notificación, en plazo máximo de <strong>10 días</strong> desde la emisión del acto, debe contener: el <strong>texto íntegro</strong> del acto, el <strong>fundamento legal</strong>, la indicación de si es o no <strong>definitivo en la vía administrativa</strong>, y en su caso, el <strong>recurso que proceda</strong>, el órgano ante quien presentarse y el <strong>plazo</strong> para su interposición.</p>
+</div>
+<div class="grid-3" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Personal (arts. 35-I, 36)</h4>
+<p style="font-size: 0.75em; margin: 4px 0 0;">En el domicilio; regla general para actos individualizados. Surtre efectos el día que se realiza (art. 38).</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Oficio / certificado / electrónica (art. 35-II)</h4>
+<p style="font-size: 0.75em; margin: 4px 0 0;">Con acuse de recibo; también por medios electrónicos cuando el promovente los haya aceptado expresamente.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Edictos (arts. 35-III, 37)</h4>
+<p style="font-size: 0.75em; margin: 4px 0 0;">Cuando se desconozca el domicilio: 3 publicaciones consecutivas en el DOF y un periódico de mayor circulación.</p>
+</div>
+</div>
+<div class="card card-accent-orange fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-orange);">Efectos (arts. 9 y 38)</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">La notificación es <strong>constitutiva de la eficacia</strong> del acto: el acto válido será eficaz y exigible <strong>a partir de que surta efectos la notificación</strong> legalmente efectuada (art. 9). Las notificaciones personales surten efectos <strong>el día en que hubieren sido realizadas</strong>, y los plazos empiezan a correr <strong>a partir del día siguiente</strong> (art. 38). Excepciones del art. 9: actos que otorgan beneficios al particular y actos de inspección o vigilancia.</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚠️</span> Notificaciones irregulares (arts. 40-41)</h2>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Consecuencia de la irregularidad</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Las notificaciones irregularmente practicadas surtirán efectos a partir de la fecha en que el interesado <strong>manifieste expresamente conocer su contenido</strong> o <strong>interponga el recurso correspondiente</strong> (art. 40).</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Impugnación de la notificación (art. 41)</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Si el particular <strong>afirma conocer</strong> el acto: impugna la notificación junto con el acto en el recurso administrativo. Si <strong>niega conocerlo</strong>: interpone el recurso ante la autoridad competente para notificar, que deberá darlo a conocer; tendrá 15 días para ampliar el recurso. La autoridad resolutora estudia primero los agravios contra la notificación, antes del examen del acto.</p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Importancia práctica</div>
+<p style="font-size: 0.82em;">La notificación defectuosa <strong>invalida el cómputo de plazos</strong> para impugnar: sin notificación válida no corren los plazos de recursos ni de ejecución. Es la primera línea de defensa del particular y el primer punto que revisa un tribunal de amparo.</p>
+</div>
+</section>
+
+<!-- ==================== 6.7 DOCTRINA COMPARADA ==================== -->
+<section class="section-header" id="seccion-6-7">
+<span class="section-icon">🎓</span>
+<h2>6.7 Doctrina comparada</h2>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎓</span> Tres autores, tres enfoques</h2>
+<table class="comparison-table dense">
+<tr><th>Tema</th><th>Hamdan Amad (ELD 2015)</th><th>Roldán Xopa (ITAM)</th><th>Fernández Ruiz (Edo. Méx. 2023)</th></tr>
+<tr><td><strong>Concepto</strong></td><td>Camino condicionado jurídicamente para la emisión del acto administrativo</td><td>Serie de actos mediante los cuales se perfecciona la voluntad administrativa</td><td>Conjunto de actos metódicamente articulado para regular la intervención de participantes</td></tr>
+<tr><td><strong>Principios</strong></td><td>Competencia, informalidad, sencillez, oficiosidad, buena fe, in dubio pro actione, celeridad, accesibilidad al expediente</td><td>Economía, celeridad, eficacia, legalidad, publicidad, buena fe (art. 13 LFPA) + oficialidad, contradicción, gratuidad</td><td>Legalidad, sencillez, celeridad, oficiosidad, eficacia, publicidad, transparencia, gratuidad, buena fe (Código Edo. Méx., art. 3)</td></tr>
+<tr><td><strong>Fases</strong></td><td>Iniciación, instrucción, resolución</td><td>Iniciación (oficio/parte), instrucción (garantías), terminación (6 formas)</td><td>Iniciación, instrucción (pruebas, informes, alegatos), terminación y ejecución</td></tr>
+<tr><td><strong>Debido proceso</strong></td><td>Se remite al art. 14 constitucional</td><td>Formalidades esenciales: notificación, pruebas, alegatos, resolución (P./J. 47/95)</td><td>El recurso administrativo es prolongación del procedimiento; la jurisdicción es proceso autónomo</td></tr>
+<tr><td><strong>Caducidad</strong></td><td>(No la desarrolla extensamente)</td><td>3 meses de paralización imputable al interesado (art. 60 LFPA)</td><td>Procedimientos de oficio: 30 días tras expiración del plazo para resolver</td></tr>
+</table>
+</section>
+
+<!-- ==================== 6.8 LEGISLACIÓN ==================== -->
+<section class="section-header" id="seccion-6-8">
+<span class="section-icon">📚</span>
+<h2>6.8 Legislación aplicable comentada</h2>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📚</span> LFPA — marco general</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Datos de la ley</div>
+<p class="lb-text">Publicada en el DOF el <strong>4 de agosto de 1994</strong>; vigente desde el <strong>1 de junio de 1995</strong>. Última reforma publicada en el DOF: <strong>14 de noviembre de 2025</strong>. El Título Tercero («Del Procedimiento Administrativo», arts. 12 al 82) es la fuente principal de esta unidad; el Título Sexto regula el <strong>recurso de revisión</strong> (arts. 83 y ss.), que estudiaremos en la Unidad 13.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Ámbito de aplicación (art. 1)</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Aplica a la APF centralizada y, respecto de actos de autoridad, servicios exclusivos y contratos reservados, a los organismos descentralizados. <strong>Exclusiones</strong>: materia fiscal (en contribuciones y accesorios), responsabilidades de servidores públicos, justicia agraria y laboral, ministerio público. En competencia económica, desleal comercio internacional y financiera, solo aplica el Título Tercero A (mejora regulatoria).</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Supletoriedad (art. 2)</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">La LFPA se aplica <strong>supletoriamente a las diversas leyes administrativas</strong>; el Código Federal de Procedimientos Civiles se aplica supletoriamente a la LFPA. Antes de 1994, esa era la vía que llenaba el vacío de regulación procedimental.</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Artículos clave (1/2)</h2>
+<table class="comparison-table dense">
+<tr><th>Art.</th><th>Contenido</th><th>Comentario</th></tr>
+<tr><td><strong>13</strong></td><td>Principios rectores</td><td>Economía, celeridad, eficacia, legalidad, publicidad y buena fe. Base de todo el Título Tercero.</td></tr>
+<tr><td><strong>14</strong></td><td>Iniciación de oficio o a petición de parte</td><td>Dos vías legítimas de activación del procedimiento.</td></tr>
+<tr><td><strong>15 / 15-A</strong></td><td>Formalidades de las promociones</td><td>Requisitos mínimos del escrito inicial; flexibilización documental.</td></tr>
+<tr><td><strong>16</strong></td><td>Obligaciones de la APF (10 fracciones)</td><td>Catálogo de derechos del particular. Destacan: fracc. V (admitir pruebas y recibir alegatos), VI (no requerir documentos innecesarios) y X (resolver expresamente).</td></tr>
+<tr><td><strong>17</strong></td><td>Plazo y silencio administrativo</td><td>3 meses; negativa ficta como regla; constancia a petición del interesado en 2 días hábiles.</td></tr>
+<tr><td><strong>17-A / 17-B</strong></td><td>Prevención por una sola vez / cómputo</td><td>Mínimo 5 días hábiles para subsanar; los plazos corren desde el día hábil siguiente.</td></tr>
+<tr><td><strong>18</strong></td><td>Impulso de oficio</td><td>El procedimiento continúa de oficio; si el impulso corresponde a los interesados y no lo hacen, opera la caducidad.</td></tr>
+</table>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Artículos clave (2/2)</h2>
+<table class="comparison-table dense">
+<tr><th>Art.</th><th>Contenido</th><th>Comentario</th></tr>
+<tr><td><strong>28-32</strong></td><td>Plazos y términos</td><td>Días y horas hábiles, cómputo, ampliación hasta la mitad, plazo genérico de 10 días.</td></tr>
+<tr><td><strong>35-39</strong></td><td>Notificaciones</td><td>Tipos y formalidades; contenido obligatorio; efectos. La personal es la regla para actos individualizados.</td></tr>
+<tr><td><strong>40-41</strong></td><td>Impugnación de notificaciones</td><td>Régimen de la notificación irregular y de la falta de notificación.</td></tr>
+<tr><td><strong>42-45</strong></td><td>Iniciación</td><td>Turno al competente en 5 días; prohibición de rechazar escritos; medidas provisionales (art. 44); acumulación (art. 45).</td></tr>
+<tr><td><strong>46-56</strong></td><td>Instrucción</td><td>Orden riguroso, incidentes, pruebas (excepción: confesional de autoridades), informes, alegatos.</td></tr>
+<tr><td><strong>57-61</strong></td><td>Terminación</td><td>Seis formas (art. 57); desistimiento y renuncia (58); congruencia (59); caducidad (60); emergencia y urgencia (61).</td></tr>
+<tr><td><strong>79-80</strong></td><td>Prescripción sancionadora</td><td>5 años (art. 79); interrupción por impugnación (art. 80). No confundir con la caducidad del art. 60.</td></tr>
+<tr><td><strong>81-82</strong></td><td>Medidas de seguridad</td><td>Para proteger la salud y la seguridad públicas; duración estrictamente necesaria.</td></tr>
+</table>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> Fundamentos constitucionales</h2>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Art. 14 CPEUM</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Formalidades esenciales del procedimiento: garantía de defensa previa al acto privativo. Aplicable al procedimiento administrativo (P./J. 47/95).</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Art. 16 CPEUM</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Legalidad de los actos de autoridad: todo acto debe estar fundado y motivado. Incluye el derecho de los particulares a que la autoridad actúe conforme a la ley.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Art. 8 CPEUM</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Derecho de petición: respuesta por escrito, en breve término, resuelta conforme a ley. Base del deber de resolver (art. 16-X LFPA) y del silencio administrativo.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Art. 17 CPEUM</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Acceso pronta y expedita a la justicia. Proyectado a la administración: celeridad procedimental y prohibición de dilaciones.</p>
+</div>
+</div>
+</section>
+
+<!-- ==================== 6.9 ESQUEMA DE SÍNTESIS ==================== -->
+<section class="section-header" id="seccion-6-9">
+<span class="section-icon">🗺️</span>
+<h2>6.9 Esquema de síntesis</h2>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗺️</span> Esquema general</h2>
+<div style="font-family: Consolas, monospace; font-size: 0.62em; line-height: 1.55; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);">
+<div><strong style="color: var(--accent-blue);">1. CONCEPTO:</strong> Serie coordinada de actos para producir y ejecutar un acto administrativo</div>
+<div style="padding-left: 18px; color: rgba(255,255,255,0.6);">Instrumento de garantía: seguridad jurídica + participación del particular</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-purple);">2. PRINCIPIOS (art. 13 LFPA)</strong></div>
+<div style="padding-left: 18px;">Economía · Celeridad y eficacia · Legalidad · Publicidad · Buena fe</div>
+<div style="padding-left: 18px; color: rgba(255,255,255,0.6);">+ Oficialidad (art. 18) · In dubio pro actione · Gratuidad · Contradicción</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-pink);">3. FASES</strong></div>
+<div style="padding-left: 18px;">INICIACIÓN (art. 14): de oficio / a petición de parte</div>
+<div style="padding-left: 18px;">INSTRUCCIÓN (arts. 46-56): pruebas, informes, alegatos</div>
+<div style="padding-left: 18px;">RESOLUCIÓN: expresa (3 meses, art. 17) / presunta (silencio)</div>
+<div style="padding-left: 18px;">EJECUCIÓN: voluntaria / forzosa (autotutela administrativa)</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-green);">4. TERMINACIÓN (art. 57)</strong></div>
+<div style="padding-left: 18px;">Resolución | Desistimiento | Renuncia | Caducidad (art. 60) | Imposibilidad | Convenio</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-orange);">5. DEBIDO PROCESO (art. 14 CPEUM + P./J. 47/95)</strong></div>
+<div style="padding-left: 18px;">Notificación → Pruebas → Alegatos → Resolución fundada</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-red);">6. PLAZOS (arts. 28-32) Y NOTIFICACIONES (arts. 35-39)</strong></div>
+<div style="padding-left: 18px;">Horario hábil: 8:00-18:00 · Resolver: 3 meses (art. 17) · Prevención: una sola vez (art. 17-A)</div>
+<div style="padding-left: 18px;">Notificación: constitutiva de eficacia (art. 9) · efectos y plazos (art. 38)</div>
+</div>
+</section>
+
+<!-- ==================== 6.10 QUIZ ==================== -->
+<section class="section-header" id="seccion-6-10">
+<span class="section-icon">🧠</span>
+<h2>6.10 Quiz interactivo</h2>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Pregunta 1 de 10</h2>
+<div class="quiz-card quiz-question fragment">
+<div class="quiz-q">Conforme al artículo 13 LFPA, son principios del procedimiento administrativo:</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">Economía, celeridad, eficacia, legalidad, publicidad y buena fe</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Legalidad, moralidad, eficiencia, transparencia y publicidad</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Oficialidad, gratuidad, celeridad, contradicción y publicidad</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Economía, legalidad, buena fe y oficialidad</div>
+<div class="quiz-explanation">El art. 13 LFPA enumera textualmente: economía, celeridad, eficacia, legalidad, publicidad y buena fe. La oficialidad es principio doctrinal (art. 18), no del catálogo legal.</div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Pregunta 2 de 10</h2>
+<div class="quiz-card quiz-question fragment">
+<div class="quiz-q">El procedimiento administrativo puede iniciarse:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Solo a petición de parte interesada</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Solo de oficio por la autoridad</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">De oficio o a petición de parte interesada (art. 14 LFPA)</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Exclusivamente por denuncia ciudadana</div>
+<div class="quiz-explanation">El art. 14 LFPA admite ambas vías. La de oficio se justifica por el interés público; la de parte requiere interés jurídico o legítimo.</div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Pregunta 3 de 10</h2>
+<div class="quiz-card quiz-question fragment">
+<div class="quiz-q">La prueba confesional de las autoridades en el procedimiento administrativo:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Está admitida expresamente</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">Está prohibida expresamente (art. 50 LFPA)</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Queda a criterio de la autoridad</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Solo procede en materia fiscal</div>
+<div class="quiz-explanation">El art. 50 admite toda clase de pruebas excepto la confesional de las autoridades. La petición de informes a autoridades no se considera comprendida en la prohibición.</div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Pregunta 4 de 10</h2>
+<div class="quiz-card quiz-question fragment">
+<div class="quiz-q">El plazo máximo para que la autoridad resuelva expresamente una solicitud, conforme al artículo 17 LFPA, es de:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">30 días hábiles</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">60 días naturales</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">3 meses</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">6 meses</div>
+<div class="quiz-explanation">El art. 17 fija el tope de tres meses, salvo que otra disposición legal o administrativa de carácter general establezca otro plazo.</div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Pregunta 5 de 10</h2>
+<div class="quiz-card quiz-question fragment">
+<div class="quiz-q">¿Cuál de las siguientes NO es una forma de terminación del procedimiento administrativo (art. 57 LFPA)?</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Resolución expresa</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Desistimiento</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">Sentencia judicial firme</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Caducidad</div>
+<div class="quiz-explanation">Las seis formas del art. 57 son: resolución, desistimiento, renuncia, caducidad, imposibilidad material y convenio entre partes. La sentencia judicial pertenece al proceso, no al procedimiento administrativo.</div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Pregunta 6 de 10</h2>
+<div class="quiz-card quiz-question fragment">
+<div class="quiz-q">La caducidad del procedimiento por paralización imputable al interesado opera a los:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">30 días</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">60 días</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">3 meses</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">6 meses</div>
+<div class="quiz-explanation">El art. 60 LFPA: advertencia previa + 3 meses de paralización imputable al interesado = caducidad. En procedimientos de oficio, el archivo opera en 30 días tras la expiración del plazo para resolver.</div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Pregunta 7 de 10</h2>
+<div class="quiz-card quiz-question fragment">
+<div class="quiz-q">La tesis P./J. 47/95 establece que las formalidades esenciales del procedimiento son:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Economía, celeridad, eficacia, legalidad, publicidad y buena fe</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">Notificación, pruebas, alegatos y resolución fundada</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Escrito, firma, domicilio, objeto y fundamentos</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Iniciación, instrucción, resolución y ejecución</div>
+<div class="quiz-explanation">P./J. 47/95 (Pleno, SJF y su Gaceta, Novena Época, Tomo II, dic. 1995, p. 133): son las que garantizan una adecuada y oportuna defensa previa al acto privativo.</div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Pregunta 8 de 10</h2>
+<div class="quiz-card quiz-question fragment">
+<div class="quiz-q">La notificación personal surte efectos, conforme al artículo 38 LFPA:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">El mismo día en que se realiza, y los plazos corren desde ese día</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">El día en que se realiza, y los plazos corren a partir del día siguiente</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">A los 3 días hábiles posteriores</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Cuando el particular se da por notificado</div>
+<div class="quiz-explanation">Art. 38 LFPA: las notificaciones personales surten efectos el día en que hubieren sido realizadas; los plazos empiezan a correr a partir del día siguiente. Para notificación por correo, vale la fecha del acuse de recibo.</div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Pregunta 9 de 10</h2>
+<div class="quiz-card quiz-question fragment">
+<div class="quiz-q">Si la autoridad no resuelve una solicitud en 3 meses, opera:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">La afirmativa ficta (se entiende aprobada)</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">La negativa ficta (se entiende negada), como regla general</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">La caducidad automática del procedimiento</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">La obligación de indemnizar al particular</div>
+<div class="quiz-explanation">Art. 17 LFPA: transcurrido el plazo, se entienden las resoluciones en sentido negativo al promovente, salvo que otra disposición prevea lo contrario (afirmativa ficta excepcional).</div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Pregunta 10 de 10</h2>
+<div class="quiz-card quiz-question fragment">
+<div class="quiz-q">La audiencia previa al acto privativo puede omitirse cuando:</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">Se trate de materia fiscal</div>
+<div class="quiz-option" onclick="this.classList.add('correct')">Medie situación de emergencia o urgencia debidamente fundada y motivada (art. 61 LFPA)</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">El particular renuncie a ella</div>
+<div class="quiz-option" onclick="this.classList.add('wrong')">La autoridad así lo decida discrecionalmente</div>
+<div class="quiz-explanation">El art. 61 LFPA permite emitir el acto sin sujetarse a las formalidades del procedimiento en situaciones de emergencia o urgencia, debidamente fundadas y motivadas, respetando en todo caso las garantías individuales.</div>
+</div>
+</section>
+
+<!-- ==================== 6.11 CASOS ==================== -->
+<section class="section-header" id="seccion-6-11">
+<span class="section-icon">🔥</span>
+<h2>6.11 Casos prácticos</h2>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🏗️</span> Caso 1 — El permiso de construcción y la caducidad</h2>
+<div class="real-life fragment">
+<div class="rl-label">Caso 1</div>
+<p style="font-size: 0.82em;">El Sr. Pérez solicita un <strong>permiso de construcción</strong> el 2 de enero de 2026. La autoridad le requiere documentación adicional el 15 de enero. El Sr. Pérez presenta la documentación el 10 de febrero. Tras ello, no hay actividad alguna hasta el 15 de junio, cuando el Sr. Pérez se presenta a preguntar y le informan que el procedimiento caducó.</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Planteamiento</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">¿Operó la caducidad? ¿Quién debe impulsar el procedimiento?</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Partes</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Sr. Pérez (particular), Dirección de Desarrollo Urbano (autoridad).</p>
+</div>
+</div>
+<div class="card card-accent-green fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-green);">Guía de análisis</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">El <span class="highlight">art. 18 LFPA</span> establece la continuación de oficio. La caducidad (art. 60) opera solo si la paralización es <strong>imputable al interesado</strong>. En este caso, tras la presentación de documentos (10 de febrero), la carga de impulsar es de la <strong>autoridad</strong>: no hubo advertencia previa ni paralización imputable al particular → la caducidad no operó.</p>
+</div>
+<div class="card card-accent-orange fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-orange);">Rúbrica</h4>
+<p style="font-size: 0.75em; margin: 4px 0 0;">Identificar la regla de oficialidad (30%) · distinguir caducidad imputable al interesado vs. a la autoridad (40%) · proponer recurso contra la declaratoria de caducidad (30%).</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🚫</span> Caso 2 — La sanción sin audiencia previa</h2>
+<div class="real-life fragment">
+<div class="rl-label">Caso 2</div>
+<p style="font-size: 0.82em;">La Procuraduría Federal del Consumidor impone una <strong>multa de $500,000</strong> a una empresa por «publicidad engañosa», sin notificar previamente el inicio del procedimiento ni dar oportunidad de ofrecer pruebas o alegar.</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Planteamiento</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">¿Qué garantía constitucional se violó? ¿Cuáles son las formalidades esenciales del procedimiento?</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Partes</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Empresa sancionada (particular), PROFECO (autoridad).</p>
+</div>
+</div>
+<div class="card card-accent-green fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-green);">Guía de análisis</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Violación al <strong>debido proceso</strong> (art. 14 CPEUM). Formalidades esenciales (P./J. 47/95): notificación, pruebas, alegatos y resolución. Sin notificación previa y sin audiencia, el acto es <strong>nulo</strong>. Procede el medio de impugnación administrativo y, en su caso, el amparo.</p>
+</div>
+<div class="card card-accent-orange fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-orange);">Rúbrica</h4>
+<p style="font-size: 0.75em; margin: 4px 0 0;">Identificar la garantía violada (30%) · citar jurisprudencia aplicable (30%) · proponer medio de impugnación (40%).</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🤝</span> Caso 3 — El convenio para terminar un procedimiento</h2>
+<div class="real-life fragment">
+<div class="rl-label">Caso 3</div>
+<p style="font-size: 0.82em;">La COFECE inicia un procedimiento por <strong>prácticas monopólicas</strong> contra una empresa. Durante la instrucción, la autoridad y la empresa negocian un compromiso: la empresa se obliga a modificar sus prácticas y pagar una contribución, y la COFECE se compromete a cerrar el procedimiento sin sanción.</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Planteamiento</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">¿Es válido el convenio conforme al art. 57, fracc. VI LFPA? ¿Qué límites tiene?</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Partes</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Empresa investigada (particular), COFECE (autoridad).</p>
+</div>
+</div>
+<div class="card card-accent-green fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-green);">Guía de análisis</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">El art. 57-VI exige: que no sea contrario al ordenamiento, que no verse sobre materias no transigibles y que tenga por objeto satisfacer el <strong>interés público</strong>. Las prácticas monopólicas son materia de interés público, pero la ley de competencia prevé la <strong>terminación anticipada mediante compromisos</strong> — el régimen específico de la materia manda sobre el régimen general.</p>
+</div>
+<div class="card card-accent-orange fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-orange);">Rúbrica</h4>
+<p style="font-size: 0.75em; margin: 4px 0 0;">Analizar los requisitos del convenio (30%) · evaluar la compatibilidad con el interés público (35%) · proponer mecanismo de garantía de cumplimiento (35%).</p>
+</div>
+</section>
+
+<!-- ==================== MATERIAL PARA ALUMNOS ==================== -->
+<section data-background-color="#0a0a1a" id="material">
+<h2><span class="icon-lg">📥</span> Material para Alumnos</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.78em;">Descarga el material de estudio de esta unidad</p>
+<div class="grid-2" style="margin-top: 10px;">
+<a href="../Material para Alumnos/Unidad 6/Unidad 6.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-blue fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">📄</span>
+<div>
+<h4 style="color: var(--accent-blue); margin: 0;">Unidad 6 — Contenido completo</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Exposición teórica, fases, terminación</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-blue); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 6/Cuestionario.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-green fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">❓</span>
+<div>
+<h4 style="color: var(--accent-green); margin: 0;">Cuestionario de estudio</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Preguntas de estudio</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-green); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 6/Taller y Evaluación.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-orange fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">🎯</span>
+<div>
+<h4 style="color: var(--accent-orange); margin: 0;">Taller y Evaluación</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Ejercicios prácticos</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-orange); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 6/Autoevaluación.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-purple fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">✅</span>
+<div>
+<h4 style="color: var(--accent-purple); margin: 0;">Autoevaluación</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Reactivos con clave de respuestas</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-purple); font-size: 1.2em;"></i>
+</div>
+</a>
+</div>
+<div style="margin-top: 16px; text-align: center;">
+<p style="font-size: 0.7em; color: rgba(255,255,255,0.35);"><i class="fa-solid fa-circle-info"></i> Toca cualquier tarjeta para descargar el PDF</p>
+</div>
+</section>
+
+<!-- ==================== CIERRE ==================== -->
+<section class="title-slide" id="cierre">
+<span style="font-size: 4em;">🎓</span>
+<h1 style="font-size: 2em; margin-top: 20px;">¡Listo para la Unidad 6!</h1>
+<p style="color: rgba(255,255,255,0.6); font-size: 1.1em; margin-top: 20px;">El procedimiento administrativo es la <span style="color: var(--accent-blue); font-weight: 600;">garantía procesal</span> del particular frente al poder público.<br>Sin procedimiento no hay acto válido: el cómo importa tanto como el qué.</p>
+<div style="margin-top: 40px;">
+<p style="font-size: 0.8em; color: rgba(255,255,255,0.4);">
+<i class="fa-solid fa-book"></i> Lectura: Hamdan Amad (Tema X, pp. 135-163) · Roldán Xopa (pp. 324-329)<br>
+<i class="fa-solid fa-scale-balanced"></i> Fernández Ruiz (Cap. X) · Martínez Morales (Diccionario)<br>
+<i class="fa-solid fa-gavel"></i> LFPA: Título Tercero (arts. 12-82) — lectura obligatoria<br>
+<i class="fa-solid fa-pen"></i> Preparar cuestionario, casos prácticos y taller</p>
+</div>
+<p style="margin-top: 40px; font-size: 0.7em; color: rgba(255,255,255,0.3);">Presiona <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">Esc</kbd> para ver la vista general · <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">F</kbd> para pantalla completa</p>
+<a href="../index.html" style="display: inline-block; margin-top: 20px; font-size: 0.75em; color: rgba(255,255,255,0.4); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice de unidades</a>
+</section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: false,
+            width: 1100,
+            height: 700,
+            margin: 0.04,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: true,
+            controls: true,
+            controlsLayout: 'edges',
+            controlsTutorial: false,
+            disableLayout: true,
+            plugins: [RevealNotes, RevealMarkdown, RevealHighlight]
+        });
+
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('a, button, .quiz-option, [onclick], input, select, textarea')) {
+                return;
+            }
+            var slide = Reveal.getCurrentSlide();
+            if (e.target === slide || slide.contains(e.target)) {
+                Reveal.navigateNext();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode === 174 || e.keyCode === 175) {
+                e.preventDefault();
+                var slide = Reveal.getCurrentSlide();
+                var scrollAmount = 100;
+                if (e.keyCode === 175) {
+                    slide.scrollTop -= scrollAmount;
+                } else {
+                    slide.scrollTop += scrollAmount;
+                }
+            }
+        });
+
+        var fullscreenBtn = document.getElementById('fullscreen-btn');
+        var fullscreenIcon = fullscreenBtn.querySelector('i');
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                var el = document.documentElement;
+                if (el.requestFullscreen) { el.requestFullscreen(); }
+                else if (el.webkitRequestFullscreen) { el.webkitRequestFullscreen(); }
+            } else {
+                if (document.exitFullscreen) { document.exitFullscreen(); }
+                else if (document.webkitExitFullscreen) { document.exitFullscreen(); }
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleFullscreen();
+        });
+
+        function updateFullscreenIcon() {
+            var isFull = document.fullscreenElement || document.webkitFullscreenElement;
+            if (isFull) {
+                fullscreenIcon.className = 'fa-solid fa-compress';
+                fullscreenBtn.title = 'Salir de pantalla completa';
+            } else {
+                fullscreenIcon.className = 'fa-solid fa-expand';
+                fullscreenBtn.title = 'Pantalla completa';
+            }
+        }
+
+        document.addEventListener('fullscreenchange', updateFullscreenIcon);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
+
+        document.getElementById('index-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            var slideIndice = document.getElementById('indice');
+            if (slideIndice) {
+                var idx = Reveal.getIndices(slideIndice);
+                Reveal.slide(idx.h, idx.v, idx.f);
+            }
+        });
+
+        var fragmentCounter = document.getElementById('fragment-counter');
+        var fcCurrent = fragmentCounter.querySelector('.fc-current');
+        var fcTotal = fragmentCounter.querySelector('.fc-total');
+
+        function updateFragmentCounter() {
+            var slide = Reveal.getCurrentSlide();
+            var total = slide.querySelectorAll('.fragment').length;
+            var shown = slide.querySelectorAll('.fragment.visible').length;
+            if (total > 0) {
+                fcCurrent.textContent = shown;
+                fcTotal.textContent = total;
+                fragmentCounter.classList.add('has-fragments');
+            } else {
+                fcCurrent.textContent = 0;
+                fcTotal.textContent = 0;
+                fragmentCounter.classList.remove('has-fragments');
+            }
+        }
+
+        Reveal.on('slidechanged', updateFragmentCounter);
+        Reveal.on('fragmentshown', updateFragmentCounter);
+        Reveal.on('fragmenthidden', updateFragmentCounter);
+
+        var slideNav = document.getElementById('slide-nav');
+        var slideNavCurrent = document.getElementById('slide-nav-current');
+        var slideNavTotal = document.getElementById('slide-nav-total');
+        var slideNavInput = document.getElementById('slide-nav-input');
+
+        function updateSlideNav() {
+            var indices = Reveal.getIndices();
+            var total = Reveal.getTotalSlides();
+            slideNavCurrent.textContent = indices.h + 1;
+            slideNavTotal.textContent = total;
+        }
+
+        function openSlideNavInput() {
+            var indices = Reveal.getIndices();
+            slideNavInput.value = indices.h + 1;
+            slideNav.classList.add('editing');
+            slideNavInput.focus();
+            slideNavInput.select();
+        }
+
+        function closeSlideNavInput() {
+            slideNav.classList.remove('editing');
+            updateSlideNav();
+        }
+
+        function navigateToSlide() {
+            var num = parseInt(slideNavInput.value, 10);
+            var total = Reveal.getTotalSlides();
+            if (!isNaN(num) && num >= 1 && num <= total) {
+                Reveal.slide(num - 1);
+            }
+            closeSlideNavInput();
+        }
+
+        slideNav.addEventListener('click', function(e) {
+            if (e.target === slideNavInput) return;
+            e.stopPropagation();
+            openSlideNavInput();
+        });
+
+        slideNavInput.addEventListener('keydown', function(e) {
+            e.stopPropagation();
+            if (e.key === 'Enter') { navigateToSlide(); }
+            else if (e.key === 'Escape') { closeSlideNavInput(); }
+        });
+
+        slideNavInput.addEventListener('blur', function() {
+            closeSlideNavInput();
+        });
+
+        Reveal.on('slidechanged', updateSlideNav);
+        updateSlideNav();
+    </script>
+</body>
+</html>

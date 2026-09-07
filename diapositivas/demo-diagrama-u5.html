@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo — Mapa conceptual HTML · Unidad 5: Teoría del Acto Administrativo</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Playfair+Display:wght@800&display=swap" rel="stylesheet">
+<style>
+    :root {
+        --bg: #0a0a1a;
+        --glass: rgba(255,255,255,0.055);
+        --glass-border: rgba(255,255,255,0.12);
+        --line: rgba(255,255,255,0.28);
+        --text: rgba(255,255,255,0.88);
+        --muted: rgba(255,255,255,0.55);
+        --blue: #4f8cff;   --blue-bg: rgba(79,140,255,0.12);
+        --purple: #a855f7; --purple-bg: rgba(168,85,247,0.12);
+        --pink: #ec4899;   --pink-bg: rgba(236,72,153,0.12);
+        --green: #10b981;  --green-bg: rgba(16,185,129,0.12);
+        --orange: #f59e0b; --orange-bg: rgba(245,158,11,0.12);
+        --red: #ef4444;    --red-bg: rgba(239,68,68,0.12);
+        --cyan: #22d3ee;   --cyan-bg: rgba(34,211,238,0.12);
+    }
+    * { box-sizing: border-box; }
+    body {
+        margin: 0; padding: 34px 28px 50px;
+        background: radial-gradient(1200px 600px at 50% -10%, #1a1a3e 0%, var(--bg) 55%);
+        color: var(--text);
+        font-family: 'Inter', 'Segoe UI', sans-serif;
+        min-height: 100vh;
+    }
+    .wrap { max-width: 1380px; margin: 0 auto; }
+
+    /* ---------- Encabezado ---------- */
+    .demo-tag {
+        display: inline-block; font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+        color: var(--muted); border: 1px solid var(--glass-border); border-radius: 20px;
+        padding: 5px 14px; margin-bottom: 14px;
+    }
+    h1 {
+        font-family: 'Playfair Display', Georgia, serif; font-size: clamp(26px, 3.4vw, 40px);
+        margin: 0 0 6px; font-weight: 800;
+        background: linear-gradient(135deg, #4f8cff, #a855f7, #ec4899);
+        -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;
+    }
+    .subtitle { color: var(--muted); font-size: 14.5px; margin: 0 0 30px; }
+
+    /* ---------- Raíz del árbol ---------- */
+    .root {
+        width: fit-content; margin: 0 auto; text-align: center;
+        background: linear-gradient(135deg, rgba(79,140,255,0.22), rgba(168,85,247,0.22));
+        border: 1px solid rgba(79,140,255,0.45); border-radius: 16px;
+        padding: 14px 34px; box-shadow: 0 0 40px rgba(79,140,255,0.25);
+    }
+    .root h2 {
+        margin: 0; font-size: clamp(19px, 2.2vw, 26px); letter-spacing: 1.5px;
+        text-transform: uppercase; font-weight: 800;
+    }
+    .root p { margin: 6px 0 0; font-size: 13.5px; color: var(--muted); font-style: italic; }
+
+    /* ---------- Conectores ---------- */
+    .trunk { width: 2px; height: 26px; background: var(--line); margin: 0 auto; }
+    .spine { height: 2px; background: var(--line); width: 97%; margin: 0 auto; border-radius: 2px; }
+
+    /* ---------- Ramas ---------- */
+    .branches {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(252px, 1fr));
+        gap: 16px; max-width: 1380px; margin: 0 auto;
+    }
+    .branch { position: relative; margin-top: 20px; transition: transform .25s ease, box-shadow .25s ease; }
+    .branch::before {           /* conexión vertical hacia la columna */
+        content: ''; position: absolute; top: -20px; left: 50%;
+        transform: translateX(-50%); width: 2px; height: 20px; background: var(--line);
+    }
+    .branch:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.45); }
+
+    .card {
+        height: 100%;
+        background: var(--glass);
+        border: 1px solid var(--glass-border);
+        border-top: 3px solid var(--c);
+        border-radius: 14px;
+        padding: 14px 15px 12px;
+        backdrop-filter: blur(8px);
+    }
+    .card h3 {
+        margin: 0 0 10px; font-size: 14px; letter-spacing: 0.4px;
+        color: var(--c); text-transform: uppercase; font-weight: 700;
+    }
+    .card ul { list-style: none; margin: 0; padding: 0; }
+    .card li {
+        position: relative; padding: 3px 0 3px 15px; font-size: 12.8px;
+        line-height: 1.45; color: var(--text);
+    }
+    .card li::before { content: '▸'; position: absolute; left: 0; color: var(--c); font-weight: 700; }
+    .chip {
+        display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.3px;
+        padding: 0.5px 8px; border-radius: 10px; margin-left: 5px; vertical-align: 1px;
+        color: var(--c); border: 1px solid var(--c); background: var(--cbg); white-space: nowrap;
+    }
+    .chip.strong { background: var(--c); color: #0a0a1a; border-color: var(--c); }
+
+    .footer-note {
+        max-width: 1380px; margin: 34px auto 0; text-align: center;
+        color: var(--muted); font-size: 12px;
+    }
+    .footer-note b { color: var(--text); }
+</style>
+</head>
+<body>
+<div class="wrap">
+    <span class="demo-tag">Demo · diagrama HTML/CSS puro · sin imágenes ni JavaScript</span>
+    <h1>Teoría del Acto Administrativo</h1>
+    <p class="subtitle">Mapa conceptual con los datos reales de la Unidad 5 (LFPA, redacción vigente) — candidato a sustituir el esquema ASCII de las diapositivas 3 y 51.</p>
+
+    <!-- Raíz -->
+    <div class="root">
+        <h2>⚖️ Acto Administrativo</h2>
+        <p>Declaración unilateral de la administración pública con efectos jurídicos individuales</p>
+    </div>
+    <div class="trunk"></div>
+    <div class="spine"></div>
+
+    <!-- Ramas -->
+    <div class="branches">
+
+        <div class="branch" style="--c: var(--blue); --cbg: var(--blue-bg);">
+            <div class="card">
+                <h3>📜 1. Concepto</h3>
+                <ul>
+                    <li>Declaración unilateral, concreta e individual</li>
+                    <li>Acto de <b>individualización normativa</b> (Roldán Xopa)</li>
+                    <li>Excluye: reglamento, contrato, hecho admvo.</li>
+                    <li>Ámbito: <span class="chip">LFPA art. 2</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch" style="--c: var(--purple); --cbg: var(--purple-bg);">
+            <div class="card">
+                <h3>🧩 2. Elementos <span class="chip">art. 3 vigente</span></h3>
+                <ul>
+                    <li>Sujeto <span class="chip">fracc. I</span></li>
+                    <li>Voluntad <span class="chip">VIII, IX, XII</span></li>
+                    <li>Objeto <span class="chip">fracc. II</span></li>
+                    <li>Motivo/causa <span class="chip strong">fracc. V</span></li>
+                    <li>Finalidad <span class="chip">fracc. III</span></li>
+                    <li>Forma <span class="chip">IV, X, XIII–XVI</span></li>
+                    <li>Procedimiento <span class="chip">fracc. VII</span></li>
+                    <li>Mérito/oportunidad <span class="chip">doctrina</span></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch" style="--c: var(--pink); --cbg: var(--pink-bg);">
+            <div class="card">
+                <h3>📊 3. Clasificación</h3>
+                <ul>
+                    <li>Sujetos: simple / complejo / colegiado</li>
+                    <li>Ámbito: interno / externo</li>
+                    <li>Destinatarios: singular / general</li>
+                    <li>Contenido: favorable / ablatorio / certificante</li>
+                    <li>Margen: reglado / discrecional</li>
+                    <li>Expresión: expreso / tácito / presunto</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch" style="--c: var(--green); --cbg: var(--green-bg);">
+            <div class="card">
+                <h3>⚖️ 4. Validez y eficacia</h3>
+                <ul>
+                    <li>Presunción de legitimidad <span class="chip">art. 8</span></li>
+                    <li>Eficacia: notificación <span class="chip">art. 9</span></li>
+                    <li>Nulidad → inválido <span class="chip strong">art. 6 · I–X</span></li>
+                    <li>Anulabilidad → válido saneable <span class="chip strong">art. 7 · XII–XVI</span></li>
+                    <li>Fracc. XI derogada</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch" style="--c: var(--orange); --cbg: var(--orange-bg);">
+            <div class="card">
+                <h3>🤫 5. Silencio administrativo</h3>
+                <ul>
+                    <li>Negativa ficta: 3 meses <span class="chip">art. 17</span></li>
+                    <li>Afirmativa ficta: excepción legal</li>
+                    <li>Silencio indefinido (Martínez Morales)</li>
+                    <li>Derecho de petición <span class="chip">art. 8 CPEUM</span></li>
+                    <li>→ Amparo por omisión</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch" style="--c: var(--red); --cbg: var(--red-bg);">
+            <div class="card">
+                <h3>🕰️ 6. Extinción <span class="chip">art. 11</span></h3>
+                <ul>
+                    <li><b>Normal:</b> cumplimiento / expiración del plazo / condición resolutoria</li>
+                    <li><b>Anormal:</b> revocación por interés público / anulación / caducidad / renuncia</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="branch" style="--c: var(--cyan); --cbg: var(--cyan-bg);">
+            <div class="card">
+                <h3>🔍 7. Distinciones</h3>
+                <ul>
+                    <li>vs. Reglamento: individual vs. <b>general</b></li>
+                    <li>vs. Contrato: unilateral vs. <b>bilateral</b></li>
+                    <li>vs. Hecho admvo.: voluntad vs. <b>materialidad</b></li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+    <p class="footer-note">
+        <b>Por qué HTML y no ASCII/mermaid:</b> se ve nítido a cualquier tamaño de proyector, hereda los colores y la tipografía de la presentación,
+        funciona sin conexión (el diagrama no depende de librerías externas) y es accesible como texto real.
+    </p>
+</div>
+</body>
+</html>
