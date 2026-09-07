@@ -71,6 +71,25 @@
         .comparison-table tr:nth-child(even) td { background: var(--glass); }
         .comparison-table tr:last-child td { border-bottom: none; }
         .comparison-table.dense th, .comparison-table.dense td { padding: 5px 10px; }
+        /* Mapa conceptual U5 — diagrama HTML clicable */
+        .md-root { width: fit-content; margin: 0 auto; text-align: center; background: linear-gradient(135deg, rgba(79,140,255,0.22), rgba(168,85,247,0.22)); border: 1px solid rgba(79,140,255,0.45); border-radius: 14px; padding: 9px 30px; box-shadow: 0 0 30px rgba(79,140,255,0.25); }
+        .reveal .md-root h3 { margin: 0; font-size: 0.9em; letter-spacing: 1.5px; text-transform: uppercase; color: white; }
+        .reveal .md-root p { margin: 4px 0 0; font-size: 0.65em; color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.4; }
+        .md-trunk { width: 2px; height: 16px; background: rgba(255,255,255,0.28); margin: 0 auto; }
+        .md-spine { height: 2px; background: rgba(255,255,255,0.28); width: 97%; margin: 0 auto; border-radius: 2px; }
+        .md-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(228px, 1fr)); gap: 12px; }
+        a.md-branch { position: relative; margin-top: 15px; display: block; text-decoration: none; transition: transform 0.25s ease; }
+        a.md-branch::before { content: ''; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); width: 2px; height: 15px; background: rgba(255,255,255,0.28); }
+        a.md-branch:hover { transform: translateY(-3px); }
+        a.md-branch:hover .md-card { border-color: var(--c); box-shadow: 0 8px 24px rgba(0,0,0,0.45); }
+        .md-card { height: 100%; background: var(--glass); border: 1px solid var(--glass-border); border-top: 3px solid var(--c); border-radius: 12px; padding: 9px 12px 8px; }
+        .reveal .md-card h4 { margin: 0 0 7px; font-size: 0.66em; letter-spacing: 0.4px; color: var(--c); text-transform: uppercase; font-weight: 700; }
+        .reveal .md-card ul { list-style: none; margin: 0; padding: 0; }
+        .reveal .md-card li { position: relative; padding: 1.5px 0 1.5px 13px; font-size: 0.55em; line-height: 1.4; color: rgba(255,255,255,0.85); }
+        .reveal .md-card li::before { content: '▸'; position: absolute; left: 0; color: var(--c); font-weight: 700; }
+        .md-chip { display: inline-block; font-size: 0.82em; font-weight: 700; padding: 0 7px; border-radius: 9px; margin-left: 4px; color: var(--c); border: 1px solid var(--c); background: var(--cbg); white-space: nowrap; }
+        .md-chip.strong { background: var(--c); color: #0a0a1a; border-color: var(--c); }
+        .reveal .md-hint { text-align: center; font-size: 0.55em; color: rgba(255,255,255,0.4); margin: 10px 0 0; }
         .fun-fact { background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(239,68,68,0.1)); border: 1px solid rgba(245,158,11,0.3); border-radius: 10px; padding: 12px 16px; margin: 10px 0; font-size: 0.85em; }
         .fun-fact .ff-label { color: var(--accent-orange); font-weight: 700; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; }
         .quiz-card { background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(79,140,255,0.15)); border: 1px solid rgba(16,185,129,0.3); border-radius: 14px; padding: 16px 20px; margin: 10px 0; }
@@ -172,33 +191,96 @@
 
 <section data-background-color="#0a0a1a">
 <h2><span class="icon-lg">🧠</span> Mapa Conceptual</h2>
-<div style="font-family: Consolas, monospace; font-size: 0.58em; line-height: 1.55; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border); white-space: pre;">Teoría del Acto Administrativo
-├── 1. Concepto
-│   ├── Definición Martínez Morales
-│   ├── Definición Roldán Xopa / Zanobini
-│   └── 7 notas distintivas
-├── 2. Elementos (LFPA art. 3)
-│   ├── Sujeto (fracc. I)
-│   ├── Voluntad (fraccs. VIII, IX y XII)
-│   ├── Objeto (fracc. II)
-│   ├── Motivo/causa (fracc. V: fundado y motivado)
-│   ├── Finalidad (fracc. III)
-│   ├── Forma (fraccs. IV, X, XIII-XVI)
-│   └── Procedimiento (fracc. VII)
-├── 3. Clasificación (6 criterios)
-├── 4. Validez y Eficacia
-│   ├── Presunción de legitimidad (art. 8)
-│   └── Nulidad (art. 6) vs. Anulabilidad (art. 7)
-├── 5. Silencio Administrativo
-│   ├── Negativa ficta (art. 17)
-│   └── Afirmativa ficta
-├── 6. Extinción (art. 11)
-│   ├── Normal: cumplimiento / expiración del plazo / condición resolutoria
-│   └── Anormal: revocación / caducidad / renuncia
-└── 7. Distinciones
-    ├── vs. Reglamento
-    ├── vs. Contrato Administrativo
-    └── vs. Hecho Administrativo</div>
+<div class="md-root">
+<h3>⚖️ Acto Administrativo</h3>
+<p>Declaración unilateral de la administración pública con efectos jurídicos individuales</p>
+</div>
+<div class="md-trunk"></div>
+<div class="md-spine"></div>
+<div class="md-grid">
+<a class="md-branch" href="#/seccion-5-1" style="--c: var(--accent-blue); --cbg: rgba(79,140,255,0.12);">
+<div class="md-card">
+<h4>📜 1. Concepto</h4>
+<ul>
+<li>Declaración unilateral, concreta e individual</li>
+<li>Individualización normativa (Roldán Xopa)</li>
+<li>Excluye reglamento, contrato y hecho admvo.</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-5-2" style="--c: var(--accent-purple); --cbg: rgba(168,85,247,0.12);">
+<div class="md-card">
+<h4>🧩 2. Elementos <span class="md-chip">art. 3 vigente</span></h4>
+<ul>
+<li>Sujeto <span class="md-chip">fracc. I</span></li>
+<li>Voluntad <span class="md-chip">VIII, IX, XII</span></li>
+<li>Objeto <span class="md-chip">fracc. II</span></li>
+<li>Motivo/causa <span class="md-chip strong">fracc. V</span></li>
+<li>Finalidad <span class="md-chip">fracc. III</span></li>
+<li>Forma <span class="md-chip">IV, X, XIII–XVI</span></li>
+<li>Procedimiento <span class="md-chip">fracc. VII</span></li>
+<li>Mérito/oportunidad <span class="md-chip">doctrina</span></li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-5-3" style="--c: var(--accent-pink); --cbg: rgba(236,72,153,0.12);">
+<div class="md-card">
+<h4>📊 3. Clasificación</h4>
+<ul>
+<li>Sujetos: simple / complejo / colegiado</li>
+<li>Ámbito: interno / externo</li>
+<li>Destinatarios: singular / general</li>
+<li>Contenido: favorable / ablatorio / certificante</li>
+<li>Margen: reglado / discrecional</li>
+<li>Expresión: expreso / tácito / presunto</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-5-4" style="--c: var(--accent-green); --cbg: rgba(16,185,129,0.12);">
+<div class="md-card">
+<h4>⚖️ 4. Validez y eficacia</h4>
+<ul>
+<li>Presunción de legitimidad <span class="md-chip">art. 8</span></li>
+<li>Eficacia: notificación <span class="md-chip">art. 9</span></li>
+<li>Nulidad → inválido <span class="md-chip strong">art. 6 · I–X</span></li>
+<li>Anulabilidad → válido saneable <span class="md-chip strong">art. 7 · XII–XVI</span></li>
+<li>Fracción XI derogada</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-5-5" style="--c: var(--accent-orange); --cbg: rgba(245,158,11,0.12);">
+<div class="md-card">
+<h4>🤫 5. Silencio administrativo</h4>
+<ul>
+<li>Negativa ficta: 3 meses <span class="md-chip">art. 17</span></li>
+<li>Afirmativa ficta: excepción legal</li>
+<li>Silencio indefinido (Martínez Morales)</li>
+<li>Derecho de petición <span class="md-chip">art. 8 CPEUM</span></li>
+<li>→ Amparo por omisión</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-5-6" style="--c: var(--accent-red); --cbg: rgba(239,68,68,0.12);">
+<div class="md-card">
+<h4>🕰️ 6. Extinción <span class="md-chip">art. 11</span></h4>
+<ul>
+<li><b>Normal:</b> cumplimiento / expiración del plazo / condición resolutoria</li>
+<li><b>Anormal:</b> revocación / anulación / caducidad / renuncia</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-5-7" style="--c: #22d3ee; --cbg: rgba(34,211,238,0.12);">
+<div class="md-card">
+<h4>🔍 7. Distinciones</h4>
+<ul>
+<li>vs. Reglamento: individual vs. <b>general</b></li>
+<li>vs. Contrato: unilateral vs. <b>bilateral</b></li>
+<li>vs. Hecho admvo.: voluntad vs. <b>materialidad</b></li>
+</ul>
+</div>
+</a>
+</div>
+<p class="md-hint">🖱️ Haz clic en una rama para ir directo a la sección</p>
 </section>
 
 <section data-background-color="#0a0a1a" id="indice">
