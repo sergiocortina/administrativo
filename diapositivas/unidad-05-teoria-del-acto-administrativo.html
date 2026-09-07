@@ -70,6 +70,7 @@
         .comparison-table td { padding: 7px 12px; border-bottom: 1px solid var(--glass-border); color: rgba(255,255,255,0.85); }
         .comparison-table tr:nth-child(even) td { background: var(--glass); }
         .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table.dense th, .comparison-table.dense td { padding: 5px 10px; }
         .fun-fact { background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(239,68,68,0.1)); border: 1px solid rgba(245,158,11,0.3); border-radius: 10px; padding: 12px 16px; margin: 10px 0; font-size: 0.85em; }
         .fun-fact .ff-label { color: var(--accent-orange); font-weight: 700; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; }
         .quiz-card { background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(79,140,255,0.15)); border: 1px solid rgba(16,185,129,0.3); border-radius: 14px; padding: 16px 20px; margin: 10px 0; }
@@ -135,8 +136,6 @@
     </div>
     <div class="reveal">
         <div class="slides">
-
-<!-- 1. PORTADA -->
 <section class="title-slide">
 <span class="unit-badge">Unidad 5</span>
 <h1 style="margin-top: 30px;">Teoría del Acto<br>Administrativo</h1>
@@ -148,7 +147,6 @@
 <a href="../index.html" style="display: inline-block; margin-top: 24px; font-size: 0.7em; color: rgba(255,255,255,0.3); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice</a>
 </section>
 
-<!-- 2. DONDE ESTAMOS -->
 <section data-background-color="#0a0a1a">
 <h2><span class="icon-lg">🗺️</span> ¿Dónde estamos en el curso?</h2>
 <p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Unidad 1: qué es el DA · Unidad 2: de dónde sale · Unidad 3: cómo se organiza · Unidad 4: quién lo hace · <strong>Unidad 5: el acto administrativo</strong>.</p>
@@ -172,7 +170,6 @@
 </div>
 </section>
 
-<!-- 3. MAPA CONCEPTUAL -->
 <section data-background-color="#0a0a1a">
 <h2><span class="icon-lg">🧠</span> Mapa Conceptual</h2>
 <div style="font-family: Consolas, monospace; font-size: 0.58em; line-height: 1.55; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border); white-space: pre;">Teoría del Acto Administrativo
@@ -182,11 +179,12 @@
 │   └── 7 notas distintivas
 ├── 2. Elementos (LFPA art. 3)
 │   ├── Sujeto (fracc. I)
-│   ├── Voluntad (fracc. VIII)
+│   ├── Voluntad (fraccs. VIII, IX y XII)
 │   ├── Objeto (fracc. II)
-│   ├── Motivo/causa (fracc. IV)
+│   ├── Motivo/causa (fracc. V: fundado y motivado)
 │   ├── Finalidad (fracc. III)
-│   └── Forma (fraccs. V, VII, IX, X, XI)
+│   ├── Forma (fraccs. IV, X, XIII-XVI)
+│   └── Procedimiento (fracc. VII)
 ├── 3. Clasificación (6 criterios)
 ├── 4. Validez y Eficacia
 │   ├── Presunción de legitimidad (art. 8)
@@ -195,7 +193,7 @@
 │   ├── Negativa ficta (art. 17)
 │   └── Afirmativa ficta
 ├── 6. Extinción (art. 11)
-│   ├── Normal: cumplimiento / plazo / condición
+│   ├── Normal: cumplimiento / expiración del plazo / condición resolutoria
 │   └── Anormal: revocación / caducidad / renuncia
 └── 7. Distinciones
     ├── vs. Reglamento
@@ -203,7 +201,6 @@
     └── vs. Hecho Administrativo</div>
 </section>
 
-<!-- 4. INDICE -->
 <section data-background-color="#0a0a1a" id="indice">
 <h2><span class="icon-lg">📑</span> Índice de la Unidad 5</h2>
 <p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Toca o haz clic en un tema para ir directo a él</p>
@@ -224,7 +221,6 @@
 </div>
 </section>
 
-<!-- 5. OBJETIVOS -->
 <section data-background-color="#0a0a1a">
 <h2><span class="icon-lg">🎯</span> Objetivos de aprendizaje</h2>
 <div class="grid-2" style="margin-top: 12px;">
@@ -238,7 +234,6 @@
 </div>
 </section>
 
-<!-- 6. COMPETENCIAS -->
 <section data-background-color="#0a0a1a">
 <h2><span class="icon-lg">🧠</span> Competencias a desarrollar</h2>
 <div class="grid-2" style="margin-top: 12px;">
@@ -249,7 +244,6 @@
 </div>
 </section>
 
-<!-- SECCION 5.1 - CONCEPTO -->
 <section class="section-header" id="seccion-5-1">
 <span class="section-icon">📜</span>
 <h2>5.1 Concepto de acto administrativo</h2>
@@ -315,15 +309,9 @@
 <div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">f) Alcance: ad intra / ad extra</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Puede dirigirse a otros órganos o a particulares.</p></div>
 <div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">g) Función ejecutiva</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Aplica y ejecuta la norma general.</p></div>
 </div>
-
-
-<div class="grid-3" style="margin-top: 12px;">
-<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">I. Sujeto</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Órgano competente.</p></div>
-<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">VIII. Voluntad</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Libre de vicios.</p></div>
-<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">II. Objeto</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Lícito y determinado.</p></div>
-<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">IV. Motivo/causa</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Fundamentación y motivación.</p></div>
-<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">III. Finalidad</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Interés público.</p></div>
-<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">V, VII, IX, X, XI. Forma</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Escrita + formalidades.</p></div>
+<div class="card card-accent-purple fragment" style="margin-top: 12px;">
+<h4 style="color: var(--accent-purple);">¿Y los elementos?</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Estas notas se concretan en los <strong>elementos</strong> que estudiaremos en 5.2: quién emite (sujeto), cómo se forma la decisión (voluntad), sobre qué recae (objeto), por qué se decide (motivo), para qué (finalidad) y cómo se exterioriza (forma).</p>
 </div>
 </section>
 
@@ -352,8 +340,8 @@
 <section data-background-color="#0a0a1a">
 <h2><span class="icon-lg">💬</span> 5.2.2 Voluntad (manifestación de voluntad)</h2>
 <div class="card card-accent-purple fragment">
-<h4 style="color: var(--accent-purple);">Art. 3, fracc. VIII LFPA</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;">La administración debe exteriorizar libremente su voluntad, <strong>sin vicios</strong> como error, dolo o violencia.</p>
+<h4 style="color: var(--accent-purple);">Art. 3, fraccs. VIII, IX y XII LFPA</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">La administración debe exteriorizar su voluntad <strong>sin vicios</strong>: sin error sobre el objeto, la causa, el motivo o el fin del acto (fracc. VIII); sin dolo ni violencia en su emisión (fracc. IX); y sin error en la identificación del expediente, los documentos o las personas (fracc. XII).</p>
 </div>
 <div class="definition-box fragment">
 <div class="def-title">Roldán Xopa (p. 318)</div>
@@ -365,7 +353,7 @@
 <h2><span class="icon-lg">🎯</span> 5.2.3 Objeto</h2>
 <div class="card card-accent-orange fragment">
 <h4 style="color: var(--accent-orange);">Art. 3, fracc. II LFPA</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;">Es lo que se decide, certifica u opina. Debe ser <strong>lícito, cierto, determinado o determinable y posible</strong> física y jurídicamente.</p>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Es lo que el acto ordena, autoriza, prohíbe, reconoce o extingue. Debe ser <strong>posible, determinado o determinable, preciso</strong> en cuanto a las circunstancias de tiempo y lugar, <strong>y previsto por la ley</strong>.</p>
 </div>
 <div class="definition-box fragment">
 <div class="def-title">Fernández Ruiz (INEHRM, Cap. IX, p. 134)</div>
@@ -376,8 +364,8 @@
 <section data-background-color="#0a0a1a">
 <h2><span class="icon-lg">⚖️</span> 5.2.4 Motivo o causa</h2>
 <div class="card card-accent-pink fragment">
-<h4 style="color: var(--accent-pink);">Art. 3, fracc. IV LFPA</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;">Son las consideraciones de <strong>hecho y de derecho</strong> que justifican la emisión del acto: la fundamentación y motivación.</p>
+<h4 style="color: var(--accent-pink);">Art. 3, fracc. V LFPA</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Es el antecedente que provoca el acto: las consideraciones de hecho y de derecho que lo justifican. El acto debe estar <strong>fundado</strong> (citar las normas que le sirven de base) y <strong>motivado</strong> (explicar las razones y los hechos concretos).</p>
 </div>
 <div class="definition-box fragment">
 <div class="def-title">Gabino Fraga (citado en Roldán Xopa, p. 322)</div>
@@ -400,8 +388,8 @@
 <section data-background-color="#0a0a1a">
 <h2><span class="icon-lg">📝</span> 5.2.6 Forma</h2>
 <div class="card card-accent-blue fragment">
-<h4 style="color: var(--accent-blue);">Art. 3, fraccs. V, VII, IX, X, XI LFPA</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;">El acto debe constar <strong>por escrito</strong> con firma autógrafa del funcionario competente, incluyendo: órgano emisor, lugar, fecha y firma.</p>
+<h4 style="color: var(--accent-blue);">Art. 3, fraccs. IV, X y XIII-XVI LFPA</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Por escrito y con <strong>firma autógrafa</strong> de la autoridad (fracc. IV); mención del órgano del que emana (X); señalar lugar y fecha de emisión (XIII); indicar la oficina del expediente cuando deba notificarse (XIV); mencionar los recursos que procedan cuando sea recurrible (XV); y decidir expresamente todos los puntos propuestos (XVI).</p>
 </div>
 <div class="definition-box fragment">
 <div class="def-title">Fernández Ruiz (Edo. Méx., Cap. IX, p. 180)</div>
@@ -410,18 +398,25 @@
 </section>
 
 <section data-background-color="#0a0a1a">
-<h2><span class="icon-lg">⭐</span> 7 notas distintivas del acto</h2>
-<div class="card card-accent-purple fragment" style="margin-top: 10px;">
-<p style="font-size: 0.78em;">Según Roldán Xopa (p. 317):</p>
-<div class="grid-2" style="margin-top: 8px;">
-<div><div class="card card-accent-blue fragment"><p style="font-size: 0.75em;">a) Actuación de <strong>órgano administrativo</strong> con efectos jurídicos directos</p></div>
-<div class="card card-accent-green fragment"><p style="font-size: 0.75em;">b) Acto <strong>unilateral</strong></p></div>
-<div class="card card-accent-orange fragment"><p style="font-size: 0.75em;">c) Expresión de <strong>potestades públicas</strong></p></div>
-<div class="card card-accent-pink fragment"><p style="font-size: 0.75em;">d) Emitido por <strong>órgano administrativo</strong></p></div></div>
-<div><div class="card card-accent-red fragment"><p style="font-size: 0.75em;">e) Produce <strong>efectos de derecho</strong></p></div>
-<div class="card card-accent-purple fragment"><p style="font-size: 0.75em;">f) Ámbito <strong>ad intra</strong> o <strong>ad extra</strong></p></div>
-<div class="card card-accent-blue fragment"><p style="font-size: 0.75em;">g) Cumple una función <strong>ejecutiva</strong></p></div></div>
+<h2><span class="icon-lg">🧾</span> Los elementos y sus vicios (art. 3 LFPA vigente)</h2>
+<div class="comparison-table fragment">
+<table class="dense" style="width:100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.68em;">
+<thead><tr><th style="width:16%;">Elemento</th><th style="width:22%;">Fracción del art. 3</th><th style="width:32%;">Requisito esencial</th><th>Vicio típico</th></tr></thead>
+<tbody>
+<tr><td><strong>Sujeto</strong></td><td>I</td><td>Órgano competente; en colegiados: sesión, quórum y votación</td><td>Incompetencia (materia, territorio, tiempo, jerarquía)</td></tr>
+<tr><td><strong>Voluntad</strong></td><td>VIII, IX y XII</td><td>Sin error, dolo o violencia en la emisión</td><td>Error, dolo, violencia; error de identificación</td></tr>
+<tr><td><strong>Objeto</strong></td><td>II</td><td>Posible, determinado o determinable, previsto por la ley</td><td>Objeto imposible, indeterminado o no previsto</td></tr>
+<tr><td><strong>Motivo / causa</strong></td><td>V</td><td>Estar fundado y motivado (hechos + derecho)</td><td>Falta de fundamentación o motivación; motivo falso</td></tr>
+<tr><td><strong>Finalidad</strong></td><td>III</td><td>Interés público previsto por la norma</td><td>Desviación de poder</td></tr>
+<tr><td><strong>Forma</strong></td><td>IV, X, XIII-XVI</td><td>Escrito con firma autógrafa, órgano, lugar y fecha</td><td>Omisión de formalidades esenciales</td></tr>
+<tr><td><strong>Procedimiento</strong></td><td>VII</td><td>Emitido conforme al procedimiento legal</td><td>Omisión de audiencia o de etapas esenciales</td></tr>
+<tr><td><strong>Mérito u oportunidad</strong></td><td>(doctrina)</td><td>Conveniencia y utilidad del acto para el interés público</td><td>No es vicio de legalidad; atañe a la discrecionalidad</td></tr>
+</tbody>
+</table>
 </div>
+<div class="card card-accent-orange fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-orange);">⚠️ Ojo con la redacción vigente</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Reforma DOF 14-11-2025: <strong>forma escrita con firma = fracc. IV</strong>; <strong>fundado y motivado = fracc. V</strong>; fracciones VI y XI derogadas. Verifica citar la versión vigente.</p>
 </div>
 </section>
 
@@ -518,7 +513,7 @@
 <section data-background-color="#0a0a1a">
 <h2><span class="icon-lg">❌</span> Nulidad vs. Anulabilidad</h2>
 <div class="comparison-table fragment">
-<table style="width:100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.65em;">
+<table style="width:100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.78em;">
 <thead><tr><th>Criterio</th><th>Nulidad (art. 6 LFPA)</th><th>Anulabilidad (art. 7 LFPA)</th></tr></thead>
 <tbody>
 <tr><td><strong>Fracciones afectadas</strong></td><td>I a X del art. 3</td><td>XII a XVI del art. 3</td></tr>
@@ -529,6 +524,10 @@
 <tr><td><strong>Efectos retroactivos</strong></td><td>Sí</td><td>Sí</td></tr>
 </tbody>
 </table>
+</div>
+<div class="card card-accent-red fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-red);">⚠️ No lo olvides</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">La fracción XI del artículo 3 está <strong>derogada</strong>: no forma parte ni del régimen de nulidad (I-X) ni del de anulabilidad (XII-XVI). Irregularidades <strong>graves</strong> (I-X) → acto inválido; irregularidades <strong>menores</strong> (XII-XVI) → acto válido pero saneable.</p>
 </div>
 </section>
 
@@ -552,12 +551,22 @@
 <h4 style="color: var(--accent-purple);">Art. 10 LFPA — Eficacia diferida</h4>
 <p style="font-size: 0.82em; margin: 4px 0 0;">Cuando el acto requiere aprobación de otro órgano, solo es eficaz cuando obtenga dicha aprobación.</p>
 </div>
+<div class="card card-accent-red fragment" style="margin-top: 12px;">
+<h4 style="color: var(--accent-red);">Excepción: actos de inspección</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Los actos de <strong>inspección, investigación o vigilancia</strong> son exigibles desde que la administración los efectúa, sin esperar notificación (art. 9 LFPA).</p>
+</div>
+</section>
+
+<section class="section-header" id="seccion-5-5">
+<span class="section-icon">🤫</span>
+<h2>5.5 El silencio administrativo</h2>
+<p style="color: rgba(255,255,255,0.5);">Cuando la administración no responde: negativa ficta, afirmativa ficta y derecho de petición</p>
 </section>
 
 <section data-background-color="#0a0a1a">
 <h2><span class="icon-lg">📊</span> Negativa ficta vs. Afirmativa ficta</h2>
 <div class="comparison-table fragment">
-<table style="width:100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.6em;">
+<table style="width:100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.78em;">
 <thead><tr><th>Criterio</th><th>Negativa ficta</th><th>Afirmativa ficta</th></tr></thead>
 <tbody>
 <tr><td><strong>Regla</strong></td><td>General (art. 17 LFPA)</td><td>Excepción (solo ley especial)</td></tr>
@@ -582,7 +591,6 @@
 </div>
 </section>
 
-<!-- SECCION 5.6 - EXTINCION -->
 <section class="section-header" id="seccion-5-6">
 <span class="section-icon">🔚</span>
 <h2>5.6 Extinción del acto administrativo</h2>
@@ -597,82 +605,208 @@
 </section>
 
 <section data-background-color="#0a0a1a">
-<h2><span class="icon-lg">✅</span> Extinción normal</h2>
+<h2><span class="icon-lg">✅</span> Extinción normal (art. 11, fraccs. I-IV)</h2>
 <div class="grid-2" style="margin-top: 12px;">
 <div class="card card-accent-blue fragment">
-<h4 style="color: var(--accent-blue);">I. Cumplimiento</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;">El objeto del acto se ha realizado íntegramente. Ej: autorización de construcción ejecutada.</p>
+<h4 style="color: var(--accent-blue);">I. Cumplimiento de su finalidad</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">El objeto del acto se ha realizado íntegramente. Ej: la autorización de construcción se extingue cuando la obra termina.</p>
 </div>
 <div class="card card-accent-purple fragment">
 <h4 style="color: var(--accent-purple);">II. Expiración del plazo</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;">El acto fue emitido con plazo determinado y éste ha vencido.</p>
+<p style="font-size: 0.82em; margin: 4px 0 0;">El acto se emitió con plazo determinado y este venció. Ej: el permiso anual de uso de la vía pública termina al concluir el año.</p>
 </div>
 <div class="card card-accent-green fragment">
-<h4 style="color: var(--accent-green);">III. Falta de condición suspensiva</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;">La eficacia estaba sujeta a condición que no se cumple.</p>
+<h4 style="color: var(--accent-green);">III. Falta de condición o término suspensivo</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">La eficacia estaba sujeta a una condición que debía cumplirse en cierto plazo y no se cumplió: el acto nunca llegó a desplegar efectos.</p>
 </div>
 <div class="card card-accent-orange fragment">
-<h4 style="color: var(--accent-orange);">IV. Condición resolutoria</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;">Evento futuro e incierto previsto en el acto.</p>
+<h4 style="color: var(--accent-orange);">IV. Acaecimiento de condición resolutoria</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Se extingue por la realización de un evento futuro e incierto previsto en el propio acto (la autorización que termina si el negocio cambia de giro).</p>
 </div>
 </div>
+<div class="card card-accent-pink fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-pink);">Causas normales (doctrina)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Fernández Ruiz llama <strong>cesación normal</strong> a la extinción por cumplimiento, expiración del plazo o acaecimiento de la condición resolutoria. Las causas anormales (renuncia, revocación, anulación y caducidad) se ven en la siguiente diapositiva.</p>
+</div>
+</section>
 
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚠️</span> Extinción anormal: renuncia y revocación</h2>
+<div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">V. Renuncia del interesado (art. 11, fracc. V)</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Procede cuando el acto se dictó en <strong>exclusivo beneficio del particular</strong> y la renuncia no perjudica el interés público. Ej: el titular de una licencia renuncia a ella.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">VI. Revocación por interés público (art. 11, fracc. VI)</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">La administración retira <strong>unilateralmente</strong> un acto válido y eficaz por razones sobrevenidas de interés general.</p>
+</div>
+</div>
 <div class="definition-box fragment">
-<div class="def-title">Hamdan Amad (Tema IX, p. 136)</div>
-<p class="def-text">La revocación tiene como <strong>límite</strong> los derechos adquiridos de buena fe; no procede cuando el acto ha creado derechos patrimoniales consolidados.</p>
+<div class="def-title">Límite de la revocación (Hamdan Amad, Tema IX, p. 136)</div>
+<p class="def-text">La revocación tiene como <strong>límite</strong> los derechos adquiridos de buena fe: no procede cuando el acto ha creado derechos patrimoniales consolidados. 💡 Ejemplo: se revoca una concesión minera de 30 años porque la zona se declara reserva ecológica; la revocación procede, pero la empresa conserva el derecho a que se respeten o indemnicen sus derechos consolidados.</p>
 </div>
+<div class="card card-accent-purple fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-purple);">⚠️ No confundas</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">La <strong>revocación</strong> retira un acto <em>válido</em> por interés público sobrevenido (art. 11, fracc. VI); la <strong>nulidad</strong> declara que el acto <em>nació viciado</em> (art. 6). La doctrina añade la <strong>caducidad</strong> (el beneficiario incumple sus obligaciones) y la <strong>anulación</strong> jurisdiccional.</p>
+</div>
+</section>
 
-<div class="legal-box fragment">
-<div class="lb-label">Artículo 3, fraccs. I-VIII</div>
-<div class="lb-text"><strong>I:</strong> Competencia. <strong>II:</strong> Objeto lícito, cierto, determinado. <strong>III:</strong> Finalidad de interés público. <strong>IV:</strong> Fundamentación y motivación. <strong>V:</strong> Forma escrita con firma autógrafa. <strong>VI:</strong> Procedimiento. <strong>VII:</strong> Dictamen desfavorable en colegiados. <strong>VIII:</strong> Ausencia de error, dolo o violencia.</div>
+<section class="section-header" id="seccion-5-7">
+<span class="section-icon">🔍</span>
+<h2>5.7 Distinciones</h2>
+<p style="color: rgba(255,255,255,0.5);">vs. Reglamento, Contrato y Hecho administrativo</p>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🔍</span> Acto administrativo vs. Reglamento</h2>
+<div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Acto administrativo</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;"><strong>Concreto, individual</strong>. Produce efectos jurídicos subjetivos para personas determinadas.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Reglamento</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;"><strong>General, abstracto e impersonal</strong>. Disposición administrativa de carácter general.</p>
+</div>
+</div>
+<div class="definition-box fragment" style="margin-top: 12px;">
+<div class="def-title">Roldán Xopa (p. 311)</div>
+<p class="def-text">Criterio binario: <strong>generalidad vs. individualización</strong>. Fernández Ruiz añade: los reglamentos son formalmente administrativos pero materialmente legislativos.</p>
 </div>
 </section>
 
 <section data-background-color="#0a0a1a">
-<h2><span class="icon-lg">📜</span> LFPA — Arts. 3 (2/2), 5-7</h2>
-<div class="legal-box fragment">
-<div class="lb-label">Artículo 3, fraccs. IX-XVI</div>
-<div class="lb-text"><strong>IX:</strong> Órgano emisor. <strong>X:</strong> Lugar y fecha. <strong>XI:</strong> Firma. <strong>XII:</strong> Recursos. <strong>XIII:</strong> Publicación DOF. <strong>XIV:</strong> Notificación. <strong>XV:</strong> Colegiados. <strong>XVI:</strong> Protocolización español.</div>
+<h2><span class="icon-lg">🔍</span> Acto administrativo vs. Contrato</h2>
+<div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Acto</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Declaración <strong>unilateral</strong> de voluntad de la administración.</p>
 </div>
-<div class="legal-box fragment">
-<div class="lb-label">Arts. 5, 6 y 7 — Nulidades</div>
-<div class="lb-text"><strong>Art. 5:</strong> Consecuencias de omisión/irregularidad. <strong>Art. 6 (Nulidad):</strong> Fraccs. I-X → inválido. <strong>Art. 7 (Anulabilidad):</strong> Fraccs. XII-XVI → válido.</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Contrato</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Producto del <strong>consentimiento bilateral</strong> entre administración y particular.</p>
+</div>
+</div>
+<div class="definition-box fragment" style="margin-top: 12px;">
+<div class="def-title">Martínez Morales (Diccionario, p. 6)</div>
+<p class="def-text">Excluye expresamente los contratos de la categoría de acto administrativo por su naturaleza bilateral.</p>
 </div>
 </section>
 
 <section data-background-color="#0a0a1a">
-<h2><span class="icon-lg">📜</span> LFPA — Arts. 8, 9, 11, 17</h2>
+<h2><span class="icon-lg">🔍</span> Acto administrativo vs. Hecho administrativo</h2>
+<div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Acto</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Contiene una <strong>declaración de voluntad</strong> dirigida a producir efectos jurídicos.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Hecho</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Actividad <strong>material</strong> sin declaración de voluntad (construcción de carretera, recolección de basura).</p>
+</div>
+</div>
+<div class="card card-accent-purple fragment" style="margin-top: 12px;">
+<h4 style="color: var(--accent-purple);">⚖️ Diferencia clave para impugnación</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Los actos se <strong>recurren</strong>; los hechos, cuando causan daños, se reparan mediante la <strong>responsabilidad patrimonial del Estado</strong>.</p>
+</div>
+</section>
+
+<section class="section-header" id="seccion-5-8">
+<span class="section-icon">📖</span>
+<h2>5.8 Doctrina comparada</h2>
+<p style="color: rgba(255,255,255,0.5);">Fraga, Roldán Xopa, Fernández Ruiz</p>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📖</span> Cuadro comparativo de autores</h2>
+<div class="comparison-table fragment">
+<table class="dense" style="width:100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.7em;">
+<thead><tr><th>Tema</th><th>Gabino Fraga</th><th>Roldán Xopa</th><th>Fernández Ruiz</th></tr></thead>
+<tbody>
+<tr><td><strong>Concepto</strong></td><td>Declaración unilateral de voluntad en ejercicio de potestad pública</td><td>Actuación del órgano que produce efectos jurídicos directos</td><td>Declaración unilateral del órgano competente con efectos jurídicos directos</td></tr>
+<tr><td><strong>Elementos</strong></td><td>Sujeto, voluntad, objeto, motivo, forma, fin</td><td>Competencia, voluntad, motivo/objeto, finalidad, forma, procedimiento</td><td>Sujeto, voluntad, objeto, motivo, fin, forma, mérito/oportunidad</td></tr>
+<tr><td><strong>Clasificación</strong></td><td>Reglados/discrecionales; simples/complejos; internos/externos; favorables/de gravamen</td><td>Por sujetos, voluntades, ámbito, destinatarios, margen, contenido, expresión</td><td>Por esfera, finalidad, contenido, relación con la ley</td></tr>
+<tr><td><strong>Silencio</strong></td><td>Ficción legal para evitar parálisis</td><td>Supuesto de hecho con tres variantes</td><td>Elementos: petición, órgano, falta de respuesta, plazo</td></tr>
+<tr><td><strong>Nulidad vs. anulabilidad</strong></td><td>Teoría civilista (inexistencia, nulidad absoluta/relativa)</td><td>Arts. 5-7 LFPA: nulidad (I-X) y anulabilidad (XII-XVI)</td><td>Inexistencia, nulidad y anulabilidad según Código Admin. EdoMéx.</td></tr>
+</tbody>
+</table>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📝</span> Lecturas complementarias</h2>
+<div class="grid-2" style="margin-top: 12px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Roldán Xopa</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Cap. «El acto administrativo» (pp. 309-351).</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Fernández Ruiz</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Edo. de México 2023, Caps. VIII-XII (pp. 165-210).</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Hamdan Amad</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Temas IX y X (pp. 127-163).</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Martínez Morales</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Diccionario. Voces: «Acto administrativo», «Elementos», «Nulidad», «Silencio».</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">LFPA</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Cap. Primero, arts. 3 al 17.</p></div>
+</div>
+</section>
+
+<section class="section-header" id="seccion-5-9">
+<span class="section-icon">📜</span>
+<h2>5.9 Legislación aplicable</h2>
+<p style="color: rgba(255,255,255,0.5);">El marco normativo del acto: LFPA (arts. 3-17) y CPEUM (arts. 8 y 16)</p>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> LFPA — Art. 3 (1/2): elementos y requisitos (fraccs. I-X)</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Artículo 3, fraccs. I-X (redacción vigente)</div>
+<div class="lb-text"><strong>I.</strong> Expedido por órgano competente, a través de servidor público; en colegiados, reunir las formalidades de ley o decreto para emitirlo (sesión, quórum y votación). <strong>II.</strong> Objeto posible, determinado o determinable, preciso y previsto por la ley. <strong>III.</strong> Finalidad de interés público, sin fines distintos (prohibida la desviación de poder). <strong>IV.</strong> Constar por escrito con firma autógrafa. <strong>V.</strong> Estar fundado y motivado. <strong>VI.</strong> (Derogada). <strong>VII.</strong> Expedirse conforme al procedimiento de la ley. <strong>VIII.</strong> Sin error sobre el objeto, causa, motivo o fin. <strong>IX.</strong> Sin dolo ni violencia. <strong>X.</strong> Mención del órgano del que emana.</div>
+</div>
+<div class="card card-accent-green fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-green);">¿Por qué importa?</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Las fracciones I-X son las irregularidades <strong>graves</strong>: si se omiten o resultan irregulares, el acto es <strong>nulo</strong> (art. 6 LFPA). Los requisitos de exteriorización (XI-XVI) y su régimen de anulabilidad se ven en la siguiente diapositiva.</p>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> LFPA — Art. 3 (2/2): requisitos de exteriorización (fraccs. XI-XVI)</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Artículo 3, fraccs. XI-XVI (redacción vigente)</div>
+<div class="lb-text"><strong>XI.</strong> (Derogada). <strong>XII.</strong> Expedirse sin error sobre la identificación del expediente, los documentos o el nombre completo de las personas. <strong>XIII.</strong> Señalar lugar y fecha de emisión. <strong>XIV.</strong> En actos que deban notificarse, mencionar la oficina donde puede consultarse el expediente. <strong>XV.</strong> En actos recurribles, mencionar los recursos que procedan. <strong>XVI.</strong> Decidir expresamente todos los puntos propuestos.</div>
+</div>
+<div class="legal-box fragment">
+<div class="lb-label">Arts. 5, 6 y 7 — Las ineficacias</div>
+<div class="lb-text"><strong>Art. 5:</strong> la omisión o irregularidad de elementos y requisitos produce, según el caso, nulidad o anulabilidad. <strong>Art. 6 (Nulidad):</strong> fraccs. I-X → acto <strong>inválido</strong>, sin presunción de legitimidad ni ejecutividad; la declara el superior jerárquico; es subsanable con efectos retroactivos. <strong>Art. 7 (Anulabilidad):</strong> fraccs. XII-XVI → acto <strong>válido</strong>, presumido legítimo y ejecutivo; se sanea con el pleno cumplimiento de requisitos, con efectos retroactivos.</div>
+</div>
+</section>
+
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> LFPA — Arts. 8, 9, 11 y 17</h2>
 <div class="legal-box fragment">
 <div class="lb-label">Art. 8 — Presunción de validez</div>
-<div class="lb-text">Válido hasta que su invalidez sea declarada (iuris tantum).</div>
+<div class="lb-text">El acto será <strong>válido</strong> hasta que su invalidez sea declarada por autoridad administrativa o jurisdiccional. Presunción <em>iuris tantum</em>: invierte la carga de la prueba a favor de la administración.</div>
 </div>
 <div class="legal-box fragment">
 <div class="lb-label">Art. 9 — Eficacia</div>
-<div class="lb-text">Eficaz a partir de la notificación. Para actos favorables, desde la emisión.</div>
+<div class="lb-text">El acto es <strong>eficaz y exigible</strong> desde que surte efectos la notificación; excepciones: los actos que otorgan un beneficio (desde su emisión) y los de inspección, investigación o vigilancia (desde que se efectúan). Si el acto requiere la aprobación de otro órgano, su eficacia se difiere hasta que esta se produzca (art. 10).</div>
 </div>
 <div class="legal-box fragment">
 <div class="lb-label">Art. 11 — Extinción</div>
-<div class="lb-text">Seis causas: cumplimiento, plazo, condición suspensiva, condición resolutoria, renuncia, revocación.</div>
+<div class="lb-text">Seis causas: I. cumplimiento de la finalidad; II. expiración del plazo; III. falta de condición o término suspensivo; IV. acaecimiento de condición resolutoria; V. renuncia del interesado; VI. revocación por interés público.</div>
 </div>
 <div class="legal-box fragment">
-<div class="lb-label">Art. 17 — Silencio</div>
-<div class="lb-text">Negativa ficta en 3 meses. Recurso de revisión o TFJA.</div>
+<div class="lb-label">Art. 17 — Silencio administrativo</div>
+<div class="lb-text">Regla: la autoridad no podrá exceder de <strong>tres meses</strong> para resolver; transcurrido el plazo aplicable, se entenderán las resoluciones en sentido <strong>negativo</strong>, salvo disposición en contrario. La negativa recurrida y no resuelta en el mismo término se entiende <strong>confirmada</strong> en sentido negativo.</div>
 </div>
 </section>
 
 <section data-background-color="#0a0a1a">
-<h2><span class="icon-lg">📜</span> Constitución — Arts. 8 y 16</h2>
+<h2><span class="icon-lg">📜</span> Constitución — Arts. 8 y 16 CPEUM</h2>
 <div class="legal-box fragment">
-<div class="lb-label">Artículo 8 CPEUM</div>
-<div class="lb-text">Derecho de petición: respuesta por escrito en breve término. Base del silencio administrativo.</div>
+<div class="lb-label">Artículo 8 CPEUM — Derecho de petición</div>
+<div class="lb-text">«Los funcionarios y empleados públicos respetarán el ejercicio del derecho de petición, siempre que esta se formule por escrito, de manera pacífica y respetuosa; a toda petición deberá recaer un acuerdo escrito de la autoridad, quien tiene la obligación de hacerlo conocer en breve término al peticionario.» Es la base constitucional del silencio administrativo y del amparo por omisión.</div>
 </div>
 <div class="legal-box fragment">
-<div class="lb-label">Artículo 16 CPEUM</div>
-<div class="lb-text">Fundamentación y motivación de todo acto de molestia. Subyace al art. 3, fracc. IV de la LFPA.</div>
+<div class="lb-label">Artículo 16 CPEUM — Fundamentación y motivación</div>
+<div class="lb-text">«Nadie puede ser molestado en su persona, familia, domicilio, papeles o posesiones, sino en virtud de mandamiento escrito de la autoridad competente, que funde y motive la causa legal del procedimiento.» Subyace a la exigencia del art. 3, <strong>fracc. V</strong> de la LFPA: todo acto de molestia debe expresar su fundamento legal y las razones que lo justifican.</div>
 </div>
 </section>
 
-<!-- SECCION 5.10 - ESQUEMA DE SINTESIS -->
 <section class="section-header" id="seccion-5-10">
 <span class="section-icon">🌳</span>
 <h2>5.10 Esquema de síntesis</h2>
@@ -685,11 +819,12 @@
 
 2. ELEMENTOS (LFPA art. 3)
    Sujeto (I): órgano competente + servidor público
-   Voluntad (VIII): libre de error, dolo o violencia
-   Objeto (II): lícito, cierto, determinado, posible
-   Motivo/causa (IV): fundamentación y motivación
+   Voluntad (VIII, IX, XII): sin error, dolo o violencia; sin error de identificación
+   Objeto (II): posible, determinado o determinable, preciso, previsto por la ley
+   Motivo/causa (V): fundado y motivado (hechos + derecho)
    Finalidad (III): interés público (prohibido desvío de poder)
-   Forma (V, VII, IX, X, XI): escrita + firma autógrafa
+   Forma (IV, X, XIII-XVI): escrita + firma autógrafa + órgano/lugar/fecha
+   Procedimiento (VII): emitido conforme al procedimiento legal
 
 3. CLASIFICACIÓN
    Sujetos: simple / complejo / colegiado
@@ -713,7 +848,6 @@
    Anormal: revocación / caducidad / renuncia</div>
 </section>
 
-<!-- SECCION 5.11 - QUIZ -->
 <section class="section-header" id="seccion-5-11">
 <span class="section-icon">🧠</span>
 <h2>5.11 Quiz interactivo</h2>
@@ -751,7 +885,7 @@
 <div class="quiz-option" onclick="this.classList.add('correct')">Error, dolo y violencia</div>
 <div class="quiz-option" onclick="this.classList.add('wrong')">Falta de fundamentación y motivación</div>
 <div class="quiz-option" onclick="this.classList.add('wrong')">Ausencia de notificación</div>
-<div class="quiz-explanation">El art. 3, fracc. VIII LFPA exige voluntad libre de error, dolo o violencia.</div>
+<div class="quiz-explanation">La voluntad debe estar libre de vicios: error sobre el objeto, causa, motivo o fin (fracc. VIII), dolo o violencia (fracc. IX) y error de identificación (fracc. XII) del art. 3 LFPA.</div>
 </div>
 </section>
 
@@ -839,7 +973,6 @@
 </div>
 </section>
 
-<!-- SECCION 5.12 - CASOS PRACTICOS -->
 <section class="section-header" id="seccion-5-12">
 <span class="section-icon">🔥</span>
 <h2>5.12 Casos prácticos</h2>
@@ -863,7 +996,7 @@
 </div>
 <div class="card card-accent-green fragment" style="margin-top: 10px;">
 <h4 style="color: var(--accent-green);">Guía de análisis</h4>
-<p style="font-size: 0.8em; margin: 4px 0 0;">Falta fundamentación y motivación (art. 3 fracc. IV). Omisión en fraccs. I-X → <strong>nulidad</strong> (art. 6). Recurso de revisión o juicio ante TFJA.</p>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Falta fundamentación y motivación (art. 3 fracc. V). Omisión en fraccs. I-X → <strong>nulidad</strong> (art. 6). Recurso de revisión o juicio ante TFJA.</p>
 </div>
 </section>
 
@@ -933,7 +1066,6 @@
 </div>
 </section>
 
-<!-- SECCION 5.13 - RESUMEN FINAL -->
 <section class="section-header" id="seccion-5-13">
 <span class="section-icon">📋</span>
 <h2>5.13 Resumen final</h2>
@@ -969,100 +1101,6 @@
 </div>
 </section>
 
-<section class="section-header" id="seccion-5-7">
-<span class="section-icon">🔍</span>
-<h2>5.7 Distinciones</h2>
-<p style="color: rgba(255,255,255,0.5);">vs. Reglamento, Contrato y Hecho administrativo</p>
-</section>
-
-<section data-background-color="#0a0a1a">
-<h2><span class="icon-lg">🔍</span> Acto administrativo vs. Reglamento</h2>
-<div class="grid-2" style="margin-top: 12px;">
-<div class="card card-accent-blue fragment">
-<h4 style="color: var(--accent-blue);">Acto administrativo</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;"><strong>Concreto, individual</strong>. Produce efectos jurídicos subjetivos para personas determinadas.</p>
-</div>
-<div class="card card-accent-orange fragment">
-<h4 style="color: var(--accent-orange);">Reglamento</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;"><strong>General, abstracto e impersonal</strong>. Disposición administrativa de carácter general.</p>
-</div>
-</div>
-<div class="definition-box fragment" style="margin-top: 12px;">
-<div class="def-title">Roldán Xopa (p. 311)</div>
-<p class="def-text">Criterio binario: <strong>generalidad vs. individualización</strong>. Fernández Ruiz añade: los reglamentos son formalmente administrativos pero materialmente legislativos.</p>
-</div>
-</section>
-
-<section data-background-color="#0a0a1a">
-<h2><span class="icon-lg">🔍</span> Acto administrativo vs. Contrato</h2>
-<div class="grid-2" style="margin-top: 12px;">
-<div class="card card-accent-blue fragment">
-<h4 style="color: var(--accent-blue);">Acto</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;">Declaración <strong>unilateral</strong> de voluntad de la administración.</p>
-</div>
-<div class="card card-accent-green fragment">
-<h4 style="color: var(--accent-green);">Contrato</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;">Producto del <strong>consentimiento bilateral</strong> entre administración y particular.</p>
-</div>
-</div>
-<div class="definition-box fragment" style="margin-top: 12px;">
-<div class="def-title">Martínez Morales (Diccionario, p. 6)</div>
-<p class="def-text">Excluye expresamente los contratos de la categoría de acto administrativo por su naturaleza bilateral.</p>
-</div>
-</section>
-
-<section data-background-color="#0a0a1a">
-<h2><span class="icon-lg">🔍</span> Acto administrativo vs. Hecho administrativo</h2>
-<div class="grid-2" style="margin-top: 12px;">
-<div class="card card-accent-blue fragment">
-<h4 style="color: var(--accent-blue);">Acto</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;">Contiene una <strong>declaración de voluntad</strong> dirigida a producir efectos jurídicos.</p>
-</div>
-<div class="card card-accent-red fragment">
-<h4 style="color: var(--accent-red);">Hecho</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;">Actividad <strong>material</strong> sin declaración de voluntad (construcción de carretera, recolección de basura).</p>
-</div>
-</div>
-<div class="card card-accent-purple fragment" style="margin-top: 12px;">
-<h4 style="color: var(--accent-purple);">⚖️ Diferencia clave para impugnación</h4>
-<p style="font-size: 0.82em; margin: 4px 0 0;">Los actos se <strong>recurren</strong>; los hechos, cuando causan daños, se reparan mediante la <strong>responsabilidad patrimonial del Estado</strong>.</p>
-</div>
-</section>
-
-<section class="section-header" id="seccion-5-8">
-<span class="section-icon">📖</span>
-<h2>5.8 Doctrina comparada</h2>
-<p style="color: rgba(255,255,255,0.5);">Fraga, Roldán Xopa, Fernández Ruiz</p>
-</section>
-
-<section data-background-color="#0a0a1a">
-<h2><span class="icon-lg">📖</span> Cuadro comparativo de autores</h2>
-<div class="comparison-table fragment">
-<table style="width:100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.52em;">
-<thead><tr><th>Tema</th><th>Gabino Fraga</th><th>Roldán Xopa</th><th>Fernández Ruiz</th></tr></thead>
-<tbody>
-<tr><td><strong>Concepto</strong></td><td>Declaración unilateral de voluntad del órgano en ejercicio de potestad pública, con efectos jurídicos concretos</td><td>Actuación de órgano que produce efectos jurídicos directos; acto de individualización normativa</td><td>Declaración unilateral de órgano competente con efectos jurídicos directos para individuos determinados</td></tr>
-<tr><td><strong>Elementos</strong></td><td>Sujeto, voluntad, objeto, motivo, forma, fin</td><td>Competencia, voluntad, motivo/objeto, finalidad, forma, procedimiento</td><td>Sujeto, voluntad, objeto, motivo, fin, forma, mérito/oportunidad</td></tr>
-<tr><td><strong>Clasificación</strong></td><td>Reglados/discrecionales; simples/complejos; internos/externos; favorables/de gravamen</td><td>Por sujetos, voluntades, ámbito, destinatarios, margen, contenido, expresión</td><td>Por esfera, finalidad, contenido, relación con la ley</td></tr>
-<tr><td><strong>Silencio</strong></td><td>Ficción legal para evitar parálisis</td><td>Supuesto de hecho con tres variantes</td><td>Elementos: petición, órgano, falta de respuesta, plazo</td></tr>
-<tr><td><strong>Nulidad vs. anulabilidad</strong></td><td>Teoría civilista (inexistencia, nulidad absoluta/relativa)</td><td>Arts. 5-7 LFPA: nulidad (I-X) y anulabilidad (XII-XVI)</td><td>Inexistencia, nulidad y anulabilidad según Código Admin. EdoMéx.</td></tr>
-</tbody>
-</table>
-</div>
-</section>
-
-<section data-background-color="#0a0a1a">
-<h2><span class="icon-lg">📝</span> Lecturas complementarias</h2>
-<div class="grid-2" style="margin-top: 12px;">
-<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Roldán Xopa</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Cap. «El acto administrativo» (pp. 309-351).</p></div>
-<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Fernández Ruiz</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Edo. de México 2023, Caps. VIII-XII (pp. 165-210).</p></div>
-<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Hamdan Amad</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Temas IX y X (pp. 127-163).</p></div>
-<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Martínez Morales</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Diccionario. Voces: «Acto administrativo», «Elementos», «Nulidad», «Silencio».</p></div>
-<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">LFPA</h4><p style="font-size: 0.82em; margin: 4px 0 0;">Cap. Primero, arts. 3 al 17.</p></div>
-</div>
-</section>
-
-<!-- MATERIAL PARA ALUMNOS -->
 <section data-background-color="#0a0a1a" id="material">
 <h2><span class="icon-lg">📥</span> Material para Alumnos</h2>
 <p style="color: rgba(255,255,255,0.5); font-size: 0.78em;">Descarga el material de estudio de esta unidad</p>
@@ -1113,7 +1151,6 @@
 </div>
 </section>
 
-<!-- CIERRE -->
 <section class="title-slide" id="cierre">
 <span style="font-size: 4em;">🎓</span>
 <h1 style="font-size: 2em; margin-top: 20px;">¡Listo para la Unidad 5!</h1>
@@ -1127,6 +1164,7 @@
 <p style="margin-top: 40px; font-size: 0.7em; color: rgba(255,255,255,0.3);">Presiona <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">Esc</kbd> para ver la vista general · <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">F</kbd> para pantalla completa</p>
 <a href="../index.html" style="display: inline-block; margin-top: 20px; font-size: 0.75em; color: rgba(255,255,255,0.4); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice de unidades</a>
 </section>
+
 
         </div>
     </div>
