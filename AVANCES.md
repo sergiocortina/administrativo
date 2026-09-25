@@ -447,3 +447,140 @@ Expandida la sección 4.6.3 de 1 diapositiva a **9 diapositivas detalladas**:
 > Próxima sesión: crear presentación de la Unidad 6 (El Procedimiento Administrativo)
 > reutilizando la base de U5, con Material para Alumnos incluido.
 > *Registrado por Buffy (Codebuff/Freebuff) — 6 de septiembre de 2026*
+
+---
+
+## RESUMEN DE LA SESIÓN (19 septiembre 2026)
+
+**Auditoría de referencias legales del libro (15 unidades).** Se verificó cada cita a artículos contra los textos vigentes de la carpeta `Legislacion/` (CPEUM DOF 02-06-2026, LFPA, LGRA, LOAPF). Criterio aplicado: **solo se conservan artículos doblemente verificados** (concordancia del texto + pertinencia temática); el resto se desanció (sin número) o se corrigió. El libro compiló al final con **0 errores y 0 warnings**.
+
+---
+
+## ARCHIVOS MODIFICADOS (19 sep 2026)
+
+| Archivo | Cambio principal |
+|---------|------------------|
+| `unidades/01` a `unidades/15` (.md) | Correcciones de citas descritas abajo; artefactos de bold reparados |
+| `libro.pdf` | Regenerado (2.5 MB, 0 errores / 0 warnings) |
+| `AVANCES.md` | Este registro |
+
+---
+
+## CORRECCIONES POR UNIDAD (19 sep 2026)
+
+| Unidad | Correcciones más importantes |
+|--------|------------------------------|
+| U1 | Art. 113 ✗ (es Sistema Nacional Anticorrupción) → responsabilidad patrimonial reubicada a **art. 109 último párrafo** (texto verificado); art. 89-I sin número de fracción (la adición de 2012 nunca entró en vigor); principios rectores → **art. 109-III vigente** |
+| U2 | Carta Magna "1245" → 1215; mapeo 14/15/16 LFPA corregido (14=inicio, 15=formalidades, 16=obligaciones; la audiencia vive en **16-V**); cita errónea del 5 LFPA eliminada; tesis no verificables sin registro |
+| U3 | **20 Secretarías + Agencia de Transformación Digital** (según LOAPF vigente); textos viejos del 24 y 90/93 CPEUM actualizados; reguladores Cofece/IFT/INAI marcados como reconfigurados por la reforma de 2024; nota sobre la Consejería Jurídica enmendada (sigue vigente) |
+| U4 | Refrendo sin nombrar SFP; demás citas 123-B, 108-114 y LGRA ya correctas |
+| U5 | Solo retirar referencias al INAI (desapareció en la reforma de 2024); LFPA 2-17 estaba impecable |
+| U6 | **Art. 38 LFPA corregido**: la notificación surte efectos el MISMO día (los plazos corren desde el día siguiente); horario "8:00-18:00" no está en el art. 28 → retirado |
+| U7 | Mapeo del art. 3 LFPA realineado (fundamentación es **V**, no IV; derogadas son **VI y XI**); 27: expropiación e indemnización en el MISMO párrafo; LFPCA y tesis sin números |
+| U8 | 134: licitación como regla general vive hoy en la fracción IV de la VI transitoria (reforma 2024); leyes no disponibles sin números de artículos |
+| U9 | 28 (concesiones), 115-III y 27 sexto párrafo verificados ✓; ajustes menores |
+| U10 | SFP → **Secretaría Anticorrupción y Buen Gobierno** (LOAPF 37 vigente); INAI retirado; "37 bis" no existe |
+| U11 | 21: hoy son TRES sanciones (multa, arresto hasta 36 horas, trabajo a favor de la comunidad); lista vigente de extinción de dominio (art. 22) incluye extorsión e hidrocarburos; Ley de Expropiación sin números de artículos |
+| U12 | LFRPE "reglamentaria del 113" → del último párrafo del 109; tope de daño moral sin número de fracción; CCF sin artículos |
+| U13 | **Ejemplo del recurso de reconsideración**: era de la LFCE pre-2014 (la vigente lo suprimió) → presentado como ejemplo histórico; LFRASP → **LGRA arts. 210-211** (verificados: revocación, 15 días, TFJA); definitividad hoy en la Ley de Amparo, no en la Constitución |
+| U14 | 107-IV (definitividad), 107-XVI (cumplimiento) y 107-II (declaratoria general) verificadas ✓; Ley de Amparo sin números de artículos |
+| U15 | **Comité Coordinador del SNA actualizado** (art. 113, reforma 2024): salieron CNDH e INAI, entró el Tribunal de Disciplina Judicial; 108 con texto vigente (sin "Distrito Federal"); recurso con anclaje LGRA 210-211 |
+
+**Formato:** 45+ entradas "peladas" de las secciones *Legislación aplicable comentada* convertidas a bloques `> 📜` (la convención del conversor); ~50 artefactos de bold mal balanceado (`X:**`, `*X:**`) reparados con script.
+
+---
+
+## VERIFICACIÓN FINAL (19 sep 2026)
+
+- `python src/md2typ.py --todas` → conversión limpia
+- `typst compile libro.typ --root .` → **0 errores, 0 warnings**
+- `libro.pdf` regenerado (2.5 MB)
+- Citas conservadas verificadas contra texto vigente: CPEUM (1°, 8, 14, 16, 21, 22, 25, 27, 28, 31-IV, 39, 42-IV, 49, 61, 71-73, 79, 89, 90, 93, 103, 104-III, 105, 107-II/IV/XVI, 108, 109-I/II/III/último, 110, 113, 115-III, 123-B, 124, 132, 133, 134), LFPA (2, 3, 5-18, 25, 28-32, 35-45, 50-62, 73, 83-96), LGRA (7, 49-52, 61, 74, 75-80, 210-211), LOAPF (1-4, 10, 17, 24, 26, 37, 46)
+
+---
+
+## PENDIENTE PARA PRÓXIMA SESIÓN (19 sep 2026)
+
+- [ ] Presentaciones U6–U15 (el libro ya está audited; las diapositivas siguen el pipeline documentado)
+- [ ] Material para Alumnos de U1 (DA) si se dispone de PDFs
+- [ ] Segundo cuestionario sin "Mezclar" en Moodle para Marco Jurídico
+
+---
+
+> Próxima sesión: continuar con presentaciones U6+ del pipeline de diapositivas.
+> *Registrado por Buffy (Codebuff/Freebuff) — 19 de septiembre de 2026*
+
+---
+
+## RESUMEN DE LA SESIÓN (24 septiembre 2026)
+
+Se creó el paquete de la actividad **"Actividades del Curso"** para subir a Moodle: 14 productos que el profesor ha ido pidiendo en clase (semanas 1–6), unificados en un solo documento sin división por semanas, con valor de 100 puntos y entrega el jueves 8 de octubre de 2026.
+
+### Archivos creados (carpeta `actividades/`)
+
+| Archivo | Descripción |
+|---------|-------------|
+| `actividades-instrucciones-alumnos.docx` | ✅ El que se adjunta a la tarea de Moodle (14 actividades + criterios 100 pts) |
+| `actividades-instrucciones-alumnos.docx.md` | Fuente markdown del documento |
+| `guia-moodle-cargar-actividad.docx` | Guía paso a paso para crear la Tarea en Moodle (descripción, foro, configuración, calificación) |
+| `guia-moodle-cargar-actividad.md` | Fuente markdown de la guía |
+
+### Las 14 actividades (redactadas y mejoradas)
+
+1. Cuadro comparativo de las escuelas del DA (8 pts)
+2. Cinco preguntas de tarea: Uber en Veracruz, multa máxima en días de salario (CPEUM), ebriedad Veracruz/Boca, toques de queda municipales, DOF del día (10 pts)
+3. Reformas al art. 73 CPEUM, últimos 10 años (8 pts)
+4. Análisis de una iniciativa de ley real (6 pts)
+5. Elaborar una iniciativa de ley propia (10 pts)
+6. Solicitud de transparencia 1: captura + folio (6 pts)
+7. Secretarías de Estado y titulares (6 pts)
+8. Art. 89 CPEUM: facultades y obligaciones del Presidente (8 pts)
+9. Encuestas del INEGI además de censos (4 pts)
+10. Casos/recomendaciones de la CNDH (6 pts)
+11. Iniciativa contra el nepotismo electoral (10 pts)
+12. Prohibición de contratar a persona física en el DOF (6 pts)
+13. Solicitud de transparencia 2: captura + folio (6 pts)
+14. Impugnación constitucional de la CNDH (6 pts)
+
+### Corrección de fondo aplicada
+
+El pedido original decía "controversia constitucional presentada por la CNDH". La CNDH **no está legitimada** para controversias (art. 105, fr. I); sus impugnaciones son **acciones de inconstitucionalidad** (art. 105, fr. II). La actividad 14 quedó redactada así, con nota aclaratoria para los alumnos.
+
+### Reglas de formato (mismas que el portafolio de MJN)
+
+- Un solo Word/PDF con portada; actividades numeradas; fuentes por actividad; capturas y folios incrustados; fecha límite jueves 8-oct-2026 (cutoff dom 11-oct); copia textual = 0.
+
+### Pendiente
+
+- [ ] Subir a Moodle siguiendo `actividades/guia-moodle-cargar-actividad.md` y publicar aviso en foro
+- [ ] (Opcional) Crear la rúbrica en el método de calificación de Moodle con los 14 criterios
+
+> *Registrado por Buffy (Codebuff/Freebuff) — 24 de septiembre de 2026*
+
+---
+
+## RESUMEN DE LA SESIÓN (24 septiembre 2026, tarde) — Material para Alumnos regenerado y sincronizado
+
+**Problema detectado por la profesora:** el material descargable de las presentaciones no correspondía con lo publicado. Causa: los PDFs de `Material para Alumnos/` (U1–U6) habían sido regenerados desde el `libro.pdf` corregido en la auditoría del 19-sep, pero **no se habían commiteado ni publicado** — en GitHub Pages los alumnos seguían descargando los PDFs viejos (previos a la auditoría).
+
+### Qué se hizo
+
+1. **Corrección de fondo — referencias al INAI** (extinto por la reforma de 2024; sus funciones las asumió **Transparencia para el Pueblo**, órgano desconcentrado de la Secretaría Anticorrupción y Buen Gobierno, desde marzo 2025):
+   - `unidades/01` Caso 3: el recurso de revisión ahora se interpone ante Transparencia para el Pueblo (con nota histórica sobre el INAI).
+   - `unidades/03` esquema de órganos constitucionales autónomos: nota "la reforma de 2024 suprimió el INAI".
+2. **Recompilación del libro**: `md2typ.py --todas` + `typst compile libro.typ --root .` → 0 errores, 271 páginas. Las únicas 3 menciones restantes de INAI en el libro son aclaratorias (explican su desaparición) — correcto.
+3. **Regeneración de los 21 PDFs** con `src/generar_material_alumnos.py`. Verificación por pdftotext: U1 Casos contiene "Transparencia para el Pueblo" ✓; U3 esquema con la nota de supresión ✓; U6 con las 4 secciones ✓.
+4. **Fix del script**: U6 no generaba "Taller y Evaluación.pdf" actualizado porque sus actividades no usan el prefijo "Actividad:" (igual que pasó con U5). Se agregó respaldo con patrón `^\s*1\.\s*Simulación de un procedimiento administrativo sancionador`. Regenerado y verificado (p. 123 del libro).
+
+### Aclaración sobre los descargables (aprobado por la profesora)
+
+- Se **sustituyen los 21 PDFs** de U1–U6 por las versiones nuevas del libro auditado.
+- Los **nombres de archivo no cambian**, así que todos los enlaces de las presentaciones siguen funcionando sin modificación.
+- No se agregan ni quitan descargables.
+- Los "Unidad N.pdf" ahora incluyen mapa conceptual, objetivos, competencias y esquema de síntesis del libro.
+
+### Correcciones heredadas que ahora sí están en el material descargable
+
+U1: art. 113→109 último párrafo · U3: 20 secretarías + ATD · U6: notificación surte efectos el mismo día (art. 38 LFPA) · sin horario "8:00-18:00" (no está en la ley).
+
+> *Registrado por Buffy (Codebuff/Freebuff) — 24 de septiembre de 2026 (tarde)*
