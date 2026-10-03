@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 9 — El Servicio Público y la Concesión</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --r-background-color: #0a0a1a;
+            --r-main-font: 'Inter', sans-serif;
+            --r-heading-font: 'Playfair Display', serif;
+            --r-main-font-size: 24px;
+            --accent-blue: #4f8cff;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --glass: rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.1);
+        }
+        .reveal { font-family: var(--r-main-font); }
+        .reveal .slides { text-align: left; }
+        .reveal .slides section { padding: 20px 40px; overflow: hidden; box-sizing: border-box; }
+        .reveal .slides section * { max-width: 100%; box-sizing: border-box; }
+        .reveal .slides p, .reveal .slides li, .reveal .slides h1, .reveal .slides h2, .reveal .slides h3, .reveal .slides h4 { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; margin-right: 0; padding-right: 0; }
+        .reveal .slides section.title-slide { text-align: center; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%); }
+        .reveal .slides section.title-slide h1 { font-family: 'Playfair Display', serif; font-size: 2.4em; font-weight: 900; background: linear-gradient(135deg, #4f8cff, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; margin-bottom: 16px; }
+        .reveal .slides section.title-slide .subtitle { font-size: 1em; color: rgba(255,255,255,0.6); font-weight: 300; letter-spacing: 2px; }
+        .reveal .slides section.title-slide .unit-badge { display: inline-block; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: white; padding: 8px 24px; border-radius: 30px; font-size: 0.7em; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-top: 30px; }
+        .reveal .slides section.section-header { text-align: center; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%); }
+        .reveal .slides section.section-header h2 { font-family: 'Playfair Display', serif; font-size: 2em; font-weight: 800; background: linear-gradient(135deg, #4f8cff, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+        .reveal .slides section.section-header .section-icon { font-size: 2.5em; margin-bottom: 14px; display: block; }
+        .card { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 14px; padding: 14px 16px; margin: 8px 0; backdrop-filter: blur(10px); overflow: hidden; box-sizing: border-box; }
+        .card p, .card li, .card h4 { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; font-size: 0.85em; }
+        .card-accent-blue { border-left: 4px solid var(--accent-blue); }
+        .card-accent-purple { border-left: 4px solid var(--accent-purple); }
+        .card-accent-pink { border-left: 4px solid var(--accent-pink); }
+        .card-accent-green { border-left: 4px solid var(--accent-green); }
+        .card-accent-orange { border-left: 4px solid var(--accent-orange); }
+        .card-accent-red { border-left: 4px solid var(--accent-red); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 14px; }
+        .grid-2 > .card, .grid-3 > .card { margin: 0; min-width: 0; }
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 { color: white; font-weight: 700; }
+        .reveal h2 { font-size: 1.4em; margin-bottom: 14px; }
+        .reveal h3 { font-size: 1.05em; color: var(--accent-blue); margin-bottom: 8px; }
+        .reveal h4 { font-size: 0.9em; color: var(--accent-purple); }
+        .reveal p, .reveal li { color: rgba(255,255,255,0.85); line-height: 1.6; }
+        .reveal ul { list-style: none; padding-left: 0; }
+        .reveal ul li { padding: 3px 0; padding-left: 24px; position: relative; }
+        .reveal ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent-blue); font-weight: 700; }
+        .highlight { color: var(--accent-blue); font-weight: 600; }
+        .highlight-purple { color: var(--accent-purple); font-weight: 600; }
+        .highlight-pink { color: var(--accent-pink); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+        .icon-lg { font-size: 1.6em; display: inline-block; margin-right: 6px; vertical-align: middle; }
+        .definition-box { background: linear-gradient(135deg, rgba(79,140,255,0.15), rgba(168,85,247,0.15)); border: 1px solid rgba(79,140,255,0.3); border-radius: 14px; padding: 16px 20px; margin: 14px 0; position: relative; }
+        .definition-box::before { content: '📖'; font-size: 1.5em; position: absolute; top: -12px; left: 20px; }
+        .definition-box .def-title { font-size: 0.65em; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-blue); font-weight: 700; margin-bottom: 6px; }
+        .definition-box .def-text { font-size: 0.85em; color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .comparison-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.65em; margin-top: 12px; }
+        .comparison-table th { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: white; padding: 8px 12px; text-align: left; font-weight: 600; }
+        .comparison-table td { padding: 7px 12px; border-bottom: 1px solid var(--glass-border); color: rgba(255,255,255,0.85); }
+        .comparison-table tr:nth-child(even) td { background: var(--glass); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table.dense th, .comparison-table.dense td { padding: 5px 10px; }
+        /* Mapa conceptual — diagrama HTML clicable */
+        .md-root { width: fit-content; margin: 0 auto; text-align: center; background: linear-gradient(135deg, rgba(79,140,255,0.22), rgba(168,85,247,0.22)); border: 1px solid rgba(79,140,255,0.45); border-radius: 14px; padding: 9px 30px; box-shadow: 0 0 30px rgba(79,140,255,0.25); }
+        .reveal .md-root h3 { margin: 0; font-size: 0.9em; letter-spacing: 1.5px; text-transform: uppercase; color: white; }
+        .reveal .md-root p { margin: 4px 0 0; font-size: 0.65em; color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.4; }
+        .md-trunk { width: 2px; height: 16px; background: rgba(255,255,255,0.28); margin: 0 auto; }
+        .md-spine { height: 2px; background: rgba(255,255,255,0.28); width: 97%; margin: 0 auto; border-radius: 2px; }
+        .md-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(228px, 1fr)); gap: 12px; }
+        a.md-branch { position: relative; margin-top: 15px; display: block; text-decoration: none; transition: transform 0.25s ease; }
+        a.md-branch::before { content: ''; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); width: 2px; height: 15px; background: rgba(255,255,255,0.28); }
+        a.md-branch:hover { transform: translateY(-3px); }
+        a.md-branch:hover .md-card { border-color: var(--c); box-shadow: 0 8px 24px rgba(0,0,0,0.45); }
+        .md-card { height: 100%; background: var(--glass); border: 1px solid var(--glass-border); border-top: 3px solid var(--c); border-radius: 12px; padding: 9px 12px 8px; }
+        .reveal .md-card h4 { margin: 0 0 7px; font-size: 0.66em; letter-spacing: 0.4px; color: var(--c); text-transform: uppercase; font-weight: 700; }
+        .reveal .md-card ul { list-style: none; margin: 0; padding: 0; }
+        .reveal .md-card li { position: relative; padding: 1.5px 0 1.5px 13px; font-size: 0.55em; line-height: 1.4; color: rgba(255,255,255,0.85); }
+        .reveal .md-card li::before { content: '▸'; position: absolute; left: 0; color: var(--c); font-weight: 700; }
+        .md-chip { display: inline-block; font-size: 0.82em; font-weight: 700; padding: 0 7px; border-radius: 9px; margin-left: 4px; color: var(--c); border: 1px solid var(--c); background: var(--cbg); white-space: nowrap; }
+        .md-chip.strong { background: var(--c); color: #0a0a1a; border-color: var(--c); }
+        .reveal .md-hint { text-align: center; font-size: 0.55em; color: rgba(255,255,255,0.4); margin: 10px 0 0; }
+        .fun-fact { background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(239,68,68,0.1)); border: 1px solid rgba(245,158,11,0.3); border-radius: 10px; padding: 12px 16px; margin: 10px 0; font-size: 0.85em; }
+        .fun-fact .ff-label { color: var(--accent-orange); font-weight: 700; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; }
+        .quiz-card { background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(79,140,255,0.15)); border: 1px solid rgba(16,185,129,0.3); border-radius: 14px; padding: 16px 20px; margin: 10px 0; }
+        .quiz-card .quiz-q { color: var(--accent-green); font-weight: 700; font-size: 0.95em; margin-bottom: 8px; }
+        .quiz-option { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 8px; padding: 7px 14px; margin: 4px 0; color: rgba(255,255,255,0.8); font-size: 0.8em; cursor: pointer; transition: all 0.3s ease; }
+        .quiz-option:hover { border-color: var(--accent-green); background: rgba(16,185,129,0.1); }
+        .quiz-option.correct { border-color: var(--accent-green); background: rgba(16,185,129,0.2); color: var(--accent-green); }
+        .quiz-option.wrong { border-color: var(--accent-red); background: rgba(239,68,68,0.1); opacity: 0.6; }
+        .quiz-explanation { font-size: 0.75em; color: rgba(255,255,255,0.7); margin-top: 8px; padding: 8px 12px; background: rgba(16,185,129,0.08); border-left: 3px solid var(--accent-green); border-radius: 6px; }
+        .real-life { background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(168,85,247,0.15)); border: 1px solid rgba(236,72,153,0.3); border-radius: 12px; padding: 14px 18px; margin: 10px 0; }
+        .real-life .rl-label { color: var(--accent-pink); font-weight: 700; font-size: 0.65em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+        .legal-box { background: linear-gradient(135deg, rgba(16,185,129,0.13), rgba(16,185,129,0.05)); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px; padding: 14px 18px; margin: 10px 0; }
+        .legal-box .lb-label { color: var(--accent-green); font-weight: 700; font-size: 0.65em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .legal-box .lb-text { font-size: 0.82em; color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .reveal .slides section .fragment.visible { opacity: 1; }
+        .reveal .slide-number { display: none !important; }
+        .slide-nav { position: fixed; bottom: 16px; left: 16px; z-index: 9999; height: 38px; padding: 0 16px; display: flex; align-items: center; justify-content: center; border-radius: 20px; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.7); backdrop-filter: blur(10px); color: rgba(255,255,255,0.7); font-family: 'Consolas', monospace; font-size: 0.9em; font-weight: 600; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(0,0,0,0.3); user-select: none; -webkit-user-select: none; }
+        .slide-nav:hover { border-color: var(--accent-blue); color: white; }
+        .slide-nav .slide-nav-display { display: flex; align-items: center; gap: 4px; }
+        .slide-nav .slide-nav-current { color: var(--accent-blue); }
+        .slide-nav .slide-nav-sep { color: rgba(255,255,255,0.3); margin: 0 2px; }
+        .slide-nav .slide-nav-input { display: none; width: 50px; background: transparent; border: none; border-bottom: 2px solid var(--accent-blue); color: var(--accent-blue); font-family: 'Consolas', monospace; font-size: 1em; font-weight: 700; text-align: center; outline: none; padding: 2px 0; -moz-appearance: textfield; }
+        .slide-nav .slide-nav-input::-webkit-outer-spin-button, .slide-nav .slide-nav-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        .slide-nav.editing .slide-nav-display { display: none; }
+        .slide-nav.editing .slide-nav-input { display: inline-block; }
+        .reveal .slides section { overflow-y: auto; max-height: 100%; padding-bottom: 40px; }
+        .reveal .slides section::-webkit-scrollbar { width: 6px; }
+        .reveal .slides section::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 3px; }
+        .reveal .slides section::-webkit-scrollbar-thumb { background: rgba(79,140,255,0.4); border-radius: 3px; }
+        .reveal .slides section::-webkit-scrollbar-thumb:hover { background: rgba(79,140,255,0.6); }
+        @media (max-width: 768px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } .reveal .slides section { padding: 20px 30px; } }
+        .glow-text { text-shadow: 0 0 20px rgba(79,140,255,0.5), 0 0 40px rgba(168,85,247,0.3); }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .fullscreen-btn, .index-btn { position: fixed; top: 16px; z-index: 9999; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.65); backdrop-filter: blur(10px); color: rgba(255,255,255,0.85); font-size: 1.1em; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; -webkit-tap-highlight-color: transparent; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+        .fullscreen-btn { right: 16px; }
+        .index-btn { right: 76px; }
+        .fullscreen-btn:hover, .fullscreen-btn:active, .index-btn:hover, .index-btn:active { border-color: var(--accent-blue); background: rgba(79,140,255,0.25); color: white; transform: scale(1.05); }
+        .fragment-counter { position: fixed; top: 22px; right: 142px; z-index: 9999; height: 38px; padding: 0 14px; display: none; align-items: center; justify-content: center; border-radius: 20px; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.65); backdrop-filter: blur(10px); color: rgba(255,255,255,0.9); font-family: 'Consolas', monospace; font-size: 0.85em; font-weight: 700; letter-spacing: 1px; box-shadow: 0 4px 16px rgba(0,0,0,0.3); white-space: nowrap; }
+        .fragment-counter.has-fragments { display: flex; }
+        .fragment-counter .fc-current { color: var(--accent-blue); }
+    </style>
+</head>
+<body>
+    <div class="fragment-counter" id="fragment-counter" title="Elementos de la diapositiva (mostrados/total)">
+        <span class="fc-current">0</span>/<span class="fc-total">0</span>
+    </div>
+    <button class="index-btn" id="index-btn" title="Ir al índice de la unidad" aria-label="Ir al índice de la unidad">
+        <i class="fa-solid fa-list-ul"></i>
+    </button>
+    <button class="fullscreen-btn" id="fullscreen-btn" title="Pantalla completa" aria-label="Pantalla completa">
+        <i class="fa-solid fa-expand"></i>
+    </button>
+    <div class="slide-nav" id="slide-nav" title="Clic para ir a una diapositiva">
+        <div class="slide-nav-display">
+            <span class="slide-nav-current" id="slide-nav-current">1</span>
+            <span class="slide-nav-sep">/</span>
+            <span id="slide-nav-total">1</span>
+        </div>
+        <input type="number" class="slide-nav-input" id="slide-nav-input" min="1" placeholder="">
+    </div>
+    <div class="reveal">
+        <div class="slides">
+<section class="title-slide">
+<span class="unit-badge">Unidad 9</span>
+<h1 style="margin-top: 30px;">El Servicio Público<br>y la Concesión</h1>
+<p class="subtitle">Licenciatura en Derecho — Universidad Cristóbal Colón</p>
+<p style="color: rgba(255,255,255,0.4); font-size: 0.7em; margin-top: 40px;">
+    <i class="fa-solid fa-graduation-cap"></i> Mtro. Sergio Armando Cortina Ceballos<br>
+    <i class="fa-solid fa-building-columns"></i> Universidad Cristóbal Colón · 2026
+</p>
+<a href="../index.html" style="display: inline-block; margin-top: 24px; font-size: 0.7em; color: rgba(255,255,255,0.3); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice</a>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗺️</span> ¿Dónde estamos en el curso?</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Unidad 1: qué es el DA · Unidad 2: de dónde sale · Unidad 3: cómo se organiza · Unidad 4: quién lo hace · Unidad 5: el acto · Unidad 6: el procedimiento que lo produce · Unidad 7: qué pasa cuando el acto está viciado · Unidad 8: cómo se contrata el Estado · <strong>Unidad 9: quién presta los servicios públicos y cómo se conceden a particulares</strong>.</p>
+<div style="font-family: Consolas, monospace; font-size: 0.62em; line-height: 1.5; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+<div>
+<div style="color: var(--accent-blue); font-weight: 700; margin-bottom: 6px;">📘 FUNDAMENTOS</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">1. Introducción al DA<br>2. Fuentes del DA</div>
+<div style="color: var(--accent-green); font-weight: 700; margin-top: 12px; margin-bottom: 6px;">🏛️ ORGANIZACIÓN</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">3. La Organización Administrativa<br>4. El Servidor Público</div>
+</div>
+<div>
+<div style="color: var(--accent-purple); font-weight: 700; margin-bottom: 6px;">📜 ACTO Y PROCEDIMIENTO</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">5. Teoría del Acto Administrativo<br>6. El Procedimiento Administrativo<br>7. Ineficacias del Acto</div>
+</div>
+<div>
+<div style="color: var(--accent-pink); font-weight: 700; margin-bottom: 6px;">⚙️ GESTIÓN Y CONTROL</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">8. Contrato administrativo<br><strong style="color: var(--accent-pink);">9. Servicio público y concesión ◀ ESTAMOS AQUÍ</strong><br>10. Control de la AP</div>
+<div style="color: var(--accent-orange); font-weight: 700; margin-top: 12px; margin-bottom: 6px;">🔍 DEFENSA</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">13. Recursos administrativos<br>14. Amparo y controversias</div>
+</div>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Mapa Conceptual</h2>
+<div class="md-root">
+<h3>🤝 Servicio Público y Concesión</h3>
+<p>concepto · elementos · clasificación · formas de prestación · concesión · APP</p>
+</div>
+<div class="md-trunk"></div>
+<div class="md-spine"></div>
+<div class="md-grid">
+<a class="md-branch" href="#/seccion-9-1" style="--c: var(--accent-blue); --cbg: rgba(79,140,255,0.12);">
+<div class="md-card">
+<h4>📖 1. Concepto y evolución</h4>
+<ul>
+<li>Escuela de Burdeos: Duguit</li>
+<li>Jeze y Hauriou</li>
+<li>Crisis del servicio público</li>
+<li>Concepto actual (Fernández Ruiz)</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-9-2" style="--c: var(--accent-purple); --cbg: rgba(168,85,247,0.12);">
+<div class="md-card">
+<h4>🧩 2. Elementos y clasificación</h4>
+<ul>
+<li>Generalidad · igualdad · regularidad</li>
+<li>Continuidad (los 4 esenciales)</li>
+<li>Propio / impropio</li>
+<li>Uti singuli / uti universi</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-9-4" style="--c: var(--accent-pink); --cbg: rgba(236,72,153,0.12);">
+<div class="md-card">
+<h4>⚙️ 3. Formas de prestación</h4>
+<ul>
+<li>Directa: gestión en régie</li>
+<li>Centralizada / desconcentrada</li>
+<li>Descentralizada / fideicomiso</li>
+<li>Indirecta: concesión (art. 28)</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-9-5" style="--c: var(--accent-green); --cbg: rgba(16,185,129,0.12);">
+<div class="md-card">
+<h4>📜 4. La concesión</h4>
+<ul>
+<li>Acto unilateral <span class="md-chip strong">México</span></li>
+<li>Elementos y procedimiento</li>
+<li>Derechos y obligaciones</li>
+<li>Revocación vs. caducidad</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-9-6" style="--c: var(--accent-orange); --cbg: rgba(245,158,11,0.12);">
+<div class="md-card">
+<h4>🧾 5. Figuras afines</h4>
+<ul>
+<li>¿Derecho preexistente?</li>
+<li>Permiso · autorización</li>
+<li>Licencia · aprobación</li>
+<li>Delimitación (Martínez Morales)</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-9-7" style="--c: var(--accent-red); --cbg: rgba(239,68,68,0.12);">
+<div class="md-card">
+<h4>🏗️ 6. Asociaciones Público Privadas</h4>
+<ul>
+<li>LAPP 2012 y su Reglamento</li>
+<li>Riesgo compartido</li>
+<li>Pago vinculado a desempeño</li>
+<li>APP vs. concesión</li>
+</ul>
+</div>
+</a>
+</div>
+<p class="md-hint">🖱️ Haz clic en una rama para ir directo a la sección</p>
+</section>
+<section data-background-color="#0a0a1a" id="indice">
+<h2><span class="icon-lg">📑</span> Índice de la Unidad 9</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Toca o haz clic en un tema para ir directo a él</p>
+<div class="grid-2" style="margin-top: 10px;">
+<a class="card card-accent-blue" href="#/seccion-9-1" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;">9.1 Concepto y evolución</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Escuela de Burdeos, crisis y concepto actual</p></a>
+<a class="card card-accent-purple" href="#/seccion-9-2" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-purple); margin: 0;">9.2 Elementos esenciales</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Generalidad, igualdad, regularidad y continuidad</p></a>
+<a class="card card-accent-pink" href="#/seccion-9-3" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-pink); margin: 0;">9.3 Clasificación de los servicios</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Propio/impropio, usuario, exigibilidad y jurisdicción</p></a>
+<a class="card card-accent-green" href="#/seccion-9-4" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-green); margin: 0;">9.4 Formas de prestación</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Gestión en régie, concesión y prestación mixta</p></a>
+<a class="card card-accent-orange" href="#/seccion-9-5" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-orange); margin: 0;">9.5 La concesión administrativa</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Concepto, naturaleza, elementos, procedimiento y extinción</p></a>
+<a class="card card-accent-red" href="#/seccion-9-6" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-red); margin: 0;">9.6 Permiso, autorización y licencia</h4><p style="font-size: 0.75em; margin: 4px 0 0;">La clave está en el derecho preexistente</p></a>
+<a class="card card-accent-blue" href="#/seccion-9-7" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;">9.7 Asociaciones Público Privadas</h4><p style="font-size: 0.75em; margin: 4px 0 0;">LAPP, elementos esenciales y APP vs. concesión</p></a>
+<a class="card card-accent-purple" href="#/seccion-9-8" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-purple); margin: 0;">9.8 Doctrina comparada</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Duguit, Jeze, Hauriou y Fernández Ruiz</p></a>
+<a class="card card-accent-pink" href="#/seccion-9-9" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-pink); margin: 0;">9.9 Legislación aplicable</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Arts. 28, 115 y 27 CPEUM · LFPA · LGyN · LAPP</p></a>
+<a class="card card-accent-green" href="#/seccion-9-10" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-green); margin: 0;">9.10 Esquema de síntesis</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Resumen visual de la unidad</p></a>
+<a class="card card-accent-red" href="#/material" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-red); margin: 0;">📥 Material para alumnos</h4><p style="font-size: 0.75em; margin: 4px 0 0;">PDFs descargables</p></a>
+</div>
+</section>
+<section class="section-header" id="seccion-9-1">
+<span class="section-icon">📖</span>
+<h2>9.1 Concepto y evolución del servicio público</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🏛️</span> De la Escuela de Burdeos a la crisis</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Escuela de Burdeos (Duguit)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Léon Duguit</strong> construyó una teoría totalizadora: el Estado no es más que un conjunto de servicios públicos; servicio público es «toda actividad que deba ser asegurada, reglada y controlada por los gobernantes» (Roldán Xopa, Cap. X, p. 2).</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Jeze amplía · Hauriou acota</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Gaston Jèze:</strong> servicio público es «toda actividad de la administración pública». <strong>Maurice Hauriou:</strong> solo «una parte de la actividad de la administración pública» (Fernández Ruiz, INEHRM, Cap. XIII, p. 146).</p>
+</div>
+<div class="card card-accent-orange fragment" style="grid-column: 1 / -1;">
+<h4 style="color: var(--accent-orange);">Crisis y transformación</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Con el neoliberalismo, <strong>Gaspar Ariño Ortiz</strong> sostuvo que el servicio público había «completado su ciclo». <strong>Roldán Xopa</strong> rescata el concepto: no es una actividad, es <strong>«una técnica de regulación»</strong> (Cap. X, p. 5).</p>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📘</span> El concepto actual</h2>
+<div class="definition-box fragment">
+<div class="def-title">Jorge Fernández Ruiz (INEHRM, Cap. XIII, p. 148)</div>
+<p class="def-text">«Servicio público es toda <strong>actividad técnica</strong> destinada a satisfacer una <strong>necesidad de carácter general</strong>, cuyo cumplimiento uniforme y continuo deba ser permanentemente asegurado, reglado y controlado por los gobernantes, con sujeción a un <strong>mutable régimen jurídico exorbitante del derecho privado</strong>, ya por medio de la Administración pública, bien mediante particulares facultados para ello por autoridad competente, en beneficio indiscriminado de toda persona».</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Reserva de ley (art. 28 CPEUM)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Una actividad solo es servicio público si el <strong>Congreso de la Unión la declara</strong> originaria del Estado conforme a la Constitución: se requiere <strong>reserva de ley</strong> (Hamdan, Tema XIII, p. 175).</p>
+</div>
+</section>
+<section class="section-header" id="seccion-9-2">
+<span class="section-icon">🧩</span>
+<h2>9.2 Elementos esenciales del servicio público</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧩</span> Los cuatro elementos esenciales</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Generalidad</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">El servicio debe estar <strong>al alcance de todas las personas</strong> que lo requieran.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Igualdad</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Todos los usuarios reciben <strong>el mismo trato</strong> en condiciones equivalentes.</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">Regularidad</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Se presta <strong>conforme a reglas y normas preestablecidas</strong>.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Continuidad</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">El servicio <strong>no puede interrumpirse</strong>, salvo fuerza mayor.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Carácteres discutidos</div>
+<p style="font-size: 0.82em;">Otros autores agregan: <strong>obligatoriedad, adaptabilidad o mutabilidad, permanencia y gratuidad</strong> (Fernández Ruiz, INEHRM, Cap. XIII, p. 150; Martínez Morales, 2o Curso, Tema XIII; Hamdan, Tema XIII, p. 176). La <em>gratuidad</em> no es esencial: muchos servicios son pagados.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-9-3">
+<span class="section-icon">🗂️</span>
+<h2>9.3 Clasificación de los servicios públicos</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗂️</span> Cuatro criterios de clasificación</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">a) Por reconocimiento jurídico</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Propio:</strong> creado por ley y atribuido al Estado.<br><strong>Impropio:</strong> deriva de un permiso, licencia o autorización.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">b) Por el usuario</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Uti singuli:</strong> usuarios determinados (agua, energía).<br><strong>Uti universi:</strong> colectividad indeterminada (alumbrado público).</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">c) Por exigibilidad</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Voluntarios:</strong> a quien los solicita.<br><strong>Obligatorios:</strong> el usuario debe recibirlos por ley (educación obligatoria).</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">d) Por jurisdicción territorial</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Federales · estatales · municipales</strong> (art. 115, fracc. III CPEUM) <strong>· concurrentes</strong> (compartida).</p>
+</div>
+</div>
+</section>
+<section class="section-header" id="seccion-9-4">
+<span class="section-icon">⚙️</span>
+<h2>9.4 Formas de prestación de los servicios públicos</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚙️</span> Directa, indirecta y mixta</h2>
+<div class="grid-3" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">a) Directa (gestión en régie)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">El Estado presta por sí mismo: <strong>dependencia centralizada, órgano desconcentrado, organismo público descentralizado o fideicomiso público</strong>.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">b) Indirecta</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">El <strong>artículo 28 CPEUM</strong> autoriza a concesionar la prestación: el particular la presta bajo el régimen de <strong>concesión</strong>.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">c) Mixta</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Estado y particulares combinados. <strong>Roldán Xopa</strong> identifica cinco modalidades: monopolio natural, monopolio regulatorio, competencia estatal-privada, etc. (Cap. X).</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 ¿Cómo se elige?</div>
+<p style="font-size: 0.82em;">La regla es la <strong>prestación directa</strong>; la indirecta (concesión) requiere <strong>reserva de ley</strong> y convocatoria pública. La mixta aparece cuando el mercado no cubre todo el servicio.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-9-5">
+<span class="section-icon">📜</span>
+<h2>9.5 La concesión administrativa</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Concepto de concesión</h2>
+<div class="definition-box fragment">
+<div class="def-title">Gabino Fraga</div>
+<p class="def-text">«El <strong>acto administrativo</strong> por el cual se otorga al particular el derecho de manejar y explotar un servicio público o la explotación y aprovechamiento de <bienes del dominio público</b> del Estado».</p>
+</div>
+<div class="definition-box fragment">
+<div class="def-title">Martínez Morales, Diccionario, voz «Concesión»</div>
+<p class="def-text">«El <strong>acto jurídico unilateral</strong> por el cual el Estado confiere a un particular la potestad de explotar a su nombre un servicio o bien públicos, que le pertenecen a aquél, satisfaciendo necesidades de interés general».</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> Naturaleza jurídica: tres teorías</h2>
+<div class="grid-3" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">a) Contractual</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">La concesión es un <strong>contrato</strong> entre el Estado y el particular.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">b) Acto unilateral</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Es un <strong>acto administrativo unilateral</strong> (reglamentaria). <strong>Es la tesis que impera en México</strong> (Hamdan, Tema XIII, p. 178).</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">c) Mixta</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Combina elementos de <strong>ambas naturalezas</strong>.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Postura mayoritaria en México</div>
+<p style="font-size: 0.82em;">La doctrina la considera un <strong>acto mixto con predominio de la naturaleza reglamentaria</strong> (Fernández Ruiz, INEHRM, Cap. XIII, p. 160). Además, la concesión es <strong>intuitu personae</strong>: se otorga a una persona determinada.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧾</span> Elementos y procedimiento</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Elementos de la concesión</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Sujeto concedente</strong> · <strong>concesionario</strong> · <strong>usuario</strong> · <strong>objeto</strong> (servicio público o bien de dominio público) · <strong>título de concesión</strong> · <strong>plazo</strong>.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Procedimiento de otorgamiento</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><span class="highlight">Convocatoria pública → licitación pública → evaluación de propuestas (idoneidad) → otorgamiento → publicación en el DOF</span></p>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> Derechos, obligaciones y extinción</h2>
+<div class="grid-3" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Derechos</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;">Prestar el servicio y <strong>percibir la tarifa</strong> · <strong>estabilidad</strong> del título durante el plazo · uso de los <strong>bienes afectos</strong>.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Obligaciones</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;">Prestar conforme al título y la ley · <strong>continuidad, regularidad, igualdad y generalidad</strong> · tarifas sujetas a aprobación · inspección · <strong>no suspender</strong> el servicio.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Extinción</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;"><strong>Vencimiento</strong> del plazo · <strong>revocación</strong> por interés público (con indemnización) · <strong>caducidad</strong> por incumplimiento grave (sin indemnización) · renuncia · muerte o incapacidad · nulidad.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Revocación vs. caducidad</div>
+<p style="font-size: 0.82em;"><strong>Revocación = interés público → sí indemniza. Caducidad = incumplimiento grave → no indemniza.</strong> Es la distinción que resuelve los casos prácticos típicos.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-9-6">
+<span class="section-icon">🧾</span>
+<h2>9.6 El permiso, la autorización y la licencia</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧾</span> La clave: el derecho preexistente</h2>
+<div class="card card-accent-orange fragment" style="margin-bottom: 10px;">
+<h4 style="color: var(--accent-orange);">Regla de delimitación</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;"><strong>Concesión:</strong> <span class="highlight">no existe derecho preexistente</span> (el acto lo crea). <strong>Permiso, autorización o licencia:</strong> sí existe un derecho preexistente cuyo ejercicio está sujeto a <strong>control administrativo</strong> (retiran un obstáculo).</p>
+</div>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Martínez Morales: delimitación</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;"><strong>Aprobación:</strong> para perfeccionar un acto previo.<br><strong>Autorización:</strong> para conferir validez a un derecho.<br><strong>Permiso:</strong> para facilitar el uso de bienes del Estado.<br><strong>Licencia:</strong> para aceptar actividades previa verificación de conocimientos.</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">Cómo se aplica</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;">Ante un caso, pregunte primero: <strong>¿el particular ya tenía derecho o el acto se lo otorga?</strong><br>· Otorga un nuevo derecho → <strong>concesión</strong><br>· Solo habilita el ejercicio de uno existente → <strong>permiso / autorización / licencia</strong><br>· Exige conocimientos o habilidad → <strong>licencia</strong>.</p>
+</div>
+</div>
+</section>
+<section class="section-header" id="seccion-9-7">
+<span class="section-icon">🏗️</span>
+<h2>9.7 Las Asociaciones Público Privadas (APP)</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🏗️</span> Concepto y origen</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Concepto</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Esquema de <strong>colaboración de largo plazo</strong> entre sector público y privado para servicios públicos, infraestructura o proyectos de interés general. A diferencia de la concesión —donde el Estado <em>delega</em>—, en la APP <strong>ambas partes comparten riesgos, recursos y responsabilidades</strong> bajo una estructura contractual más equilibrada.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Origen</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">El modelo nace del <strong>Private Finance Initiative (PFI)</strong> del Reino Unido en los años noventa y se expande globalmente como <strong>respuesta a la limitación de recursos públicos</strong> para financiar grandes proyectos.</p>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Marco normativo de las APP</h2>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Ley de Asociaciones Público Privadas (LAPP), 2012</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Publicada el <strong>16 de enero de 2012</strong>, con su Reglamento. Establece: <strong>objeto</strong> (regular esquemas APP que generan valor social) · <strong>ámbito</strong> (entidades de la AP Federal) · <strong>requisitos del proyecto</strong>: viabilidad técnica, legal, ambiental, económica y social; análisis de <strong>valor por dinero</strong> (<em>value for money</em>); estructura de riesgos.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Disposiciones sectoriales</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">También aplican las disposiciones de APP previstas en la <strong>Ley de Obras Públicas y Servicios Relacionados (LOPSRM)</strong> y en la <strong>LAASSP</strong>.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧩</span> Los cinco elementos esenciales de la APP</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">1. Largo plazo</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Generalmente <strong>superan los 10 años</strong> y llegan a 30-40 años.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">2. Riesgo compartido</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Los riesgos se distribuyen <strong>según quién esté en mejor posición</strong> para gestionarlos (a diferencia de la concesión pura).</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">3. Financiamiento privado</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">El particular aporta <strong>total o parcialmente el capital</strong> del proyecto.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">4. Pago vinculado a desempeño</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">La contraprestación (pública, tarifaria o mixta) depende del cumplimiento de <strong>indicadores de calidad y disponibilidad</strong>.</p>
+</div>
+<div class="card card-accent-red fragment" style="grid-column: 1 / -1;">
+<h4 style="color: var(--accent-red);">5. Reversión de activos</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Al término del contrato, los <strong>bienes del proyecto revierten al Estado</strong>.</p>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📊</span> APP vs. concesión tradicional</h2>
+<table class="comparison-table dense">
+<tr><th>Elemento</th><th>Concesión tradicional</th><th>APP</th></tr>
+<tr><td><strong>Naturaleza jurídica</strong></td><td>Acto administrativo unilateral mayoritariamente</td><td>Contrato de largo plazo</td></tr>
+<tr><td><strong>Riesgo</strong></td><td>Principalmente a cargo del concesionario</td><td>Compartido público-privado</td></tr>
+<tr><td><strong>Financiamiento</strong></td><td>Generalmente privado</td><td>Privado con posible apoyo público</td></tr>
+<tr><td><strong>Marco normativo</strong></td><td>Leyes sectoriales (aguas, carreteras…)</td><td>LAPP y legislación sectorial</td></tr>
+<tr><td><strong>Retribución</strong></td><td>Tarifas de usuarios</td><td>Pago público, tarifario o mixto vinculado a desempeño</td></tr>
+<tr><td><strong>Plazo</strong></td><td>Variable (15-30 años típicamente)</td><td>Largo plazo (20-40 años)</td></tr>
+<tr><td><strong>Régimen de bienes</strong></td><td>Bienes afectos al servicio</td><td>Reversión al Estado al término</td></tr>
+</table>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚙️</span> Procedimiento, ventajas y riesgos</h2>
+<div class="card card-accent-blue fragment" style="margin-bottom: 10px;">
+<h4 style="color: var(--accent-blue);">Procedimiento de una APP</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><span class="highlight">Identificación y registro → estudios de viabilidad → análisis de valor por dinero → estructuración y asignación de riesgos → licitación pública → firma del contrato → ejecución, supervisión y evaluación</span></p>
+</div>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Ventajas</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;">Moviliza <strong>capital privado</strong> · transfiere riesgos al sector privado · <strong>eficiencia</strong> en ejecución y operación · innovación tecnológica · libera recursos públicos.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Riesgos</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;">Complejidad contractual · <strong>compromisos fiscales de largo plazo</strong> · sobrecostos si la estructura de riesgos es deficiente · <strong>captura regulatoria</strong> · menor flexibilidad de política pública.</p>
+</div>
+</div>
+</section>
+<section class="section-header" id="seccion-9-8">
+<span class="section-icon">🎓</span>
+<h2>9.8 Doctrina comparada</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎓</span> Cuatro autores, cuatro ejes</h2>
+<table class="comparison-table dense">
+<tr><th>Tema</th><th>Léon Duguit</th><th>Gaston Jèze</th><th>Maurice Hauriou</th><th>Jorge Fernández Ruiz</th></tr>
+<tr><td><strong>Definición de SP</strong></td><td>Toda actividad del Estado</td><td>Toda actividad de la administración</td><td>Solo una parte de la actividad estatal</td><td>Actividad técnica que satisface necesidad general, bajo régimen exorbitante</td></tr>
+<tr><td><strong>Naturaleza de la concesión</strong></td><td>Contrato administrativo</td><td>Contractual</td><td>Acto unilateral</td><td>Acto mixto con predominio reglamentario</td></tr>
+<tr><td><strong>Crisis del SP</strong></td><td>No aplica</td><td>No aplica</td><td>No aplica</td><td>El servicio público no ha muerto; se ha transformado</td></tr>
+<tr><td><strong>APP vs. concesión</strong></td><td>No desarrolló</td><td>Concesión como servicio público en sentido amplio</td><td>Distingue la concesión como acto unilateral</td><td>Las APP son un nuevo esquema que trasciende la concesión</td></tr>
+</table>
+</section>
+<section class="section-header" id="seccion-9-9">
+<span class="section-icon">📚</span>
+<h2>9.9 Legislación aplicable comentada</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Constitución: arts. 28, 115 y 27</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Artículo 28 CPEUM (facultad de concesionar)</div>
+<p class="lb-text">«El Estado, sujetándose a las leyes, podrá en casos de interés general, <strong>concesionar la prestación de servicios públicos</strong> o la explotación, uso y aprovechamiento de bienes de dominio de la Federación…» — <strong>Base constitucional de todo el régimen de concesiones.</strong></p>
+</div>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Artículo 115, fracción III</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Catálogo mínimo de <strong>servicios públicos municipales</strong>: agua potable, drenaje, alcantarillado, alumbrado público, limpia, mercados, panteones, seguridad y tránsito, entre otros.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Artículo 27</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Dominio directo de la Nación sobre los <strong>recursos naturales</strong>; en hidrocarburos, el art. 28 remite a los párrafos sexto y séptimo del art. 27 como <strong>áreas estratégicas</strong>.</p>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Leyes secundarias</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">LFPA, artículo 3</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Elementos y requisitos del <strong>acto administrativo</strong> aplicables al título de concesión.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Ley General de Bienes Nacionales</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Régimen jurídico para la <strong>concesión de bienes de dominio público</strong>.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">LAPP, 2012</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Marco regulatorio de las APP: objeto, ámbito, requisitos de proyectos, <strong>procedimiento de contratación</strong> y régimen de ejecución y supervisión.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Reglamento de la LAPP</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Desarrolla los procedimientos de <strong>valoración, licitación y supervisión</strong> de proyectos APP.</p>
+</div>
+</div>
+</section>
+<section class="section-header" id="seccion-9-10">
+<span class="section-icon">🗺️</span>
+<h2>9.10 Esquema de síntesis</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗺️</span> Esquema general</h2>
+<div style="font-family: Consolas, monospace; font-size: 0.6em; line-height: 1.5; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);">
+<div><strong style="color: var(--accent-blue);">I. SERVICIO PÚBLICO</strong></div>
+<div style="padding-left: 18px; color: rgba(255,255,255,0.6);">Concepto: actividad técnica que satisface necesidad general, bajo régimen exorbitante (Fernández Ruiz)</div>
+<div style="padding-left: 18px;">Elementos esenciales: <strong>generalidad · igualdad · regularidad · continuidad</strong></div>
+<div style="padding-left: 18px;">Clasificación: propio/impropio · uti singuli/uti universi · voluntarios/obligatorios · federal/estatal/municipal/concurrente</div>
+<div style="padding-left: 18px;">Formas de prestación: directa (centralizada, desconcentrada, descentralizada, fideicomiso) · indirecta (concesión) · mixta</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-green);">II. CONCESIÓN ADMINISTRATIVA</strong></div>
+<div style="padding-left: 18px;">Concepto: el Estado confiere a un particular la explotación de un servicio o bien público</div>
+<div style="padding-left: 18px;">Naturaleza: <strong>acto administrativo unilateral</strong> en México (acto mixto con predominio reglamentario)</div>
+<div style="padding-left: 18px;">Elementos: concedente · concesionario · usuario · objeto · título · plazo</div>
+<div style="padding-left: 18px;">Procedimiento: convocatoria → licitación → evaluación → otorgamiento → publicación</div>
+<div style="padding-left: 18px;">Extinción: vencimiento · revocación (indemniza) · caducidad (no indemniza) · renuncia · muerte · nulidad</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-orange);">III. FIGURAS AFINES</strong></div>
+<div style="padding-left: 18px;">Concesión | sin derecho preexistente | crea el derecho</div>
+<div style="padding-left: 18px;">Permiso | derecho preexistente | retira obstáculo</div>
+<div style="padding-left: 18px;">Autorización | derecho preexistente | verifica cualidades</div>
+<div style="padding-left: 18px;">Licencia | derecho preexistente | verifica conocimientos</div>
+<div style="padding-left: 18px;">Aprobación | derecho preexistente | perfecciona acto previo</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-red);">IV. ASOCIACIONES PÚBLICO PRIVADAS (APP)</strong></div>
+<div style="padding-left: 18px;">Marco: LAPP (2012) y Reglamento · requisitos: viabilidad, valor por dinero, riesgos</div>
+<div style="padding-left: 18px;">Elementos: largo plazo · riesgo compartido · financiamiento privado · pago a desempeño · reversión</div>
+<div style="padding-left: 18px;">APP vs. concesión: contrato vs. acto unilateral · riesgo compartido vs. riesgo privado</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a" id="material">
+<h2><span class="icon-lg">📥</span> Material para Alumnos</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.78em;">Descarga el material de estudio de esta unidad</p>
+<div class="grid-2" style="margin-top: 10px;">
+<a href="../Material para Alumnos/Unidad 9/Unidad 9.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-blue fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">📄</span>
+<div>
+<h4 style="color: var(--accent-blue); margin: 0;">Unidad 9 — Contenido completo</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Servicio público, concesión y APP</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-blue); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 9/Cuestionario.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-green fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">❓</span>
+<div>
+<h4 style="color: var(--accent-green); margin: 0;">Cuestionario de estudio</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">13 preguntas de comprensión, análisis y aplicación</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-green); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 9/Casos.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-purple fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">🔎</span>
+<div>
+<h4 style="color: var(--accent-purple); margin: 0;">Casos prácticos</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">4 casos con guía de análisis y rúbrica</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-purple); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 9/Actividades.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-orange fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">👥</span>
+<div>
+<h4 style="color: var(--accent-orange); margin: 0;">Actividades en clase</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Debate, simulación de licitación y título real</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-orange); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 9/Taller y Evaluación.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-red fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">🎯</span>
+<div>
+<h4 style="color: var(--accent-red); margin: 0;">Taller y Evaluación</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Solicitud de concesión de servicio municipal</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-red); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 9/Autoevaluación.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-pink fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">✅</span>
+<div>
+<h4 style="color: var(--accent-pink); margin: 0;">Autoevaluación</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">14 reactivos con clave de respuestas</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-pink); font-size: 1.2em;"></i>
+</div>
+</a>
+</div>
+<div style="margin-top: 16px; text-align: center;">
+<p style="font-size: 0.7em; color: rgba(255,255,255,0.35);"><i class="fa-solid fa-circle-info"></i> Toca cualquier tarjeta para descargar el PDF</p>
+</div>
+</section>
+<section class="title-slide" id="cierre">
+<span style="font-size: 4em;">🎓</span>
+<h1 style="font-size: 2em; margin-top: 20px;">¡Listo para la Unidad 9!</h1>
+<p style="color: rgba(255,255,255,0.6); font-size: 1.1em; margin-top: 20px;">El servicio público es <span style="color: var(--accent-blue); font-weight: 600;">un régimen, no una actividad</span>: por eso lo que cambia es quién lo presta y bajo qué reglas.<br>Preguntas clave: <strong>¿propio o impropio? · ¿concesión o permiso? · ¿revocación o caducidad? · ¿concesión o APP?</strong></p>
+<div style="margin-top: 40px;">
+<p style="font-size: 0.8em; color: rgba(255,255,255,0.4);">
+<i class="fa-solid fa-book"></i> Lectura: Fernández Ruiz INEHRM, Caps. XIII-XIV (pp. 145-185) · Hamdan, Tema XIII (pp. 175-185)<br>
+<i class="fa-solid fa-scale-balanced"></i> Roldán Xopa, Cap. X · Martínez Morales (Diccionario y 2o Curso, Tema XIII)<br>
+<i class="fa-solid fa-gavel"></i> CPEUM arts. 28, 115 y 27 · LAPP (DOF 16-01-2012) y su Reglamento — lectura obligatoria</p>
+</div>
+<p style="margin-top: 40px; font-size: 0.7em; color: rgba(255,255,255,0.3);">Presiona <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">Esc</kbd> para ver la vista general · <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">F</kbd> para pantalla completa</p>
+<a href="../index.html" style="display: inline-block; margin-top: 20px; font-size: 0.75em; color: rgba(255,255,255,0.4); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice de unidades</a>
+</section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: false,
+            width: 1100,
+            height: 700,
+            margin: 0.04,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: true,
+            controls: true,
+            controlsLayout: 'edges',
+            controlsTutorial: false,
+            disableLayout: true,
+            plugins: [RevealNotes, RevealMarkdown, RevealHighlight]
+        });
+
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('a, button, .quiz-option, [onclick], input, select, textarea')) {
+                return;
+            }
+            var slide = Reveal.getCurrentSlide();
+            if (e.target === slide || slide.contains(e.target)) {
+                Reveal.navigateNext();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode === 174 || e.keyCode === 175) {
+                e.preventDefault();
+                var slide = Reveal.getCurrentSlide();
+                var scrollAmount = 100;
+                if (e.keyCode === 175) {
+                    slide.scrollTop -= scrollAmount;
+                } else {
+                    slide.scrollTop += scrollAmount;
+                }
+            }
+        });
+
+        var fullscreenBtn = document.getElementById('fullscreen-btn');
+        var fullscreenIcon = fullscreenBtn.querySelector('i');
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                var el = document.documentElement;
+                if (el.requestFullscreen) { el.requestFullscreen(); }
+                else if (el.webkitRequestFullscreen) { el.webkitRequestFullscreen(); }
+            } else {
+                if (document.exitFullscreen) { document.exitFullscreen(); }
+                else if (document.webkitExitFullscreen) { document.exitFullscreen(); }
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleFullscreen();
+        });
+
+        function updateFullscreenIcon() {
+            var isFull = document.fullscreenElement || document.webkitFullscreenElement;
+            if (isFull) {
+                fullscreenIcon.className = 'fa-solid fa-compress';
+                fullscreenBtn.title = 'Salir de pantalla completa';
+            } else {
+                fullscreenIcon.className = 'fa-solid fa-expand';
+                fullscreenBtn.title = 'Pantalla completa';
+            }
+        }
+
+        document.addEventListener('fullscreenchange', updateFullscreenIcon);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
+
+        document.getElementById('index-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            var slideIndice = document.getElementById('indice');
+            if (slideIndice) {
+                var idx = Reveal.getIndices(slideIndice);
+                Reveal.slide(idx.h, idx.v, idx.f);
+            }
+        });
+
+        var fragmentCounter = document.getElementById('fragment-counter');
+        var fcCurrent = fragmentCounter.querySelector('.fc-current');
+        var fcTotal = fragmentCounter.querySelector('.fc-total');
+
+        function updateFragmentCounter() {
+            var slide = Reveal.getCurrentSlide();
+            var total = slide.querySelectorAll('.fragment').length;
+            var shown = slide.querySelectorAll('.fragment.visible').length;
+            if (total > 0) {
+                fcCurrent.textContent = shown;
+                fcTotal.textContent = total;
+                fragmentCounter.classList.add('has-fragments');
+            } else {
+                fcCurrent.textContent = 0;
+                fcTotal.textContent = 0;
+                fragmentCounter.classList.remove('has-fragments');
+            }
+        }
+
+        Reveal.on('ready', updateFragmentCounter);
+        Reveal.on('slidechanged', updateFragmentCounter);
+        Reveal.on('fragmentshown', updateFragmentCounter);
+        Reveal.on('fragmenthidden', updateFragmentCounter);
+
+        var slideNav = document.getElementById('slide-nav');
+        var slideNavCurrent = document.getElementById('slide-nav-current');
+        var slideNavTotal = document.getElementById('slide-nav-total');
+        var slideNavInput = document.getElementById('slide-nav-input');
+
+        function updateSlideNav() {
+            var indices = Reveal.getIndices();
+            var h = (indices && typeof indices.h === 'number' && !isNaN(indices.h)) ? indices.h : 0;
+            var total = Reveal.getTotalSlides();
+            slideNavCurrent.textContent = h + 1;
+            slideNavTotal.textContent = total;
+        }
+
+        function openSlideNavInput() {
+            var indices = Reveal.getIndices();
+            slideNavInput.value = indices.h + 1;
+            slideNav.classList.add('editing');
+            slideNavInput.focus();
+            slideNavInput.select();
+        }
+
+        function closeSlideNavInput() {
+            slideNav.classList.remove('editing');
+            updateSlideNav();
+        }
+
+        function navigateToSlide() {
+            var num = parseInt(slideNavInput.value, 10);
+            var total = Reveal.getTotalSlides();
+            if (!isNaN(num) && num >= 1 && num <= total) {
+                Reveal.slide(num - 1);
+            }
+            closeSlideNavInput();
+        }
+
+        slideNav.addEventListener('click', function(e) {
+            if (e.target === slideNavInput) return;
+            e.stopPropagation();
+            openSlideNavInput();
+        });
+
+        slideNavInput.addEventListener('keydown', function(e) {
+            e.stopPropagation();
+            if (e.key === 'Enter') { navigateToSlide(); }
+            else if (e.key === 'Escape') { closeSlideNavInput(); }
+        });
+
+        slideNavInput.addEventListener('blur', function() {
+            closeSlideNavInput();
+        });
+
+        Reveal.on('ready', updateSlideNav);
+        Reveal.on('slidechanged', updateSlideNav);
+        updateSlideNav();
+    </script>
+</body>
+</html>

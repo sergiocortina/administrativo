@@ -681,7 +681,7 @@ Arts. 3, 5, 6, 7, 8, 9, 11 y 17 de la LFPA; art. 16 CPEUM; LFPCA sin numerales. 
 
 ### Pendientes
 
-- [ ] Presentaciones **U9-U15** (pipeline documentado: base U6 → head/middle/tail → CDP → index.html)
+- [ ] Presentaciones **U10-U15** (pipeline documentado: base U6 → head/middle/tail → CDP → index.html)
 - [ ] Replicar la corrección del `NaN` del `slide-nav` en U1-U6
 - [ ] Typo en el libro: el encabezado de la U7 dice **"INEFICIACIAS"** (usar "Ineficacias"; el título de la presentación ya usa la forma correcta)
 - [ ] `diapositivas/README-DIAPOSITIVAS.md` → sección "Contenido actual" desactualizada desde la U5
@@ -707,4 +707,19 @@ Arts. 3, 5, 6, 7, 8, 9, 11 y 17 de la LFPA; art. 16 CPEUM; LFPCA sin numerales. 
 - **Material U8** (páginas del libro detectadas por patrón): `Unidad 8.pdf` 145-151 (7 pág.) · `Cuestionario.pdf` 152 · `Casos.pdf` 153-154 · `Actividades.pdf` 155 (respaldo `1. Debate:`) · `Taller y Evaluación.pdf` 156 · `Autoevaluación.pdf` 157-159 (3 pág.). Verificados con PyMuPDF (páginas + texto de cabecera).
 - `generar_material_alumnos.py`: docstring 1-8, `range(1,8)` → `range(1,9)` (plan y generación), 5 entradas de `NOMBRES` para U8. Los PDFs U1-U7 se regeneraron por el script y se restauraron con `git checkout --` (sin cambios).
 - `index.html`: barra 46.67 % → **53.33 %**, "8 de 15 unidades disponibles", tarjeta Unidad 08 → `available` con enlace a la presentación.
+> *Registrado por OpenCode (mimo-v2.6-flash-free) - 2 de octubre de 2026*
+
+### Unidad 9 — El Servicio Público y la Concesión (solo clase + material)
+
+**Archivos:** `diapositivas/unidad-09-el-servicio-publico-y-la-concesion.html` (nuevo) · `Material para Alumnos/Unidad 9/*.pdf` (6 nuevos) · `src/generar_material_alumnos.py` (extendido a U9) · `index.html` (9/15).
+
+- **35 diapositivas**: portada → ¿Dónde estamos? → mapa conceptual → índice (11 tarjetas) → **9.1** Concepto y evolución (Burdeos, crisis, Fernández Ruiz + reserva de ley art. 28) → **9.2** Elementos esenciales → **9.3** Clasificación → **9.4** Formas de prestación → **9.5** La concesión (concepto, naturaleza, elementos, procedimiento, derechos/obligaciones, extinción) → **9.6** Permiso, autorización y licencia → **9.7** APP (concepto, LAPP, 5 elementos, tabla vs. concesión, procedimiento/ventajas/riesgos) → **9.8** Doctrina comparada (Duguit, Jèze, Hauriou, Fernández Ruiz) → **9.9** Legislación (arts. 28, 115 III y 27 CPEUM; LFPA art. 3, LGyN, LAPP y Reglamento) → **9.10** Esquema → **Material** → **Cierre**.
+- **Sin láminas ajenas a la clase** (mismo alcance que U7/U8): Objetivos, Competencias, Quiz, Casos, Actividades y Taller solo existen como PDFs en `#material`.
+- Ensamblada con el pipeline head/middle/tail desde U7 (fix del `NaN` incluido), `<title>` "Unidad 9 — El Servicio Público y la Concesión", UTF-8 sin BOM.
+- **CDP**: 35 secciones, `slide-nav` "1 / 35" **sin NaN**, 59 `fragment`, 16 enlaces `#/...` con destino, 6 enlaces de material, botón índice → `#/indice` y tarjeta del índice → `seccion-9-1` (5/35), **0 excepciones JS**.
+- Layout: solo el índice (último elemento 162 px bajo el borde) y el cierre (85 px) usan el scroll vertical propio del tema; el resto de las diapositivas caben completas.
+- **Material U9** (libro pp. 160-174): `Unidad 9.pdf` 160-167 (8 pág.) · `Cuestionario.pdf` 168 · `Casos.pdf` 169-170 · `Actividades.pdf` 171 (respaldo `1. Debate:`) · `Taller y Evaluación.pdf` 172 · `Autoevaluación.pdf` 173-174 (2 pág.). Verificados con PyMuPDF (páginas + texto de cabecera).
+- `generar_material_alumnos.py`: docstring 1-9, `range(1,9)` → `range(1,10)` (plan y generación), 5 entradas de `NOMBRES` para U9. Los PDFs U1-U8 se regeneraron y se restauraron con `git checkout --` (sin cambios).
+- `index.html`: barra 53.33 % → **60 %**, "9 de 15 unidades disponibles", tarjeta Unidad 09 → `available` con enlace a la presentación.
+- Commits: `15570db` (U8) y el de esta entrada (U9), ambos con push a `origin/master`.
 > *Registrado por OpenCode (mimo-v2.6-flash-free) - 2 de octubre de 2026*

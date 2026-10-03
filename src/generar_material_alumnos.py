@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Regenera los PDFs de "Material para Alumnos" (unidades 1-8) extrayendo páginas
+Regenera los PDFs de "Material para Alumnos" (unidades 1-9) extrayendo páginas
 del libro.pdf recién compilado (fuente de verdad: unidades/*.md corregidas).
 
 Los nombres de salida respetan los que ya enlazan las presentaciones HTML.
@@ -67,6 +67,11 @@ NOMBRES = {
     (8, "Actividades en clase"): "Actividades.pdf",
     (8, "Taller práctico"): "Taller y Evaluación.pdf",
     (8, "Autoevaluación"): "Autoevaluación.pdf",
+    (9, "Cuestionario de estudio"): "Cuestionario.pdf",
+    (9, "Casos prácticos"): "Casos.pdf",
+    (9, "Actividades en clase"): "Actividades.pdf",
+    (9, "Taller práctico"): "Taller y Evaluación.pdf",
+    (9, "Autoevaluación"): "Autoevaluación.pdf",
 }
 
 PAT_UNIDAD = re.compile(r"^\s*UNIDAD\s+(\d+)\.", re.M)
@@ -96,7 +101,7 @@ def main():
             inicio_unidad.setdefault(int(m.group(1)), i)
 
     plan = {}
-    for u in range(1, 9):
+    for u in range(1, 10):
         if u not in inicio_unidad:
             print(f"AVISO: no se encontró UNIDAD {u} en el PDF.")
             continue
@@ -117,7 +122,7 @@ def main():
         print(f"U{u}: páginas {ini+1}-{fin} | {secs}")
 
     # --- Generar PDFs ---
-    for u in range(1, 9):
+    for u in range(1, 10):
         if u not in plan:
             continue
         p = plan[u]
