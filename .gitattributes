@@ -1,0 +1,2 @@
+# PDFs: tratarlos como binarios (con autocrlf=true Git los reescribiría con CRLF y se corromperían)
+*.pdf binary

@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 7 — Ineficacias del Acto Administrativo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --r-background-color: #0a0a1a;
+            --r-main-font: 'Inter', sans-serif;
+            --r-heading-font: 'Playfair Display', serif;
+            --r-main-font-size: 24px;
+            --accent-blue: #4f8cff;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --glass: rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.1);
+        }
+        .reveal { font-family: var(--r-main-font); }
+        .reveal .slides { text-align: left; }
+        .reveal .slides section { padding: 20px 40px; overflow: hidden; box-sizing: border-box; }
+        .reveal .slides section * { max-width: 100%; box-sizing: border-box; }
+        .reveal .slides p, .reveal .slides li, .reveal .slides h1, .reveal .slides h2, .reveal .slides h3, .reveal .slides h4 { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; margin-right: 0; padding-right: 0; }
+        .reveal .slides section.title-slide { text-align: center; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%); }
+        .reveal .slides section.title-slide h1 { font-family: 'Playfair Display', serif; font-size: 2.4em; font-weight: 900; background: linear-gradient(135deg, #4f8cff, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; margin-bottom: 16px; }
+        .reveal .slides section.title-slide .subtitle { font-size: 1em; color: rgba(255,255,255,0.6); font-weight: 300; letter-spacing: 2px; }
+        .reveal .slides section.title-slide .unit-badge { display: inline-block; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: white; padding: 8px 24px; border-radius: 30px; font-size: 0.7em; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-top: 30px; }
+        .reveal .slides section.section-header { text-align: center; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%); }
+        .reveal .slides section.section-header h2 { font-family: 'Playfair Display', serif; font-size: 2em; font-weight: 800; background: linear-gradient(135deg, #4f8cff, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+        .reveal .slides section.section-header .section-icon { font-size: 2.5em; margin-bottom: 14px; display: block; }
+        .card { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 14px; padding: 14px 16px; margin: 8px 0; backdrop-filter: blur(10px); overflow: hidden; box-sizing: border-box; }
+        .card p, .card li, .card h4 { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; font-size: 0.85em; }
+        .card-accent-blue { border-left: 4px solid var(--accent-blue); }
+        .card-accent-purple { border-left: 4px solid var(--accent-purple); }
+        .card-accent-pink { border-left: 4px solid var(--accent-pink); }
+        .card-accent-green { border-left: 4px solid var(--accent-green); }
+        .card-accent-orange { border-left: 4px solid var(--accent-orange); }
+        .card-accent-red { border-left: 4px solid var(--accent-red); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 14px; }
+        .grid-2 > .card, .grid-3 > .card { margin: 0; min-width: 0; }
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 { color: white; font-weight: 700; }
+        .reveal h2 { font-size: 1.4em; margin-bottom: 14px; }
+        .reveal h3 { font-size: 1.05em; color: var(--accent-blue); margin-bottom: 8px; }
+        .reveal h4 { font-size: 0.9em; color: var(--accent-purple); }
+        .reveal p, .reveal li { color: rgba(255,255,255,0.85); line-height: 1.6; }
+        .reveal ul { list-style: none; padding-left: 0; }
+        .reveal ul li { padding: 3px 0; padding-left: 24px; position: relative; }
+        .reveal ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent-blue); font-weight: 700; }
+        .highlight { color: var(--accent-blue); font-weight: 600; }
+        .highlight-purple { color: var(--accent-purple); font-weight: 600; }
+        .highlight-pink { color: var(--accent-pink); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+        .icon-lg { font-size: 1.6em; display: inline-block; margin-right: 6px; vertical-align: middle; }
+        .definition-box { background: linear-gradient(135deg, rgba(79,140,255,0.15), rgba(168,85,247,0.15)); border: 1px solid rgba(79,140,255,0.3); border-radius: 14px; padding: 16px 20px; margin: 14px 0; position: relative; }
+        .definition-box::before { content: '📖'; font-size: 1.5em; position: absolute; top: -12px; left: 20px; }
+        .definition-box .def-title { font-size: 0.65em; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-blue); font-weight: 700; margin-bottom: 6px; }
+        .definition-box .def-text { font-size: 0.85em; color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .comparison-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.65em; margin-top: 12px; }
+        .comparison-table th { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: white; padding: 8px 12px; text-align: left; font-weight: 600; }
+        .comparison-table td { padding: 7px 12px; border-bottom: 1px solid var(--glass-border); color: rgba(255,255,255,0.85); }
+        .comparison-table tr:nth-child(even) td { background: var(--glass); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table.dense th, .comparison-table.dense td { padding: 5px 10px; }
+        /* Mapa conceptual — diagrama HTML clicable */
+        .md-root { width: fit-content; margin: 0 auto; text-align: center; background: linear-gradient(135deg, rgba(79,140,255,0.22), rgba(168,85,247,0.22)); border: 1px solid rgba(79,140,255,0.45); border-radius: 14px; padding: 9px 30px; box-shadow: 0 0 30px rgba(79,140,255,0.25); }
+        .reveal .md-root h3 { margin: 0; font-size: 0.9em; letter-spacing: 1.5px; text-transform: uppercase; color: white; }
+        .reveal .md-root p { margin: 4px 0 0; font-size: 0.65em; color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.4; }
+        .md-trunk { width: 2px; height: 16px; background: rgba(255,255,255,0.28); margin: 0 auto; }
+        .md-spine { height: 2px; background: rgba(255,255,255,0.28); width: 97%; margin: 0 auto; border-radius: 2px; }
+        .md-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(228px, 1fr)); gap: 12px; }
+        a.md-branch { position: relative; margin-top: 15px; display: block; text-decoration: none; transition: transform 0.25s ease; }
+        a.md-branch::before { content: ''; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); width: 2px; height: 15px; background: rgba(255,255,255,0.28); }
+        a.md-branch:hover { transform: translateY(-3px); }
+        a.md-branch:hover .md-card { border-color: var(--c); box-shadow: 0 8px 24px rgba(0,0,0,0.45); }
+        .md-card { height: 100%; background: var(--glass); border: 1px solid var(--glass-border); border-top: 3px solid var(--c); border-radius: 12px; padding: 9px 12px 8px; }
+        .reveal .md-card h4 { margin: 0 0 7px; font-size: 0.66em; letter-spacing: 0.4px; color: var(--c); text-transform: uppercase; font-weight: 700; }
+        .reveal .md-card ul { list-style: none; margin: 0; padding: 0; }
+        .reveal .md-card li { position: relative; padding: 1.5px 0 1.5px 13px; font-size: 0.55em; line-height: 1.4; color: rgba(255,255,255,0.85); }
+        .reveal .md-card li::before { content: '▸'; position: absolute; left: 0; color: var(--c); font-weight: 700; }
+        .md-chip { display: inline-block; font-size: 0.82em; font-weight: 700; padding: 0 7px; border-radius: 9px; margin-left: 4px; color: var(--c); border: 1px solid var(--c); background: var(--cbg); white-space: nowrap; }
+        .md-chip.strong { background: var(--c); color: #0a0a1a; border-color: var(--c); }
+        .reveal .md-hint { text-align: center; font-size: 0.55em; color: rgba(255,255,255,0.4); margin: 10px 0 0; }
+        .fun-fact { background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(239,68,68,0.1)); border: 1px solid rgba(245,158,11,0.3); border-radius: 10px; padding: 12px 16px; margin: 10px 0; font-size: 0.85em; }
+        .fun-fact .ff-label { color: var(--accent-orange); font-weight: 700; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; }
+        .quiz-card { background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(79,140,255,0.15)); border: 1px solid rgba(16,185,129,0.3); border-radius: 14px; padding: 16px 20px; margin: 10px 0; }
+        .quiz-card .quiz-q { color: var(--accent-green); font-weight: 700; font-size: 0.95em; margin-bottom: 8px; }
+        .quiz-option { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 8px; padding: 7px 14px; margin: 4px 0; color: rgba(255,255,255,0.8); font-size: 0.8em; cursor: pointer; transition: all 0.3s ease; }
+        .quiz-option:hover { border-color: var(--accent-green); background: rgba(16,185,129,0.1); }
+        .quiz-option.correct { border-color: var(--accent-green); background: rgba(16,185,129,0.2); color: var(--accent-green); }
+        .quiz-option.wrong { border-color: var(--accent-red); background: rgba(239,68,68,0.1); opacity: 0.6; }
+        .quiz-explanation { font-size: 0.75em; color: rgba(255,255,255,0.7); margin-top: 8px; padding: 8px 12px; background: rgba(16,185,129,0.08); border-left: 3px solid var(--accent-green); border-radius: 6px; }
+        .real-life { background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(168,85,247,0.15)); border: 1px solid rgba(236,72,153,0.3); border-radius: 12px; padding: 14px 18px; margin: 10px 0; }
+        .real-life .rl-label { color: var(--accent-pink); font-weight: 700; font-size: 0.65em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+        .legal-box { background: linear-gradient(135deg, rgba(16,185,129,0.13), rgba(16,185,129,0.05)); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px; padding: 14px 18px; margin: 10px 0; }
+        .legal-box .lb-label { color: var(--accent-green); font-weight: 700; font-size: 0.65em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .legal-box .lb-text { font-size: 0.82em; color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .reveal .slides section .fragment.visible { opacity: 1; }
+        .reveal .slide-number { display: none !important; }
+        .slide-nav { position: fixed; bottom: 16px; left: 16px; z-index: 9999; height: 38px; padding: 0 16px; display: flex; align-items: center; justify-content: center; border-radius: 20px; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.7); backdrop-filter: blur(10px); color: rgba(255,255,255,0.7); font-family: 'Consolas', monospace; font-size: 0.9em; font-weight: 600; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(0,0,0,0.3); user-select: none; -webkit-user-select: none; }
+        .slide-nav:hover { border-color: var(--accent-blue); color: white; }
+        .slide-nav .slide-nav-display { display: flex; align-items: center; gap: 4px; }
+        .slide-nav .slide-nav-current { color: var(--accent-blue); }
+        .slide-nav .slide-nav-sep { color: rgba(255,255,255,0.3); margin: 0 2px; }
+        .slide-nav .slide-nav-input { display: none; width: 50px; background: transparent; border: none; border-bottom: 2px solid var(--accent-blue); color: var(--accent-blue); font-family: 'Consolas', monospace; font-size: 1em; font-weight: 700; text-align: center; outline: none; padding: 2px 0; -moz-appearance: textfield; }
+        .slide-nav .slide-nav-input::-webkit-outer-spin-button, .slide-nav .slide-nav-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        .slide-nav.editing .slide-nav-display { display: none; }
+        .slide-nav.editing .slide-nav-input { display: inline-block; }
+        .reveal .slides section { overflow-y: auto; max-height: 100%; padding-bottom: 40px; }
+        .reveal .slides section::-webkit-scrollbar { width: 6px; }
+        .reveal .slides section::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 3px; }
+        .reveal .slides section::-webkit-scrollbar-thumb { background: rgba(79,140,255,0.4); border-radius: 3px; }
+        .reveal .slides section::-webkit-scrollbar-thumb:hover { background: rgba(79,140,255,0.6); }
+        @media (max-width: 768px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } .reveal .slides section { padding: 20px 30px; } }
+        .glow-text { text-shadow: 0 0 20px rgba(79,140,255,0.5), 0 0 40px rgba(168,85,247,0.3); }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .fullscreen-btn, .index-btn { position: fixed; top: 16px; z-index: 9999; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.65); backdrop-filter: blur(10px); color: rgba(255,255,255,0.85); font-size: 1.1em; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; -webkit-tap-highlight-color: transparent; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+        .fullscreen-btn { right: 16px; }
+        .index-btn { right: 76px; }
+        .fullscreen-btn:hover, .fullscreen-btn:active, .index-btn:hover, .index-btn:active { border-color: var(--accent-blue); background: rgba(79,140,255,0.25); color: white; transform: scale(1.05); }
+        .fragment-counter { position: fixed; top: 22px; right: 142px; z-index: 9999; height: 38px; padding: 0 14px; display: none; align-items: center; justify-content: center; border-radius: 20px; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.65); backdrop-filter: blur(10px); color: rgba(255,255,255,0.9); font-family: 'Consolas', monospace; font-size: 0.85em; font-weight: 700; letter-spacing: 1px; box-shadow: 0 4px 16px rgba(0,0,0,0.3); white-space: nowrap; }
+        .fragment-counter.has-fragments { display: flex; }
+        .fragment-counter .fc-current { color: var(--accent-blue); }
+    </style>
+</head>
+<body>
+    <div class="fragment-counter" id="fragment-counter" title="Elementos de la diapositiva (mostrados/total)">
+        <span class="fc-current">0</span>/<span class="fc-total">0</span>
+    </div>
+    <button class="index-btn" id="index-btn" title="Ir al índice de la unidad" aria-label="Ir al índice de la unidad">
+        <i class="fa-solid fa-list-ul"></i>
+    </button>
+    <button class="fullscreen-btn" id="fullscreen-btn" title="Pantalla completa" aria-label="Pantalla completa">
+        <i class="fa-solid fa-expand"></i>
+    </button>
+    <div class="slide-nav" id="slide-nav" title="Clic para ir a una diapositiva">
+        <div class="slide-nav-display">
+            <span class="slide-nav-current" id="slide-nav-current">1</span>
+            <span class="slide-nav-sep">/</span>
+            <span id="slide-nav-total">1</span>
+        </div>
+        <input type="number" class="slide-nav-input" id="slide-nav-input" min="1" placeholder="">
+    </div>
+    <div class="reveal">
+        <div class="slides">
+
+<!-- ==================== PORTADA ==================== -->
+<section class="title-slide">
+<span class="unit-badge">Unidad 7</span>
+<h1 style="margin-top: 30px;">Ineficacias del<br>Acto Administrativo</h1>
+<p class="subtitle">Licenciatura en Derecho — Universidad Cristóbal Colón</p>
+<p style="color: rgba(255,255,255,0.4); font-size: 0.7em; margin-top: 40px;">
+    <i class="fa-solid fa-graduation-cap"></i> Mtro. Sergio Armando Cortina Ceballos<br>
+    <i class="fa-solid fa-building-columns"></i> Universidad Cristóbal Colón · 2026
+</p>
+<a href="../index.html" style="display: inline-block; margin-top: 24px; font-size: 0.7em; color: rgba(255,255,255,0.3); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice</a>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗺️</span> ¿Dónde estamos en el curso?</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Unidad 1: qué es el DA · Unidad 2: de dónde sale · Unidad 3: cómo se organiza · Unidad 4: quién lo hace · Unidad 5: el acto · Unidad 6: el procedimiento que lo produce · <strong>Unidad 7: qué pasa cuando el acto está viciado o pierde vigencia</strong>.</p>
+<div style="font-family: Consolas, monospace; font-size: 0.62em; line-height: 1.5; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+<div>
+<div style="color: var(--accent-blue); font-weight: 700; margin-bottom: 6px;">📘 FUNDAMENTOS</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">1. Introducción al DA<br>2. Fuentes del DA</div>
+<div style="color: var(--accent-green); font-weight: 700; margin-top: 12px; margin-bottom: 6px;">🏛️ ORGANIZACIÓN</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">3. La Organización Administrativa<br>4. El Servidor Público</div>
+</div>
+<div>
+<div style="color: var(--accent-purple); font-weight: 700; margin-bottom: 6px;">📜 ACTO Y PROCEDIMIENTO</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">5. Teoría del Acto Administrativo<br>6. El Procedimiento Administrativo<br><strong style="color: var(--accent-purple);">7. Ineficacias del Acto ◀ ESTAMOS AQUÍ</strong></div>
+</div>
+<div>
+<div style="color: var(--accent-pink); font-weight: 700; margin-bottom: 6px;">⚙️ GESTIÓN Y CONTROL</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">8. Contrato administrativo<br>9. Servicio público y concesión<br>10. Control de la AP</div>
+<div style="color: var(--accent-orange); font-weight: 700; margin-top: 12px; margin-bottom: 6px;">🔍 DEFENSA</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">13. Recursos administrativos<br>14. Amparo y controversias</div>
+</div>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Mapa Conceptual</h2>
+<div class="md-root">
+<h3>⚖️ Ineficacias del Acto Administrativo</h3>
+<p>Vicios, nulidad y anulabilidad · saneamiento · extinción del acto</p>
+</div>
+<div class="md-trunk"></div>
+<div class="md-spine"></div>
+<div class="md-grid">
+<a class="md-branch" href="#/seccion-7-1" style="--c: var(--accent-blue); --cbg: rgba(79,140,255,0.12);">
+<div class="md-card">
+<h4>📖 1. Teoría general</h4>
+<ul>
+<li>Civilismo: inexistencia, nulidad absoluta/relativa</li>
+<li>LFPA 1994: sistema propio de DP</li>
+<li>Irregularidad ≠ ineficacia</li>
+<li>Plazo de 45 días para impugnar</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-7-3" style="--c: var(--accent-purple); --cbg: rgba(168,85,247,0.12);">
+<div class="md-card">
+<h4>🧩 2. Vicios por elemento</h4>
+<ul>
+<li>Sujeto: incompetencia</li>
+<li>Objeto · Motivo · Forma</li>
+<li>Finalidad: desvío de poder</li>
+<li>Procedimiento: etapas omitidas</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-7-4" style="--c: var(--accent-pink); --cbg: rgba(236,72,153,0.12);">
+<div class="md-card">
+<h4>⚖️ 3. Nulidades (LFPA)</h4>
+<ul>
+<li>Nulidad: fracc. I-X <span class="md-chip strong">art. 6</span></li>
+<li>Anulabilidad: fracc. XII-XVI <span class="md-chip strong">art. 7</span></li>
+<li>Acto inexistente: fuera de la ley</li>
+<li>Subsanabilidad controvertida</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-7-6" style="--c: var(--accent-green); --cbg: rgba(16,185,129,0.12);">
+<div class="md-card">
+<h4>🩹 4. Saneamiento</h4>
+<ul>
+<li>Vicios no invalidantes</li>
+<li>Convalidación</li>
+<li>Conversión</li>
+<li>Confirmación</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-7-7" style="--c: var(--accent-orange); --cbg: rgba(245,158,11,0.12);">
+<div class="md-card">
+<h4>🏛️ 5. Sede jurisdiccional</h4>
+<ul>
+<li>TFJA: 4 tipos de sentencia <span class="md-chip">LFPCA</span></li>
+<li>Amparo: efectos relativos</li>
+<li>Juicio de lesividad</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-7-8" style="--c: var(--accent-red); --cbg: rgba(239,68,68,0.12);">
+<div class="md-card">
+<h4>🏁 6. Extinción <span class="md-chip">art. 11</span></h4>
+<ul>
+<li>Normal: cumplimiento, plazo, condición</li>
+<li>Anormal: renuncia, revocación</li>
+<li>Caducidad de concesiones</li>
+<li>Nulidad vs. revocación</li>
+</ul>
+</div>
+</a>
+</div>
+<p class="md-hint">🖱️ Haz clic en una rama para ir directo a la sección</p>
+</section>
+<section data-background-color="#0a0a1a" id="indice">
+<h2><span class="icon-lg">📑</span> Índice de la Unidad 7</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Toca o haz clic en un tema para ir directo a él</p>
+<div class="grid-2" style="margin-top: 10px;">
+<a class="card card-accent-blue" href="#/seccion-7-1" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;">7.1 Teoría general de las ineficacias</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Del derecho civil a la LFPA de 1994</p></a>
+<a class="card card-accent-purple" href="#/seccion-7-2" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-purple); margin: 0;">7.2 Irregularidades e ineficacias</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Precisiones conceptuales (Martínez Morales)</p></a>
+<a class="card card-accent-pink" href="#/seccion-7-3" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-pink); margin: 0;">7.3 Vicios por elemento</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Sujeto, objeto, motivo, finalidad, forma y procedimiento</p></a>
+<a class="card card-accent-green" href="#/seccion-7-4" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-green); margin: 0;">7.4 Nulidad y anulabilidad</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Arts. 6 y 7 LFPA · efectos · acto inexistente</p></a>
+<a class="card card-accent-orange" href="#/seccion-7-5" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-orange); margin: 0;">7.5 Vicios no invalidantes</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Conservación del acto administrativo</p></a>
+<a class="card card-accent-red" href="#/seccion-7-6" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-red); margin: 0;">7.6 Convalidación, conversión y confirmación</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Figuras de saneamiento del acto viciado</p></a>
+<a class="card card-accent-blue" href="#/seccion-7-7" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;">7.7 Invalidez en sede jurisdiccional</h4><p style="font-size: 0.75em; margin: 4px 0 0;">TFJA (4 sentencias) y amparo (efectos relativos)</p></a>
+<a class="card card-accent-purple" href="#/seccion-7-8" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-purple); margin: 0;">7.8 Extinción del acto administrativo</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Art. 11 LFPA: normal y anormal · nulidad vs. revocación</p></a>
+<a class="card card-accent-pink" href="#/seccion-7-9" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-pink); margin: 0;">7.9 Juicio de lesividad</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Cuando la administración impugna su propio acto</p></a>
+<a class="card card-accent-green" href="#/seccion-7-10" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-green); margin: 0;">7.10 Doctrina comparada</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Roldán Xopa, Fernández Ruiz y Hamdan Amad</p></a>
+<a class="card card-accent-orange" href="#/seccion-7-11" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-orange); margin: 0;">7.11 Legislación aplicable</h4><p style="font-size: 0.75em; margin: 4px 0 0;">LFPA (arts. 3-11), CPEUM y LFPCA</p></a>
+<a class="card card-accent-red" href="#/seccion-7-12" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-red); margin: 0;">7.12 Esquema de síntesis</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Resumen visual de la unidad</p></a>
+
+
+
+
+<a class="card card-accent-red" href="#/material" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-red); margin: 0;">📥 Material para alumnos</h4><p style="font-size: 0.75em; margin: 4px 0 0;">PDFs descargables</p></a>
+</div>
+</section>
+<section class="section-header" id="seccion-7-1">
+<span class="section-icon">📖</span>
+<h2>7.1 Teoría general de las ineficacias</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🤯</span> Uno de los capítulos más difíciles</h2>
+<div class="definition-box fragment">
+<div class="def-title">Martínez Morales (Diccionario, voz «Irregularidades e ineficacias del acto administrativo»)</div>
+<p class="def-text">La teoría de las ineficacias del acto administrativo es «<strong>uno de los capítulos más difíciles del derecho público</strong>». La dificultad radica en que, durante décadas, la doctrina mexicana intentó aplicar al acto administrativo la teoría de las nulidades del derecho privado, sin considerar que el acto administrativo es un acto jurídico de <strong>derecho público</strong> cuya naturaleza, efectos y fines son radicalmente distintos.</p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Clave histórica</div>
+<p style="font-size: 0.82em;">Hamdan Amad —quien participó en la elaboración de la LFPA— relata que antes de 1994 «diversos autores necesariamente hacían alusión a la teoría de las ineficacias del acto jurídico en general, intentando aplicar al acto administrativo la teoría de las nulidades del acto jurídico de derecho privado, situación que es incorrecta» (Hamdan, Tema IX, p. 127).</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> La teoría civilista (derecho privado)</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-bottom: 4px;">Tres categorías que el derecho privado aplica al acto jurídico y que se intentaron trasplantar al acto administrativo:</p>
+<div class="grid-3" style="margin-top: 10px;">
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Inexistencia</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Falta de un elemento esencial.<br>No produce efecto alguno.<br><strong>Imprescriptible.</strong></p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Nulidad absoluta</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Acto contrario a la ley, al orden público o a las buenas costumbres. La invoca <strong>cualquier interesado</strong>: imprescriptible y no convalidable.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Nulidad relativa</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Vicio del consentimiento, falta de forma o incapacidad. Solo la invocan <strong>los afectados</strong>: prescriptible y confirmable.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Por qué no encaja</div>
+<p style="font-size: 0.82em;">Martínez Morales: «las llamadas nulidades en el derecho administrativo resultan ser un punto complejo de nuestra disciplina, en el que hay gran confusión doctrinaria y legislativa, ya sea por pretender calcar las instituciones que en derecho civil existen en este renglón» (Diccionario, voz «Nulidad del acto administrativo»).</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🇲🇽</span> México: la LFPA de 1994 simplifica el sistema</h2>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Un sistema propio de derecho público</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">La LFPA abandonó deliberadamente la figura de la <strong>inexistencia</strong> y estableció solo dos categorías: <span class="highlight">nulidad</span> (art. 6) y <span class="highlight">anulabilidad</span> (art. 7). Un sistema más simple, con reglas claras de impugnación.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">El proyecto original preveía la inexistencia</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Se incluía la inexistencia jurídica del acto emitido por un «usurpador» o por un órgano constituido ilegalmente, con carácter <strong>imprescriptible</strong>. Hamdan: «en la discusión y aprobación del proyecto se eliminó la figura de la inexistencia jurídica de los actos administrativos, para establecer un <strong>plazo de 45 días</strong> para impugnar los mismos» (Tema IX, p. 129).</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">La postura de Gabino Fraga</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Algunos autores sostienen que la inexistencia es «<strong>una necesidad lógica</strong>»: opera cuando el acto carece de sus elementos esenciales —falta de voluntad, de objeto o de competencia absoluta— (citado en Fernández Ruiz, INEHRM, Cap. XII, p. 160). Veremos su reflejo en 7.4.3.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🌎</span> Derecho comparado: la escala argentina</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-bottom: 4px;">Argentina clasifica las nulidades según el elemento ausente o irregular (Hamdan, Tema IX):</p>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">i) Grosera</h4><p style="font-size: 0.8em; margin: 4px 0 0;">El acto lo emite un órgano que <strong>carece de competencia constitucional</strong>.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">ii) Grave</h4><p style="font-size: 0.8em; margin: 4px 0 0;">Corresponde a <strong>otra institución</strong> de manera clara → ineficacia absoluta.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">iii) Leve</h4><p style="font-size: 0.8em; margin: 4px 0 0;">Corresponde a la <strong>misma secretaría pero a distinto órgano</strong> → anulabilidad subsanable.</p></div>
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">iv) Levísima</h4><p style="font-size: 0.8em; margin: 4px 0 0;">El vicio es <strong>interno del mismo órgano</strong> → no produce ineficacia.</p></div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Comparación útil</div>
+<p style="font-size: 0.82em;">La escala argentina recoge lo que en México resuelven otras figuras: la <strong>incompetencia absoluta</strong> (ultra vires), la <strong>anulabilidad subsanable</strong> y los <strong>vicios no invalidantes</strong> (7.5). Un mismo problema, dos soluciones distintas.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-7-2">
+<span class="section-icon">🔍</span>
+<h2>7.2 Irregularidades e ineficacias</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📖</span> Definición: irregularidad vs. ineficacia</h2>
+<div class="definition-box fragment">
+<div class="def-title">Martínez Morales (Diccionario, voz «Irregularidades e ineficacias del acto administrativo»)</div>
+<p class="def-text">«Un acto es <strong>irregular</strong> cuando no ha sido elaborado conforme a las reglas correspondientes, o sea, cuando son defectuosos uno o más de sus elementos o requisitos. La <strong>ineficacia</strong> se refiere a la falta de realización de un acto, es decir, no producir los efectos para los cuales se creó.»</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Irregular pero eficaz</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Si los afectados <strong>no lo impugnan</strong>, el acto se consume normalmente y produce sus efectos, aunque tenga un elemento defectuoso.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Regular pero ineficaz</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Un acto perfectamente regular puede ser ineficaz si <strong>carece de un presupuesto de eficacia</strong>, por ejemplo, la notificación.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Alcance</div>
+<p style="font-size: 0.82em;">La ineficacia puede ser <strong>total o parcial</strong> (Martínez Morales, Diccionario). Distintos planos: la irregularidad mide la <em>formación</em> del acto; la ineficacia mide sus <em>resultados</em>.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎓</span> ¿Por qué prefieren hablar de «irregularidades e ineficacias»?</h2>
+<div class="fun-fact fragment">
+<div class="ff-label">📖 Fernández Ruiz (Edo. Méx., Cap. XI, p. 188)</div>
+<p style="font-size: 0.85em;">«La teoría de las nulidades, ampliamente desarrollada en las normas de derecho privado, como es el caso de los códigos civiles, necesita de una <strong>profunda revisión en el ámbito del derecho público</strong>, en virtud de los fines que persigue el Estado y las múltiples situaciones que enfrenta cotidianamente la administración pública en sus relaciones con los administrados. En razón de lo anterior, algunos autores prefieren hablar de las <strong>irregularidades e ineficacias</strong> del acto administrativo, y no propiamente de la nulidad y anulabilidad como categorías globales.»</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Lectura práctica</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">La LFPA conserva las etiquetas «nulidad» y «anulabilidad» (arts. 6 y 7), pero su contenido ya no es el del derecho civil: son <strong>categorías de derecho público</strong>, con plazos, autoridades y efectos propios. El resto de la unidad estudiará esas etiquetas bajo esa clave.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-7-3">
+<span class="section-icon">🧩</span>
+<h2>7.3 Vicios o irregularidades por elemento</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗺️</span> Panorama general</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-bottom: 4px;">La LFPA y la doctrina clasifican los vicios según el elemento del acto que afectan. El análisis de cada vicio determina la consecuencia jurídica:</p>
+<table class="comparison-table dense fragment">
+<tr><th>Elemento</th><th>Vicio típico</th><th>Consecuencia</th></tr>
+<tr><td><strong>Sujeto</strong></td><td>Incompetencia (territorio, materia, tiempo, jerarquía); funcionario de hecho o impedido</td><td>Nulidad (art. 6, fracc. I)</td></tr>
+<tr><td><strong>Objeto</strong></td><td>Ilícito, imposible o indeterminado</td><td>Nulidad (fracc. II)</td></tr>
+<tr><td><strong>Finalidad</strong></td><td>Desvío de poder (fin distinto al legal)</td><td>Nulidad (fracc. III)</td></tr>
+<tr><td><strong>Forma</strong></td><td>Falta de escrito, firma autógrafa u órgano emisor</td><td>Nulidad (fracc. IV y X)</td></tr>
+<tr><td><strong>Motivo</strong></td><td>Inexistencia de hechos/derecho; error de apreciación</td><td>Nulidad (fracc. V: fundamentación y motivación)</td></tr>
+<tr><td><strong>Procedimiento</strong></td><td>Omisión de etapas esenciales</td><td>Nulidad (fracc. VII), salvo que no afecte la defensa</td></tr>
+<tr><td><strong>Requisitos XII-XVI</strong></td><td>Datos de identificación, fecha, oficina, recursos, puntos resueltos</td><td>Anulabilidad (art. 7)</td></tr>
+</table>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">👤</span> Vicios en el sujeto: la competencia</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-bottom: 4px;">Roldán Xopa divide los vicios del sujeto en: competencia, funcionario y voluntad (Cap. 10, p. 363). Primero, la <strong>competencia</strong> —la medida de la potestad atribuida a cada órgano:</p>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Por territorio</h4><p style="font-size: 0.78em; margin: 4px 0 0;">El órgano actúa fuera del ámbito territorial de validez de su competencia.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Por materia</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Actúa en un ámbito material ajeno a sus atribuciones.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Por tiempo</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Actúa habiendo fenecido el plazo de su encargo.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Por jerarquía</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Un órgano inferior ejerce competencias reservadas al superior, o viceversa.</p></div>
+<div class="card card-accent-red fragment" style="grid-column: 1 / -1;"><h4 style="color: var(--accent-red);">Ausencia absoluta de competencia (ultra vires)</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Actúa un órgano o persona que carece <strong>por completo</strong> de competencia, como un <strong>usurpador</strong>. Es el supuesto que el proyecto de la LFPA quiso cubrir con la inexistencia.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧑‍⚖️</span> Vicios en el sujeto: funcionario y voluntad</h2>
+<div class="grid-2" style="margin-top: 4px;">
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Funcionario de hecho y parcial</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;"><strong>Funcionario de hecho:</strong> el servidor no fue designado regularmente, pero el órgano actúa <strong>dentro de su competencia</strong>. La doctrina lo considera un <em>vicio no invalidante</em>: lo relevante es que la función se ejerza dentro de las atribuciones del órgano.<br><strong>Funcionario parcial:</strong> actúa estando <strong>impedido legalmente</strong>.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Vicios de la voluntad — objetivos</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">En <strong>actos colegiados</strong>: falta de sesión, quórum o votación.<br>En <strong>actos complejos</strong>: falta de participación de alguno de los órganos intervinientes.<br>Actos que requieren <strong>autorización, aprobación o ratificación</strong> y se emitieron sin ellas.</p>
+</div>
+</div>
+<div class="card card-accent-red fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-red);">Vicios de la voluntad — subjetivos</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;"><span class="highlight">Error</span>: discordancia entre la voluntad real y la declarada (fracc. VIII). · <span class="highlight">Dolo</span>: artificio, argucia, maquinación o simulación (fracc. IX). · <span class="highlight">Violencia</span>: coacción física o moral sobre el funcionario (fracc. IX). Fuente: Roldán Xopa, Cap. 10, p. 365.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎯</span> Vicios en el objeto</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Artículo 3, fracción II LFPA</div>
+<p class="lb-text">El objeto del acto debe ser <strong>lícito, cierto, determinado o determinable y posible física y jurídicamente</strong>.</p>
+</div>
+<div class="grid-3" style="margin-top: 10px;">
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Ilícito</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Prohibido por la ley o contrario al orden público.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Imposible</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Física o jurídicamente inexigible.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Indeterminado</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Sin precisión suficiente para saber qué se ordena o concede.</p></div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Consecuencia</div>
+<p style="font-size: 0.82em;">Si el objeto es ilícito, imposible o indeterminado, el acto adolece de un vicio que produce su <strong>nulidad</strong> (art. 6 LFPA).</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📌</span> Vicios en el motivo</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-bottom: 4px;">El motivo o causa son las <strong>consideraciones de hecho y de derecho</strong> que justifican el acto. Martínez Morales identifica tres vicios:</p>
+<div class="grid-3" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">a) Inexistencia</h4><p style="font-size: 0.78em; margin: 4px 0 0;">No existen los hechos o el derecho que originan el acto.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">b) Error de apreciación</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Error en la apreciación de los hechos o del derecho aplicable.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">c) Inadecuación</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Falta de adecuación entre los motivos aducidos y el derecho aplicado.</p></div>
+</div>
+<div class="card card-accent-red fragment" style="margin-top: 10px; border-left-color: var(--accent-red);">
+<h4 style="color: var(--accent-red);">⚠️ Importante</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">La <strong>falta total de fundamentación y motivación</strong> constituye un vicio particularmente grave, pues vulnera directamente el <span class="highlight">artículo 16 constitucional</span>. Es el supuesto del Caso 1.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎭</span> Vicios en la finalidad: el desvío de poder</h2>
+<div class="definition-box fragment">
+<div class="def-title">Desvío de poder (détournement de pouvoir)</div>
+<p class="def-text">Vicio que afecta el elemento <strong>teleológico</strong> del acto: se produce cuando la autoridad persigue <strong>un fin distinto al previsto por la ley</strong>.</p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">📖 Roldán Xopa (Cap. 10, p. 366)</div>
+<p style="font-size: 0.85em;">«La finalidad del acto se determina juzgando el cumplimiento de sus fines de interés público. El desvío de poder, como vicio, puede analizarse <strong>no solo en la intención del funcionario</strong>, sino también desde una perspectiva <strong>objetiva</strong>, determinando si el acto, a pesar de las intenciones del funcionario, se aparta del fin normativo.»</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">¿Por qué es difícil de probar?</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Exige acreditar una <strong>intención oculta</strong> o un apartamiento objetivo del fin legal. Por eso la doctrina lo analiza también en clave objetiva: basta con demostrar que el acto se aleja del fin normativo, aunque el funcionario alegue buenas intenciones.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">✍️</span> Vicios en la forma</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Artículo 3, fracción IV LFPA</div>
+<p class="lb-text">El acto debe <strong>constar por escrito y con la firma autógrafa de la autoridad que lo expida</strong>. La forma es el modo de exteriorización de la voluntad administrativa.</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Vicios esenciales o constitutivos</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Se omite la <strong>forma escrita</strong>, la <strong>firma autógrafa</strong> o la <strong>mención del órgano emisor</strong> (fracc. X). Producen nulidad.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Vicios no esenciales o accidentales</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Se omite un requisito formal <strong>secundario</strong>: fecha, lugar, sello. Ver 7.5: pueden ser vicios no invalidantes.</p>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗂️</span> Vicios en el procedimiento</h2>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Qué es</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">El procedimiento administrativo es el conjunto de <strong>formalidades y trámites</strong> que deben observarse antes de emitir el acto. Su omisión total o parcial puede viciar el acto (<span class="highlight">art. 3, fracc. VII</span>: sujeción a las disposiciones del procedimiento previstas en la LFPA).</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Límite jurisprudencial</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">No cualquier irregularidad procedimental invalida el acto: <strong>solo aquellas que afectan las defensas del particular o el debido proceso</strong> (formalidades esenciales —recuérdese la P./J. 47/95 de la Unidad 6).</p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Conexión con la Unidad 6</div>
+<p style="font-size: 0.82em;">El procedimiento es <em>garantía</em>; el vicio procedimental es <em>la violación de esa garantía</em>. Por eso el mismo defecto puede ser inocuo (mero retraso) o grave (indefensión).</p>
+</div>
+</section>
+<section class="section-header" id="seccion-7-4">
+<span class="section-icon">⚖️</span>
+<h2>7.4 El régimen de nulidades en la LFPA</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🚫</span> Nulidad (artículo 6 LFPA)</h2>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Procedencia: fracciones I a X del artículo 3</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Procede cuando se omite o es irregular cualquiera de los <strong>elementos esenciales</strong>: competencia (I) · objeto (II) · finalidad de interés público (III) · forma escrita y firma autógrafa (IV) · fundamentación y motivación (V) · sujeción al procedimiento (VII) · ausencia de error sobre objeto, causa, motivo o fin (VIII) · sin dolo o violencia (IX) · mención del órgano del cual emana (X).</p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">⚠️ Las fracciones VI y XI</div>
+<p style="font-size: 0.82em;">Están <strong>derogadas</strong>: no integran ninguno de los dos regímenes (ni nulidad ni anulabilidad). No las cite en un examen ni en un recurso.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">💥</span> Efectos de la nulidad</h2>
+<div class="grid-3" style="margin-top: 4px;">
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">1. Invalidez</h4><p style="font-size: 0.75em; margin: 4px 0 0;">El acto es inválido.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">2. Sin presunción</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Pierde la presunción de legitimidad.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">3. Subsanable</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Puede ser subsanado (controvertido).</p></div>
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">4. No obliga</h4><p style="font-size: 0.75em; margin: 4px 0 0;">No obliga al particular.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">5. Deber de oposición</h4><p style="font-size: 0.75em; margin: 4px 0 0;">El servidor público debe oponerse a ejecutarlo.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">6. Efectos retroactivos</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Retroacción (<em>ex tunc</em>).</p></div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">📖 Crítica de Hamdan Amad (Tema IX, p. 132)</div>
+<p style="font-size: 0.82em;">Hamdan critica calificar al acto nulo como «subsanable»: «si es emitido por una <strong>autoridad incompetente</strong> o es un defecto no subsanable, el acto será otro». Es la contradicción interna del art. 6: un acto inválido que, a la vez, podría convalidarse.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚠️</span> Anulabilidad (artículo 7 LFPA)</h2>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Procedencia: fracciones XII a XVI del artículo 3</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Procede cuando se omite o es irregular alguno de los <strong>requisitos de validez</strong>: error en datos de identificación del interesado (XII) · lugar y fecha (XIII) · oficina donde se lleva el expediente (XIV) · recursos que proceden (XV) · decisión expresa de todos los puntos controvertidos (XVI).</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Efectos (inversos a la nulidad)</h4><p style="font-size: 0.8em; margin: 4px 0 0;">1) El acto es <strong>válido</strong>. 2) Goza de <strong>presunción de legitimidad y ejecutividad</strong>. 3) Es <strong>subsanable</strong>. 4) El saneamiento opera con <strong>efectos retroactivos</strong>.</p></div>
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Clave para diferenciar</h4><p style="font-size: 0.8em; margin: 4px 0 0;">Las fracciones <strong>I-X tocan el núcleo del acto</strong> (elementos); las <strong>XII-XVI tocan la información y la comunicación</strong> al particular (requisitos). Por eso el segundo grupo es menos grave.</p></div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📊</span> Nulidad vs. anulabilidad</h2>
+<table class="comparison-table dense fragment">
+<tr><th>Aspecto</th><th>Nulidad (art. 6)</th><th>Anulabilidad (art. 7)</th></tr>
+<tr><td><strong>Base</strong></td><td>Fracciones I a X del art. 3 (elementos esenciales)</td><td>Fracciones XII a XVI del art. 3 (requisitos de validez)</td></tr>
+<tr><td><strong>Validez</strong></td><td>Inválido</td><td>Válido</td></tr>
+<tr><td><strong>Presunción de legitimidad</strong></td><td>Se pierde</td><td>Se conserva (con ejecutividad)</td></tr>
+<tr><td><strong>Subsanabilidad</strong></td><td>Sí, pero es controvertida</td><td>Sí, pacífica</td></tr>
+<tr><td><strong>Obligatoriedad</strong></td><td>No obliga al particular; el servidor debe oponerse</td><td>Obliga mientras no sea saneado</td></tr>
+<tr><td><strong>Efectos</strong></td><td>Retroactivos (<em>ex tunc</em>)</td><td>El saneamiento retrotrae sus efectos</td></tr>
+</table>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Para el examen</div>
+<p style="font-size: 0.82em;">Toda pregunta de aplicación se resuelve identificando <strong>qué fracción del art. 3</strong> está afectada. Si el defecto está en I-X → nulidad; si está en XII-XVI → anulabilidad.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">👻</span> 7.4.3 El problema del acto inexistente</h2>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">La LFPA lo eliminó deliberadamente</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">El proyecto preveía la inexistencia (acto de usurpador u órgano constituido ilegalmente, imprescriptible); en la discusión se suprimió para dar a <strong>todos</strong> los actos un régimen de impugnación con <strong>plazos ciertos</strong> (45 días).</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Gabino Fraga: «necesidad lógica»</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">La inexistencia opera cuando el acto carece de sus elementos esenciales: falta de <strong>voluntad</strong>, de <strong>objeto</strong> o de <strong>competencia absoluta</strong> (citado en Fernández Ruiz, INEHRM, Cap. XII, p. 160).</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Roldán Xopa (Cap. 10, p. 372)</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">El acto inexistente <strong>no requiere declaración formal de nulidad</strong>: «no ha nacido jurídicamente» y el particular puede <strong>desconocerlo</strong> sin impugnación previa.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 En la práctica</div>
+<p style="font-size: 0.82em;">Ante un acto de un usurpador, lo normal es <strong>desconocerlo</strong> y, si hace falta, acudir al TFJA o al amparo. No espere «invalidar» lo que nunca nació.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-7-5">
+<span class="section-icon">🛡️</span>
+<h2>7.5 Vicios no invalidantes</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">✅</span> Conservación del acto administrativo</h2>
+<div class="fun-fact fragment">
+<div class="ff-label">📖 Roldán Xopa (Cap. 10, p. 373)</div>
+<p style="font-size: 0.85em;">«Cuando un acto está viciado pero presenta los <strong>requisitos imprescindibles para alcanzar su fin</strong> o <strong>no dé lugar a la indefensión</strong> de los interesados, no lleva aparejada la invalidez, en cuyo caso <strong>el acto se conserva</strong>.»</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Los dos criterios</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">1) El acto conserva los <strong>requisitos imprescindibles</strong> para alcanzar su fin.<br>2) El defecto <strong>no causa indefensión</strong> al interesado.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Ejemplos típicos</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Omisión de <strong>fecha, lugar o sello</strong> (vicios accidentales de la forma); errores materiales que no alteran el sentido del acto; irregularidades procedimentales que no afectan la defensa.</p>
+</div>
+</div>
+<div class="card card-accent-orange fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-orange);">No confundir</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Los vicios no invalidantes <strong>no se subsanan: simplemente no perjudican</strong>. La subsanación (7.6) es para actos que sí están viciados de nulidad o anulabilidad.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-7-6">
+<span class="section-icon">🩹</span>
+<h2>7.6 Convalidación, conversión y confirmación</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🩹</span> Tres figuras de saneamiento</h2>
+<div class="grid-3" style="margin-top: 4px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Convalidación</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Saneamiento del acto viciado mediante la <strong>corrección del defecto</strong> que lo afecta. Opera <strong>retroactivamente</strong>. La LFPA la prevé implícitamente: tanto el acto nulo como el anulable son <strong>subsanables</strong> (arts. 6 y 7).</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Conversión</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Un acto viciado se <strong>transforma en otro acto distinto pero válido</strong>, si contiene los elementos esenciales de este último.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Confirmación</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Acto por el cual la autoridad <strong>ratifica</strong> un acto cuyos vicios han sido <strong>subsanados o han prescrito</strong>.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Idea de fondo</div>
+<p style="font-size: 0.82em;">Las tres figuras comparten un mismo principio: el derecho administrativo <strong>prefiere conservar</strong> el acto antes que invalidarlo. La nulidad es la excepción, no la regla.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-7-7">
+<span class="section-icon">🏛️</span>
+<h2>7.7 Invalidez en sede jurisdiccional</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> Invalidez ante el TFJA</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-bottom: 4px;">La ley del procedimiento contencioso administrativo (LFPCA) prevé cuatro tipos de sentencia:</p>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">a) Nulidad lisa y llana</h4><p style="font-size: 0.8em; margin: 4px 0 0;">Se declara la <strong>nulidad total</strong> del acto impugnado, con <strong>efectos retroactivos</strong>.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">b) Nulidad para efectos</h4><p style="font-size: 0.8em; margin: 4px 0 0;">Se declara la nulidad y se <strong>ordena a la autoridad dictar uno nuevo</strong> corrigiendo los vicios.</p></div>
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">c) Nulidad con indicación expresa</h4><p style="font-size: 0.8em; margin: 4px 0 0;">Se <strong>indica cómo</strong> deberá dictarse la nueva resolución.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">d) Nulidad para el reconocimiento de un derecho</h4><p style="font-size: 0.8em; margin: 4px 0 0;">Se <strong>reconoce al demandante</strong> un derecho subjetivo.</p></div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Diferencia clave con la sede administrativa</div>
+<p style="font-size: 0.82em;">En sede administrativa la invalidez se declara en el marco de los <strong>recursos y facultades de la propia administración</strong>; ante el TFJA, la declaración la dicta un <strong>tribunal independiente</strong> con autoridad de cosa juzgada.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🛡️</span> Invalidez en el juicio de amparo</h2>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Efectos relativos (principio de relatividad)</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">El amparo protege a los particulares contra actos de autoridad que violan derechos humanos. Cuando la sentencia es <strong>protectora</strong>, el acto administrativo <strong>queda sin efectos en relación con el quejoso</strong>, pero <strong>no se declara la nulidad <em>erga omnes</em></strong>.</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">TFJA</h4><p style="font-size: 0.8em; margin: 4px 0 0;">Declara la <strong>nulidad del acto</strong> (con sus distintas modalidades). Efectos sobre la validez del acto impugnado.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Amparo</h4><p style="font-size: 0.8em; margin: 4px 0 0;">Protege al <strong>quejoso</strong>: el acto deja de surtir efectos frente a él. Es una <strong>garantía individual</strong>, no una acción de nulidad.</p></div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 No son excluyentes</div>
+<p style="font-size: 0.82em;">Pueden acumularse: la nulidad ante el TFJA busca retirar el acto del ordenamiento; el amparo busca <strong>proteger a una persona</strong> de sus efectos.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-7-8">
+<span class="section-icon">🏁</span>
+<h2>7.8 Extinción del acto administrativo</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🌅</span> Extinción normal u ordinaria (art. 11 LFPA)</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-bottom: 4px;">Causas previstas <em>ab initio</em> en el propio acto:</p>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">I. Cumplimiento de su finalidad</h4><p style="font-size: 0.8em; margin: 4px 0 0;">El objeto que se propone el acto se ha realizado <strong>íntegramente</strong>.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">II. Expiración del plazo</h4><p style="font-size: 0.8em; margin: 4px 0 0;">El acto fue emitido con un <strong>plazo determinado</strong> y éste ha vencido.</p></div>
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">III. Falta de la condición o término suspensivo</h4><p style="font-size: 0.8em; margin: 4px 0 0;">La formación del acto estaba sujeta a una <strong>condición</strong> y ésta no se realiza.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">IV. Acaecimiento de una condición resolutoria</h4><p style="font-size: 0.8em; margin: 4px 0 0;">Se extingue por la realización de un <strong>evento futuro e incierto</strong> previsto en el propio acto.</p></div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Clave</div>
+<p style="font-size: 0.82em;">Son las formas «naturales» de muerte del acto: <strong>lo previsto</strong>. Ninguna supone un defecto ni una decisión discrecional de la administración.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚡</span> Extinción anormal o extraordinaria</h2>
+<div class="grid-2" style="margin-top: 4px;">
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">V. Renuncia del interesado <span class="highlight">(art. 11, fracc. V)</span></h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Procede cuando el acto fue dictado en <strong>exclusivo beneficio del particular</strong> y <strong>no sea en perjuicio del interés público</strong>.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">VI. Revocación por interés público <span class="highlight">(art. 11, fracc. VI)</span></h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Acto administrativo <strong>unilateral de la autoridad que lo creó</strong> y posteriormente lo deja sin efectos legales por un <strong>motivo superveniente</strong> previsto en la ley (Hamdan, Tema X, p. 141).</p>
+</div>
+</div>
+<div class="card card-accent-orange fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-orange);">Más allá del art. 11: caducidad y rescate</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">En materia de <strong>concesiones y permisos</strong>, la doctrina también señala la <strong>caducidad</strong> (incumplimiento de obligaciones esenciales por el beneficiario) y el <strong>rescate</strong> de ventajas concedidas. Ver Caso 3.</p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">⚠️ Límite de la revocación</div>
+<p style="font-size: 0.82em;">La revocación exige <strong>audiencia previa</strong> cuando afecta derechos del particular y encuentra tope en los <strong>derechos adquiridos</strong>. Ver Caso 2.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📊</span> Nulidad vs. revocación</h2>
+<table class="comparison-table dense fragment">
+<tr><th>Aspecto</th><th>Nulidad</th><th>Revocación</th></tr>
+<tr><td><strong>Origen</strong></td><td>Acto <strong>viciado desde su nacimiento</strong></td><td>Acto <strong>válido y regular</strong></td></tr>
+<tr><td><strong>Efectos temporales</strong></td><td><em>Ex tunc</em> (retroactivos)</td><td><em>Ex nunc</em> (hacia futuro)</td></tr>
+<tr><td><strong>Declaración</strong></td><td>Administrativa o judicial</td><td>Solo administrativa</td></tr>
+<tr><td><strong>Actos afectables</strong></td><td>Cualquier acto</td><td>Solo actos de tracto sucesivo</td></tr>
+<tr><td><strong>Fundamento</strong></td><td>Ilegalidad o irregularidad</td><td>Interés público sobrevenido</td></tr>
+</table>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 La pregunta clave</div>
+<p style="font-size: 0.82em;"><strong>¿El acto nació mal o cambió el mundo?</strong> Si nació mal → nulidad (retroactiva). Si nació bien pero cambió el contexto → revocación (hacia futuro).</p>
+</div>
+</section>
+<section class="section-header" id="seccion-7-9">
+<span class="section-icon">📜</span>
+<h2>7.9 La declaración de nulidad y el juicio de lesividad</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🏛️</span> Cuando la administración impugna su propio acto</h2>
+<div class="definition-box fragment">
+<div class="def-title">Juicio de lesividad (Hamdan, Tema X, p. 144)</div>
+<p class="def-text">Cuando la autoridad descubre, <strong>después de emitir un acto favorable al particular</strong>, que dicho acto está viciado de nulidad, <strong>no puede simplemente retirarlo</strong>: debe demandar ante el <strong>TFJA su propio acto</strong>, solicitando su nulidad. Ese juicio es el <em>juicio de lesividad</em>.</p>
+</div>
+<div class="grid-3" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">¿Cuándo?</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Acto <strong>favorable</strong> al particular ya firme, viciado de nulidad.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">¿Ante quién?</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Ante el <strong>TFJA</strong> (vía contencioso administrativa).</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">¿Quién carga la prueba?</h4><p style="font-size: 0.78em; margin: 4px 0 0;">La <strong>propia administración</strong> que demanda su acto.</p></div>
+</div>
+<div class="card card-accent-green fragment" style="margin-top: 10px;">
+<h4 style="color: var(--accent-green);">¿Por qué no basta con la revocación?</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Porque la revocación <strong>no es viable</strong> cuando se trata de retirar un acto que generó derechos para el particular (y porque aquí no hay interés público sobrevenido, sino un <strong>vicio de origen</strong>). Aplicación: Caso 4.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-7-10">
+<span class="section-icon">🎓</span>
+<h2>7.10 Doctrina comparada</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎓</span> Tres autores, tres enfoques</h2>
+<table class="comparison-table dense">
+<tr><th>Tema</th><th>Roldán Xopa (ITAM)</th><th>Fernández Ruiz (Edo. Méx. 2023)</th><th>Hamdan Amad (ELD 2015)</th></tr>
+<tr><td><strong>Concepto de ineficacia</strong></td><td>Distingue entre invalidez en sede administrativa (LFPA) e invalidez en sede jurisdiccional (TFJA y amparo)</td><td>Prefiere hablar de «irregularidades e ineficacias» en lugar de nulidades</td><td>Distingue entre extinción normal (prevista <em>ab initio</em>) y anormal (imprevisible)</td></tr>
+<tr><td><strong>Nulidad vs. anulabilidad</strong></td><td>Nulidad: fracc. I-X. Anulabilidad: fracc. XII-XVI. Critica la subsanabilidad del acto nulo (p. 370)</td><td>Reconoce los grados: inexistencia, nulidad y anulabilidad. Sostiene que la inexistencia opera como «necesidad lógica»</td><td>Explica el sistema de la LFPA: nulidad (art. 6), anulabilidad (art. 7). Propone que el acto inexistente es un hecho administrativo</td></tr>
+<tr><td><strong>Revocación</strong></td><td>Procede cuando lo exija el interés público. Tiene límite en los derechos adquiridos</td><td>Distingue entre revocación por legalidad y por oportunidad. Efectos <em>ex nunc</em></td><td>Diferencia nítida entre nulidad y revocación (pp. 142-143)</td></tr>
+<tr><td><strong>Desvío de poder</strong></td><td>Vicio que involucra la finalidad. Puede analizarse desde perspectiva objetiva</td><td>Se relaciona con el principio de proporcionalidad, buena fe y confianza legítima</td><td>El fin es el elemento más importante del acto</td></tr>
+</table>
+</section>
+<section class="section-header" id="seccion-7-11">
+<span class="section-icon">📚</span>
+<h2>7.11 Legislación aplicable comentada</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> LFPA — artículos 3 a 9</h2>
+<table class="comparison-table dense">
+<tr><th>Art.</th><th>Contenido</th><th>Comentario</th></tr>
+<tr><td><strong>3</strong></td><td>Elementos y requisitos (fracc. I a XVI)</td><td>Corazón de la unidad: la división I-X (elementos esenciales) vs. XII-XVI (requisitos) determina si el vicio produce nulidad o anulabilidad.</td></tr>
+<tr><td><strong>5</strong></td><td>Vínculo ausencia/vicio → consecuencia</td><td>Regla general que conecta la ausencia o vicio de los elementos con sus consecuencias jurídicas.</td></tr>
+<tr><td><strong>6</strong></td><td>Nulidad</td><td>Efectos: invalidez, pérdida de presunción de legitimidad, subsanabilidad (controvertida), no obligatoriedad, deber de oposición, retroactividad.</td></tr>
+<tr><td><strong>7</strong></td><td>Anulabilidad</td><td>Efectos: validez, presunción de legitimidad, subsanabilidad, retroactividad del saneamiento.</td></tr>
+<tr><td><strong>8</strong></td><td>Presunción de legitimidad</td><td>Presunción <em>iuris tantum</em> del acto administrativo: admite prueba en contrario.</td></tr>
+<tr><td><strong>9</strong></td><td>Validez vs. eficacia</td><td>Distinción clave de 7.2: la <strong>notificación es constitutiva de la eficacia</strong>.</td></tr>
+</table>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> LFPA — artículos 11 y 17</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Artículo 11 LFPA — Causas de extinción</div>
+<p class="lb-text">Seis fracciones: <strong>I</strong> cumplimiento de la finalidad · <strong>II</strong> expiración del plazo · <strong>III</strong> falta de la condición o término suspensivo · <strong>IV</strong> acaecimiento de la condición resolutoria · <strong>V</strong> renuncia del interesado · <strong>VI</strong> revocación por interés público.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Artículo 17 LFPA — Silencio administrativo</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Regulado en detalle en la <strong>Unidad 6</strong> (negativa ficta como regla, 3 meses). Aquí solo importa su conexión: el acto presunto <strong>también es acto administrativo</strong> y, por lo tanto, puede ser viciado y extinguido conforme al art. 11.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Conexión con la Unidad 5</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Validez (arts. 6-8) y eficacia (art. 9) son el puente con la <strong>Teoría del Acto Administrativo</strong>: lo estudiado allí como «nulidad/anulabilidad» se completa aquí con sus <strong>causas por elemento</strong> y sus <strong>efectos</strong>.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> CPEUM y LFPCA</h2>
+<div class="grid-2" style="margin-top: 4px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Artículo 16 CPEUM</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Fundamento constitucional de la <strong>nulidad por falta de fundamentación y motivación</strong>. Todo acto de autoridad debe estar fundado y motivado; su ausencia es el vicio más grave del elemento motivo (7.3.3).</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">LFPCA — Tribunal Federal de Justicia Administrativa</h4>
+<p style="font-size: 0.82em; margin: 4px 0 0;">Regula los <strong>tipos de sentencia</strong> que puede dictar el Tribunal (7.7.1) y los <strong>plazos para el cumplimiento</strong> de sus fallos. Consúltala directamente para los numerales precisos: es la ley del <strong>juicio contencioso administrativo</strong> que estudiaremos en la Unidad 14.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Regla de la unidad</div>
+<p style="font-size: 0.82em;">Toda pretensión de nulidad se apoya en dos niveles: <strong>art. 16 CPEUM</strong> (mandato constitucional de fundar y motivar) y <strong>arts. 3, 5, 6 y 7 LFPA</strong> (mecanismo administrativo de invalidación).</p>
+</div>
+</section>
+<section class="section-header" id="seccion-7-12">
+<span class="section-icon">🗺️</span>
+<h2>7.12 Esquema de síntesis</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗺️</span> Esquema general</h2>
+<div style="font-family: Consolas, monospace; font-size: 0.6em; line-height: 1.5; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);">
+<div><strong style="color: var(--accent-blue);">1. TEORÍA GENERAL</strong></div>
+<div style="padding-left: 18px; color: rgba(255,255,255,0.6);">Regularidad = todos los elementos y requisitos · Irregularidad = defecto en uno o más · Ineficacia = no produce sus efectos típicos</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-purple);">2. VICIOS POR ELEMENTO</strong></div>
+<div style="padding-left: 18px;">Sujeto: incompetencia (territorio, materia, tiempo, jerarquía) / funcionario de hecho o parcial</div>
+<div style="padding-left: 18px;">Objeto: ilícito, imposible, indeterminado · Motivo: inexistencia, error, inadecuación</div>
+<div style="padding-left: 18px;">Finalidad: desvío de poder · Forma: falta de escrito, firma, órgano emisor</div>
+<div style="padding-left: 18px;">Procedimiento: omisión de etapas esenciales</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-pink);">3. RÉGIMEN DE NULIDADES (LFPA)</strong></div>
+<div style="padding-left: 18px;">NULIDAD (art. 6): fracc. I-X → inválido, no legítimo, no ejecutable → subsanabilidad controvertida → <em>ex tunc</em></div>
+<div style="padding-left: 18px;">ANULABILIDAD (art. 7): fracc. XII-XVI → válido, legítimo, ejecutable → subsanable → retroactivo</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-green);">4. FIGURAS DE SANEAMIENTO</strong></div>
+<div style="padding-left: 18px;">Convalidación: corrección del vicio (retroactiva) · Conversión: acto viciado → acto distinto válido · Confirmación: ratificación del acto saneado</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-orange);">5. INVALIDEZ EN SEDE JURISDICCIONAL</strong></div>
+<div style="padding-left: 18px;">TFJA: nulidad lisa y llana / para efectos / con indicación expresa / reconocimiento de derecho</div>
+<div style="padding-left: 18px;">Amparo: efectos relativos (solo al quejoso)</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-red);">6. EXTINCIÓN (art. 11 LFPA)</strong></div>
+<div style="padding-left: 18px;">Normal: cumplimiento (I) / plazo (II) / condición suspensiva (III) / condición resolutoria (IV)</div>
+<div style="padding-left: 18px;">Anormal: renuncia (V) / revocación (VI) / caducidad / rescate</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-blue);">7. NULIDAD vs. REVOCACIÓN</strong></div>
+<div style="padding-left: 18px;">Nulidad: acto nace viciado → <em>ex tunc</em> → declara la administración o el judicial</div>
+<div style="padding-left: 18px;">Revocación: acto nace válido → <em>ex nunc</em> → solo administrativa</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a" id="material">
+<h2><span class="icon-lg">📥</span> Material para Alumnos</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.78em;">Descarga el material de estudio de esta unidad</p>
+<div class="grid-2" style="margin-top: 10px;">
+<a href="../Material para Alumnos/Unidad 7/Unidad 7.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-blue fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">📄</span>
+<div>
+<h4 style="color: var(--accent-blue); margin: 0;">Unidad 7 — Contenido completo</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Teoría, vicios, nulidades y extinción</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-blue); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 7/Cuestionario.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-green fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">❓</span>
+<div>
+<h4 style="color: var(--accent-green); margin: 0;">Cuestionario de estudio</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">12 preguntas de comprensión, análisis y aplicación</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-green); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 7/Casos.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-purple fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">🔎</span>
+<div>
+<h4 style="color: var(--accent-purple); margin: 0;">Casos prácticos</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">4 casos con guía de análisis y rúbrica</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-purple); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 7/Actividades.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-orange fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">👥</span>
+<div>
+<h4 style="color: var(--accent-orange); margin: 0;">Actividades en clase</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Debate, análisis de acto real y simulación</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-orange); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 7/Taller y Evaluación.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-red fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">🎯</span>
+<div>
+<h4 style="color: var(--accent-red); margin: 0;">Taller y Evaluación</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Recurso de revisión por nulidad</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-red); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 7/Autoevaluación.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-pink fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">✅</span>
+<div>
+<h4 style="color: var(--accent-pink); margin: 0;">Autoevaluación</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">10 reactivos con clave de respuestas</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-pink); font-size: 1.2em;"></i>
+</div>
+</a>
+</div>
+<div style="margin-top: 16px; text-align: center;">
+<p style="font-size: 0.7em; color: rgba(255,255,255,0.35);"><i class="fa-solid fa-circle-info"></i> Toca cualquier tarjeta para descargar el PDF</p>
+</div>
+</section>
+<section class="title-slide" id="cierre">
+<span style="font-size: 4em;">🎓</span>
+<h1 style="font-size: 2em; margin-top: 20px;">¡Listo para la Unidad 7!</h1>
+<p style="color: rgba(255,255,255,0.6); font-size: 1.1em; margin-top: 20px;">Las ineficacias son el <span style="color: var(--accent-blue); font-weight: 600;">lado oscuro del acto administrativo</span>: dónde nace mal, cómo se sana y cuándo muere.<br>Distinga siempre tres preguntas: <strong>¿vicio? · ¿nulidad o anulabilidad? · ¿cómo se extingue?</strong></p>
+<div style="margin-top: 40px;">
+<p style="font-size: 0.8em; color: rgba(255,255,255,0.4);">
+<i class="fa-solid fa-book"></i> Lectura: Roldán Xopa (Cap. 10, pp. 363-375) · Hamdan Amad (Temas IX-X, pp. 127-163)<br>
+<i class="fa-solid fa-scale-balanced"></i> Fernández Ruiz (Cap. XI Edo. Méx. · Cap. XII INEHRM) · Martínez Morales (Diccionario)<br>
+<i class="fa-solid fa-gavel"></i> LFPA: Capítulo Primero, «Del Acto Administrativo» (arts. 3-11) — lectura obligatoria</p>
+</div>
+<p style="margin-top: 40px; font-size: 0.7em; color: rgba(255,255,255,0.3);">Presiona <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">Esc</kbd> para ver la vista general · <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">F</kbd> para pantalla completa</p>
+<a href="../index.html" style="display: inline-block; margin-top: 20px; font-size: 0.75em; color: rgba(255,255,255,0.4); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice de unidades</a>
+</section>
+        </div>
+    </div>
+
+    <!-- Reveal.js -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: false,
+            width: 1100,
+            height: 700,
+            margin: 0.04,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: true,
+            controls: true,
+            controlsLayout: 'edges',
+            controlsTutorial: false,
+            disableLayout: true,
+            plugins: [RevealNotes, RevealMarkdown, RevealHighlight]
+        });
+
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('a, button, .quiz-option, [onclick], input, select, textarea')) {
+                return;
+            }
+            var slide = Reveal.getCurrentSlide();
+            if (e.target === slide || slide.contains(e.target)) {
+                Reveal.navigateNext();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode === 174 || e.keyCode === 175) {
+                e.preventDefault();
+                var slide = Reveal.getCurrentSlide();
+                var scrollAmount = 100;
+                if (e.keyCode === 175) {
+                    slide.scrollTop -= scrollAmount;
+                } else {
+                    slide.scrollTop += scrollAmount;
+                }
+            }
+        });
+
+        var fullscreenBtn = document.getElementById('fullscreen-btn');
+        var fullscreenIcon = fullscreenBtn.querySelector('i');
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                var el = document.documentElement;
+                if (el.requestFullscreen) { el.requestFullscreen(); }
+                else if (el.webkitRequestFullscreen) { el.webkitRequestFullscreen(); }
+            } else {
+                if (document.exitFullscreen) { document.exitFullscreen(); }
+                else if (document.webkitExitFullscreen) { document.exitFullscreen(); }
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleFullscreen();
+        });
+
+        function updateFullscreenIcon() {
+            var isFull = document.fullscreenElement || document.webkitFullscreenElement;
+            if (isFull) {
+                fullscreenIcon.className = 'fa-solid fa-compress';
+                fullscreenBtn.title = 'Salir de pantalla completa';
+            } else {
+                fullscreenIcon.className = 'fa-solid fa-expand';
+                fullscreenBtn.title = 'Pantalla completa';
+            }
+        }
+
+        document.addEventListener('fullscreenchange', updateFullscreenIcon);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
+
+        document.getElementById('index-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            var slideIndice = document.getElementById('indice');
+            if (slideIndice) {
+                var idx = Reveal.getIndices(slideIndice);
+                Reveal.slide(idx.h, idx.v, idx.f);
+            }
+        });
+
+        var fragmentCounter = document.getElementById('fragment-counter');
+        var fcCurrent = fragmentCounter.querySelector('.fc-current');
+        var fcTotal = fragmentCounter.querySelector('.fc-total');
+
+        function updateFragmentCounter() {
+            var slide = Reveal.getCurrentSlide();
+            var total = slide.querySelectorAll('.fragment').length;
+            var shown = slide.querySelectorAll('.fragment.visible').length;
+            if (total > 0) {
+                fcCurrent.textContent = shown;
+                fcTotal.textContent = total;
+                fragmentCounter.classList.add('has-fragments');
+            } else {
+                fcCurrent.textContent = 0;
+                fcTotal.textContent = 0;
+                fragmentCounter.classList.remove('has-fragments');
+            }
+        }
+
+        Reveal.on('ready', updateFragmentCounter);
+        Reveal.on('slidechanged', updateFragmentCounter);
+        Reveal.on('fragmentshown', updateFragmentCounter);
+        Reveal.on('fragmenthidden', updateFragmentCounter);
+
+        var slideNav = document.getElementById('slide-nav');
+        var slideNavCurrent = document.getElementById('slide-nav-current');
+        var slideNavTotal = document.getElementById('slide-nav-total');
+        var slideNavInput = document.getElementById('slide-nav-input');
+
+        function updateSlideNav() {
+            var indices = Reveal.getIndices();
+            var h = (indices && typeof indices.h === 'number' && !isNaN(indices.h)) ? indices.h : 0;
+            var total = Reveal.getTotalSlides();
+            slideNavCurrent.textContent = h + 1;
+            slideNavTotal.textContent = total;
+        }
+
+        function openSlideNavInput() {
+            var indices = Reveal.getIndices();
+            slideNavInput.value = indices.h + 1;
+            slideNav.classList.add('editing');
+            slideNavInput.focus();
+            slideNavInput.select();
+        }
+
+        function closeSlideNavInput() {
+            slideNav.classList.remove('editing');
+            updateSlideNav();
+        }
+
+        function navigateToSlide() {
+            var num = parseInt(slideNavInput.value, 10);
+            var total = Reveal.getTotalSlides();
+            if (!isNaN(num) && num >= 1 && num <= total) {
+                Reveal.slide(num - 1);
+            }
+            closeSlideNavInput();
+        }
+
+        slideNav.addEventListener('click', function(e) {
+            if (e.target === slideNavInput) return;
+            e.stopPropagation();
+            openSlideNavInput();
+        });
+
+        slideNavInput.addEventListener('keydown', function(e) {
+            e.stopPropagation();
+            if (e.key === 'Enter') { navigateToSlide(); }
+            else if (e.key === 'Escape') { closeSlideNavInput(); }
+        });
+
+        slideNavInput.addEventListener('blur', function() {
+            closeSlideNavInput();
+        });
+
+        Reveal.on('ready', updateSlideNav);
+        Reveal.on('slidechanged', updateSlideNav);
+        updateSlideNav();
+    </script>
+</body>
+</html>

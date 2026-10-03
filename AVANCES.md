@@ -584,3 +584,113 @@ El pedido original decía "controversia constitucional presentada por la CNDH". 
 U1: art. 113→109 último párrafo · U3: 20 secretarías + ATD · U6: notificación surte efectos el mismo día (art. 38 LFPA) · sin horario "8:00-18:00" (no está en la ley).
 
 > *Registrado por Buffy (Codebuff/Freebuff) — 24 de septiembre de 2026 (tarde)*
+
+---
+
+## RESUMEN DE LA SESIÓN (2 octubre 2026) — Examen parcial U1-U6
+
+Se creó el **banco de preguntas del examen parcial** (Unidades 1 a 6) en tres formatos: XML para importar a Moodle, Word imprimible para alumnos y clave de respuestas para el docente.
+
+**Hallazgo previo:** no existía banco de preguntas alguno — ni en el repo ni en Moodle. Lo único publicado en el curso 157 (Humanidades) era el *Examen Unidades 1 y 2* (27-ago-2026) y su reposición. El examen parcial de la planeación (40 % del periodo) estaba pendiente.
+
+### Archivos creados (carpeta `examen_parcial/`)
+
+| Archivo | Descripción |
+|---------|-------------|
+| `examen_parcial_u1-u6.xml` | **90 reactivos** (15 por unidad) en formato XML de Moodle (fuente de verdad) |
+| `examen_parcial_u1-u6_alumnos.docx` | Examen imprimible: portada, instrucciones, 90 preguntas y hoja de respuestas |
+| `examen_parcial_u1-u6_clave.docx` | Misma versión con la respuesta correcta en **negritas y resaltado amarillo** + justificación |
+| `examen_parcial-clave-respuestas.md` | Clave con ✅/❌ por reactivo y **clave rápida** por unidad |
+| `generar_documentos.py` | Regenera los tres documentos desde el XML |
+| `verificar.py` | Chequeo automático: estructura, unidad, posición de la correcta, resaltados |
+| `guia-moodle-examen-parcial.md` | Guía paso a paso de importación, descripción y aviso de foro |
+
+### Diseño del examen
+
+- **90 reactivos** (15 por unidad), 1 punto c/u, **90 minutos** (≈1 min por reactivo), 1 intento, preguntas y opciones barajadas.
+- **Nivel:** razonamiento, comprensión y aplicación. Ninguna pregunta pide recordar el texto de un artículo ni quién dijo qué; los artículos solo aparecen como contexto en el enunciado. Casos cortos, "¿cuál NO es correcta?" y distinciones clásicas (nulidad/anulabilidad, desconcentración/delegación, base/confianza, negativa/afirmativa ficta, revocación/nulidad).
+- **Distractores:** opciones claramente descartables una vez entendido el concepto; sin "todas las anteriores", sin dobles negaciones, sin trampas de redacción.
+- Respuesta correcta **distribuida** en las cuatro posiciones (a:23, b:22, c:22, d:23) y **sin letra en el texto de la opción** — la letra la genera Moodle al barajar (si se incluyera, quedaría desalineada).
+- Cobertura: U1 criterios/caracteres/principios (15) · U2 jerarquía, antinomias, reglamento, leyes, precedentes (15) · U3 formas de organización, conflictos de competencia, LOAPF, poderes jerárquicos (15) · U4 art. 108, faltas graves/no graves, juicio político, delegación de firma, SPC (15) · U5 elementos, nulidades, silencio, clasificación, extinción (15) · U6 principios, fases, pruebas, plazos, terminación, debido proceso (15).
+
+### Segunda pasada — sin preguntas de autores (2 oct 2026)
+
+La profesora pidió **subir de 72 a 90 preguntas** y **eliminar las que cuestionan qué dice un autor**. Se hizo en una sola vuelta:
+
+- **Eliminadas:** U1-03 (escuelas del DA: Duguit, Hauriou, Zanobini, Fraga) y U3-05 ("Fernández Ruiz sostiene que el municipio…").
+- **Reencuadradas:** U1-09 (criterio mixto) y U2-11 (valor de la doctrina): antes empezaban con "Un autor define…" / "Un tribunal cita a un autor…"; ahora plantean el concepto sin atribuirlo a nadie.
+- **Añadidas 20** de aplicación: supletoriedad de otras ramas, carácter dinámico, seguridad jurídica e irretroactividad, interés público no absoluto (U1) · clasificación de leyes, acuerdo general vs. circular, precedente horizontal (U2) · conflicto positivo, órganos secundarios no constitucionales, empresa de participación estatal, poder disciplinario (U3) · nombramiento por colaboración de poderes, faltas graves, Servicio Profesional de Carrera (U4) · acto reglado/discrecional, actos internos/externos, condición resolutoria (U5) · desistimiento vs. renuncia, notificación personal, ampliación de plazos (U6).
+- **Verificación automática:** 0 preguntas con nombres de autores o de escuelas.
+
+### Formato del Word de la clave
+
+La respuesta correcta se muestra en **negritas y con resaltado amarillo** (90/90); el Word de alumnos va limpio, sin resaltados.
+
+### Verificación
+
+- XML bien formado: **90 preguntas, 15 por unidad, 4 opciones y exactamente 1 respuesta correcta por reactivo**; IDs secuenciales sin duplicados.
+- Corregido un error de encuadre en U1-01 (la opción marcada era la incorrecta).
+- Eliminados los prefijos de letra duplicados (`a) a)`) de las 288 opciones de la primera versión; el XML reescrito (90 preguntas) ya no los incluye en ningún texto.
+- Word de alumnos: 90 preguntas numeradas 1–90, seis encabezados de unidad, hoja de respuestas de 90 casillas (tabla de 3 columnas × 30 filas).
+- Word de clave: 90 respuestas resaltadas en amarillo + 10 justificaciones en cursiva.
+
+### Pendiente
+
+- [ ] Definir **fecha y hora** de aplicación (quedan campos `[PONER FECHA Y HORA]` en la guía)
+- [ ] Importar el XML a Moodle (categoría `Examen parcial U1-U6`, curso 157) y crear la actividad
+- [ ] Publicar el aviso en el foro de novedades
+- [ ] Presentaciones U7–U15 (sigue el pipeline documentado)
+
+> *Registrado por Buffy (Codebuff/Freebuff) — 2 de octubre de 2026*
+
+---
+
+## RESUMEN DE LA SESIÓN (2 octubre 2026) - Presentación y material de la Unidad 7
+
+Se creó la **presentación Reveal.js de la Unidad 7** (*Ineficacias del Acto Administrativo*) y su **Material para Alumnos**, dejando **7 de 15 unidades disponibles**.
+
+### Archivos creados/modificados
+
+| Archivo | Descripción |
+|---------|-------------|
+| `diapositivas/unidad-07-ineficacias-del-acto-administrativo.html` | **Nuevo**: 73 diapositivas, UTF-8 sin BOM, 119 KB |
+| `src/generar_material_alumnos.py` | Extendido a unidad 7 (`range(1,7)` → `range(1,8)` + `NOMBRES` de U7) |
+| `Material para Alumnos/Unidad 7/*.pdf` | **6 PDFs nuevos**: Unidad 7 (9 pág.), Cuestionario (1), Casos (2), Actividades (1), Taller y Evaluación (1), Autoevaluación (3) |
+| `index.html` | Barra de progreso 40 % → 46.67 %, "7 de 15 unidades disponibles", badge Unidad 07 → **Disponible** con enlace a la presentación |
+
+### Estructura de la presentación (base: U6, criterios del README de `diapositivas/`)
+
+Portada → ¿Dónde estamos? → Mapa conceptual → Índice (`id="indice"`) → Objetivos → Competencias → **7.1** Teoría general de las ineficacias → **7.2** Irregularidades e ineficacias → **7.3** Vicios por elemento (sujeto, objeto, motivo, finalidad, forma, procedimiento) → **7.4** Nulidad y anulabilidad (arts. 6 y 7 LFPA, acto inexistente) → **7.5** Vicios no invalidantes → **7.6** Convalidación, conversión y confirmación → **7.7** Invalidez en sede jurisdiccional (TFJA y amparo) → **7.8** Extinción (art. 11 LFPA) → **7.9** Juicio de lesividad → **7.10** Doctrina comparada → **7.11** Legislación → **7.12** Esquema → **7.13** Quiz (10 preguntas) → **7.14** Casos (4) → **7.15** Actividades → **7.16** Taller → Material para Alumnos (6 tarjetas) → Cierre.
+
+### Verificación (Chrome headless + CDP, sin excepciones JS)
+
+- **73 secciones**, ids `seccion-7-1` … `seccion-7-16`, `indice`, `material`, `cierre` **sin duplicados**; balance de `<section>`, `<div>`, `<table>`, `<ul>`, `<p>`.
+- **17 enlaces internos del índice, todos con destino**; 159 `fragment`; quiz: 10 preguntas × 4 opciones (`correct` 10 / `wrong` 30).
+- **6 enlaces de material**, todos con PDF existente (recuentos de páginas confirmados con PyMuPDF).
+- Botón índice, navegación por hash, contador de fragments y `slide-nav` funcionan; layout sin desbordes horizontales (idéntico a U6; las diapositivas largas usan el scroll vertical previsto).
+
+### Bug heredado corregido (solo en U7)
+
+El indicador inferior izquierdo mostraba **`NaN / 73`** al cargar: `updateSlideNav()` se ejecuta antes de que `Reveal.initialize()` termine y `Reveal.getIndices()` devuelve `h` no numérico. Se corrigió con un guard en `updateSlideNav()` y un listener `Reveal.on('ready', updateSlideNav)` (mismo tratamiento para `updateFragmentCounter`).
+
+> ⚠️ **El mismo `NaN` existe en U1-U6** (verificado en vivo en U6). Pendiente replicar la corrección en esos seis archivos.
+
+### Contenido: citas legales verificadas
+
+Arts. 3, 5, 6, 7, 8, 9, 11 y 17 de la LFPA; art. 16 CPEUM; LFPCA sin numerales. **No se incluyó la cita "art. 27 CPEUM"** (pertenece a la U11: es el fundamento del dominio de la Nación sobre recursos naturales, no de esta unidad).
+
+### Pendientes
+
+- [ ] Presentaciones **U8-U15** (pipeline documentado: base U6 → head/middle/tail → CDP → index.html)
+- [ ] Replicar la corrección del `NaN` del `slide-nav` en U1-U6
+- [ ] Typo en el libro: el encabezado de la U7 dice **"INEFICIACIAS"** (usar "Ineficacias"; el título de la presentación ya usa la forma correcta)
+- [ ] `diapositivas/README-DIAPOSITIVAS.md` → sección "Contenido actual" desactualizada desde la U5
+- [ ] Examen parcial: fecha/hora, importación a Moodle y aviso en el foro (pendientes de la sesión anterior)
+
+### Ajuste posterior (mismo día): la U7 queda solo con la clase
+
+- Se eliminaron las diapositivas de **Objetivos de aprendizaje**, **Competencias a desarrollar**, **Quiz interactivo (10 preguntas)**, **Casos prácticos (4)**, **Actividades en clase** y **Taller práctico**: de **73 a 50 diapositivas**.
+- Índice interno ajustado a **13 tarjetas** (7.1-7.12 + Material); el cierre ya no incluye "Preparar cuestionario, casos prácticos y taller".
+- Se conserva **Material para Alumnos** (6 PDFs descargables) y el cierre con "Volver al índice".
+- Verificado con CDP: 50 diapositivas, **0 enlaces rotos**, 0 excepciones JS.
+> *Registrado por Buffy (Codebuff/Freebuff) - 2 de octubre de 2026*
