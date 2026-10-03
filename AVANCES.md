@@ -723,3 +723,16 @@ Arts. 3, 5, 6, 7, 8, 9, 11 y 17 de la LFPA; art. 16 CPEUM; LFPCA sin numerales. 
 - `index.html`: barra 53.33 % → **60 %**, "9 de 15 unidades disponibles", tarjeta Unidad 09 → `available` con enlace a la presentación.
 - Commits: `15570db` (U8) y el de esta entrada (U9), ambos con push a `origin/master`.
 > *Registrado por OpenCode (mimo-v2.6-flash-free) - 2 de octubre de 2026*
+
+---
+
+### Ajuste de granularidad — U8 y U9 expandidas (mismo día)
+
+La profesora cuestionó si las presentaciones eran suficientemente exhaustivas. Diagnóstico con `audit_u9_contenido.py` (cobertura de contenido): **10/10 secciones y 44/44 claves presentes** — el contenido sí estaba completo; el problema era la **densidad por lámina** (U9 tenía 1.9 diapositivas por sección frente a 2.7 de la U7).
+
+- **U9: 35 → 43 diapositivas.** Divisiones: Burdeos/crisis (2), clasificación (2), formas de prestación (2), elementos/procedimiento de la concesión (2), derechos/extinción (2), derecho preexistente/aplicación (2), procedimiento APP/ventajas-riesgos (2), tabla de doctrina (2 tablas de 2 filas). Cada lámina quedó con ≤6 bloques cortos; el esquema de síntesis sigue siendo el único denso por diseño.
+- **U8: 39 → 44 diapositivas.** Divisiones: criterios a-d/Vedel (2), caracteres (2 de 3 notas), elementos (2 de 3), extinción (2 de 3 causas, con fun-fact de enlace a la U7), doctrina (2 tablas). Se retiró el ajuste `font-size: 0.95em` de "Los primeros cuatro criterios" al dividirse.
+- **Verificación:** U8 y U9 con `check_u8/check_u9.py` → `errors: 0`; `audit.mjs` (CDP) → 44 y 43 secciones, `slide-nav` sin NaN, ids `seccion-N-X` completos, hash-links con destino, **0 excepciones JS**; solo índice/esquema/cierre usan el scroll vertical previsto.
+- Corrección de herramienta: `audit.mjs` tenía el número de unidad hardcodeado (`seccion-9-*`); ahora lo deriva del nombre de archivo.
+- **Criterio para U10 en adelante:** ~2.5-3 diapositivas por sección, bloques de 2-6 cards cortos, sin láminas monolíticas.
+> *Registrado por OpenCode (mimo-v2.6-flash-free) - 2 de octubre de 2026*
