@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 10 — Control de la Administración Pública</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --r-background-color: #0a0a1a;
+            --r-main-font: 'Inter', sans-serif;
+            --r-heading-font: 'Playfair Display', serif;
+            --r-main-font-size: 24px;
+            --accent-blue: #4f8cff;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --glass: rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.1);
+        }
+        .reveal { font-family: var(--r-main-font); }
+        .reveal .slides { text-align: left; }
+        .reveal .slides section { padding: 20px 40px; overflow: hidden; box-sizing: border-box; }
+        .reveal .slides section * { max-width: 100%; box-sizing: border-box; }
+        .reveal .slides p, .reveal .slides li, .reveal .slides h1, .reveal .slides h2, .reveal .slides h3, .reveal .slides h4 { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; margin-right: 0; padding-right: 0; }
+        .reveal .slides section.title-slide { text-align: center; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%); }
+        .reveal .slides section.title-slide h1 { font-family: 'Playfair Display', serif; font-size: 2.4em; font-weight: 900; background: linear-gradient(135deg, #4f8cff, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; margin-bottom: 16px; }
+        .reveal .slides section.title-slide .subtitle { font-size: 1em; color: rgba(255,255,255,0.6); font-weight: 300; letter-spacing: 2px; }
+        .reveal .slides section.title-slide .unit-badge { display: inline-block; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: white; padding: 8px 24px; border-radius: 30px; font-size: 0.7em; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-top: 30px; }
+        .reveal .slides section.section-header { text-align: center; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%); }
+        .reveal .slides section.section-header h2 { font-family: 'Playfair Display', serif; font-size: 2em; font-weight: 800; background: linear-gradient(135deg, #4f8cff, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+        .reveal .slides section.section-header .section-icon { font-size: 2.5em; margin-bottom: 14px; display: block; }
+        .card { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 14px; padding: 14px 16px; margin: 8px 0; backdrop-filter: blur(10px); overflow: hidden; box-sizing: border-box; }
+        .card p, .card li, .card h4 { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; font-size: 0.85em; }
+        .card-accent-blue { border-left: 4px solid var(--accent-blue); }
+        .card-accent-purple { border-left: 4px solid var(--accent-purple); }
+        .card-accent-pink { border-left: 4px solid var(--accent-pink); }
+        .card-accent-green { border-left: 4px solid var(--accent-green); }
+        .card-accent-orange { border-left: 4px solid var(--accent-orange); }
+        .card-accent-red { border-left: 4px solid var(--accent-red); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 14px; }
+        .grid-2 > .card, .grid-3 > .card { margin: 0; min-width: 0; }
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 { color: white; font-weight: 700; }
+        .reveal h2 { font-size: 1.4em; margin-bottom: 14px; }
+        .reveal h3 { font-size: 1.05em; color: var(--accent-blue); margin-bottom: 8px; }
+        .reveal h4 { font-size: 0.9em; color: var(--accent-purple); }
+        .reveal p, .reveal li { color: rgba(255,255,255,0.85); line-height: 1.6; }
+        .reveal ul { list-style: none; padding-left: 0; }
+        .reveal ul li { padding: 3px 0; padding-left: 24px; position: relative; }
+        .reveal ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent-blue); font-weight: 700; }
+        .highlight { color: var(--accent-blue); font-weight: 600; }
+        .highlight-purple { color: var(--accent-purple); font-weight: 600; }
+        .highlight-pink { color: var(--accent-pink); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+        .icon-lg { font-size: 1.6em; display: inline-block; margin-right: 6px; vertical-align: middle; }
+        .definition-box { background: linear-gradient(135deg, rgba(79,140,255,0.15), rgba(168,85,247,0.15)); border: 1px solid rgba(79,140,255,0.3); border-radius: 14px; padding: 16px 20px; margin: 14px 0; position: relative; }
+        .definition-box::before { content: '📖'; font-size: 1.5em; position: absolute; top: -12px; left: 20px; }
+        .definition-box .def-title { font-size: 0.65em; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-blue); font-weight: 700; margin-bottom: 6px; }
+        .definition-box .def-text { font-size: 0.85em; color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .comparison-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.65em; margin-top: 12px; }
+        .comparison-table th { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: white; padding: 8px 12px; text-align: left; font-weight: 600; }
+        .comparison-table td { padding: 7px 12px; border-bottom: 1px solid var(--glass-border); color: rgba(255,255,255,0.85); }
+        .comparison-table tr:nth-child(even) td { background: var(--glass); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table.dense th, .comparison-table.dense td { padding: 5px 10px; }
+        /* Mapa conceptual — diagrama HTML clicable */
+        .md-root { width: fit-content; margin: 0 auto; text-align: center; background: linear-gradient(135deg, rgba(79,140,255,0.22), rgba(168,85,247,0.22)); border: 1px solid rgba(79,140,255,0.45); border-radius: 14px; padding: 9px 30px; box-shadow: 0 0 30px rgba(79,140,255,0.25); }
+        .reveal .md-root h3 { margin: 0; font-size: 0.9em; letter-spacing: 1.5px; text-transform: uppercase; color: white; }
+        .reveal .md-root p { margin: 4px 0 0; font-size: 0.65em; color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.4; }
+        .md-trunk { width: 2px; height: 16px; background: rgba(255,255,255,0.28); margin: 0 auto; }
+        .md-spine { height: 2px; background: rgba(255,255,255,0.28); width: 97%; margin: 0 auto; border-radius: 2px; }
+        .md-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(228px, 1fr)); gap: 12px; }
+        a.md-branch { position: relative; margin-top: 15px; display: block; text-decoration: none; transition: transform 0.25s ease; }
+        a.md-branch::before { content: ''; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); width: 2px; height: 15px; background: rgba(255,255,255,0.28); }
+        a.md-branch:hover { transform: translateY(-3px); }
+        a.md-branch:hover .md-card { border-color: var(--c); box-shadow: 0 8px 24px rgba(0,0,0,0.45); }
+        .md-card { height: 100%; background: var(--glass); border: 1px solid var(--glass-border); border-top: 3px solid var(--c); border-radius: 12px; padding: 9px 12px 8px; }
+        .reveal .md-card h4 { margin: 0 0 7px; font-size: 0.66em; letter-spacing: 0.4px; color: var(--c); text-transform: uppercase; font-weight: 700; }
+        .reveal .md-card ul { list-style: none; margin: 0; padding: 0; }
+        .reveal .md-card li { position: relative; padding: 1.5px 0 1.5px 13px; font-size: 0.55em; line-height: 1.4; color: rgba(255,255,255,0.85); }
+        .reveal .md-card li::before { content: '▸'; position: absolute; left: 0; color: var(--c); font-weight: 700; }
+        .md-chip { display: inline-block; font-size: 0.82em; font-weight: 700; padding: 0 7px; border-radius: 9px; margin-left: 4px; color: var(--c); border: 1px solid var(--c); background: var(--cbg); white-space: nowrap; }
+        .md-chip.strong { background: var(--c); color: #0a0a1a; border-color: var(--c); }
+        .reveal .md-hint { text-align: center; font-size: 0.55em; color: rgba(255,255,255,0.4); margin: 10px 0 0; }
+        .fun-fact { background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(239,68,68,0.1)); border: 1px solid rgba(245,158,11,0.3); border-radius: 10px; padding: 12px 16px; margin: 10px 0; font-size: 0.85em; }
+        .fun-fact .ff-label { color: var(--accent-orange); font-weight: 700; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; }
+        .quiz-card { background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(79,140,255,0.15)); border: 1px solid rgba(16,185,129,0.3); border-radius: 14px; padding: 16px 20px; margin: 10px 0; }
+        .quiz-card .quiz-q { color: var(--accent-green); font-weight: 700; font-size: 0.95em; margin-bottom: 8px; }
+        .quiz-option { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 8px; padding: 7px 14px; margin: 4px 0; color: rgba(255,255,255,0.8); font-size: 0.8em; cursor: pointer; transition: all 0.3s ease; }
+        .quiz-option:hover { border-color: var(--accent-green); background: rgba(16,185,129,0.1); }
+        .quiz-option.correct { border-color: var(--accent-green); background: rgba(16,185,129,0.2); color: var(--accent-green); }
+        .quiz-option.wrong { border-color: var(--accent-red); background: rgba(239,68,68,0.1); opacity: 0.6; }
+        .quiz-explanation { font-size: 0.75em; color: rgba(255,255,255,0.7); margin-top: 8px; padding: 8px 12px; background: rgba(16,185,129,0.08); border-left: 3px solid var(--accent-green); border-radius: 6px; }
+        .real-life { background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(168,85,247,0.15)); border: 1px solid rgba(236,72,153,0.3); border-radius: 12px; padding: 14px 18px; margin: 10px 0; }
+        .real-life .rl-label { color: var(--accent-pink); font-weight: 700; font-size: 0.65em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+        .legal-box { background: linear-gradient(135deg, rgba(16,185,129,0.13), rgba(16,185,129,0.05)); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px; padding: 14px 18px; margin: 10px 0; }
+        .legal-box .lb-label { color: var(--accent-green); font-weight: 700; font-size: 0.65em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .legal-box .lb-text { font-size: 0.82em; color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .reveal .slides section .fragment.visible { opacity: 1; }
+        .reveal .slide-number { display: none !important; }
+        .slide-nav { position: fixed; bottom: 16px; left: 16px; z-index: 9999; height: 38px; padding: 0 16px; display: flex; align-items: center; justify-content: center; border-radius: 20px; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.7); backdrop-filter: blur(10px); color: rgba(255,255,255,0.7); font-family: 'Consolas', monospace; font-size: 0.9em; font-weight: 600; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(0,0,0,0.3); user-select: none; -webkit-user-select: none; }
+        .slide-nav:hover { border-color: var(--accent-blue); color: white; }
+        .slide-nav .slide-nav-display { display: flex; align-items: center; gap: 4px; }
+        .slide-nav .slide-nav-current { color: var(--accent-blue); }
+        .slide-nav .slide-nav-sep { color: rgba(255,255,255,0.3); margin: 0 2px; }
+        .slide-nav .slide-nav-input { display: none; width: 50px; background: transparent; border: none; border-bottom: 2px solid var(--accent-blue); color: var(--accent-blue); font-family: 'Consolas', monospace; font-size: 1em; font-weight: 700; text-align: center; outline: none; padding: 2px 0; -moz-appearance: textfield; }
+        .slide-nav .slide-nav-input::-webkit-outer-spin-button, .slide-nav .slide-nav-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        .slide-nav.editing .slide-nav-display { display: none; }
+        .slide-nav.editing .slide-nav-input { display: inline-block; }
+        .reveal .slides section { overflow-y: auto; max-height: 100%; padding-bottom: 40px; }
+        .reveal .slides section::-webkit-scrollbar { width: 6px; }
+        .reveal .slides section::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 3px; }
+        .reveal .slides section::-webkit-scrollbar-thumb { background: rgba(79,140,255,0.4); border-radius: 3px; }
+        .reveal .slides section::-webkit-scrollbar-thumb:hover { background: rgba(79,140,255,0.6); }
+        @media (max-width: 768px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } .reveal .slides section { padding: 20px 30px; } }
+        .glow-text { text-shadow: 0 0 20px rgba(79,140,255,0.5), 0 0 40px rgba(168,85,247,0.3); }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .fullscreen-btn, .index-btn { position: fixed; top: 16px; z-index: 9999; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.65); backdrop-filter: blur(10px); color: rgba(255,255,255,0.85); font-size: 1.1em; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; -webkit-tap-highlight-color: transparent; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+        .fullscreen-btn { right: 16px; }
+        .index-btn { right: 76px; }
+        .fullscreen-btn:hover, .fullscreen-btn:active, .index-btn:hover, .index-btn:active { border-color: var(--accent-blue); background: rgba(79,140,255,0.25); color: white; transform: scale(1.05); }
+        .fragment-counter { position: fixed; top: 22px; right: 142px; z-index: 9999; height: 38px; padding: 0 14px; display: none; align-items: center; justify-content: center; border-radius: 20px; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.65); backdrop-filter: blur(10px); color: rgba(255,255,255,0.9); font-family: 'Consolas', monospace; font-size: 0.85em; font-weight: 700; letter-spacing: 1px; box-shadow: 0 4px 16px rgba(0,0,0,0.3); white-space: nowrap; }
+        .fragment-counter.has-fragments { display: flex; }
+        .fragment-counter .fc-current { color: var(--accent-blue); }
+    </style>
+</head>
+<body>
+    <div class="fragment-counter" id="fragment-counter" title="Elementos de la diapositiva (mostrados/total)">
+        <span class="fc-current">0</span>/<span class="fc-total">0</span>
+    </div>
+    <button class="index-btn" id="index-btn" title="Ir al índice de la unidad" aria-label="Ir al índice de la unidad">
+        <i class="fa-solid fa-list-ul"></i>
+    </button>
+    <button class="fullscreen-btn" id="fullscreen-btn" title="Pantalla completa" aria-label="Pantalla completa">
+        <i class="fa-solid fa-expand"></i>
+    </button>
+    <div class="slide-nav" id="slide-nav" title="Clic para ir a una diapositiva">
+        <div class="slide-nav-display">
+            <span class="slide-nav-current" id="slide-nav-current">1</span>
+            <span class="slide-nav-sep">/</span>
+            <span id="slide-nav-total">1</span>
+        </div>
+        <input type="number" class="slide-nav-input" id="slide-nav-input" min="1" placeholder="">
+    </div>
+    <div class="reveal">
+        <div class="slides">
+<section class="title-slide">
+<span class="unit-badge">Unidad 10</span>
+<h1 style="margin-top: 30px;">Control de<br>la Administración Pública</h1>
+<p class="subtitle">Licenciatura en Derecho — Universidad Cristóbal Colón</p>
+<p style="color: rgba(255,255,255,0.4); font-size: 0.7em; margin-top: 40px;">
+    <i class="fa-solid fa-graduation-cap"></i> Mtro. Sergio Armando Cortina Ceballos<br>
+    <i class="fa-solid fa-building-columns"></i> Universidad Cristóbal Colón · 2026
+</p>
+<a href="../index.html" style="display: inline-block; margin-top: 24px; font-size: 0.7em; color: rgba(255,255,255,0.3); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice</a>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗺️</span> ¿Dónde estamos en el curso?</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Unidad 1: qué es el DA · Unidad 2: de dónde sale · Unidad 3: cómo se organiza · Unidad 4: quién lo hace · Unidad 5: el acto · Unidad 6: el procedimiento que lo produce · Unidad 7: qué pasa cuando el acto está viciado · Unidad 8: cómo se contrata el Estado · Unidad 9: quién presta los servicios públicos · <strong>Unidad 10: quién vigila y fiscaliza a la administración</strong>.</p>
+<div style="font-family: Consolas, monospace; font-size: 0.62em; line-height: 1.5; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+<div>
+<div style="color: var(--accent-blue); font-weight: 700; margin-bottom: 6px;">📘 FUNDAMENTOS</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">1. Introducción al DA<br>2. Fuentes del DA</div>
+<div style="color: var(--accent-green); font-weight: 700; margin-top: 12px; margin-bottom: 6px;">🏛️ ORGANIZACIÓN</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">3. La Organización Administrativa<br>4. El Servidor Público</div>
+</div>
+<div>
+<div style="color: var(--accent-purple); font-weight: 700; margin-bottom: 6px;">📜 ACTO Y PROCEDIMIENTO</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">5. Teoría del Acto Administrativo<br>6. El Procedimiento Administrativo<br>7. Ineficacias del Acto</div>
+<div style="color: var(--accent-pink); font-weight: 700; margin-top: 12px; margin-bottom: 6px;">⚙️ GESTIÓN Y CONTROL</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">8. Contrato administrativo<br>9. Servicio público y concesión<br><strong style="color: var(--accent-pink);">10. Control de la AP ◀ ESTAMOS AQUÍ</strong></div>
+</div>
+<div>
+<div style="color: var(--accent-orange); font-weight: 700; margin-bottom: 6px;">💰 PATRIMONIO Y RESPONSABILIDAD</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">11. Patrimonio del Estado<br>12. Responsabilidad patrimonial<br>15. Responsabilidades administrativas</div>
+<div style="color: var(--accent-red); font-weight: 700; margin-top: 12px; margin-bottom: 6px;">🔍 DEFENSA</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">13. Recursos administrativos<br>14. Amparo y controversias</div>
+</div>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧠</span> Mapa Conceptual</h2>
+<div class="md-root">
+<h3>🎛️ Control de la Administración Pública</h3>
+<p>concepto · clasificación · interno · externo · social · marco normativo</p>
+</div>
+<div class="md-trunk"></div>
+<div class="md-spine"></div>
+<div class="md-grid">
+<a class="md-branch" href="#/seccion-10-1" style="--c: var(--accent-blue); --cbg: rgba(79,140,255,0.12);">
+<div class="md-card">
+<h4>📖 1. Concepto y clasificación</h4>
+<ul>
+<li>Definición y fundamento</li>
+<li>Por el órgano: interno / externo / social</li>
+<li>Por el momento: previo / concurrente / posterior</li>
+<li>Por la naturaleza: 4 tipos</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-10-2" style="--c: var(--accent-purple); --cbg: rgba(168,85,247,0.12);">
+<div class="md-card">
+<h4>🛡️ 2. Control interno</h4>
+<ul>
+<li>Secretaría Anticorrupción y Buen Gobierno</li>
+<li>Art. 37 LOAPF</li>
+<li>OIC en cada dependencia</li>
+<li>Inconformidad y declaración patrimonial</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-10-3" style="--c: var(--accent-pink); --cbg: rgba(236,72,153,0.12);">
+<div class="md-card">
+<h4>⚖️ 3. Control externo</h4>
+<ul>
+<li>ASF: fiscalización superior</li>
+<li>TFJA: nulidad de actos</li>
+<li>Amparo (Poder Judicial)</li>
+<li>CNDH: recomendaciones</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-10-4" style="--c: var(--accent-green); --cbg: rgba(16,185,129,0.12);">
+<div class="md-card">
+<h4>🗳️ 4. Control social</h4>
+<ul>
+<li>Acceso a la información</li>
+<li>Participación ciudadana</li>
+<li>Denuncia popular</li>
+<li>Art. 134 CPEUM</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-10-5" style="--c: var(--accent-orange); --cbg: rgba(245,158,11,0.12);">
+<div class="md-card">
+<h4>📜 5. Marco normativo</h4>
+<ul>
+<li>CPEUM: 6, 79, 108, 109, 134</li>
+<li>LGRA</li>
+<li>LFRCF</li>
+<li>LOAPF art. 37</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-10-6" style="--c: var(--accent-red); --cbg: rgba(239,68,68,0.12);">
+<div class="md-card">
+<h4>🎓 6. Doctrina y legislación</h4>
+<ul>
+<li>Interno vs. externo vs. social</li>
+<li>Autocontrol / heterocontrol</li>
+<li>Efectos de cada control</li>
+<li>CPEUM y leyes comentadas</li>
+</ul>
+</div>
+</a>
+</div>
+<p class="md-hint">🖱️ Haz clic en una rama para ir directo a la sección</p>
+</section>
+<section data-background-color="#0a0a1a" id="indice">
+<h2><span class="icon-lg">📑</span> Índice de la Unidad 10</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Toca o haz clic en un tema para ir directo a él</p>
+<div class="grid-2" style="margin-top: 10px;">
+<a class="card card-accent-blue" href="#/seccion-10-1" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;">10.1 Concepto y clasificación</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Definición, fundamento y los tres criterios</p></a>
+<a class="card card-accent-purple" href="#/seccion-10-2" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-purple); margin: 0;">10.2 Control interno</h4><p style="font-size: 0.75em; margin: 4px 0 0;">SABG, OIC, inconformidad y declaración patrimonial</p></a>
+<a class="card card-accent-pink" href="#/seccion-10-3" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-pink); margin: 0;">10.3 Control externo</h4><p style="font-size: 0.75em; margin: 4px 0 0;">ASF, TFJA, amparo y CNDH</p></a>
+<a class="card card-accent-green" href="#/seccion-10-4" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-green); margin: 0;">10.4 Control social</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Información, participación y denuncia popular</p></a>
+<a class="card card-accent-orange" href="#/seccion-10-5" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-orange); margin: 0;">10.5 Marco normativo</h4><p style="font-size: 0.75em; margin: 4px 0 0;">CPEUM, LGRA, LFRCF y LOAPF</p></a>
+<a class="card card-accent-red" href="#/seccion-10-6" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-red); margin: 0;">10.6 Doctrina comparada</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Interno vs. externo vs. social</p></a>
+<a class="card card-accent-blue" href="#/seccion-10-7" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;">10.7 Legislación aplicable</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Arts. 6, 79, 108, 109 y 134 CPEUM · LGRA · LFRCF · LOAPF</p></a>
+<a class="card card-accent-purple" href="#/seccion-10-8" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-purple); margin: 0;">10.8 Esquema de síntesis</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Resumen visual de la unidad</p></a>
+<a class="card card-accent-green" href="#/material" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-green); margin: 0;">📥 Material para alumnos</h4><p style="font-size: 0.75em; margin: 4px 0 0;">PDFs descargables</p></a>
+</div>
+</section>
+<section class="section-header" id="seccion-10-1">
+<span class="section-icon">🔍</span>
+<h2>10.1 Concepto y clasificación del control</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📖</span> ¿Qué es el control de la administración?</h2>
+<div class="definition-box fragment">
+<div class="def-title">Definición</div>
+<p class="def-text">El control de la administración pública es el conjunto de <strong>mecanismos jurídicos, administrativos y sociales</strong> destinados a verificar que la actuación de los órganos del Estado se ajuste al ordenamiento jurídico, a los principios de <strong>eficiencia, eficacia, economía, transparencia y honradez</strong>, y a la satisfacción del interés público.</p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Verificar, no sustituir</div>
+<p style="font-size: 0.82em;">El control <strong>revisa</strong> la actuación administrativa; no la reemplaza. Por eso conviven controles internos, externos y sociales: nadie se autocorrige por completo.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧩</span> Claves de la definición y fundamento</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">¿Qué verifica?</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">· Que el acto sea <strong>conforme a derecho</strong><br>· Que el gasto cumpla los <strong>principios del art. 134</strong><br>· Que se satisfaga el <strong>interés público</strong></p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">¿Con qué fundamento?</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><span class="highlight">Art. 109 CPEUM:</span> responsabilidades de los servidores públicos.<br><span class="highlight">Art. 134 CPEUM:</span> principios de administración de los recursos.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Los dos ejes</div>
+<p style="font-size: 0.82em;">Todo el control administrativo se apoya en dos ejes constitucionales: <strong>¿quién responde?</strong> (109) y <strong>¿con qué criterios se administra?</strong> (134). La U15 verá el primero; esta unidad, el sistema completo.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗂️</span> Por el órgano que lo ejerce</h2>
+<div class="grid-3" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Interno</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Órganos de la <strong>propia administración</strong>: Secretaría Anticorrupción y Buen Gobierno y los OIC.</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">Externo</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Órganos <strong>ajenos</strong> a la administración: ASF, Poder Judicial, CNDH.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Social</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Ejercido por la <strong>ciudadanía</strong> mediante acceso a la información y participación.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 La pregunta que decide</div>
+<p style="font-size: 0.82em;">¿Quién lo ejerce? Si es la <strong>misma administración</strong> → interno (autocontrol). Si es un <strong>tercero</strong> → externo (heterocontrol). Si es la <strong>ciudadanía</strong> → social.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⏱️</span> Por el momento en que se realiza</h2>
+<div class="grid-3" style="margin-top: 6px;">
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Previo</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Antes de que el acto se consume: <strong>fiscalización preventiva</strong>.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Concurrente</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Durante la ejecución del acto o programa: <strong>seguimiento</strong>.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Posterior</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Después de consumado: <strong>auditoría y revisión de cuentas</strong>.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 El mismo control, tres tiempos</div>
+<p style="font-size: 0.82em;">La clasificación por momento no cambia quién controla, sino <strong>cuándo</strong>: revisar el gasto antes de pagarlo, durante la obra o después de concluida son las tres caras de la misma fiscalización.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧭</span> Por la naturaleza del control</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">De legalidad</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Verifica la conformidad del acto con el <strong>ordenamiento jurídico</strong>.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">De constitucionalidad</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Verifica la conformidad con la <strong>Constitución</strong> (y con los tratados: convencionalidad).</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Financiero</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Verifica el <strong>manejo correcto de los recursos públicos</strong>.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Social</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Ejercido por la <strong>ciudadanía</strong>: acceso a la información y participación.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 De lo general a lo específico</div>
+<p style="font-size: 0.82em;">Los cuatro se ordenan por alcance: <strong>legalidad</strong> (cualquier acto) → <strong>constitucionalidad</strong> (jerarquía suprema) → <strong>financiero</strong> (el gasto) → <strong>social</strong> (la mirada ciudadana).</p>
+</div>
+</section>
+<section class="section-header" id="seccion-10-2">
+<span class="section-icon">🛡️</span>
+<h2>10.2 Control interno</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🪞</span> El autocontrol de la administración</h2>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Concepto</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Es ejercido por <strong>órganos pertenecientes a la propia administración pública</strong>, con el objeto de supervisar y fiscalizar la actuación de las dependencias y entidades.</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Nivel central</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;"><strong>Secretaría Anticorrupción y Buen Gobierno</strong> (antes Secretaría de la Función Pública).</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">Nivel interno</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;"><strong>Órganos Internos de Control (OIC)</strong> dentro de cada dependencia o entidad.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Cambio de nombre 2024-2025</div>
+<p style="font-size: 0.82em;">La <strong>SFP se transformó en la Secretaría Anticorrupción y Buen Gobierno</strong>: mismo art. 37 LOAPF, nuevo nombre. En los casos y preguntas del examen, ambas denominaciones se refieren al mismo órgano.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🏛️</span> Secretaría Anticorrupción y Buen Gobierno</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Artículo 37 LOAPF</div>
+<p class="lb-text">Tiene a su cargo, entre otros asuntos: <strong>la fiscalización del gasto público</strong> · <strong>la vigilancia de la contratación pública</strong> · <strong>la gestión de la declaración patrimonial</strong> de los servidores públicos · <strong>la substanciación de los procedimientos administrativos disciplinarios</strong>.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Dependencia del Ejecutivo Federal</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Es la dependencia encargada del <strong>control interno</strong> de la APF: vigila, fiscaliza y sanciona dentro de la propia administración.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🏢</span> Los Órganos Internos de Control (OIC)</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">¿Qué son?</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Unidades administrativas que ejercen funciones de control <strong>dentro de cada dependencia o entidad</strong> de la APF, en coordinación con la SABG.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Facultades</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">· <strong>Auditar</strong><br>· <strong>Prevenir</strong> irregularidades<br>· <strong>Substanciar</strong> procedimientos disciplinarios<br>· <strong>Aplicar sanciones</strong> a servidores públicos</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 ¿Dónde denuncio?</div>
+<p style="font-size: 0.82em;">Cada secretaría tiene <strong>su propio OIC</strong>: la denuncia por un funcionario de una dependencia se presenta ante el OIC de esa misma dependencia (luego veremos la instancia de inconformidad para contrataciones).</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧾</span> Instancia de inconformidad y declaración patrimonial</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Instancia de Inconformidad</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Medio de defensa previsto en la <strong>LAASSP y la LOPSRM</strong>: permite a los particulares inconformarse ante la secretaría de control contra actos de la administración <strong>en materia de contrataciones públicas</strong>.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Declaración patrimonial y de intereses</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Obligación de la <strong>Ley General de Responsabilidades Administrativas</strong>: busca <strong>prevenir conflictos de intereses</strong> y actos de corrupción en los servidores públicos.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Prevención, no castigo</div>
+<p style="font-size: 0.82em;">Ambas figuras son <strong>preventivas</strong>: la inconformidad corrige el procedimiento de compra <em>antes</em> de que se consuma, y la declaración patrimonial expone el patrimonio <em>antes</em> de que haya sospechas.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-10-3">
+<span class="section-icon">⚖️</span>
+<h2>10.3 Control externo</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📊</span> La Auditoría Superior de la Federación</h2>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">¿Qué es?</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">El <strong>órgano técnico de fiscalización superior de la Cámara de Diputados</strong>, dotado de <strong>autonomía técnica y de gestión</strong>. Su función principal: fiscalizar el uso de los recursos públicos federales mediante la <strong>revisión de la Cuenta Pública</strong>.</p>
+</div>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">¿Ante quién reporta?</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;">Orgánicamente ante la <strong>Cámara de Diputados</strong>, pero con autonomía técnica: decide qué audita y cómo.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Base constitucional</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;"><span class="highlight">Art. 79 CPEUM:</span> facultades de la ASF para fiscalizar la Cuenta Pública.</p>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🔍</span> Facultades de la ASF</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Alcance de la auditoría</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Audita a <strong>todas las entidades que manejen recursos federales</strong>, incluyendo estados y municipios.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Sanciones</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Puede <strong>fincar responsabilidades resarcitorias</strong> y promover el fincamiento de otras ante las autoridades competentes.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Informes públicos</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Emite <strong>informes individuales de auditoría</strong> que son públicos.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Prescripción</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Sus acciones de fiscalización <strong>prescriben a los 5 años</strong>.</p>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> Control jurisdiccional: el TFJA</h2>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Tribunal Federal de Justicia Administrativa</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Conoce del <strong>juicio contencioso administrativo federal</strong>. Puede declarar la <strong>nulidad de actos administrativos</strong> y <strong>reconocer derechos subjetivos</strong> de los particulares frente a la administración.</p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Conexión con la U14</div>
+<p style="font-size: 0.82em;">El juicio ante el TFJA se estudia en la U14. Aquí basta con ubicarlo: es el control <strong>externo jurisdiccional</strong> por excelencia — un tercero (el tribunal) anula lo que la administración hizo mal.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🛡️</span> El Poder Judicial: amparo y controversias</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Juicio de amparo</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Protege a los particulares contra <strong>actos de autoridad que violan derechos humanos</strong>.</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">Controversias constitucionales</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Resuelven conflictos <strong>entre entes públicos</strong> (federación, estados, municipios) por invasión de esferas de competencia.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Tres vías judiciales</div>
+<p style="font-size: 0.82em;"><strong>TFJA:</strong> el particular contra el acto administrativo. <strong>Amparo:</strong> el particular contra el acto que lesiona sus derechos. <strong>Controversia:</strong> un ente público contra otro. Misma jurisdicción, tres objetos distintos.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗣️</span> La CNDH: recomendaciones no vinculantes</h2>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">¿Qué hace?</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Emite <strong>recomendaciones no vinculantes</strong> a las autoridades administrativas derivadas de <strong>quejas por violaciones a derechos humanos</strong>.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Efecto real</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Aunque no son obligatorias en sentido estricto, la autoridad destinataria está <strong>obligada a pronunciarse</strong> sobre su aceptación y, en su caso, a <strong>informar sobre su cumplimiento</strong>.</p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 «No vinculante» ≠ «sin efectos»</div>
+<p style="font-size: 0.82em;">La recomendación no obliga a hacer, pero <strong>sí obliga a responder</strong>: el silencio de la autoridad es un incumplimiento público. Es la tesis clásica de la autoevaluación (reactivo 5).</p>
+</div>
+</section>
+<section class="section-header" id="seccion-10-4">
+<span class="section-icon">🗳️</span>
+<h2>10.4 Control social y rendición de cuentas</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">👁️</span> Acceso a la información pública</h2>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">El derecho que lo hace posible</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">El marco constitucional (<span class="highlight">artículo 6o</span>) y la ley general en la materia garantizan el derecho de acceso a la información gubernamental: los ciudadanos pueden conocer <strong>el uso de los recursos públicos y la actuación de las autoridades</strong>.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">¿Qué pasó con el INAI?</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">El <strong>INAI desapareció con la reforma de 2024</strong>, que reasignó sus funciones a <strong>Transparencia para el Pueblo</strong> (órgano desconcentrado de la SABG desde marzo de 2025). El derecho a la información <strong>no desapareció: cambió de casa</strong>.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🙋</span> Participación ciudadana y denuncia popular</h2>
+<div class="grid-3" style="margin-top: 6px;">
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Participación ciudadana</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;"><strong>Consultas populares, audiencias públicas</strong> y contraloría social.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Denuncia popular</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;">Cualquier persona puede presentar <strong>denuncias ante los OIC</strong> por irregularidades administrativas.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Contraloría social</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;">La ciudadanía <strong>acompaña la ejecución</strong> de obras y programas públicos.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Sin intermediarios</div>
+<p style="font-size: 0.82em;">La denuncia popular es el control social más directo: <strong>no requiere interés jurídico ni abogado</strong> — basta con informar ante el OIC competente.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> El art. 134: el corazón de todo control</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Artículo 134 CPEUM</div>
+<p class="lb-text">Los recursos económicos se administrarán con <strong>eficiencia, eficacia, economía, transparencia y honradez</strong>, para satisfacer los objetivos a los que estén destinados. <span class="highlight">Cinco principios = los cinco parámetros con que se mide todo control financiero.</span></p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Por qué aparece en tres unidades</div>
+<p style="font-size: 0.82em;">El 134 está en la contratación (U8), en el control (esta unidad) y en la responsabilidad patrimonial (U12): es el <strong>artículo de medición</strong> del buen gobierno. Apréndetelo con sus cinco palabras.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-10-5">
+<span class="section-icon">📜</span>
+<h2>10.5 Marco normativo del control</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> CPEUM: control social y fiscalización</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Artículo 6o</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Derecho de acceso a la información pública</strong>: base del control social.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Artículo 79</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>La ASF fiscaliza la Cuenta Pública</strong>: órgano técnico de la Cámara de Diputados.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Del derecho al fiscalizador</div>
+<p style="font-size: 0.82em;">El 6o le da al ciudadano la <strong>llave de la información</strong>; el 79 le da al Estado el <strong>fiscalizador profesional</strong>. Son las dos caras del control externo y social.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> CPEUM: responsabilidades y principios</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Artículo 108</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Define a los servidores públicos</strong> y los sujetos a responsabilidad.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Artículo 109</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Tipos de responsabilidad</strong> de los servidores públicos y la responsabilidad patrimonial del Estado.</p>
+</div>
+<div class="card card-accent-red fragment" style="grid-column: 1 / -1;">
+<h4 style="color: var(--accent-red);">Artículo 134</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Principios de administración</strong> de los recursos públicos: eficiencia, eficacia, economía, transparencia y honradez.</p>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> LGRA y LFRCF</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">LGRA</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Regula los <strong>procedimientos disciplinarios</strong>, las <strong>faltas administrativas graves y no graves</strong> y las sanciones. Establece la <strong>declaración patrimonial y de intereses</strong> como obligación de todos los servidores públicos.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">LFRCF</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Ley de Fiscalización y Rendición de Cuentas de la Federación: regula la <strong>fiscalización superior</strong>, la <strong>revisión de la Cuenta Pública</strong>, los procedimientos de auditoría y el fincamiento de <strong>responsabilidades resarcitorias</strong>.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Cuál ley para cuál control</div>
+<p style="font-size: 0.82em;"><strong>LFRCF = el libro de la ASF</strong> (cuentas y auditoría). <strong>LGRA = el libro de la SABG/OIC</strong> (faltas, procedimientos y sanciones a servidores). No se mezclan.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> LOAPF, artículo 37</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Artículo 37 LOAPF</div>
+<p class="lb-text">Facultades de la <strong>Secretaría Anticorrupción y Buen Gobierno</strong> en materia de control interno. (La dependencia se denominó <strong>Secretaría de la Función Pública hasta las reformas de 2024-2025</strong>: si la ley o el caso dicen «SFP», se refieren al mismo órgano.)</p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 El control interno tiene casa propia</div>
+<p style="font-size: 0.82em;">Mientras la ASF tiene su propia ley (LFRCF), el control interno vive en la <strong>ley orgánica del Ejecutivo</strong>: por eso el art. 37 es la base de la SABG.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-10-6">
+<span class="section-icon">🎓</span>
+<h2>10.6 Doctrina comparada</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎓</span> Órgano, fundamento y naturaleza</h2>
+<table class="comparison-table dense">
+<tr><th>Tema</th><th>Control interno</th><th>Control externo</th><th>Control social</th></tr>
+<tr><td><strong>Órgano</strong></td><td>Secretaría Anticorrupción y Buen Gobierno, OIC</td><td>ASF, TFJA, Poder Judicial</td><td>Ciudadanía, mecanismos de transparencia</td></tr>
+<tr><td><strong>Fundamento</strong></td><td>LOAPF art. 37</td><td>Arts. 79, 103 CPEUM</td><td>Art. 6 CPEUM</td></tr>
+<tr><td><strong>Naturaleza</strong></td><td>Autocontrol</td><td>Heterocontrol</td><td>Participación</td></tr>
+</table>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎓</span> Efectos y alcance de cada control</h2>
+<table class="comparison-table dense">
+<tr><th>Tema</th><th>Control interno</th><th>Control externo</th><th>Control social</th></tr>
+<tr><td><strong>Efectos</strong></td><td>Sanciones administrativas</td><td>Nulidad, responsabilidad resarcitoria</td><td>Recomendaciones, opinión pública</td></tr>
+<tr><td><strong>Alcance</strong></td><td>APF y entes públicos</td><td>Toda entidad con recursos federales</td><td>Toda la administración</td></tr>
+</table>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 La regla de los tres controles</div>
+<p style="font-size: 0.82em;"><strong>Interno sanciona · externo anula y cobra · social opina y denuncia.</strong> El primero es autocontrol, el segundo es de un tercero con poder jurídico, el tercero es ciudadano sin poder coercitivo.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-10-7">
+<span class="section-icon">📚</span>
+<h2>10.7 Legislación aplicable comentada</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Constitución Política</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">Artículo 6o</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;">Derecho de acceso a la información pública. <strong>Base del control social</strong>.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Artículo 79</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;">La ASF fiscaliza la Cuenta Pública. <strong>Órgano técnico de la Cámara de Diputados</strong>.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Artículo 108</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;"><strong>Sujetos de responsabilidad</strong>: define a los servidores públicos.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Artículo 109</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;"><strong>Responsabilidades administrativas, penales, políticas y patrimoniales</strong>.</p>
+</div>
+<div class="card card-accent-red fragment" style="grid-column: 1 / -1;">
+<h4 style="color: var(--accent-red);">Artículo 134</h4>
+<p style="font-size: 0.76em; margin: 4px 0 0;"><strong>Principios de administración de recursos públicos</strong>: eficiencia, eficacia, economía, transparencia y honradez.</p>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Las tres leyes del control</h2>
+<div class="grid-3" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">LGRA</h4>
+<p style="font-size: 0.74em; margin: 4px 0 0;">Faltas administrativas <strong>graves y no graves</strong>, procedimiento disciplinario y sanciones. <strong>Declaración patrimonial</strong> de todos los servidores públicos.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">LFRCF</h4>
+<p style="font-size: 0.74em; margin: 4px 0 0;">Fiscalización superior, <strong>revisión de la Cuenta Pública</strong>, procedimientos de auditoría y <strong>responsabilidades resarcitorias</strong>.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">LOAPF art. 37</h4>
+<p style="font-size: 0.74em; margin: 4px 0 0;">Facultades de la <strong>Secretaría Anticorrupción y Buen Gobierno</strong> en materia de control interno.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Mapa de leyes</div>
+<p style="font-size: 0.82em;"><strong>¿Al ciudadano y su información?</strong> art. 6 + transparencia. <strong>¿A las cuentas del Estado?</strong> LFRCF (ASF). <strong>¿A los servidores que fallan?</strong> LGRA (SABG/OIC). <strong>¿A la casa del control interno?</strong> LOAPF 37.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-10-8">
+<span class="section-icon">🗺️</span>
+<h2>10.8 Esquema de síntesis</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗺️</span> Esquema general</h2>
+<div style="font-family: Consolas, monospace; font-size: 0.68em; line-height: 1.55; color: rgba(255,255,255,0.88); background: var(--glass); border: 1px solid var(--glass-border); border-radius: 12px; padding: 14px 18px; margin-top: 8px;">
+<div style="color: var(--accent-blue); font-weight: 700;">1. CONCEPTO: Mecanismos para verificar legalidad, eficiencia y transparencia de la actuación administrativa</div>
+<div style="margin-top: 8px; color: var(--accent-purple); font-weight: 700;">2. CLASIFICACIÓN</div>
+<div style="padding-left: 18px;">Por órgano: Interno (SABG, OIC) / Externo (ASF, TFJA, PJF, CNDH) / Social (ciudadanía)</div>
+<div style="padding-left: 18px;">Por momento: Previo / Concurrente / Posterior</div>
+<div style="padding-left: 18px;">Por naturaleza: Legalidad / Constitucionalidad / Financiero / Social</div>
+<div style="margin-top: 8px; color: var(--accent-green); font-weight: 700;">3. CONTROL INTERNO (Secretaría Anticorrupción y Buen Gobierno + OIC)</div>
+<div style="padding-left: 18px;">Fiscalización preventiva y correctiva</div>
+<div style="padding-left: 18px;">Procedimientos disciplinarios (LGRA) · Declaración patrimonial y de intereses</div>
+<div style="padding-left: 18px;">Instancia de inconformidad (contrataciones)</div>
+<div style="margin-top: 8px; color: var(--accent-pink); font-weight: 700;">4. CONTROL EXTERNO</div>
+<div style="padding-left: 18px;">ASF: auditoría de Cuenta Pública, informes, responsabilidades resarcitorias (prescripción 5 años)</div>
+<div style="padding-left: 18px;">TFJA: nulidad de actos · PJF: amparo y controversias · CNDH: recomendaciones no vinculantes</div>
+<div style="margin-top: 8px; color: var(--accent-orange); font-weight: 700;">5. CONTROL SOCIAL</div>
+<div style="padding-left: 18px;">Acceso a la información pública (art. 6) · Participación ciudadana · Denuncia popular · Contraloría social</div>
+<div style="margin-top: 8px; color: var(--accent-red); font-weight: 700;">6. MARCO NORMATIVO</div>
+<div style="padding-left: 18px;">CPEUM arts. 6, 79, 108, 109, 134 · LGRA / LFRCF / LOAPF art. 37</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a" id="material">
+<h2><span class="icon-lg">📥</span> Material para Alumnos</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.78em;">Descarga el material de estudio de esta unidad</p>
+<div class="grid-2" style="margin-top: 10px;">
+<a href="../Material para Alumnos/Unidad 10/Unidad 10.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-blue fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">📄</span>
+<div>
+<h4 style="color: var(--accent-blue); margin: 0;">Unidad 10 — Contenido completo</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Control interno, externo y social</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-blue); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 10/Cuestionario.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-green fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">❓</span>
+<div>
+<h4 style="color: var(--accent-green); margin: 0;">Cuestionario de estudio</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">9 preguntas de comprensión, análisis y aplicación</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-green); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 10/Casos.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-purple fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">🔎</span>
+<div>
+<h4 style="color: var(--accent-purple); margin: 0;">Casos prácticos</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">2 casos con guía de análisis y rúbrica</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-purple); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 10/Actividades.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-orange fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">👥</span>
+<div>
+<h4 style="color: var(--accent-orange); margin: 0;">Actividades en clase</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Debate, análisis de informe de la ASF y simulación</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-orange); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 10/Taller y Evaluación.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-red fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">🎯</span>
+<div>
+<h4 style="color: var(--accent-red); margin: 0;">Taller y Evaluación</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Redacción de una denuncia ante el OIC</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-red); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 10/Autoevaluación.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-pink fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">✅</span>
+<div>
+<h4 style="color: var(--accent-pink); margin: 0;">Autoevaluación</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">10 reactivos con clave de respuestas</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-pink); font-size: 1.2em;"></i>
+</div>
+</a>
+</div>
+<div style="margin-top: 16px; text-align: center;">
+<p style="font-size: 0.7em; color: rgba(255,255,255,0.35);"><i class="fa-solid fa-circle-info"></i> Toca cualquier tarjeta para descargar el PDF</p>
+</div>
+</section>
+<section class="title-slide" id="cierre">
+<span style="font-size: 4em;">🎓</span>
+<h1 style="font-size: 2em; margin-top: 20px;">¡Listo para la Unidad 10!</h1>
+<p style="color: rgba(255,255,255,0.6); font-size: 1.1em; margin-top: 20px;">El control no sustituye a la administración: <span style="color: var(--accent-blue); font-weight: 600;">la verifica desde tres frentes</span> — interno (SABG y OIC), externo (ASF, TFJA, amparo y CNDH) y social (la ciudadanía).<br>Preguntas clave: <strong>¿interno, externo o social? · ¿previo, concurrente o posterior? · ¿la CNDH obliga o solo recomienda? · ¿quién fiscaliza la Cuenta Pública?</strong></p>
+<div style="margin-top: 40px;">
+<p style="font-size: 0.8em; color: rgba(255,255,255,0.4);">
+<i class="fa-solid fa-book"></i> Lectura: LGRA, Títulos Primero a Tercero · LFRCF, Capítulos I a V · LOAPF, art. 37<br>
+<i class="fa-solid fa-scale-balanced"></i> Roldán Xopa, cap. «Control de la administración pública» · Fernández Ruiz INEHRM, cap. «Control interno y externo»<br>
+<i class="fa-solid fa-gavel"></i> CPEUM arts. 6, 79, 108, 109 y 134 — lectura obligatoria</p>
+</div>
+<p style="margin-top: 40px; font-size: 0.7em; color: rgba(255,255,255,0.3);">Presiona <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">Esc</kbd> para ver la vista general · <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">F</kbd> para pantalla completa</p>
+<a href="../index.html" style="display: inline-block; margin-top: 20px; font-size: 0.75em; color: rgba(255,255,255,0.4); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice de unidades</a>
+</section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: false,
+            width: 1100,
+            height: 700,
+            margin: 0.04,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: true,
+            controls: true,
+            controlsLayout: 'edges',
+            controlsTutorial: false,
+            disableLayout: true,
+            plugins: [RevealNotes, RevealMarkdown, RevealHighlight]
+        });
+
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('a, button, .quiz-option, [onclick], input, select, textarea')) {
+                return;
+            }
+            var slide = Reveal.getCurrentSlide();
+            if (e.target === slide || slide.contains(e.target)) {
+                Reveal.navigateNext();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode === 174 || e.keyCode === 175) {
+                e.preventDefault();
+                var slide = Reveal.getCurrentSlide();
+                var scrollAmount = 100;
+                if (e.keyCode === 175) {
+                    slide.scrollTop -= scrollAmount;
+                } else {
+                    slide.scrollTop += scrollAmount;
+                }
+            }
+        });
+
+        var fullscreenBtn = document.getElementById('fullscreen-btn');
+        var fullscreenIcon = fullscreenBtn.querySelector('i');
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                var el = document.documentElement;
+                if (el.requestFullscreen) { el.requestFullscreen(); }
+                else if (el.webkitRequestFullscreen) { el.webkitRequestFullscreen(); }
+            } else {
+                if (document.exitFullscreen) { document.exitFullscreen(); }
+                else if (document.webkitExitFullscreen) { document.exitFullscreen(); }
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleFullscreen();
+        });
+
+        function updateFullscreenIcon() {
+            var isFull = document.fullscreenElement || document.webkitFullscreenElement;
+            if (isFull) {
+                fullscreenIcon.className = 'fa-solid fa-compress';
+                fullscreenBtn.title = 'Salir de pantalla completa';
+            } else {
+                fullscreenIcon.className = 'fa-solid fa-expand';
+                fullscreenBtn.title = 'Pantalla completa';
+            }
+        }
+
+        document.addEventListener('fullscreenchange', updateFullscreenIcon);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
+
+        document.getElementById('index-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            var slideIndice = document.getElementById('indice');
+            if (slideIndice) {
+                var idx = Reveal.getIndices(slideIndice);
+                Reveal.slide(idx.h, idx.v, idx.f);
+            }
+        });
+
+        var fragmentCounter = document.getElementById('fragment-counter');
+        var fcCurrent = fragmentCounter.querySelector('.fc-current');
+        var fcTotal = fragmentCounter.querySelector('.fc-total');
+
+        function updateFragmentCounter() {
+            var slide = Reveal.getCurrentSlide();
+            var total = slide.querySelectorAll('.fragment').length;
+            var shown = slide.querySelectorAll('.fragment.visible').length;
+            if (total > 0) {
+                fcCurrent.textContent = shown;
+                fcTotal.textContent = total;
+                fragmentCounter.classList.add('has-fragments');
+            } else {
+                fcCurrent.textContent = 0;
+                fcTotal.textContent = 0;
+                fragmentCounter.classList.remove('has-fragments');
+            }
+        }
+
+        Reveal.on('ready', updateFragmentCounter);
+        Reveal.on('slidechanged', updateFragmentCounter);
+        Reveal.on('fragmentshown', updateFragmentCounter);
+        Reveal.on('fragmenthidden', updateFragmentCounter);
+
+        var slideNav = document.getElementById('slide-nav');
+        var slideNavCurrent = document.getElementById('slide-nav-current');
+        var slideNavTotal = document.getElementById('slide-nav-total');
+        var slideNavInput = document.getElementById('slide-nav-input');
+
+        function updateSlideNav() {
+            var indices = Reveal.getIndices();
+            var h = (indices && typeof indices.h === 'number' && !isNaN(indices.h)) ? indices.h : 0;
+            var total = Reveal.getTotalSlides();
+            slideNavCurrent.textContent = h + 1;
+            slideNavTotal.textContent = total;
+        }
+
+        function openSlideNavInput() {
+            var indices = Reveal.getIndices();
+            slideNavInput.value = indices.h + 1;
+            slideNav.classList.add('editing');
+            slideNavInput.focus();
+            slideNavInput.select();
+        }
+
+        function closeSlideNavInput() {
+            slideNav.classList.remove('editing');
+            updateSlideNav();
+        }
+
+        function navigateToSlide() {
+            var num = parseInt(slideNavInput.value, 10);
+            var total = Reveal.getTotalSlides();
+            if (!isNaN(num) && num >= 1 && num <= total) {
+                Reveal.slide(num - 1);
+            }
+            closeSlideNavInput();
+        }
+
+        slideNav.addEventListener('click', function(e) {
+            if (e.target === slideNavInput) return;
+            e.stopPropagation();
+            openSlideNavInput();
+        });
+
+        slideNavInput.addEventListener('keydown', function(e) {
+            e.stopPropagation();
+            if (e.key === 'Enter') { navigateToSlide(); }
+            else if (e.key === 'Escape') { closeSlideNavInput(); }
+        });
+
+        slideNavInput.addEventListener('blur', function() {
+            closeSlideNavInput();
+        });
+
+        Reveal.on('ready', updateSlideNav);
+        Reveal.on('slidechanged', updateSlideNav);
+        updateSlideNav();
+    </script>
+</body>
+</html>

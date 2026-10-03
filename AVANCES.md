@@ -736,3 +736,19 @@ La profesora cuestionó si las presentaciones eran suficientemente exhaustivas. 
 - Corrección de herramienta: `audit.mjs` tenía el número de unidad hardcodeado (`seccion-9-*`); ahora lo deriva del nombre de archivo.
 - **Criterio para U10 en adelante:** ~2.5-3 diapositivas por sección, bloques de 2-6 cards cortos, sin láminas monolíticas.
 > *Registrado por OpenCode (mimo-v2.6-flash-free) - 2 de octubre de 2026*
+
+---
+
+### Unidad 10 — Control de la Administración Pública (solo clase + material)
+
+**Archivos:** `diapositivas/unidad-10-control-de-la-administracion-publica.html` (nuevo) · `Material para Alumnos/Unidad 10/*.pdf` (6 nuevos) · `src/generar_material_alumnos.py` (extendido a U10) · `index.html` (10/15).
+
+- **40 diapositivas** (3 por sección, con el criterio de granularidad nuevo desde el inicio): portada → ¿Dónde estamos? → mapa conceptual (6 ramas) → índice (9 tarjetas) → **10.1** Concepto y clasificación (definición, fundamento, por órgano, por momento, por naturaleza) → **10.2** Control interno (autocontrol, SABG, OIC, inconformidad y declaración patrimonial) → **10.3** Control externo (ASF concepto y facultades, TFJA, amparo/controversias, CNDH) → **10.4** Control social (información y nota INAI→Transparencia para el Pueblo, participación/denuncia/contraloría, art. 134) → **10.5** Marco normativo (CPEUM 6/79, CPEUM 108/109/134, LGRA+LFRCF, LOAPF 37) → **10.6** Doctrina comparada (2 tablas) → **10.7** Legislación (CPEUM y las 3 leyes) → **10.8** Esquema → **Material** → **Cierre**.
+- **Sin láminas ajenas a la clase** (mismo alcance que U7-U9): Objetivos, Competencias, Quiz, Casos, Actividades y Taller solo existen como PDFs en `#material`.
+- Ensamblada con el pipeline head/middle/tail desde U7 (fix del `NaN` incluido), `<title>` "Unidad 10 — Control de la Administración Pública", UTF-8 sin BOM.
+- **CDP (`audit.mjs`)**: 40 secciones, `slide-nav` "1 / 40" **sin NaN**, 81 `fragment`, 15 enlaces `#/...` todos con destino (índice 9 + mapa 6), ids `seccion-10-1`…`10-8` completos, 6 enlaces de material, botón índice → `seccion-10-1` (5/40), **0 excepciones JS**. Solo el cierre usa el scroll vertical (29 px); índice, esquema y el resto caben completos.
+- **Material U10** (libro pp. 175-187): `Unidad 10.pdf` 175-180 (6 pág.) · `Cuestionario.pdf` 181 · `Casos.pdf` 182 · `Actividades.pdf` 183 (respaldo `1. Debate:`) · `Taller y Evaluación.pdf` 184 · `Autoevaluación.pdf` 185-187 (3 pág.). Verificados con PyMuPDF (páginas + texto de cabecera).
+- `generar_material_alumnos.py`: docstring 1-10, ambos `range(1,10)` → `range(1,11)`, 5 entradas de `NOMBRES` para U10. Los PDFs U1-U9 se regeneraron por el script y se restauraron con `git checkout --` (sin cambios).
+- `index.html`: barra 60 % → **66.67 %**, "10 de 15 unidades disponibles", tarjeta Unidad 10 → `available` con enlace a la presentación.
+- Commits de esta entrada: expansión U8/U9 (`83b39b1`, `9fb5012`) y U10.
+> *Registrado por OpenCode (mimo-v2.6-flash-free) - 2 de octubre de 2026*
