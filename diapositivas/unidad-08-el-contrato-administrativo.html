@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unidad 8 — El Contrato Administrativo</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        :root {
+            --r-background-color: #0a0a1a;
+            --r-main-font: 'Inter', sans-serif;
+            --r-heading-font: 'Playfair Display', serif;
+            --r-main-font-size: 24px;
+            --accent-blue: #4f8cff;
+            --accent-purple: #a855f7;
+            --accent-pink: #ec4899;
+            --accent-green: #10b981;
+            --accent-orange: #f59e0b;
+            --accent-red: #ef4444;
+            --glass: rgba(255,255,255,0.06);
+            --glass-border: rgba(255,255,255,0.1);
+        }
+        .reveal { font-family: var(--r-main-font); }
+        .reveal .slides { text-align: left; }
+        .reveal .slides section { padding: 20px 40px; overflow: hidden; box-sizing: border-box; }
+        .reveal .slides section * { max-width: 100%; box-sizing: border-box; }
+        .reveal .slides p, .reveal .slides li, .reveal .slides h1, .reveal .slides h2, .reveal .slides h3, .reveal .slides h4 { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; margin-right: 0; padding-right: 0; }
+        .reveal .slides section.title-slide { text-align: center; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%); }
+        .reveal .slides section.title-slide h1 { font-family: 'Playfair Display', serif; font-size: 2.4em; font-weight: 900; background: linear-gradient(135deg, #4f8cff, #a855f7, #ec4899); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; line-height: 1.2; margin-bottom: 16px; }
+        .reveal .slides section.title-slide .subtitle { font-size: 1em; color: rgba(255,255,255,0.6); font-weight: 300; letter-spacing: 2px; }
+        .reveal .slides section.title-slide .unit-badge { display: inline-block; background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: white; padding: 8px 24px; border-radius: 30px; font-size: 0.7em; font-weight: 600; letter-spacing: 3px; text-transform: uppercase; margin-top: 30px; }
+        .reveal .slides section.section-header { text-align: center; background: linear-gradient(135deg, #0a0a1a 0%, #1a1a3e 50%, #2d1b69 100%); }
+        .reveal .slides section.section-header h2 { font-family: 'Playfair Display', serif; font-size: 2em; font-weight: 800; background: linear-gradient(135deg, #4f8cff, #a855f7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 16px; }
+        .reveal .slides section.section-header .section-icon { font-size: 2.5em; margin-bottom: 14px; display: block; }
+        .card { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 14px; padding: 14px 16px; margin: 8px 0; backdrop-filter: blur(10px); overflow: hidden; box-sizing: border-box; }
+        .card p, .card li, .card h4 { overflow-wrap: break-word; word-wrap: break-word; hyphens: auto; font-size: 0.85em; }
+        .card-accent-blue { border-left: 4px solid var(--accent-blue); }
+        .card-accent-purple { border-left: 4px solid var(--accent-purple); }
+        .card-accent-pink { border-left: 4px solid var(--accent-pink); }
+        .card-accent-green { border-left: 4px solid var(--accent-green); }
+        .card-accent-orange { border-left: 4px solid var(--accent-orange); }
+        .card-accent-red { border-left: 4px solid var(--accent-red); }
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 14px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin-top: 14px; }
+        .grid-2 > .card, .grid-3 > .card { margin: 0; min-width: 0; }
+        .reveal h1, .reveal h2, .reveal h3, .reveal h4 { color: white; font-weight: 700; }
+        .reveal h2 { font-size: 1.4em; margin-bottom: 14px; }
+        .reveal h3 { font-size: 1.05em; color: var(--accent-blue); margin-bottom: 8px; }
+        .reveal h4 { font-size: 0.9em; color: var(--accent-purple); }
+        .reveal p, .reveal li { color: rgba(255,255,255,0.85); line-height: 1.6; }
+        .reveal ul { list-style: none; padding-left: 0; }
+        .reveal ul li { padding: 3px 0; padding-left: 24px; position: relative; }
+        .reveal ul li::before { content: '▸'; position: absolute; left: 0; color: var(--accent-blue); font-weight: 700; }
+        .highlight { color: var(--accent-blue); font-weight: 600; }
+        .highlight-purple { color: var(--accent-purple); font-weight: 600; }
+        .highlight-pink { color: var(--accent-pink); font-weight: 600; }
+        .highlight-green { color: var(--accent-green); font-weight: 600; }
+        .highlight-orange { color: var(--accent-orange); font-weight: 600; }
+        .icon-lg { font-size: 1.6em; display: inline-block; margin-right: 6px; vertical-align: middle; }
+        .definition-box { background: linear-gradient(135deg, rgba(79,140,255,0.15), rgba(168,85,247,0.15)); border: 1px solid rgba(79,140,255,0.3); border-radius: 14px; padding: 16px 20px; margin: 14px 0; position: relative; }
+        .definition-box::before { content: '📖'; font-size: 1.5em; position: absolute; top: -12px; left: 20px; }
+        .definition-box .def-title { font-size: 0.65em; text-transform: uppercase; letter-spacing: 2px; color: var(--accent-blue); font-weight: 700; margin-bottom: 6px; }
+        .definition-box .def-text { font-size: 0.85em; color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .comparison-table { width: 100%; border-collapse: separate; border-spacing: 0; border-radius: 10px; overflow: hidden; font-size: 0.65em; margin-top: 12px; }
+        .comparison-table th { background: linear-gradient(135deg, var(--accent-blue), var(--accent-purple)); color: white; padding: 8px 12px; text-align: left; font-weight: 600; }
+        .comparison-table td { padding: 7px 12px; border-bottom: 1px solid var(--glass-border); color: rgba(255,255,255,0.85); }
+        .comparison-table tr:nth-child(even) td { background: var(--glass); }
+        .comparison-table tr:last-child td { border-bottom: none; }
+        .comparison-table.dense th, .comparison-table.dense td { padding: 5px 10px; }
+        /* Mapa conceptual — diagrama HTML clicable */
+        .md-root { width: fit-content; margin: 0 auto; text-align: center; background: linear-gradient(135deg, rgba(79,140,255,0.22), rgba(168,85,247,0.22)); border: 1px solid rgba(79,140,255,0.45); border-radius: 14px; padding: 9px 30px; box-shadow: 0 0 30px rgba(79,140,255,0.25); }
+        .reveal .md-root h3 { margin: 0; font-size: 0.9em; letter-spacing: 1.5px; text-transform: uppercase; color: white; }
+        .reveal .md-root p { margin: 4px 0 0; font-size: 0.65em; color: rgba(255,255,255,0.6); font-style: italic; line-height: 1.4; }
+        .md-trunk { width: 2px; height: 16px; background: rgba(255,255,255,0.28); margin: 0 auto; }
+        .md-spine { height: 2px; background: rgba(255,255,255,0.28); width: 97%; margin: 0 auto; border-radius: 2px; }
+        .md-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(228px, 1fr)); gap: 12px; }
+        a.md-branch { position: relative; margin-top: 15px; display: block; text-decoration: none; transition: transform 0.25s ease; }
+        a.md-branch::before { content: ''; position: absolute; top: -15px; left: 50%; transform: translateX(-50%); width: 2px; height: 15px; background: rgba(255,255,255,0.28); }
+        a.md-branch:hover { transform: translateY(-3px); }
+        a.md-branch:hover .md-card { border-color: var(--c); box-shadow: 0 8px 24px rgba(0,0,0,0.45); }
+        .md-card { height: 100%; background: var(--glass); border: 1px solid var(--glass-border); border-top: 3px solid var(--c); border-radius: 12px; padding: 9px 12px 8px; }
+        .reveal .md-card h4 { margin: 0 0 7px; font-size: 0.66em; letter-spacing: 0.4px; color: var(--c); text-transform: uppercase; font-weight: 700; }
+        .reveal .md-card ul { list-style: none; margin: 0; padding: 0; }
+        .reveal .md-card li { position: relative; padding: 1.5px 0 1.5px 13px; font-size: 0.55em; line-height: 1.4; color: rgba(255,255,255,0.85); }
+        .reveal .md-card li::before { content: '▸'; position: absolute; left: 0; color: var(--c); font-weight: 700; }
+        .md-chip { display: inline-block; font-size: 0.82em; font-weight: 700; padding: 0 7px; border-radius: 9px; margin-left: 4px; color: var(--c); border: 1px solid var(--c); background: var(--cbg); white-space: nowrap; }
+        .md-chip.strong { background: var(--c); color: #0a0a1a; border-color: var(--c); }
+        .reveal .md-hint { text-align: center; font-size: 0.55em; color: rgba(255,255,255,0.4); margin: 10px 0 0; }
+        .fun-fact { background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(239,68,68,0.1)); border: 1px solid rgba(245,158,11,0.3); border-radius: 10px; padding: 12px 16px; margin: 10px 0; font-size: 0.85em; }
+        .fun-fact .ff-label { color: var(--accent-orange); font-weight: 700; font-size: 0.7em; text-transform: uppercase; letter-spacing: 1px; }
+        .quiz-card { background: linear-gradient(135deg, rgba(16,185,129,0.15), rgba(79,140,255,0.15)); border: 1px solid rgba(16,185,129,0.3); border-radius: 14px; padding: 16px 20px; margin: 10px 0; }
+        .quiz-card .quiz-q { color: var(--accent-green); font-weight: 700; font-size: 0.95em; margin-bottom: 8px; }
+        .quiz-option { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 8px; padding: 7px 14px; margin: 4px 0; color: rgba(255,255,255,0.8); font-size: 0.8em; cursor: pointer; transition: all 0.3s ease; }
+        .quiz-option:hover { border-color: var(--accent-green); background: rgba(16,185,129,0.1); }
+        .quiz-option.correct { border-color: var(--accent-green); background: rgba(16,185,129,0.2); color: var(--accent-green); }
+        .quiz-option.wrong { border-color: var(--accent-red); background: rgba(239,68,68,0.1); opacity: 0.6; }
+        .quiz-explanation { font-size: 0.75em; color: rgba(255,255,255,0.7); margin-top: 8px; padding: 8px 12px; background: rgba(16,185,129,0.08); border-left: 3px solid var(--accent-green); border-radius: 6px; }
+        .real-life { background: linear-gradient(135deg, rgba(236,72,153,0.15), rgba(168,85,247,0.15)); border: 1px solid rgba(236,72,153,0.3); border-radius: 12px; padding: 14px 18px; margin: 10px 0; }
+        .real-life .rl-label { color: var(--accent-pink); font-weight: 700; font-size: 0.65em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 6px; }
+        .legal-box { background: linear-gradient(135deg, rgba(16,185,129,0.13), rgba(16,185,129,0.05)); border: 1px solid rgba(16,185,129,0.3); border-radius: 12px; padding: 14px 18px; margin: 10px 0; }
+        .legal-box .lb-label { color: var(--accent-green); font-weight: 700; font-size: 0.65em; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
+        .legal-box .lb-text { font-size: 0.82em; color: rgba(255,255,255,0.9); line-height: 1.5; }
+        .reveal .slides section .fragment.visible { opacity: 1; }
+        .reveal .slide-number { display: none !important; }
+        .slide-nav { position: fixed; bottom: 16px; left: 16px; z-index: 9999; height: 38px; padding: 0 16px; display: flex; align-items: center; justify-content: center; border-radius: 20px; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.7); backdrop-filter: blur(10px); color: rgba(255,255,255,0.7); font-family: 'Consolas', monospace; font-size: 0.9em; font-weight: 600; letter-spacing: 1px; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(0,0,0,0.3); user-select: none; -webkit-user-select: none; }
+        .slide-nav:hover { border-color: var(--accent-blue); color: white; }
+        .slide-nav .slide-nav-display { display: flex; align-items: center; gap: 4px; }
+        .slide-nav .slide-nav-current { color: var(--accent-blue); }
+        .slide-nav .slide-nav-sep { color: rgba(255,255,255,0.3); margin: 0 2px; }
+        .slide-nav .slide-nav-input { display: none; width: 50px; background: transparent; border: none; border-bottom: 2px solid var(--accent-blue); color: var(--accent-blue); font-family: 'Consolas', monospace; font-size: 1em; font-weight: 700; text-align: center; outline: none; padding: 2px 0; -moz-appearance: textfield; }
+        .slide-nav .slide-nav-input::-webkit-outer-spin-button, .slide-nav .slide-nav-input::-webkit-inner-spin-button { -webkit-appearance: none; margin: 0; }
+        .slide-nav.editing .slide-nav-display { display: none; }
+        .slide-nav.editing .slide-nav-input { display: inline-block; }
+        .reveal .slides section { overflow-y: auto; max-height: 100%; padding-bottom: 40px; }
+        .reveal .slides section::-webkit-scrollbar { width: 6px; }
+        .reveal .slides section::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); border-radius: 3px; }
+        .reveal .slides section::-webkit-scrollbar-thumb { background: rgba(79,140,255,0.4); border-radius: 3px; }
+        .reveal .slides section::-webkit-scrollbar-thumb:hover { background: rgba(79,140,255,0.6); }
+        @media (max-width: 768px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } .reveal .slides section { padding: 20px 30px; } }
+        .glow-text { text-shadow: 0 0 20px rgba(79,140,255,0.5), 0 0 40px rgba(168,85,247,0.3); }
+        .fade-in { animation: fadeIn 0.8s ease-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .pulse { animation: pulse 2s infinite; }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        .fullscreen-btn, .index-btn { position: fixed; top: 16px; z-index: 9999; width: 48px; height: 48px; border-radius: 50%; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.65); backdrop-filter: blur(10px); color: rgba(255,255,255,0.85); font-size: 1.1em; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; -webkit-tap-highlight-color: transparent; box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
+        .fullscreen-btn { right: 16px; }
+        .index-btn { right: 76px; }
+        .fullscreen-btn:hover, .fullscreen-btn:active, .index-btn:hover, .index-btn:active { border-color: var(--accent-blue); background: rgba(79,140,255,0.25); color: white; transform: scale(1.05); }
+        .fragment-counter { position: fixed; top: 22px; right: 142px; z-index: 9999; height: 38px; padding: 0 14px; display: none; align-items: center; justify-content: center; border-radius: 20px; border: 1px solid var(--glass-border); background: rgba(10,10,26,0.65); backdrop-filter: blur(10px); color: rgba(255,255,255,0.9); font-family: 'Consolas', monospace; font-size: 0.85em; font-weight: 700; letter-spacing: 1px; box-shadow: 0 4px 16px rgba(0,0,0,0.3); white-space: nowrap; }
+        .fragment-counter.has-fragments { display: flex; }
+        .fragment-counter .fc-current { color: var(--accent-blue); }
+    </style>
+</head>
+<body>
+    <div class="fragment-counter" id="fragment-counter" title="Elementos de la diapositiva (mostrados/total)">
+        <span class="fc-current">0</span>/<span class="fc-total">0</span>
+    </div>
+    <button class="index-btn" id="index-btn" title="Ir al índice de la unidad" aria-label="Ir al índice de la unidad">
+        <i class="fa-solid fa-list-ul"></i>
+    </button>
+    <button class="fullscreen-btn" id="fullscreen-btn" title="Pantalla completa" aria-label="Pantalla completa">
+        <i class="fa-solid fa-expand"></i>
+    </button>
+    <div class="slide-nav" id="slide-nav" title="Clic para ir a una diapositiva">
+        <div class="slide-nav-display">
+            <span class="slide-nav-current" id="slide-nav-current">1</span>
+            <span class="slide-nav-sep">/</span>
+            <span id="slide-nav-total">1</span>
+        </div>
+        <input type="number" class="slide-nav-input" id="slide-nav-input" min="1" placeholder="">
+    </div>
+    <div class="reveal">
+        <div class="slides">
+<section class="title-slide">
+<span class="unit-badge">Unidad 8</span>
+<h1 style="margin-top: 30px;">El Contrato<br>Administrativo</h1>
+<p class="subtitle">Licenciatura en Derecho — Universidad Cristóbal Colón</p>
+<p style="color: rgba(255,255,255,0.4); font-size: 0.7em; margin-top: 40px;">
+    <i class="fa-solid fa-graduation-cap"></i> Mtro. Sergio Armando Cortina Ceballos<br>
+    <i class="fa-solid fa-building-columns"></i> Universidad Cristóbal Colón · 2026
+</p>
+<a href="../index.html" style="display: inline-block; margin-top: 24px; font-size: 0.7em; color: rgba(255,255,255,0.3); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 6px 16px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice</a>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗺️</span> ¿Dónde estamos en el curso?</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Unidad 1: qué es el DA · Unidad 2: de dónde sale · Unidad 3: cómo se organiza · Unidad 4: quién lo hace · Unidad 5: el acto · Unidad 6: el procedimiento que lo produce · Unidad 7: qué pasa cuando el acto está viciado o pierde vigencia · <strong>Unidad 8: cómo se contrata el Estado con particulares</strong>.</p>
+<div style="font-family: Consolas, monospace; font-size: 0.62em; line-height: 1.5; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);">
+<div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px;">
+<div>
+<div style="color: var(--accent-blue); font-weight: 700; margin-bottom: 6px;">📘 FUNDAMENTOS</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">1. Introducción al DA<br>2. Fuentes del DA</div>
+<div style="color: var(--accent-green); font-weight: 700; margin-top: 12px; margin-bottom: 6px;">🏛️ ORGANIZACIÓN</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">3. La Organización Administrativa<br>4. El Servidor Público</div>
+</div>
+<div>
+<div style="color: var(--accent-purple); font-weight: 700; margin-bottom: 6px;">📜 ACTO Y PROCEDIMIENTO</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">5. Teoría del Acto Administrativo<br>6. El Procedimiento Administrativo<br>7. Ineficacias del Acto</div>
+</div>
+<div>
+<div style="color: var(--accent-pink); font-weight: 700; margin-bottom: 6px;">⚙️ GESTIÓN Y CONTROL</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);"><strong style="color: var(--accent-pink);">8. Contrato administrativo ◀ ESTAMOS AQUÍ</strong><br>9. Servicio público y concesión<br>10. Control de la AP</div>
+<div style="color: var(--accent-orange); font-weight: 700; margin-top: 12px; margin-bottom: 6px;">🔍 DEFENSA</div>
+<div style="padding-left: 10px; font-size: 0.95em; color: rgba(255,255,255,0.7);">13. Recursos administrativos<br>14. Amparo y controversias</div>
+</div>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a" style="font-size: 0.92em;">
+<h2><span class="icon-lg">🧠</span> Mapa Conceptual</h2>
+<div class="md-root">
+<h3>🤝 El Contrato Administrativo</h3>
+<p>Concepto y criterios · principios · licitación · cláusulas exorbitantes · ejecución y extinción</p>
+</div>
+<div class="md-trunk"></div>
+<div class="md-spine"></div>
+<div class="md-grid">
+<a class="md-branch" href="#/seccion-8-1" style="--c: var(--accent-blue); --cbg: rgba(79,140,255,0.12);">
+<div class="md-card">
+<h4>📖 1. Concepto y debate</h4>
+<ul>
+<li>Corriente negativa: Mayer, Fleiner, Duguit</li>
+<li>Corriente positiva: Jèze, Bielsa, Fraga</li>
+<li>Régimen exorbitante de DP</li>
+<li>Criterio mixto de Fernández Ruiz</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-8-2" style="--c: var(--accent-purple); --cbg: rgba(168,85,247,0.12);">
+<div class="md-card">
+<h4>🧩 2. Criterios y caracteres</h4>
+<ul>
+<li>Subjetivo · jurisdicción · formal</li>
+<li>Cláusulas exorbitantes (Vedel)</li>
+<li>Desigualdad jurídica de las partes</li>
+<li>Contratos de adhesión (Hamdan)</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-8-4" style="--c: var(--accent-pink); --cbg: rgba(236,72,153,0.12);">
+<div class="md-card">
+<h4>⚖️ 3. Principios rectores</h4>
+<ul>
+<li>Legalidad <span class="md-chip strong">art. 134</span></li>
+<li>Continuidad · mutabilidad (ius variandi)</li>
+<li>Hecho del príncipe</li>
+<li>Teoría de la imprevisión</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-8-6" style="--c: var(--accent-green); --cbg: rgba(16,185,129,0.12);">
+<div class="md-card">
+<h4>📋 4. Licitación y cláusulas</h4>
+<ul>
+<li>Licitación pública: regla general</li>
+<li>Invitación restringida · adjudicación directa</li>
+<li>Ius variandi · rescisión administrativa</li>
+<li>Garantías y fianzas</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-8-8" style="--c: var(--accent-orange); --cbg: rgba(245,158,11,0.12);">
+<div class="md-card">
+<h4>🏗️ 5. Tipos y ejecución</h4>
+<ul>
+<li>Obra pública (LOPSRM)</li>
+<li>Suministro · servicios · arrendamiento</li>
+<li>Concesión · empréstito · consultoría</li>
+<li>Modificación ≤ 25 % del monto</li>
+</ul>
+</div>
+</a>
+<a class="md-branch" href="#/seccion-8-9" style="--c: var(--accent-red); --cbg: rgba(239,68,68,0.12);">
+<div class="md-card">
+<h4>🏁 6. Extinción y contencioso</h4>
+<ul>
+<li>Cumplimiento · rescisión · terminación</li>
+<li>Nulidad · caducidad · mutuo acuerdo</li>
+<li>TFJA · juzgados de distrito</li>
+<li>Inconformidad · amparo indirecto</li>
+</ul>
+</div>
+</a>
+</div>
+<p class="md-hint">🖱️ Haz clic en una rama para ir directo a la sección</p>
+</section>
+<section data-background-color="#0a0a1a" id="indice">
+<h2><span class="icon-lg">📑</span> Índice de la Unidad 8</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.85em; margin-bottom: 12px;">Toca o haz clic en un tema para ir directo a él</p>
+<div class="grid-2" style="margin-top: 10px;">
+<a class="card card-accent-blue" href="#/seccion-8-1" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;">8.1 Debate sobre su existencia</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Corrientes negativa y positiva · definiciones</p></a>
+<a class="card card-accent-purple" href="#/seccion-8-2" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-purple); margin: 0;">8.2 Criterios de identificación</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Siete criterios · cláusulas exorbitantes y criterio mixto</p></a>
+<a class="card card-accent-pink" href="#/seccion-8-3" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-pink); margin: 0;">8.3 Caracteres esenciales</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Desigualdad jurídica y régimen exorbitante</p></a>
+<a class="card card-accent-green" href="#/seccion-8-4" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-green); margin: 0;">8.4 Principios rectores</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Legalidad, continuidad, mutabilidad y equilibrio financiero</p></a>
+<a class="card card-accent-orange" href="#/seccion-8-5" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-orange); margin: 0;">8.5 Elementos del contrato</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Sujetos, consentimiento, objeto, forma, causa y licitación</p></a>
+<a class="card card-accent-red" href="#/seccion-8-6" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-red); margin: 0;">8.6 Licitación pública</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Regla general (art. 134 CPEUM) y sus excepciones</p></a>
+<a class="card card-accent-blue" href="#/seccion-8-7" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;">8.7 Cláusulas exorbitantes</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Inspección, ius variandi, rescisión y garantías</p></a>
+<a class="card card-accent-purple" href="#/seccion-8-8" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-purple); margin: 0;">8.8 Tipos de contratos</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Obra, suministro, servicios, concesión y más</p></a>
+<a class="card card-accent-pink" href="#/seccion-8-9" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-pink); margin: 0;">8.9 Ejecución y extinción</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Modificación, equilibrio financiero y causas de término</p></a>
+<a class="card card-accent-green" href="#/seccion-8-10" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-green); margin: 0;">8.10 Contencioso contractual</h4><p style="font-size: 0.75em; margin: 4px 0 0;">TFJA, juzgados de distrito, inconformidad y amparo</p></a>
+<a class="card card-accent-orange" href="#/seccion-8-11" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-orange); margin: 0;">8.11 Doctrina comparada</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Martínez Morales, Fernández Ruiz y Hamdan Amad</p></a>
+<a class="card card-accent-red" href="#/seccion-8-12" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-red); margin: 0;">8.12 Legislación aplicable</h4><p style="font-size: 0.75em; margin: 4px 0 0;">CPEUM 134, LAASSP, LOPSRM y LFPRH</p></a>
+<a class="card card-accent-blue" href="#/seccion-8-13" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-blue); margin: 0;">8.13 Esquema de síntesis</h4><p style="font-size: 0.75em; margin: 4px 0 0;">Resumen visual de la unidad</p></a>
+<a class="card card-accent-red" href="#/material" style="display: block; text-decoration: none;"><h4 style="color: var(--accent-red); margin: 0;">📥 Material para alumnos</h4><p style="font-size: 0.75em; margin: 4px 0 0;">PDFs descargables</p></a>
+</div>
+</section>
+<section class="section-header" id="seccion-8-1">
+<span class="section-icon">📖</span>
+<h2>8.1 Debate sobre la existencia del contrato administrativo</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> ¿Existe como categoría autónoma?</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-bottom: 4px;">El debate doctrinal se remonta al siglo XIX y define la posición de cada autor:</p>
+<div class="grid-2" style="margin-top: 10px;">
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">❌ Corriente negativa</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Otto Mayer · Fritz Fleiner · León Duguit.</strong> No existe una categoría especial: los supuestos contratos administrativos son <strong>actos administrativos unilaterales</strong> o simples contratos civiles celebrados por la administración.</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">✅ Corriente positiva</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Gastón Jèze · Marcel Waline · Rafael Bielsa · Gabino Fraga.</strong> Sí existe una categoría autónoma, con cinco notas: celebrados con un particular, finalidad de interés público, régimen de DP, cláusulas exorbitantes y subordinación del particular.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Postura mayoritaria en México</div>
+<p style="font-size: 0.82em;">La corriente positiva es la dominante en la doctrina mexicana contemporánea (Fernández Ruiz, Edo. Méx., Cap. XII, p. 200). Toda la unidad se construye sobre ella.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📘</span> Dos definiciones de referencia</h2>
+<div class="definition-box fragment">
+<div class="def-title">Martínez Morales (Diccionario, voz «Contratos administrativos», p. 109)</div>
+<p class="def-text">«El contrato administrativo es <strong>el acuerdo de voluntades de la administración pública y un particular</strong>, dirigido a crear o transmitir derechos y obligaciones, que se rige —en primer término— por <strong>normas de derecho público</strong>.»</p>
+</div>
+<div class="definition-box fragment">
+<div class="def-title">Fernández Ruiz (Edo. Méx., Cap. XII, p. 203)</div>
+<p class="def-text">«El contrato administrativo es el acuerdo de dos o más personas, de las cuales <strong>una es órgano del poder público en ejercicio de función administrativa</strong>, para crear, transferir, modificar o extinguir obligaciones patrimoniales, en aras del interés público, con sujeción a un <strong>régimen exorbitante del derecho ordinario</strong>.»</p>
+</div>
+</section>
+<section class="section-header" id="seccion-8-2">
+<span class="section-icon">🧩</span>
+<h2>8.2 Criterios para identificar el contrato administrativo</h2>
+</section>
+<section data-background-color="#0a0a1a" style="font-size: 0.95em;">
+<h2><span class="icon-lg">🔍</span> Los primeros cuatro criterios</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">a) Subjetivo u orgánico</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Es administrativo cuando <strong>una de las partes es la administración pública</strong>. El más simple, pero también el más insuficiente.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">b) De la jurisdicción</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Son administrativos los contratos cuyo conocimiento corresponde a los <strong>tribunales contencioso-administrativos</strong>.</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">c) Formal</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Atiende a las <strong>formalidades de celebración</strong>: licitación pública, invitación restringida o adjudicación directa.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">d) Cláusulas exorbitantes</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>El más aceptado.</strong> Según Vedel, son «estipulaciones que confieren a las partes derechos u obligaciones ajenos por su naturaleza a los que pueden ser libremente consentidos en el marco de las leyes civiles o comerciales».</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">📖 Vedel (citado en Martínez Morales, 2o Curso, Tema XX, p. 136)</div>
+<p style="font-size: 0.8em;">La clave no es quién firma, sino <strong>qué poderes da la ley a la administración</strong> dentro del contrato: si rompen la igualdad civilista, el contrato es administrativo.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧬</span> Tres criterios más: teleológico, legal y mixto</h2>
+<div class="grid-3" style="margin-top: 6px;">
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">e) Teleológico</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Atiende a la <strong>finalidad del contrato</strong>: la satisfacción del interés público.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">f) Legal</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Son administrativos los contratos que <strong>la ley califique como tales</strong>.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">g) Mixto (integrador)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Fernández Ruiz: una parte es <strong>persona de derecho público</strong> en función administrativa, con formalidades especiales, posible cláusula exorbitante y destino al interés público (p. 203).</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Cómo se aplica en el examen</div>
+<p style="font-size: 0.82em;">Ante un caso concreto, revise en orden: <strong>¿quién firma? → ¿ante qué tribunal se demanda? → ¿qué formalidad usó? → ¿tiene cláusulas exorbitantes?</strong> El criterio mixto integra los cuatro.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-8-3">
+<span class="section-icon">🧬</span>
+<h2>8.3 Caracteres esenciales</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> Seis notas que lo distinguen del contrato civil</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">a) Juridicidad</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Acto jurídico que <strong>crea, modifica, transmite o extingue</strong> derechos y obligaciones.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">b) Bilateralidad (sinalagmaticidad)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Acuerdo de voluntades que genera <strong>obligaciones recíprocas</strong> entre las partes.</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">c) Desigualdad jurídica</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>El carácter más distintivo:</strong> la administración goza de prerrogativas exorbitantes que el particular no tiene.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">d) Restricción de la libertad contractual</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">La administración se sujeta al procedimiento de licitación y a las <strong>bases previamente establecidas</strong>. Hamdan los llama «contratos de adhesión» (Tema XII, p. 151).</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">e) Interés público prevaleciente</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Es la <strong>justificación</strong> de las prerrogativas de la administración dentro del contrato.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">f) Régimen jurídico exorbitante</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Se rige por normas de DP que otorgan <strong>facultades inexistentes en el derecho privado</strong>.</p>
+</div>
+</div>
+</section>
+<section class="section-header" id="seccion-8-4">
+<span class="section-icon">⚖️</span>
+<h2>8.4 Principios rectores de la contratación</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> Cuatro principios</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">a) Legalidad</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">El <span class="highlight">artículo 134 CPEUM</span> es la norma rectora: los recursos públicos se administran «con <strong>eficiencia, eficacia, economía, transparencia y honradez</strong>».</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">b) Continuidad</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">La <strong>ejecución del contrato no debe interrumpirse</strong>: afectaría directamente el servicio público que lo justifica.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">c) Mutabilidad (ius variandi)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Hamdan: «el <strong>derecho permanente e irrenunciable del Estado</strong> de modificar el objeto o contenido del contrato por razones de interés público» (Tema XII, p. 155).</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">d) Equilibrio financiero</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">El <strong>contrapeso del ius variandi</strong>: si la administración altera el contrato, debe restablecer su equilibrio económico. Opera por dos figuras (siguiente diapositiva).</p>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> Equilibrio financiero: las dos figuras</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">🏛️ Hecho del príncipe</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Alteración provocada por <strong>decisiones de la autoridad contratante</strong> en ejercicio de sus atribuciones, que ocasiona un perjuicio <strong>real, cierto, directo y especial</strong> al contratista.</p>
+<p style="font-size: 0.78em; margin: 6px 0 0;"><strong>Efecto:</strong> indemnización integral.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">🌦️ Teoría de la imprevisión (rebus sic stantibus)</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Se aplica cuando ocurren <strong>acontecimientos extraordinarios, imprevisibles y ajenos a las partes</strong>, que alteran sustancialmente la economía del contrato.</p>
+<p style="font-size: 0.78em; margin: 6px 0 0;"><strong>Efecto:</strong> la administración cubre los aumentos para restablecer el equilibrio.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Distinga siempre la causa</div>
+<p style="font-size: 0.82em;"><strong>Hecho del príncipe = decisión de la autoridad</strong> (un acto propio del Estado). <strong>Imprevisión = acontecimiento externo</strong> (mercado, crisis, tipo de cambio). La primera se prueba con el acto; la segunda, con la alteración extraordinaria del costo.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-8-5">
+<span class="section-icon">🧾</span>
+<h2>8.5 Elementos del contrato administrativo</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧾</span> Los seis elementos</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">a) Sujetos</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Dos partes: la <strong>administración pública</strong> y el <strong>particular</strong>.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">b) Consentimiento</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>No es libre:</strong> va precedido de requisitos legales, como la licitación pública.</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">c) Objeto</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Debe ser <strong>determinado o determinable, lícito, idóneo y viable</strong>.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">d) Forma</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Debe constar <strong>por escrito</strong> (ad solemnitatem).</p>
+</div>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">e) Causa o motivo</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Para el particular: el <strong>lucro</strong>. Para la administración: el <strong>interés público</strong>.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">f) Licitación</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Requisito procedimental previo:</strong> su omisión vicia el contrato de nulidad.</p>
+</div>
+</div>
+</section>
+<section class="section-header" id="seccion-8-6">
+<span class="section-icon">📋</span>
+<h2>8.6 La licitación pública y sus excepciones</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📢</span> Licitación pública: la regla general</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Artículo 134 CPEUM</div>
+<p class="lb-text">Los recursos económicos se administrarán «con <strong>eficiencia, eficacia, economía, transparencia y honradez</strong>». El texto constitucional impone la <strong>licitación pública como regla general</strong> para adquisiciones, arrendamientos, servicios y obra pública, y fija sus excepciones.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Procedimiento en seis etapas</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Convocatoria publicada en el DOF → <strong>bases</strong> → ofertas en <strong>sobre cerrado</strong> → <strong>apertura pública</strong> → adjudicación a la propuesta que asegure <strong>las mejores condiciones</strong> de precio y calidad.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚠️</span> Excepciones a la licitación pública</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Invitación restringida</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Se invita a un <strong>mínimo de tres proveedores</strong>. Procede cuando la licitación quedó desierta, el importe no excede ciertos montos o existen <strong>razones justificadas</strong>.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Adjudicación directa</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">La <strong>excepción extrema</strong>: monto ínfimo, bienes perecederos, <strong>proveedor único</strong>, situaciones de emergencia u obras de arte.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Orden de aplicación</div>
+<p style="font-size: 0.82em;">Licitación (regla) → invitación restringida (primera excepción) → adjudicación directa (última excepción). <strong>Agote el escalón anterior antes de bajar</strong>: la licitación desierta no autoriza por sí sola a adjudicar directamente.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-8-7">
+<span class="section-icon">📜</span>
+<h2>8.7 Las cláusulas exorbitantes</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚡</span> Cuatro cláusulas que rompen la igualdad</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">a) Inspección y vigilancia</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">La administración puede <strong>supervisar permanentemente</strong> la ejecución del contrato.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">b) Ius variandi</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Puede <strong>modificar unilateralmente</strong> las condiciones por razones de interés público, con la obligación de restablecer el equilibrio financiero.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">c) Terminación anticipada y rescisión</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Puede dar por terminado el contrato <strong>anticipadamente</strong> o <strong>rescindirlo</strong> por incumplimiento del contratista, previo <strong>derecho de audiencia</strong>.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">d) Garantías y fianzas</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Garantía de <strong>anticipo (100 %)</strong>, de <strong>cumplimiento (10 %)</strong>, de <strong>vicios ocultos</strong> y <strong>penas convencionales</strong>.</p>
+</div>
+</div>
+</section>
+<section class="section-header" id="seccion-8-8">
+<span class="section-icon">🏗️</span>
+<h2>8.8 Tipos de contratos administrativos</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🧱</span> Contratos de obras, bienes y uso</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">a) Obra pública</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>El más importante.</strong> Se rige por la LOPSRM.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">b) Suministro</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">La administración contrata la <strong>provisión continua de bienes</strong> con un particular.</p>
+</div>
+<div class="card card-accent-pink fragment">
+<h4 style="color: var(--accent-pink);">c) Adquisición de bienes muebles</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Compraventa con <strong>cláusulas exorbitantes</strong>.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">d) Arrendamiento</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">La administración arrienda bienes para el <strong>cumplimiento de sus funciones</strong>.</p>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🏗️</span> Contratos de servicios, concesión y deuda</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">e) Prestación de servicios</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Servicios profesionales, <strong>consultoría, asesoría y mantenimiento</strong>.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">f) Concesión de obra pública</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Acto mixto:</strong> obra pública más concesión de explotación.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">g) Empréstito público</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;"><strong>Deuda pública</strong> contraída por el Estado.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">h) Consultoría</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Servicios de expertos para <strong>opiniones técnicas o estudios especializados</strong>.</p>
+</div>
+</div>
+</section>
+<section class="section-header" id="seccion-8-9">
+<span class="section-icon">⚙️</span>
+<h2>8.9 Ejecución, modificación y extinción</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🔨</span> Ejecución y modificación</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">Ejecución</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Conforme a las <strong>cláusulas pactadas</strong> y a las disposiciones legales. La administración supervisa mediante <strong>inspectores o residentes de obra</strong>.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Modificación</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Debe constar <strong>por escrito</strong> mediante convenios modificatorios. No puede exceder ciertos porcentajes del monto original (generalmente <span class="highlight">25 % en obra pública</span>).</p>
+</div>
+<div class="card card-accent-green fragment" style="grid-column: 1 / -1;">
+<h4 style="color: var(--accent-green);">Equilibrio financiero durante la ejecución</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">El contratista puede solicitar: <strong>ajuste de costos</strong> · <strong>ampliación de plazo</strong> · <strong>indemnización por hecho del príncipe</strong> · <strong>restablecimiento del equilibrio por imprevisión</strong>.</p>
+</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🏁</span> Extinción del contrato</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.8em; margin-bottom: 4px;">Causas por las que el contrato administrativo puede terminar:</p>
+<div class="grid-3" style="margin-top: 8px;">
+<div class="card card-accent-green fragment"><h4 style="color: var(--accent-green);">Cumplimiento</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Se agota el objeto pactado: <strong>extinción normal</strong>.</p></div>
+<div class="card card-accent-red fragment"><h4 style="color: var(--accent-red);">Rescisión administrativa</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Por <strong>incumplimiento</strong> del contratista, previo derecho de audiencia.</p></div>
+<div class="card card-accent-orange fragment"><h4 style="color: var(--accent-orange);">Terminación anticipada</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Por <strong>interés público</strong>: la administración retira el contrato antes de su plazo.</p></div>
+<div class="card card-accent-pink fragment"><h4 style="color: var(--accent-pink);">Nulidad</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Vicio en un elemento esencial, por ejemplo la <strong>omisión de la licitación</strong>.</p></div>
+<div class="card card-accent-purple fragment"><h4 style="color: var(--accent-purple);">Caducidad</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Incumplimiento que hace <strong>innecesaria la continuidad</strong> (típica en concesiones).</p></div>
+<div class="card card-accent-blue fragment"><h4 style="color: var(--accent-blue);">Mutuo acuerdo</h4><p style="font-size: 0.78em; margin: 4px 0 0;">Las partes convienen terminar el contrato <strong>de común acuerdo</strong>.</p></div>
+</div>
+</section>
+<section class="section-header" id="seccion-8-10">
+<span class="section-icon">🏛️</span>
+<h2>8.10 El contencioso contractual</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">⚖️</span> Dónde se discuten estos contratos</h2>
+<div class="grid-2" style="margin-top: 6px;">
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">TFJA</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Conoce de los <strong>contratos de obra pública federal</strong>.</p>
+</div>
+<div class="card card-accent-purple fragment">
+<h4 style="color: var(--accent-purple);">Juzgados de Distrito</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Contratos de los <strong>Poderes Legislativo y Judicial</strong> y órganos autónomos.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">Instancia de inconformidad</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Ante la <strong>Secretaría Anticorrupción y Buen Gobierno</strong>.</p>
+</div>
+<div class="card card-accent-red fragment">
+<h4 style="color: var(--accent-red);">Amparo indirecto</h4>
+<p style="font-size: 0.78em; margin: 4px 0 0;">Contra <strong>resoluciones definitivas</strong> del TFJA o de los juzgados de distrito.</p>
+</div>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Conexión con la Unidad 14</div>
+<p style="font-size: 0.82em;">La vía contencioso-administrativa del contrato se estudia a fondo en el <strong>juicio ante el TFJA</strong> y el <strong>amparo</strong>: aquí solo identifica cuál de las cuatro vías corresponde según el contrato y el acto impugnado.</p>
+</div>
+</section>
+<section class="section-header" id="seccion-8-11">
+<span class="section-icon">🎓</span>
+<h2>8.11 Doctrina comparada</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🎓</span> Tres autores, tres enfoques</h2>
+<table class="comparison-table dense">
+<tr><th>Tema</th><th>Martínez Morales (2o Curso)</th><th>Fernández Ruiz (Edo. Méx. 2023)</th><th>Hamdan Amad (ELD 2015)</th></tr>
+<tr><td><strong>Concepto</strong></td><td>Acuerdo de voluntades AP + particular, regido por normas de DP</td><td>Acuerdo en que una parte es órgano del poder público en función administrativa, para crear obligaciones patrimoniales en aras del interés público</td><td>No hay autonomía de la voluntad: son <strong>contratos de adhesión</strong></td></tr>
+<tr><td><strong>Criterio identificador</strong></td><td>Cláusulas exorbitantes (Vedel): las ventajas son siempre para el Estado</td><td><strong>Criterio mixto:</strong> persona de DP + función administrativa + formalidades + cláusulas exorbitantes</td><td>Exigencia de <strong>licitación pública</strong> como regla general</td></tr>
+<tr><td><strong>Mutabilidad</strong></td><td>Límite: el <strong>equilibrio financiero</strong></td><td>El ius variandi es <strong>irrenunciable</strong> (Ariño Ortiz)</td><td>Derecho <strong>permanente e irrenunciable</strong> del Estado por interés público</td></tr>
+<tr><td><strong>Equilibrio financiero</strong></td><td>Hecho del príncipe: acto que grave nuevas cargas al concesionario</td><td>Hecho del príncipe + teoría de la imprevisión (Conferencia de Lima, 1947)</td><td>Imprevisión <strong>implícita en todo contrato de tracto sucesivo</strong></td></tr>
+<tr><td><strong>Rescisión</strong></td><td>El Estado puede rescindir <strong>unilateralmente</strong></td><td>Si el contratista abandona, ejecución directa con su maquinaria</td><td>Rescisión unilateral <strong>previo derecho de audiencia</strong></td></tr>
+</table>
+</section>
+<section class="section-header" id="seccion-8-12">
+<span class="section-icon">📚</span>
+<h2>8.12 Legislación aplicable comentada</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> CPEUM art. 134 y LAASSP</h2>
+<div class="legal-box fragment">
+<div class="lb-label">Artículo 134 CPEUM</div>
+<p class="lb-text">«Los recursos económicos de que dispongan la Federación, las entidades federativas, los Municipios y las demarcaciones territoriales de la Ciudad de México, se administrarán con <strong>eficiencia, eficacia, economía, transparencia y honradez</strong> para satisfacer los objetivos a los que estén destinados.» Base constitucional de <strong>toda la contratación pública</strong>: el texto tradicional que impone la licitación como regla general se conserva en las disposiciones transitorias del decreto de reforma de 2024 en materia de austeridad.</p>
+</div>
+<div class="card card-accent-blue fragment">
+<h4 style="color: var(--accent-blue);">LAASSP — Adquisiciones, Arrendamientos y Servicios del Sector Público</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Consúltase en especial: ámbito de aplicación · <strong>licitación pública como regla</strong> · causas de excepción · invitación a cuando menos tres personas · adjudicación directa · régimen de <strong>rescisión administrativa</strong>.</p>
+</div>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">📜</span> LOPSRM y LFPRH</h2>
+<div class="card card-accent-green fragment">
+<h4 style="color: var(--accent-green);">LOPSRM — Obras Públicas y Servicios Relacionados con las mismas</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Regula la obra pública federal. Consúltase en especial: ámbito de aplicación · licitación pública · <strong>garantías</strong> · <strong>ajuste de costos</strong> · causas de <strong>rescisión</strong> y <strong>terminación anticipada</strong>.</p>
+</div>
+<div class="card card-accent-orange fragment">
+<h4 style="color: var(--accent-orange);">LFPRH — Presupuesto y Responsabilidad Hacendaria</h4>
+<p style="font-size: 0.8em; margin: 4px 0 0;">Principios de disciplina presupuestaria aplicables a toda contratación pública: <strong>disciplina, gratuidad, transparencia, evaluación, responsabilidad hacendaria y adecuación</strong>; además, erogaciones plurianuales y suficiencia presupuestal.</p>
+</div>
+<div class="fun-fact fragment">
+<div class="ff-label">💡 Regla de la unidad</div>
+<p style="font-size: 0.82em;">Toda discusión de contrato público se apoya en <strong>tres niveles</strong>: el <strong>art. 134 CPEUM</strong> (principios), la ley material (<strong>LAASSP</strong> o <strong>LOPSRM</strong>, según el objeto) y la ley presupuestaria (<strong>LFPRH</strong>).</p>
+</div>
+</section>
+<section class="section-header" id="seccion-8-13">
+<span class="section-icon">🗺️</span>
+<h2>8.13 Esquema de síntesis</h2>
+</section>
+<section data-background-color="#0a0a1a">
+<h2><span class="icon-lg">🗺️</span> Esquema general</h2>
+<div style="font-family: Consolas, monospace; font-size: 0.6em; line-height: 1.5; color: rgba(255,255,255,0.85); background: var(--glass); border-radius: 12px; padding: 16px 20px; border: 1px solid var(--glass-border);">
+<div><strong style="color: var(--accent-blue);">1. DEBATE DOCTRINAL</strong></div>
+<div style="padding-left: 18px; color: rgba(255,255,255,0.6);">Corriente negativa (Mayer, Fleiner, Duguit): no existe categoría autónoma · Corriente positiva (Jèze, Bielsa, Fraga): sí existe, con régimen exorbitante</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-purple);">2. CRITERIOS DE IDENTIFICACIÓN</strong></div>
+<div style="padding-left: 18px;">Subjetivo / Jurisdicción / Formal / Cláusulas exorbitantes / Teleológico / Legal / Mixto</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-pink);">3. CARACTERES ESENCIALES</strong></div>
+<div style="padding-left: 18px;">Juridicidad / Bilateralidad / Desigualdad jurídica / Restricción de la libertad contractual / Interés público / Régimen exorbitante</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-green);">4. PRINCIPIOS RECTORES</strong></div>
+<div style="padding-left: 18px;">Legalidad (art. 134 CPEUM) / Continuidad / Mutabilidad (ius variandi) / Equilibrio financiero</div>
+<div style="padding-left: 18px;">└─ Hecho del príncipe: decisión de la autoridad contratante que ocasiona perjuicio</div>
+<div style="padding-left: 18px;">└─ Teoría de la imprevisión: acontecimientos extraordinarios ajenos a las partes</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-orange);">5. PROCEDIMIENTOS DE ADJUDICACIÓN</strong></div>
+<div style="padding-left: 18px;">Licitación pública (regla): convocatoria → bases → ofertas → apertura → adjudicación</div>
+<div style="padding-left: 18px;">Invitación restringida (excepción, 3 proveedores mínimo) · Adjudicación directa (excepción extrema)</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-red);">6. CLÁUSULAS EXORBITANTES</strong></div>
+<div style="padding-left: 18px;">Inspección y vigilancia / Ius variandi / Terminación anticipada / Rescisión administrativa / Garantías</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-blue);">7. TIPOS DE CONTRATOS</strong></div>
+<div style="padding-left: 18px;">Obra pública / Suministro / Adquisiciones / Arrendamiento / Servicios / Concesión / Empréstito / Consultoría</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-purple);">8. EXTINCIÓN</strong></div>
+<div style="padding-left: 18px;">Cumplimiento / Rescisión / Terminación anticipada / Nulidad / Caducidad / Mutuo acuerdo</div>
+<div style="margin-top: 8px;"><strong style="color: var(--accent-pink);">9. CONTENCIOSO CONTRACTUAL</strong></div>
+<div style="padding-left: 18px;">TFJA / Juzgados de Distrito / Instancia de inconformidad / Amparo indirecto</div>
+</div>
+</section>
+<section data-background-color="#0a0a1a" id="material">
+<h2><span class="icon-lg">📥</span> Material para Alumnos</h2>
+<p style="color: rgba(255,255,255,0.5); font-size: 0.78em;">Descarga el material de estudio de esta unidad</p>
+<div class="grid-2" style="margin-top: 10px;">
+<a href="../Material para Alumnos/Unidad 8/Unidad 8.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-blue fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">📄</span>
+<div>
+<h4 style="color: var(--accent-blue); margin: 0;">Unidad 8 — Contenido completo</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Concepto, licitación, cláusulas y extinción</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-blue); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 8/Cuestionario.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-green fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">❓</span>
+<div>
+<h4 style="color: var(--accent-green); margin: 0;">Cuestionario de estudio</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">12 preguntas de comprensión, análisis y aplicación</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-green); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 8/Casos.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-purple fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">🔎</span>
+<div>
+<h4 style="color: var(--accent-purple); margin: 0;">Casos prácticos</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">4 casos con guía de análisis y rúbrica</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-purple); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 8/Actividades.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-orange fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">👥</span>
+<div>
+<h4 style="color: var(--accent-orange); margin: 0;">Actividades en clase</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Debate, análisis de contrato real y simulación</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-orange); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 8/Taller y Evaluación.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-red fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">🎯</span>
+<div>
+<h4 style="color: var(--accent-red); margin: 0;">Taller y Evaluación</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">Escrito de solicitud de ajuste de costos</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-red); font-size: 1.2em;"></i>
+</div>
+</a>
+<a href="../Material para Alumnos/Unidad 8/Autoevaluación.pdf" download style="display: block; text-decoration: none;">
+<div class="card card-accent-pink fragment" style="display: flex; align-items: center; gap: 16px; cursor: pointer; transition: transform 0.2s;">
+<span style="font-size: 2em;">✅</span>
+<div>
+<h4 style="color: var(--accent-pink); margin: 0;">Autoevaluación</h4>
+<p style="font-size: 0.72em; margin: 4px 0 0; color: rgba(255,255,255,0.5);">10 reactivos con clave de respuestas</p>
+</div>
+<i class="fa-solid fa-download" style="margin-left: auto; color: var(--accent-pink); font-size: 1.2em;"></i>
+</div>
+</a>
+</div>
+<div style="margin-top: 16px; text-align: center;">
+<p style="font-size: 0.7em; color: rgba(255,255,255,0.35);"><i class="fa-solid fa-circle-info"></i> Toca cualquier tarjeta para descargar el PDF</p>
+</div>
+</section>
+<section class="title-slide" id="cierre">
+<span style="font-size: 4em;">🎓</span>
+<h1 style="font-size: 2em; margin-top: 20px;">¡Listo para la Unidad 8!</h1>
+<p style="color: rgba(255,255,255,0.6); font-size: 1.1em; margin-top: 20px;">El contrato administrativo es <span style="color: var(--accent-blue); font-weight: 600;">un contrato con poderes de autoridad</span>: por eso se identifica por sus cláusulas exorbitantes, no por quien lo firma.<br>Preguntas clave: <strong>¿criterio de identificación? · ¿licitación o excepción? · ¿qué figura de equilibrio opera?</strong></p>
+<div style="margin-top: 40px;">
+<p style="font-size: 0.8em; color: rgba(255,255,255,0.4);">
+<i class="fa-solid fa-book"></i> Lectura: Martínez Morales, 2o Curso (Temas XIX-XX, pp. 135-160) · Hamdan Amad (Tema XII, pp. 151-165)<br>
+<i class="fa-solid fa-scale-balanced"></i> Fernández Ruiz (Cap. XII Edo. Méx. · Cap. XIII-XIV INEHRM) · Diccionario de Martínez Morales<br>
+<i class="fa-solid fa-gavel"></i> CPEUM art. 134 · LOPSRM (arts. 1, 24, 59, 63, 74, 85) · LAASSP — lectura obligatoria</p>
+</div>
+<p style="margin-top: 40px; font-size: 0.7em; color: rgba(255,255,255,0.3);">Presiona <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">Esc</kbd> para ver la vista general · <kbd style="background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px;">F</kbd> para pantalla completa</p>
+<a href="../index.html" style="display: inline-block; margin-top: 20px; font-size: 0.75em; color: rgba(255,255,255,0.4); text-decoration: none; border: 1px solid rgba(255,255,255,0.15); padding: 8px 20px; border-radius: 20px;"><i class="fa-solid fa-arrow-left"></i> Volver al índice de unidades</a>
+</section>
+
+        </div>
+    </div>
+
+    <!-- Reveal.js -->
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/markdown/markdown.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+    
+    <script>
+        Reveal.initialize({
+            hash: true,
+            slideNumber: false,
+            width: 1100,
+            height: 700,
+            margin: 0.04,
+            transition: 'slide',
+            transitionSpeed: 'default',
+            backgroundTransition: 'fade',
+            center: true,
+            controls: true,
+            controlsLayout: 'edges',
+            controlsTutorial: false,
+            disableLayout: true,
+            plugins: [RevealNotes, RevealMarkdown, RevealHighlight]
+        });
+
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('a, button, .quiz-option, [onclick], input, select, textarea')) {
+                return;
+            }
+            var slide = Reveal.getCurrentSlide();
+            if (e.target === slide || slide.contains(e.target)) {
+                Reveal.navigateNext();
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.keyCode === 174 || e.keyCode === 175) {
+                e.preventDefault();
+                var slide = Reveal.getCurrentSlide();
+                var scrollAmount = 100;
+                if (e.keyCode === 175) {
+                    slide.scrollTop -= scrollAmount;
+                } else {
+                    slide.scrollTop += scrollAmount;
+                }
+            }
+        });
+
+        var fullscreenBtn = document.getElementById('fullscreen-btn');
+        var fullscreenIcon = fullscreenBtn.querySelector('i');
+
+        function toggleFullscreen() {
+            if (!document.fullscreenElement && !document.webkitFullscreenElement) {
+                var el = document.documentElement;
+                if (el.requestFullscreen) { el.requestFullscreen(); }
+                else if (el.webkitRequestFullscreen) { el.webkitRequestFullscreen(); }
+            } else {
+                if (document.exitFullscreen) { document.exitFullscreen(); }
+                else if (document.webkitExitFullscreen) { document.exitFullscreen(); }
+            }
+        }
+
+        fullscreenBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleFullscreen();
+        });
+
+        function updateFullscreenIcon() {
+            var isFull = document.fullscreenElement || document.webkitFullscreenElement;
+            if (isFull) {
+                fullscreenIcon.className = 'fa-solid fa-compress';
+                fullscreenBtn.title = 'Salir de pantalla completa';
+            } else {
+                fullscreenIcon.className = 'fa-solid fa-expand';
+                fullscreenBtn.title = 'Pantalla completa';
+            }
+        }
+
+        document.addEventListener('fullscreenchange', updateFullscreenIcon);
+        document.addEventListener('webkitfullscreenchange', updateFullscreenIcon);
+
+        document.getElementById('index-btn').addEventListener('click', function(e) {
+            e.stopPropagation();
+            var slideIndice = document.getElementById('indice');
+            if (slideIndice) {
+                var idx = Reveal.getIndices(slideIndice);
+                Reveal.slide(idx.h, idx.v, idx.f);
+            }
+        });
+
+        var fragmentCounter = document.getElementById('fragment-counter');
+        var fcCurrent = fragmentCounter.querySelector('.fc-current');
+        var fcTotal = fragmentCounter.querySelector('.fc-total');
+
+        function updateFragmentCounter() {
+            var slide = Reveal.getCurrentSlide();
+            var total = slide.querySelectorAll('.fragment').length;
+            var shown = slide.querySelectorAll('.fragment.visible').length;
+            if (total > 0) {
+                fcCurrent.textContent = shown;
+                fcTotal.textContent = total;
+                fragmentCounter.classList.add('has-fragments');
+            } else {
+                fcCurrent.textContent = 0;
+                fcTotal.textContent = 0;
+                fragmentCounter.classList.remove('has-fragments');
+            }
+        }
+
+        Reveal.on('ready', updateFragmentCounter);
+        Reveal.on('slidechanged', updateFragmentCounter);
+        Reveal.on('fragmentshown', updateFragmentCounter);
+        Reveal.on('fragmenthidden', updateFragmentCounter);
+
+        var slideNav = document.getElementById('slide-nav');
+        var slideNavCurrent = document.getElementById('slide-nav-current');
+        var slideNavTotal = document.getElementById('slide-nav-total');
+        var slideNavInput = document.getElementById('slide-nav-input');
+
+        function updateSlideNav() {
+            var indices = Reveal.getIndices();
+            var h = (indices && typeof indices.h === 'number' && !isNaN(indices.h)) ? indices.h : 0;
+            var total = Reveal.getTotalSlides();
+            slideNavCurrent.textContent = h + 1;
+            slideNavTotal.textContent = total;
+        }
+
+        function openSlideNavInput() {
+            var indices = Reveal.getIndices();
+            slideNavInput.value = indices.h + 1;
+            slideNav.classList.add('editing');
+            slideNavInput.focus();
+            slideNavInput.select();
+        }
+
+        function closeSlideNavInput() {
+            slideNav.classList.remove('editing');
+            updateSlideNav();
+        }
+
+        function navigateToSlide() {
+            var num = parseInt(slideNavInput.value, 10);
+            var total = Reveal.getTotalSlides();
+            if (!isNaN(num) && num >= 1 && num <= total) {
+                Reveal.slide(num - 1);
+            }
+            closeSlideNavInput();
+        }
+
+        slideNav.addEventListener('click', function(e) {
+            if (e.target === slideNavInput) return;
+            e.stopPropagation();
+            openSlideNavInput();
+        });
+
+        slideNavInput.addEventListener('keydown', function(e) {
+            e.stopPropagation();
+            if (e.key === 'Enter') { navigateToSlide(); }
+            else if (e.key === 'Escape') { closeSlideNavInput(); }
+        });
+
+        slideNavInput.addEventListener('blur', function() {
+            closeSlideNavInput();
+        });
+
+        Reveal.on('ready', updateSlideNav);
+        Reveal.on('slidechanged', updateSlideNav);
+        updateSlideNav();
+    </script>
+</body>
+</html>

@@ -681,7 +681,7 @@ Arts. 3, 5, 6, 7, 8, 9, 11 y 17 de la LFPA; art. 16 CPEUM; LFPCA sin numerales. 
 
 ### Pendientes
 
-- [ ] Presentaciones **U8-U15** (pipeline documentado: base U6 → head/middle/tail → CDP → index.html)
+- [ ] Presentaciones **U9-U15** (pipeline documentado: base U6 → head/middle/tail → CDP → index.html)
 - [ ] Replicar la corrección del `NaN` del `slide-nav` en U1-U6
 - [ ] Typo en el libro: el encabezado de la U7 dice **"INEFICIACIAS"** (usar "Ineficacias"; el título de la presentación ya usa la forma correcta)
 - [ ] `diapositivas/README-DIAPOSITIVAS.md` → sección "Contenido actual" desactualizada desde la U5
@@ -694,3 +694,17 @@ Arts. 3, 5, 6, 7, 8, 9, 11 y 17 de la LFPA; art. 16 CPEUM; LFPCA sin numerales. 
 - Se conserva **Material para Alumnos** (6 PDFs descargables) y el cierre con "Volver al índice".
 - Verificado con CDP: 50 diapositivas, **0 enlaces rotos**, 0 excepciones JS.
 > *Registrado por Buffy (Codebuff/Freebuff) - 2 de octubre de 2026*
+
+### Unidad 8 — El Contrato Administrativo (solo clase + material)
+
+**Archivos:** `diapositivas/unidad-08-el-contrato-administrativo.html` (nuevo) · `Material para Alumnos/Unidad 8/*.pdf` (6 nuevos) · `src/generar_material_alumnos.py` (extendido a U8) · `index.html` (8/15).
+
+- **39 diapositivas**: portada → ¿Dónde estamos? → mapa conceptual → índice (14 tarjetas) → **8.1** Debate doctrinal → **8.2** Siete criterios de identificación → **8.3** Caracteres esenciales → **8.4** Principios rectores (ius variandi, hecho del príncipe, imprevisión) → **8.5** Elementos → **8.6** Licitación pública y excepciones → **8.7** Cláusulas exorbitantes → **8.8** Tipos de contratos → **8.9** Ejecución y extinción → **8.10** Contencioso contractual → **8.11** Doctrina comparada (tabla Martínez Morales / Fernández Ruiz / Hamdan) → **8.12** Legislación (art. 134 CPEUM, LAASSP, LOPSRM, LFPRH) → **8.13** Esquema → **Material** → **Cierre**.
+- **Sin láminas ajenas a la clase**: no hay Objetivos, Competencias, Quiz, Casos, Actividades ni Taller (por indicación: mismo alcance que el ajuste de la U7); esos contenidos solo aparecen como tarjetas descargables en `#material`.
+- Ensamblada con el pipeline head/middle/tail desde U7 (fix del `NaN` incluido): `<title>` cambiado a "Unidad 8 — El Contrato Administrativo", UTF-8 sin BOM.
+- **CDP**: 39 secciones, `slide-nav` "1 / 39" **sin NaN**, 76 `fragment`, 19 enlaces `#/...` con destino, 6 enlaces de material, botón índice navega a `#/indice` y las tarjetas del índice a su sección (p. ej. 8.6 → 18/39), **0 excepciones JS**.
+- Ajustes de layout: mapa conceptual (`font-size: 0.92em`) y "Los primeros cuatro criterios" (`0.95em` + cita Vedel acortada) caben completos; índice/esquema/cierre usan el scroll vertical con scrollbar propio del tema (mismos valores que U7: 274/126/125 px frente a 300/110/125).
+- **Material U8** (páginas del libro detectadas por patrón): `Unidad 8.pdf` 145-151 (7 pág.) · `Cuestionario.pdf` 152 · `Casos.pdf` 153-154 · `Actividades.pdf` 155 (respaldo `1. Debate:`) · `Taller y Evaluación.pdf` 156 · `Autoevaluación.pdf` 157-159 (3 pág.). Verificados con PyMuPDF (páginas + texto de cabecera).
+- `generar_material_alumnos.py`: docstring 1-8, `range(1,8)` → `range(1,9)` (plan y generación), 5 entradas de `NOMBRES` para U8. Los PDFs U1-U7 se regeneraron por el script y se restauraron con `git checkout --` (sin cambios).
+- `index.html`: barra 46.67 % → **53.33 %**, "8 de 15 unidades disponibles", tarjeta Unidad 08 → `available` con enlace a la presentación.
+> *Registrado por OpenCode (mimo-v2.6-flash-free) - 2 de octubre de 2026*
